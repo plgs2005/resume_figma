@@ -536,7 +536,7 @@ context-menu.tsx        tabs.tsx
 #### **2. Section (Seção)**
 
 ```tsx
-<section className="mb-8 break-inside-avoid">
+<section className="mb-8">
   {/* Título da seção */}
   <h2 className="
     text-xl 
@@ -567,7 +567,6 @@ context-menu.tsx        tabs.tsx
   rounded-lg 
   border 
   border-slate-200 
-  break-inside-avoid
   print:shadow-none
 ">
   {/* Cargo */}
@@ -1025,9 +1024,9 @@ xl:         1280px  /* Desktops */
 </header>
 
 {/* Quebras de página */}
-<section className="break-inside-avoid">
-  {/* Evita quebra dentro desta seção */}
-</section>
+<div className="break-inside-avoid">
+  {/* Evita quebra dentro deste elemento PEQUENO */}
+</div>
 ```
 
 ---
@@ -1048,10 +1047,10 @@ xl:         1280px  /* Desktops */
 #### **Quebras de Página Inteligentes**
 
 ```tsx
-{/* Evita quebra dentro de elementos importantes */}
-<section className="break-inside-avoid">
-<div className="break-inside-avoid">
-<article className="break-inside-avoid">
+{/* Evita quebra dentro de elementos PEQUENOS */}
+<li className="break-inside-avoid">
+<div className="break-inside-avoid"> {/* Ex: Card pequeno */}
+<span className="break-inside-avoid">
 ```
 
 #### **Cores Otimizadas**

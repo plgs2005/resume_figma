@@ -559,15 +559,16 @@ const handlePrint = () => {
 
 #### **Quebras de Página**
 ```tsx
-// Evita quebra dentro de elementos
+// Evita quebra dentro de elementos PEQUENOS
 className="break-inside-avoid"
 
 // Aplicado em:
-- Seções completas (<section>)
-- Cards de experiência (<div> de empresa)
-- Blocos de skills (<div> de categoria)
-- Projetos individuais
+- Itens de educação/formação
+- Certificações
+- Cards pequenos
 ```
+
+**Nota:** Cards de experiência extensos NÃO usam `break-inside-avoid`. Isso permite que o conteúdo flua naturalmente para a próxima página (WYSIWYG), evitando grandes espaços em branco no final da página anterior.
 
 #### **Espaçamento Ajustado**
 ```tsx
@@ -1149,6 +1150,9 @@ Este currículo foi desenvolvido com foco em **3 pilares fundamentais**:
 ---
 
 ### **Changelog Importante**
+
+#### **v2.0.1** - 20/02/2026
+- **[FIXED]** Ajuste de quebras de página na impressão (remoção de `break-inside-avoid` em cards longos para evitar espaços em branco)
 
 #### **v2.0.0** - 20/02/2026
 - **[BREAKING]** Refatoração estrutural completa

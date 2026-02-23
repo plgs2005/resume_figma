@@ -1,322 +1,594 @@
-# 📄 Currículo Interativo - Tech Lead
+# Curriculo Interativo - Tech Lead
 
-> **Currículo digital profissional e interativo para posições de Tech Lead e Engenheiro de Software Sênior**  
+> **Curriculo digital profissional e interativo para posicoes de Tech Lead e Engenheiro de Software Senior**  
 > Desenvolvido com React, TypeScript e Tailwind CSS v4
 
 [![GitHub](https://img.shields.io/badge/GitHub-plgs2005%2Fresume__figma-blue?logo=github)](https://github.com/plgs2005/resume_figma)
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?logo=vite)](https://vite.dev/)
 
 ---
 
-## 🎯 **Visão Geral**
+## Visao Geral
 
-Currículo digital interativo com foco em **experiência profissional**, otimizado para:
+Curriculo digital interativo com foco em **experiencia profissional**, otimizado para:
 
-- ✅ **Compatibilidade ATS** (Applicant Tracking Systems)
-- ✅ **Impressão A4 perfeita** (210mm x 297mm)
-- ✅ **Exportação PDF dupla** (Visual + ATS-friendly)
-- ✅ **Design responsivo** (Mobile, Tablet, Desktop)
-- ✅ **Performance otimizada**
-
----
-
-## ✨ **Funcionalidades Principais**
-
-### **📥 Exportação PDF Dupla**
-
-#### **1. PDF Visual (Alta Qualidade)**
-- ✅ Preserva 100% dos estilos CSS
-- ✅ Qualidade JPEG 98%
-- ✅ Formato A4 perfeito
-- 🎯 **Para:** Envio direto a recrutadores
-
-#### **2. PDF para ATS (Compatível com Sistemas)**
-- ✅ Texto 100% selecionável
-- ✅ Estrutura semântica preservada
-- ✅ Compatível com Greenhouse, Lever, Workday, etc.
-- 🎯 **Para:** Submissão em portais de emprego
-
-### **🖨️ Impressão Otimizada**
-- Dimensões A4 exatas (210mm x 297mm)
-- Quebras de página inteligentes
-- Otimização de cores e espaçamento
-- Botões ocultos automaticamente na impressão
-
-### **📱 Design Responsivo**
-- Layout adaptável para mobile, tablet e desktop
-- Tipografia escalável
-- Hierarquia visual clara
+- **Compatibilidade ATS** (Applicant Tracking Systems)
+- **Impressao A4 perfeita** (210mm x 297mm)
+- **Exportacao PDF dupla** (Visual + ATS-friendly)
+- **Design responsivo** (Mobile, Tablet, Desktop)
+- **Performance otimizada**
 
 ---
 
-## 🛠️ **Tech Stack**
+## Pre-requisitos
 
-### **Core**
-- **React** 18.x - Framework UI
-- **TypeScript** 5.x - Type safety
-- **Tailwind CSS** v4.0 - Estilização utility-first
+Antes de comecar, certifique-se de ter as seguintes ferramentas instaladas na sua maquina:
 
-### **UI & Icons**
-- **Shadcn/ui** - Sistema de componentes (47 componentes)
-- **Lucide React** - Biblioteca de ícones moderna
+| Ferramenta | Versao Minima | Como verificar | Download |
+|-----------|---------------|----------------|----------|
+| **Node.js** | 18.0.0+ | `node --version` | [nodejs.org](https://nodejs.org/) |
+| **npm** | 9.0.0+ | `npm --version` | (incluido com Node.js) |
+| **Git** | 2.x | `git --version` | [git-scm.com](https://git-scm.com/) |
 
-### **Funcionalidades**
-- **html2pdf.js** 0.10.1 - Exportação PDF visual
-- **Print API** (Navegador) - Exportação PDF ATS
+> **Recomendado:** Node.js 20 LTS ou superior. O projeto usa Vite 6 e Tailwind CSS v4, que requerem Node.js 18+.
 
----
+### Verificacao rapida dos pre-requisitos
 
-## 📁 **Estrutura do Projeto**
-
-```
-/
-├── App.tsx                    # Componente principal do currículo
-├── Attributions.md            # Licenças e atribuições
-├── README.md                  # Este arquivo
-│
-├── components/
-│   ├── figma/
-│   │   └── ImageWithFallback.tsx
-│   └── ui/                    # 47 componentes Shadcn/ui
-│
-├── guidelines/
-│   └── Guidelines.md          # Documentação completa (1000+ linhas)
-│
-└── styles/
-    └── globals.css            # Estilos globais + Tailwind config
-```
-
----
-
-## 📚 **Documentação**
-
-### **📖 Documentação Completa**
-- **[Guidelines.md](guidelines/Guidelines.md)** - Documentação técnica completa
-  - Decisões de arquitetura
-  - Padrões de código
-  - Design system
-  - Workflow de desenvolvimento
-  - Guia de contribuição
-
-### **🎨 Design System**
-- **Cores:** Custom palette com OKLCH color space
-- **Tipografia:** System fonts com escala otimizada
-- **Componentes:** 47 componentes Shadcn/ui disponíveis
-- **Ícones:** Lucide React
-
-### **⚙️ Otimizações**
-
-#### **Para ATS (Applicant Tracking Systems)**
-- ✅ Estrutura semântica HTML5
-- ✅ Hierarquia clara (h1, h2, h3)
-- ✅ Texto 100% selecionável
-- ✅ Palavras-chave estratégicas
-- ✅ Links clicáveis
-
-#### **Para Impressão A4**
-- ✅ Dimensões exatas (210mm x 297mm)
-- ✅ Quebras de página (`break-inside-avoid`)
-- ✅ Espaçamento ajustado para impressão
-- ✅ Print styles do Tailwind (`print:`)
-
----
-
-## 🚀 **Como Usar**
-
-### **Visualização Web**
-1. Acesse o projeto no Figma Make ou ambiente local
-2. Navegue pelo currículo interativo
-3. Links de email e LinkedIn são clicáveis
-
-### **Exportação PDF Visual**
-1. Clique no botão verde **"Exportar PDF"** (canto inferior direito)
-2. Aguarde o download automático
-3. Arquivo: `Curriculo_Pedro_Lucas_Gandara_Santos.pdf`
-
-### **Exportação PDF para ATS**
-1. Clique no botão escuro **"PDF para ATS (Ctrl+P)"**
-2. Ou pressione `Ctrl+P` (Windows) / `Cmd+P` (Mac)
-3. Selecione "Salvar como PDF" no diálogo de impressão
-4. Texto 100% selecionável e parseável por ATS
-
----
-
-## 🔧 **Desenvolvimento Local** (Opcional)
+Execute os comandos abaixo no seu terminal. Todos devem retornar uma versao:
 
 ```bash
-# Clonar repositório
+node --version
+# Esperado: v18.x.x ou superior (ex: v20.11.0)
+
+npm --version
+# Esperado: 9.x.x ou superior (ex: 10.2.4)
+
+git --version
+# Esperado: git version 2.x.x (ex: git version 2.43.0)
+```
+
+Se algum comando falhar ou retornar versao inferior, instale/atualize antes de prosseguir.
+
+---
+
+## Quick Start - Passo a Passo Completo
+
+Siga **todos os passos abaixo na ordem exata** para executar o projeto localmente.
+
+### Passo 1 - Clonar o repositorio
+
+```bash
 git clone https://github.com/plgs2005/resume_figma.git
+cd resume_figma
+```
 
-# Instalar dependências
-npm install
+**Verificacao:** O diretorio deve conter os arquivos do projeto:
 
-# Iniciar servidor de desenvolvimento
-npm run dev
-
-# Build de produção
-npm run build
+```bash
+ls -la
+# Deve mostrar: App.tsx, package.json, index.html, vite.config.ts, etc.
 ```
 
 ---
 
-## 📝 **Padrões de Código**
+### Passo 2 - Corrigir imports do Figma Make (OBRIGATORIO)
 
-### **Naming Conventions**
-```tsx
-// Componentes: PascalCase
-export default function App() { }
+O projeto foi desenvolvido no **Figma Make**, que usa uma sintaxe especial de imports com versao embutida (ex: `from "lucide-react@0.487.0"`). Essa sintaxe **nao funciona** em ambiente Node.js/Vite padrao. O script abaixo corrige todos os imports automaticamente.
 
-// Funções: camelCase
-const handleExportPDF = () => { }
+**No Linux / macOS:**
 
-// Arquivos: kebab-case ou PascalCase
-alert-dialog.tsx, ImageWithFallback.tsx
+```bash
+chmod +x scripts/fix-figma-imports.sh
+./scripts/fix-figma-imports.sh
 ```
 
-### **Estrutura de Componentes**
-```tsx
-// 1. Imports
-import React, { useState } from "react";
+**No Windows (PowerShell):**
 
-// 2. Component
-export default function Component() {
-  // State
-  const [state, setState] = useState();
-  
-  // Handlers
-  const handleClick = () => { };
-  
-  // Render
-  return <div>...</div>;
+```powershell
+# Alternativa manual com PowerShell
+Get-ChildItem -Recurse -Include *.ts,*.tsx | ForEach-Object {
+  $content = Get-Content $_.FullName -Raw
+  $updated = $content -replace '(from\s+"[^"@]+)@[\d]+\.[\d]+[^"]*(")', '$1$2'
+  if ($content -ne $updated) {
+    Set-Content $_.FullName -Value $updated -NoNewline
+    Write-Host "  Corrigido: $($_.FullName)"
+  }
 }
 ```
 
+**No Windows (Git Bash):**
+
+```bash
+chmod +x scripts/fix-figma-imports.sh
+./scripts/fix-figma-imports.sh
+```
+
+**O que o script faz:**
+
+| Antes (Figma Make) | Depois (Node.js/Vite) |
+|--------------------|-----------------------|
+| `from "@radix-ui/react-accordion@1.2.3"` | `from "@radix-ui/react-accordion"` |
+| `from "lucide-react@0.487.0"` | `from "lucide-react"` |
+| `from "class-variance-authority@0.7.1"` | `from "class-variance-authority"` |
+| `from "embla-carousel-react@8.6.0"` | `from "embla-carousel-react"` |
+| `from "sonner@2.0.3"` | `from "sonner"` |
+
+> **Nota:** As versoes corretas ja estao definidas no `package.json`. O npm instalara as versoes compatveis.
+
+**Verificacao:** Confirme que nao restam imports versionados:
+
+```bash
+grep -r '@[0-9]\+\.[0-9]\+' --include="*.tsx" --include="*.ts" . | grep 'from "' | head -5
+# Esperado: nenhum resultado (vazio)
+```
+
 ---
 
-## 📊 **Changelog**
+### Passo 3 - Instalar dependencias
 
-### **v2.0.0** - 20/02/2026
-- ✅ Refatoração estrutural completa
-- ✅ Remoção de pasta `/resume` duplicada
-- ✅ Criação de Guidelines.md completo
-- ✅ Estrutura consolidada na raiz
+```bash
+npm install
+```
 
-### **v1.0.0** - Data Inicial
-- ✅ Criação do currículo interativo
-- ✅ Exportação PDF dupla (Visual + ATS)
-- ✅ Integração com Shadcn/ui
-- ✅ Otimizações ATS e impressão A4
+Este comando instala **todas as dependencias** listadas no `package.json`:
+
+- **48 dependencias** de producao (React, Radix UI, Shadcn/ui, Lucide, etc.)
+- **6 dependencias** de desenvolvimento (Vite, TypeScript, Tailwind CSS v4)
+
+**Tempo estimado:** 30-90 segundos (depende da conexao)
+
+**Verificacao:** O diretorio `node_modules` deve existir e o comando nao deve mostrar erros criticos:
+
+```bash
+ls node_modules/ | head -5
+# Deve listar pastas de pacotes (ex: @radix-ui, react, lucide-react, etc.)
+
+# Verificar se nao ha vulnerabilidades criticas
+npm audit --production
+```
 
 ---
 
-## 🤝 **Como Contribuir**
+### Passo 4 - Conferencia de pacotes instalados
 
-Contribuições são bem-vindas! Por favor:
+Verifique se os pacotes principais foram instalados corretamente:
 
-1. Fork o repositório
+```bash
+# Verificar pacotes essenciais do core
+npm ls react react-dom typescript vite tailwindcss
+```
+
+Saida esperada (versoes podem variar levemente):
+
+```
+resume-figma@2.0.1
+├── react@18.3.1
+├── react-dom@18.3.1
+├── tailwindcss@4.x.x
+├── typescript@5.7.x
+└── vite@6.x.x
+```
+
+```bash
+# Verificar pacotes Shadcn/ui (Radix UI)
+npm ls @radix-ui/react-slot @radix-ui/react-dialog @radix-ui/react-tooltip
+```
+
+Saida esperada:
+
+```
+resume-figma@2.0.1
+├── @radix-ui/react-slot@1.1.2
+├── @radix-ui/react-dialog@1.1.6
+└── @radix-ui/react-tooltip@1.1.8
+```
+
+```bash
+# Verificar pacotes de UI e funcionalidades
+npm ls lucide-react class-variance-authority clsx tailwind-merge
+```
+
+Saida esperada:
+
+```
+resume-figma@2.0.1
+├── class-variance-authority@0.7.1
+├── clsx@2.1.1
+├── lucide-react@0.487.0
+└── tailwind-merge@2.6.0
+```
+
+```bash
+# Verificar TODOS os pacotes de uma vez (resumo)
+npm ls --depth=0
+```
+
+> **Se algum pacote estiver faltando**, execute `npm install` novamente. Se o erro persistir, delete `node_modules` e `package-lock.json` e reinstale:
+>
+> ```bash
+> rm -rf node_modules package-lock.json
+> npm install
+> ```
+
+---
+
+### Passo 5 - Iniciar o servidor de desenvolvimento
+
+```bash
+npm run dev
+```
+
+**Saida esperada no terminal:**
+
+```
+  VITE v6.x.x  ready in XXX ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.x.x:5173/
+  ➜  press h + enter to show help
+```
+
+**Abra o navegador** e acesse:
+
+```
+http://localhost:5173/
+```
+
+Voce devera ver o curriculo completo renderizado com:
+- Header escuro (bg-slate-900) com nome, cargo e contatos
+- Secoes: Resumo Profissional, Conhecimentos Tecnicos, Experiencia, Formacao
+- Dois botoes flutuantes no canto inferior direito (Exportar PDF + PDF para ATS)
+
+> **Nota:** O Vite tem Hot Module Replacement (HMR). Qualquer alteracao no codigo sera refletida instantaneamente no navegador sem recarregar a pagina.
+
+**Para parar o servidor:** Pressione `Ctrl+C` no terminal.
+
+---
+
+### Passo 6 - Build de producao (opcional)
+
+Para gerar os arquivos otimizados para deploy:
+
+```bash
+# Verificacao de tipos TypeScript + build Vite
+npm run build
+```
+
+**Saida esperada:**
+
+```
+vite v6.x.x building for production...
+✓ XX modules transformed.
+dist/index.html         0.xx kB │ gzip: 0.xx kB
+dist/assets/index-XXXX.css    XX.xx kB │ gzip: X.xx kB
+dist/assets/index-XXXX.js    XXX.xx kB │ gzip: XX.xx kB
+✓ built in Xs
+```
+
+**Preview da build de producao:**
+
+```bash
+npm run preview
+```
+
+Acesse `http://localhost:4173/` para visualizar a versao de producao.
+
+> Os arquivos gerados ficam na pasta `dist/`. Essa pasta pode ser deployada em qualquer servidor estatico (Vercel, Netlify, GitHub Pages, etc.).
+
+---
+
+## Scripts Disponiveis
+
+| Comando | Descricao |
+|---------|-----------|
+| `npm run dev` | Inicia servidor de desenvolvimento (Vite + HMR) na porta 5173 |
+| `npm run build` | Verifica tipos TypeScript + gera build de producao em `dist/` |
+| `npm run preview` | Serve a build de producao localmente na porta 4173 |
+| `npm run type-check` | Verifica tipos TypeScript sem gerar build |
+
+---
+
+## Como Usar o Curriculo
+
+### Visualizacao Web
+
+1. Acesse `http://localhost:5173/` com o servidor rodando
+2. Navegue pelo curriculo (scroll vertical)
+3. Links de email e LinkedIn sao clicaveis
+
+### Exportar PDF Visual (Alta Qualidade)
+
+1. Clique no botao verde **"Exportar PDF"** (canto inferior direito)
+2. Aguarde o download automatico
+3. Arquivo gerado: `Curriculo_Pedro_Lucas_Gandara_Santos.pdf`
+4. **Uso:** Envio direto a recrutadores quando a apresentacao visual importa
+
+### Exportar PDF para ATS (Texto Selecionavel)
+
+1. Clique no botao escuro **"PDF para ATS (Ctrl+P)"**
+2. Ou pressione `Ctrl+P` (Windows/Linux) / `Cmd+P` (Mac)
+3. No dialogo de impressao, selecione **"Salvar como PDF"**
+4. **Uso:** Submissao em portais de emprego (Greenhouse, Lever, Workday, etc.)
+
+---
+
+## Estrutura do Projeto
+
+```
+resume_figma/
+│
+├── index.html                       # Entry point HTML (Vite)
+├── main.tsx                         # Ponto de montagem React (ReactDOM.createRoot)
+├── App.tsx                          # Componente principal do curriculo
+├── vite-env.d.ts                    # Tipos Vite + declaracao window.html2pdf
+│
+├── package.json                     # Dependencias e scripts npm
+├── vite.config.ts                   # Config Vite (React + Tailwind v4 plugins)
+├── tsconfig.json                    # Config TypeScript raiz (references)
+├── tsconfig.app.json                # Config TypeScript para o app
+├── tsconfig.node.json               # Config TypeScript para vite.config.ts
+├── .gitignore                       # Arquivos ignorados pelo Git
+│
+├── scripts/
+│   └── fix-figma-imports.sh         # Script para corrigir imports do Figma Make
+│
+├── styles/
+│   └── globals.css                  # Tailwind v4 config + design tokens + estilos base
+│
+├── components/
+│   ├── figma/
+│   │   └── ImageWithFallback.tsx    # Componente de imagem com fallback
+│   └── ui/                          # 47 componentes Shadcn/ui
+│       ├── accordion.tsx
+│       ├── alert-dialog.tsx
+│       ├── alert.tsx
+│       ├── button.tsx
+│       ├── card.tsx
+│       ├── dialog.tsx
+│       ├── ... (44 componentes adicionais)
+│       ├── utils.ts                 # Utilidade cn() (clsx + tailwind-merge)
+│       └── use-mobile.ts            # Hook de deteccao mobile
+│
+├── guidelines/
+│   ├── Guidelines.md                # Documentacao tecnica completa (1000+ linhas)
+│   ├── DESIGN_SYSTEM.md             # Design system detalhado
+│   └── DEVELOPMENT.md               # Guia de desenvolvimento
+│
+├── Attributions.md                  # Licencas de terceiros
+├── CHANGELOG.md                     # Historico de alteracoes
+├── PRINT_FIX_SUMMARY.md             # Documentacao do fix de impressao
+└── README.md                        # Este arquivo
+```
+
+---
+
+## Tech Stack
+
+### Core
+
+| Tecnologia | Versao | Funcao |
+|-----------|--------|--------|
+| **React** | 18.3.x | Framework UI principal |
+| **TypeScript** | 5.7.x | Type safety |
+| **Tailwind CSS** | 4.0.x | Estilizacao utility-first |
+| **Vite** | 6.0.x | Bundler e dev server |
+
+### UI e Componentes
+
+| Biblioteca | Versao | Funcao |
+|-----------|--------|--------|
+| **Shadcn/ui** (Radix UI) | variadas | 47 componentes UI acessiveis |
+| **Lucide React** | 0.487.x | Icones (Mail, Phone, Download, Printer, etc.) |
+| **class-variance-authority** | 0.7.x | Variantes de componentes |
+| **clsx** + **tailwind-merge** | 2.1.x / 2.6.x | Merge de classes CSS |
+
+### Funcionalidades
+
+| Biblioteca | Versao | Funcao |
+|-----------|--------|--------|
+| **html2pdf.js** | 0.10.1 | Exportacao PDF visual (via CDN) |
+| **Print API** | Nativo | Exportacao PDF ATS |
+
+---
+
+## Troubleshooting - Solucao de Problemas
+
+### Problema: `npm install` falha com erros de dependencia
+
+```bash
+# Limpar cache e reinstalar do zero
+rm -rf node_modules package-lock.json
+npm cache clean --force
+npm install
+```
+
+### Problema: `npm run dev` falha com erro de modulo nao encontrado
+
+Provavelmente os imports versionados do Figma Make nao foram corrigidos. Execute:
+
+```bash
+# Verificar se ainda existem imports versionados
+grep -r '@[0-9]\+\.[0-9]\+' --include="*.tsx" --include="*.ts" . | grep 'from "'
+
+# Se encontrar resultados, execute o fix novamente
+chmod +x scripts/fix-figma-imports.sh
+./scripts/fix-figma-imports.sh
+```
+
+### Problema: Estilos Tailwind nao aplicados
+
+Verifique se o `globals.css` comeca com `@import "tailwindcss";`:
+
+```bash
+head -1 styles/globals.css
+# Esperado: @import "tailwindcss";
+```
+
+Se nao tiver, adicione manualmente:
+
+```bash
+echo '@import "tailwindcss";' | cat - styles/globals.css > temp && mv temp styles/globals.css
+```
+
+### Problema: Porta 5173 ja em uso
+
+```bash
+# Rodar em outra porta
+npx vite --port 3000
+
+# Ou matar o processo na porta 5173
+# Linux/macOS:
+lsof -ti:5173 | xargs kill -9
+# Windows:
+netstat -ano | findstr :5173
+taskkill /PID <PID> /F
+```
+
+### Problema: TypeScript reporta erros de tipo
+
+```bash
+# Verificar erros sem bloquear o build
+npm run type-check
+
+# Se erros forem apenas em componentes Shadcn/ui nao utilizados,
+# o Vite ignora erros de tipo no modo dev (apenas o build falha)
+# Para forcar build ignorando TS:
+npx vite build
+```
+
+### Problema: PDF Visual nao exporta (botao nao funciona)
+
+A biblioteca `html2pdf.js` e carregada via CDN em runtime. Verifique:
+
+1. Conexao com internet esta ativa
+2. O CDN `cdnjs.cloudflare.com` nao esta bloqueado
+3. Abra o Console do navegador (F12) para ver erros
+
+### Problema: Node.js versao incompativel
+
+```bash
+# Verificar versao
+node --version
+
+# Se menor que 18, atualize:
+# Via nvm (recomendado):
+nvm install 20
+nvm use 20
+
+# Ou baixe diretamente: https://nodejs.org/
+```
+
+---
+
+## Documentacao Completa
+
+- **[Guidelines.md](guidelines/Guidelines.md)** - Documentacao tecnica completa
+  - Decisoes de arquitetura
+  - Padroes de codigo (naming, estrutura, Tailwind)
+  - Design system (cores, tipografia, espacamento)
+  - Otimizacoes ATS e impressao A4
+  - Workflow de desenvolvimento
+- **[DESIGN_SYSTEM.md](guidelines/DESIGN_SYSTEM.md)** - Design system detalhado
+- **[DEVELOPMENT.md](guidelines/DEVELOPMENT.md)** - Guia de desenvolvimento
+- **[CHANGELOG.md](CHANGELOG.md)** - Historico de alteracoes
+- **[Attributions.md](Attributions.md)** - Licencas de terceiros
+
+---
+
+## Changelog
+
+### v2.0.1 - 20/02/2026
+- Ajuste de quebras de pagina na impressao
+
+### v2.0.0 - 20/02/2026
+- Refatoracao estrutural completa
+- Remocao de pasta `/resume` duplicada
+- Criacao de Guidelines.md completo
+- Estrutura consolidada na raiz
+
+### v1.0.0 - Data Inicial
+- Criacao do curriculo interativo
+- Exportacao PDF dupla (Visual + ATS)
+- Integracao com Shadcn/ui
+- Otimizacoes ATS e impressao A4
+
+---
+
+## Como Contribuir
+
+1. Fork o repositorio
 2. Crie uma branch feature: `git checkout -b feature/nova-feature`
-3. Commit suas mudanças: `git commit -m 'feat: adiciona nova feature'`
+3. Commit suas mudancas: `git commit -m 'feat: adiciona nova feature'`
 4. Push para a branch: `git push origin feature/nova-feature`
 5. Abra um Pull Request
 
-### **Convenção de Commits**
-Seguimos o padrão [Conventional Commits](https://www.conventionalcommits.org/):
+### Convencao de Commits
+
+Seguimos o padrao [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
 feat:     Nova funcionalidade
-fix:      Correção de bug
-docs:     Documentação
-style:    Formatação
-refactor: Refatoração
+fix:      Correcao de bug
+docs:     Documentacao
+style:    Formatacao
+refactor: Refatoracao
 perf:     Performance
 test:     Testes
-chore:    Manutenção
+chore:    Manutencao
 ```
 
 ---
 
-## 📄 **Licenças**
+## Features Futuras (Roadmap)
 
-### **Código do Projeto**
+- [ ] Versao em ingles (i18n)
+- [ ] Temas customizaveis
+- [ ] Secao de certificacoes
+- [ ] Modo escuro funcional
+- [ ] Testes automatizados
+- [ ] CI/CD com GitHub Actions
+- [ ] Deploy automatico (Vercel/Netlify)
+
+---
+
+## Licencas
+
+### Codigo do Projeto
 Propriedade de Pedro Lucas Gandara Santos
 
-### **Bibliotecas de Terceiros**
+### Bibliotecas de Terceiros
 - **Shadcn/ui** - [MIT License](https://github.com/shadcn-ui/ui/blob/main/LICENSE.md)
 - **Lucide React** - ISC License
 - **html2pdf.js** - MIT License
+- **Radix UI** - MIT License
 
 Ver [Attributions.md](Attributions.md) para detalhes completos.
 
 ---
 
-## 👤 **Autor**
+## Autor
 
 **Pedro Lucas Gandara Santos**
 
-- 📧 Email: [plgsantos@icloud.com](mailto:plgsantos@icloud.com)
-- 💼 LinkedIn: [linkedin.com/in/pedrolucassantos](https://linkedin.com/in/pedrolucassantos)
-- 🐙 GitHub: [@plgs2005](https://github.com/plgs2005)
-- 📂 Repositório: [plgs2005/resume_figma](https://github.com/plgs2005/resume_figma)
+- Email: [plgsantos@icloud.com](mailto:plgsantos@icloud.com)
+- LinkedIn: [linkedin.com/in/pedrolucassantos](https://linkedin.com/in/pedrolucassantos)
+- GitHub: [@plgs2005](https://github.com/plgs2005)
+- Repositorio: [plgs2005/resume_figma](https://github.com/plgs2005/resume_figma)
 
 ---
 
-## 🎯 **Objetivos do Projeto**
+## Suporte
 
-Este currículo foi desenvolvido com 3 pilares:
+Encontrou um bug ou tem uma sugestao?
 
-1. **🎯 Funcionalidade sobre Complexidade**
-   - Código simples e direto
-   - Sem over-engineering
-   - Manutenção facilitada
-
-2. **📱 Acessibilidade e Compatibilidade**
-   - ATS-friendly
-   - Print-optimized
-   - Responsive design
-   - Semantic HTML
-
-3. **✨ Profissionalismo Visual**
-   - Design limpo e moderno
-   - Tipografia cuidadosa
-   - Hierarquia clara
-   - Atenção aos detalhes
+- [Abrir Issue](https://github.com/plgs2005/resume_figma/issues)
+- [Discussoes](https://github.com/plgs2005/resume_figma/discussions)
+- [Email direto](mailto:plgsantos@icloud.com)
 
 ---
 
-## 🌟 **Features Futuras** (Roadmap)
-
-- [ ] Versão em inglês (i18n)
-- [ ] Temas customizáveis
-- [ ] Seção de certificações
-- [ ] Analytics de visualizações
-- [ ] Modo escuro funcional
-- [ ] Testes automatizados
-- [ ] CI/CD com GitHub Actions
-- [ ] Deploy automático (Vercel/Netlify)
-
----
-
-## 📞 **Suporte**
-
-Encontrou um bug ou tem uma sugestão? 
-
-- 🐛 [Abrir Issue](https://github.com/plgs2005/resume_figma/issues)
-- 💡 [Discussões](https://github.com/plgs2005/resume_figma/discussions)
-- 📧 [Email direto](mailto:plgsantos@icloud.com)
-
----
-
-<div align="center">
-
-**⭐ Se este projeto foi útil, considere dar uma estrela no GitHub! ⭐**
-
-[![Star on GitHub](https://img.shields.io/github/stars/plgs2005/resume_figma?style=social)](https://github.com/plgs2005/resume_figma)
-
-</div>
-
----
-
-**📅 Última atualização:** 20 de Fevereiro de 2026  
-**🏷️ Versão:** 2.0.0
+**Ultima atualizacao:** 23 de Fevereiro de 2026  
+**Versao:** 2.0.1
