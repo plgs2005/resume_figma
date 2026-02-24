@@ -10,20 +10,27 @@
  *   ske full-pipeline        Executa pipeline completo (collect → normalize → extract)
  *   ske query "pergunta"     Consulta a base factual
  *   ske match-job "arquivo"  Cruza descrição de vaga com base factual
+ *   ske match-multi "dir"    Compara perfil vs N vagas (ranking)
+ *   ske prompt [formato]     Gera prompt estruturado para LLMs
  *   ske status               Mostra status atual da base
  *
  * Flags:
  *   --config <path>          Caminho para arquivo de configuração
  *   --scan <path>            Diretório adicional para escanear
- *   --github-token <token>   Token GitHub para API
- *   --github-user <user>     Username GitHub
+ *   --github-token <token>   Token GitHub para API (ou env GITHUB_TOKEN)
+ *   --github-user <user>     Username GitHub (ou env GITHUB_USERNAME)
+ *   --vaga <arquivo>         Arquivo de vaga (para prompt com job context)
+ *   --formato <formato>      Formato do prompt
+ *   --idioma <pt-br|en>      Idioma do prompt
+ *   --tom <formal|...>       Tom do prompt
  */
 
-import { readFileSync, existsSync, statSync } from 'node:fs';
-import { join, resolve } from 'node:path';
+import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
+import { join, resolve, basename } from 'node:path';
 import { SelfKnowledgeEngine } from './engine.js';
 import { log, safeReadJson } from './utils.js';
 import type { SKEConfig } from './types.js';
+import type { PromptFormat } from './prompt-export.js';
 
 // ─── Argument Parsing ───────────────────────────────────────────────
 
@@ -104,7 +111,7 @@ async function main(): Promise<void> {
 
   console.log(`
 ╔═══════════════════════════════════════════════════════╗
-║   SelfKnowledgeEngine v1.0                           ║
+║   SelfKnowledgeEngine v2.0                           ║
 ║   Agente factual de conhecimento técnico             ║
 ║   Modo: ${command.padEnd(44)}║
 ╚═══════════════════════════════════════════════════════╝
@@ -206,6 +213,132 @@ async function main(): Promise<void> {
 
       case 'status': {
         await showStatus(engine);
+        break;
+      }
+
+      case 'prompt': {
+        const formato = (flags.formato || flags.format || args[0] || 'technical-summary') as PromptFormat;
+        const validFormats: PromptFormat[] = ['cover-letter', 'interview-prep', 'technical-summary', 'linkedin', 'custom'];
+
+        if (!validFormats.includes(formato)) {
+          log.error(`Formato inválido: "${formato}". Válidos: ${validFormats.join(', ')}`);
+          process.exit(1);
+        }
+
+        // Carregar job match se vaga for fornecida
+        let jobMatch;
+        const vagaPath = flags.vaga || flags.job;
+        if (vagaPath) {
+          const resolvedVaga = resolve(vagaPath);
+          if (!existsSync(resolvedVaga)) {
+            log.error(`Arquivo de vaga não encontrado: ${resolvedVaga}`);
+            process.exit(1);
+          }
+          const jobText = readFileSync(resolvedVaga, 'utf-8');
+          const titulo = flags.titulo || flags.title;
+          const empresa = flags.empresa || flags.company;
+          jobMatch = await engine.matchJob(jobText, titulo, empresa);
+        }
+
+        const idioma = (flags.idioma || flags.lang || 'pt-br') as 'pt-br' | 'en';
+        const tom = (flags.tom || flags.tone || 'formal') as 'formal' | 'conversacional' | 'tecnico';
+
+        const result = await engine.exportPrompt({
+          formato,
+          jobMatch,
+          idioma,
+          tom,
+          instrucoes_extras: flags.extra,
+          max_skills: flags['max-skills'] ? parseInt(flags['max-skills'], 10) : undefined,
+        });
+
+        // Salvar prompt
+        const outputDir = engine.getConfig().output_dir;
+        const promptPath = join(outputDir, `prompt-${formato}.md`);
+        const { writeFileSync: wf, mkdirSync } = await import('node:fs');
+        mkdirSync(outputDir, { recursive: true });
+        wf(promptPath, result.prompt, 'utf-8');
+        log.ok(`Prompt salvo em: ${promptPath}`);
+
+        // Também imprimir no console
+        console.log('\n' + '─'.repeat(60));
+        console.log(result.prompt);
+        console.log('─'.repeat(60));
+        console.log(`\n📊 Dados injetados: ${result.dados_injetados.total_skills} skills, ${result.dados_injetados.total_projetos} projetos`);
+
+        break;
+      }
+
+      case 'match-multi': {
+        const dirPath = args[0];
+        if (!dirPath) {
+          log.error('Forneça o diretório com arquivos de vagas: ske match-multi vagas/');
+          process.exit(1);
+        }
+
+        const resolvedDir = resolve(dirPath);
+        if (!existsSync(resolvedDir) || !statSync(resolvedDir).isDirectory()) {
+          log.error(`Diretório não encontrado: ${resolvedDir}`);
+          process.exit(1);
+        }
+
+        const files = readdirSync(resolvedDir)
+          .filter(f => f.endsWith('.txt') || f.endsWith('.md'))
+          .map(f => join(resolvedDir, f));
+
+        if (files.length === 0) {
+          log.error(`Nenhum arquivo .txt ou .md encontrado em: ${resolvedDir}`);
+          process.exit(1);
+        }
+
+        log.step(`Processando ${files.length} vagas de: ${resolvedDir}`);
+
+        const results: Array<{ arquivo: string; titulo: string; aderencia: number; matches: number; gaps: number }> = [];
+
+        for (const file of files) {
+          const jobText = readFileSync(file, 'utf-8');
+          const result = await engine.matchJob(jobText);
+
+          results.push({
+            arquivo: basename(file),
+            titulo: result.vaga.titulo,
+            aderencia: result.aderencia,
+            matches: result.matches.length,
+            gaps: result.gaps.length,
+          });
+        }
+
+        // Ordenar por aderência (maior primeiro)
+        results.sort((a, b) => b.aderencia - a.aderencia);
+
+        // Exibir ranking
+        console.log('\n📊 RANKING DE VAGAS POR ADERÊNCIA:');
+        console.log('═'.repeat(80));
+        console.log(
+          '  #  │ Aderência │ Matches │ Gaps │ Vaga'
+        );
+        console.log('─'.repeat(80));
+
+        for (let i = 0; i < results.length; i++) {
+          const r = results[i];
+          const icon = r.aderencia >= 80 ? '🟢' : r.aderencia >= 60 ? '🟡' : '🔴';
+          console.log(
+            `  ${String(i + 1).padStart(2)} │ ${icon} ${String(r.aderencia).padStart(3)}%   │ ${String(r.matches).padStart(7)} │ ${String(r.gaps).padStart(4)} │ ${r.titulo.slice(0, 40)}`
+          );
+        }
+
+        console.log('═'.repeat(80));
+        console.log(`  Melhor fit: ${results[0].titulo} (${results[0].aderencia}%)`);
+        console.log(`  Fonte: ${results[0].arquivo}`);
+
+        // Salvar ranking
+        const outputDir = engine.getConfig().output_dir;
+        const rankingPath = join(outputDir, 'multi-match-ranking.json');
+        const { writeFileSync: wf2, mkdirSync: mk2 } = await import('node:fs');
+        mk2(outputDir, { recursive: true });
+        wf2(rankingPath, JSON.stringify(results, null, 2), 'utf-8');
+        log.ok(`Ranking salvo em: ${rankingPath}`);
+
         break;
       }
 
@@ -346,29 +479,53 @@ function generateJobMatchReport(result: import('./types.js').JobMatchResult): st
 function showHelp(): void {
   console.log(`
 COMANDOS:
-  collect           Coleta evidências de projetos locais e GitHub
-  normalize         Normaliza e agrupa evidências
-  extract           Extrai skills e padrões de engenharia
-  full-pipeline     Executa pipeline completo (collect → normalize → extract)
-  query "pergunta"  Consulta a base factual com uma pergunta
-  match-job <file>  Cruza descrição de vaga com base factual
-  status            Mostra status atual da base de conhecimento
-  help              Mostra esta ajuda
+  collect               Coleta evidências de projetos locais e GitHub
+  normalize             Normaliza e agrupa evidências
+  extract               Extrai skills e padrões de engenharia
+  full-pipeline         Executa pipeline completo (collect → normalize → extract)
+  query "pergunta"      Consulta a base factual com uma pergunta
+  match-job <file>      Cruza descrição de vaga com base factual
+  match-multi <dir>     Compara perfil vs N vagas — gera ranking
+  prompt [formato]      Gera prompt estruturado para LLMs
+  status                Mostra status atual da base de conhecimento
+  help                  Mostra esta ajuda
+
+FORMATOS DE PROMPT:
+  cover-letter          Prompt para gerar cover letter personalizada
+  interview-prep        Prompt para preparação de entrevista técnica
+  technical-summary     Resumo técnico factual do perfil (padrão)
+  linkedin              Texto para perfil LinkedIn
+  custom                Template livre (requer --template)
 
 FLAGS:
   --config <path>           Caminho para config.json
   --scan <path>             Diretório adicional para escanear
-  --github-token <token>    Token GitHub (para API)
-  --github-user <username>  Username GitHub
+  --github-token <token>    Token GitHub (ou env GITHUB_TOKEN / GH_TOKEN)
+  --github-user <username>  Username GitHub (ou env GITHUB_USERNAME / GH_USER)
   --titulo <titulo>         Título da vaga (para match-job)
   --empresa <empresa>       Empresa da vaga (para match-job)
+  --vaga <arquivo>          Arquivo de vaga (para prompt com job context)
+  --formato <formato>       Formato do prompt (cover-letter, interview-prep, etc.)
+  --idioma <pt-br|en>       Idioma do prompt (padrão: pt-br)
+  --tom <formal|conversacional|tecnico>  Tom do prompt
+  --max-skills <N>          Máximo de skills no contexto do prompt
 
 EXEMPLOS:
   node dist/cli.js full-pipeline
   node dist/cli.js full-pipeline --scan /home/user/projetos
+  node dist/cli.js full-pipeline --github-token ghp_xxx --github-user meuuser
   node dist/cli.js query "qual minha experiência com React?"
-  node dist/cli.js match-job vaga.txt --titulo "Senior Engineer" --empresa "XPTO"
+  node dist/cli.js match-job vaga.txt --titulo "Senior Engineer"
+  node dist/cli.js match-multi ./vagas/
+  node dist/cli.js prompt cover-letter --vaga vaga.txt --idioma pt-br
+  node dist/cli.js prompt interview-prep --vaga vaga.txt --tom tecnico
+  node dist/cli.js prompt technical-summary
+  node dist/cli.js prompt linkedin --idioma en
   node dist/cli.js status
+
+VARIÁVEIS DE AMBIENTE:
+  GITHUB_TOKEN / GH_TOKEN     Token de acesso GitHub
+  GITHUB_USERNAME / GH_USER   Username GitHub
 
 REGRAS:
   • O agente NUNCA inventa experiências.

@@ -10,6 +10,13 @@ export { EvidenceCollector } from './collector.js';
 export { EvidenceNormalizer } from './normalizer.js';
 export { SkillExtractor } from './extractor.js';
 export { AnswerEngine } from './answer-engine.js';
+export { PromptExporter } from './prompt-export.js';
+
+export type {
+  PromptFormat,
+  PromptExportOptions,
+  ExportedPrompt,
+} from './prompt-export.js';
 
 export type {
   Evidence,

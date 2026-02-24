@@ -1,6 +1,6 @@
 {
     "name": "@resume/self-knowledge-engine",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Agente factual para construção e manutenção de base de conhecimento técnico do candidato — baseado exclusivamente em evidências rastreáveis.",
     "type": "module",
     "main": "./dist/index.js",
@@ -17,6 +17,8 @@
         "extract": "node --enable-source-maps dist/cli.js extract",
         "query": "node --enable-source-maps dist/cli.js query",
         "match-job": "node --enable-source-maps dist/cli.js match-job",
+        "match-multi": "node --enable-source-maps dist/cli.js match-multi",
+        "prompt": "node --enable-source-maps dist/cli.js prompt",
         "full-pipeline": "node --enable-source-maps dist/cli.js full-pipeline",
         "scan": "node --enable-source-maps dist/cli.js full-pipeline --scan /home/plgsa",
         "export": "npx tsc bridge/export.ts --outDir bridge/dist --module Node16 --moduleResolution Node16 --target ES2022 --esModuleInterop --skipLibCheck && node bridge/dist/export.js",

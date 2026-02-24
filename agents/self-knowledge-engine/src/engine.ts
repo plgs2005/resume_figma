@@ -20,7 +20,9 @@ import { EvidenceCollector } from './collector.js';
 import { EvidenceNormalizer } from './normalizer.js';
 import { SkillExtractor } from './extractor.js';
 import { AnswerEngine } from './answer-engine.js';
-import { loadConfig, persistJson, safeReadJson, log, now } from './utils.js';
+import { PromptExporter } from './prompt-export.js';
+import type { PromptExportOptions, ExportedPrompt } from './prompt-export.js';
+import { loadConfig, persistJson, safeReadJson, log, now, resolveGitHubConfig } from './utils.js';
 
 export class SelfKnowledgeEngine {
   private config: SKEConfig;
@@ -35,7 +37,7 @@ export class SelfKnowledgeEngine {
   private skillBase: SkillBase | null = null;
 
   constructor(configPath?: string) {
-    this.config = loadConfig(configPath);
+    this.config = resolveGitHubConfig(loadConfig(configPath));
     this.collector = new EvidenceCollector(this.config);
     this.normalizer = new EvidenceNormalizer();
     this.extractor = new SkillExtractor();
@@ -197,6 +199,20 @@ export class SelfKnowledgeEngine {
   async matchJobStructured(job: JobDescription): Promise<JobMatchResult> {
     await this.ensureAnswerEngine();
     return this.answerEngine!.matchJob(job);
+  }
+
+  /**
+   * Gera prompt estruturado para LLMs.
+   */
+  async exportPrompt(options: PromptExportOptions): Promise<ExportedPrompt> {
+    await this.ensureAnswerEngine();
+
+    if (!this.normalizedBase || !this.skillBase) {
+      throw new Error('Base não inicializada. Execute o pipeline primeiro: full-pipeline');
+    }
+
+    const exporter = new PromptExporter(this.skillBase, this.normalizedBase);
+    return exporter.export(options);
   }
 
   // ─── Report Generation ───────────────────────────────────────────

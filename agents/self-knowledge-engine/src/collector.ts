@@ -748,38 +748,84 @@ export class EvidenceCollector {
     log.step('Coletando dados do GitHub API...');
 
     try {
-      const repos = await this.githubRequest<GitHubRepo[]>(
-        `/users/${this.config.github_username}/repos?per_page=100&sort=updated`
-      );
+      // Coletar todos os repos com paginação
+      const allRepos: GitHubRepo[] = [];
+      let page = 1;
+      const perPage = 100;
 
-      for (const repo of repos) {
+      while (true) {
+        const repos = await this.githubRequest<GitHubRepo[]>(
+          `/user/repos?per_page=${perPage}&page=${page}&sort=updated&affiliation=owner,collaborator`
+        );
+
+        if (!repos || !Array.isArray(repos) || repos.length === 0) break;
+        allRepos.push(...repos);
+
+        if (repos.length < perPage) break;
+        page++;
+
+        // Rate-limit: aguardar 100ms entre páginas
+        await new Promise(r => setTimeout(r, 100));
+      }
+
+      log.info(`${allRepos.length} repositórios encontrados no GitHub.`);
+
+      for (const repo of allRepos) {
         const stack: string[] = [];
         if (repo.language) stack.push(repo.language);
         if (repo.topics) stack.push(...repo.topics);
 
-        // Obter linguagens do repo
+        // Obter linguagens do repo (com rate-limit guard)
         try {
           const languages = await this.githubRequest<Record<string, number>>(
-            `/repos/${this.config.github_username}/${repo.name}/languages`
+            `/repos/${repo.full_name}/languages`
           );
-          stack.push(...Object.keys(languages));
+          if (languages && typeof languages === 'object' && !('message' in languages)) {
+            stack.push(...Object.keys(languages));
+          }
+          // Rate-limit: 50ms entre chamadas de linguagens
+          await new Promise(r => setTimeout(r, 50));
         } catch {
-          // Skip
+          // Skip — rate limit ou repo sem acesso
         }
+
+        // Determinar complexidade baseada em tamanho e atividade
+        const complexity: ComplexityLevel =
+          repo.size > 50000 || (repo.stargazers_count > 10 && repo.forks_count > 5)
+            ? 'alto'
+            : repo.size > 5000 || repo.stargazers_count > 0
+              ? 'medio'
+              : 'baixo';
+
+        // Descrição rica
+        const parts: string[] = [
+          `Repositório GitHub "${repo.name}"`,
+          repo.description ? `: ${repo.description}` : '',
+          `. ${repo.stargazers_count} stars, ${repo.forks_count} forks`,
+          `. ${repo.private ? 'Privado' : 'Público'}`,
+          repo.fork ? '. Fork de outro repo.' : '',
+          repo.archived ? '. Arquivado.' : '',
+          repo.license?.spdx_id ? `. Licença: ${repo.license.spdx_id}` : '',
+        ];
 
         this.addEvidence({
           fonte: repo.html_url,
           tipo: 'github-api',
-          descricao: `Repositório GitHub "${repo.name}": ${repo.description || 'sem descrição'}. ${repo.stargazers_count} stars, ${repo.forks_count} forks. ${repo.private ? 'Privado' : 'Público'}.`,
+          descricao: parts.join(''),
           stack_detectada: [...new Set(stack)],
-          nivel_complexidade: repo.size > 10000 ? 'alto' : repo.size > 1000 ? 'medio' : 'baixo',
+          nivel_complexidade: complexity,
           projeto: repo.name,
         });
       }
 
-      log.ok(`${repos.length} repositórios coletados do GitHub.`);
+      log.ok(`${allRepos.length} repositórios coletados do GitHub.`);
     } catch (err) {
-      log.warn(`Falha ao acessar GitHub API: ${String(err)}`);
+      const errStr = String(err);
+      if (errStr.includes('rate limit') || errStr.includes('403')) {
+        log.warn('GitHub API rate limit atingido. Dados parciais coletados.');
+      } else {
+        log.warn(`Falha ao acessar GitHub API: ${errStr}`);
+      }
     }
   }
 
@@ -791,16 +837,30 @@ export class EvidenceCollector {
         hostname: 'api.github.com',
         path,
         headers: {
-          'User-Agent': 'SelfKnowledgeEngine/1.0',
+          'User-Agent': 'SelfKnowledgeEngine/2.0',
           Authorization: `Bearer ${this.config.github_token}`,
           Accept: 'application/vnd.github.v3+json',
         },
       };
 
       https.get(options, (res) => {
+        // Handle rate limiting
+        const remaining = res.headers['x-ratelimit-remaining'];
+        if (remaining && parseInt(remaining as string, 10) < 10) {
+          log.warn(`GitHub API rate limit baixo: ${remaining} requests restantes`);
+        }
+
         let data = '';
         res.on('data', chunk => data += chunk);
         res.on('end', () => {
+          if (res.statusCode === 403 || res.statusCode === 429) {
+            reject(new Error(`GitHub API rate limit exceeded (${res.statusCode})`));
+            return;
+          }
+          if (res.statusCode && res.statusCode >= 400) {
+            reject(new Error(`GitHub API error ${res.statusCode}: ${data.slice(0, 200)}`));
+            return;
+          }
           try {
             resolve(JSON.parse(data) as T);
           } catch {
@@ -833,6 +893,7 @@ export class EvidenceCollector {
 
 interface GitHubRepo {
   name: string;
+  full_name: string;
   html_url: string;
   description: string | null;
   language: string | null;
@@ -841,4 +902,7 @@ interface GitHubRepo {
   forks_count: number;
   size: number;
   private: boolean;
+  fork: boolean;
+  archived: boolean;
+  license: { spdx_id: string } | null;
 }

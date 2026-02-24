@@ -186,6 +186,20 @@ export function loadConfig(configPath?: string): SKEConfig {
 }
 
 /**
+ * Resolve configuração de GitHub a partir de env vars.
+ * Prioridade: config explícito > env var > undefined
+ */
+export function resolveGitHubConfig(config: SKEConfig): SKEConfig {
+  if (!config.github_token) {
+    config.github_token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || undefined;
+  }
+  if (!config.github_username) {
+    config.github_username = process.env.GITHUB_USERNAME || process.env.GH_USER || undefined;
+  }
+  return config;
+}
+
+/**
  * Timestamp ISO atual.
  */
 export function now(): string {
