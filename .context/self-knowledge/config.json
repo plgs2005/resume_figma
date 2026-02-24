@@ -1,0 +1,44 @@
+{
+    "scan_paths": [
+        "."
+    ],
+    "output_dir": ".context/self-knowledge",
+    "file_extensions": [
+        ".ts",
+        ".tsx",
+        ".js",
+        ".jsx",
+        ".json",
+        ".php",
+        ".py",
+        ".go",
+        ".rs",
+        ".java",
+        ".yml",
+        ".yaml",
+        ".toml",
+        ".xml",
+        ".sql",
+        ".sh",
+        ".bash",
+        ".md",
+        ".txt",
+        ".dockerfile",
+        ".env.example"
+    ],
+    "ignore_patterns": [
+        "node_modules",
+        ".git",
+        "vendor",
+        "dist",
+        ".next",
+        "__pycache__",
+        ".cache",
+        "coverage",
+        ".nyc_output",
+        "build",
+        "tmp",
+        "temp"
+    ],
+    "max_depth": 8
+}

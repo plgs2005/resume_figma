@@ -1,0 +1,39 @@
+project:
+  name: "analise conceitual!"
+  scale: QUICK
+  started: "2026-02-23T20:40:51.905Z"
+  current_phase: V
+
+phases:
+  P:
+    status: skipped
+    reason: "Not required for scale QUICK"
+  R:
+    status: skipped
+    reason: "Not required for scale QUICK"
+  E:
+    status: completed
+    started_at: "2026-02-23T20:40:51.904Z"
+    completed_at: "2026-02-23T20:41:14.621Z"
+  V:
+    status: completed
+    started_at: "2026-02-23T20:41:14.623Z"
+    completed_at: "2026-02-23T20:41:15.772Z"
+  C:
+    status: skipped
+    reason: "Not required for scale QUICK"
+
+execution:
+  history:
+    - timestamp: "2026-02-23T20:41:15.772Z"
+      phase: V
+      action: completed
+  last_activity: "2026-02-23T20:41:15.772Z"
+  resume_context: "Fase V (Validação) concluída"
+
+approval:
+  plan_created: false
+  plan_approved: true
+  approved_by: "system-migration"
+  approved_at: "2026-02-23T20:41:14.621Z"
+
