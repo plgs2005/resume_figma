@@ -9,6 +9,8 @@
 
 export type EvidenceSourceType = 'arquivo' | 'commit' | 'config' | 'readme' | 'migration' | 'docker' | 'ci' | 'test' | 'github-api';
 
+export type EvidenceOrigin = 'local' | 'github';
+
 export type ComplexityLevel = 'baixo' | 'medio' | 'alto';
 
 export interface Evidence {
@@ -30,6 +32,49 @@ export interface Evidence {
   projeto?: string;
   /** Linha ou referência específica (ex: "linha 42-58") */
   referencia?: string;
+
+  // ─── Authorship Fields (v2.1) ──────────────────────────────────
+  /** Origem da evidência: local (disco) ou github (API) */
+  origem?: EvidenceOrigin;
+  /** Owner do repositório (ex: "plgs2005") */
+  repo_owner?: string | null;
+  /** Autor do commit (se evidência de commit) */
+  commit_author?: string | null;
+  /** Se a autoria foi verificada via commit ou git blame */
+  autoria_verificada?: boolean;
+  /** Se o arquivo/evidência foi gerado por framework */
+  framework_generated?: boolean;
+  /** Peso base segundo tipo (1.0 para commit, 0.3 para config, etc.) */
+  peso_base?: number;
+  /** Peso final após ajustes de autoria/framework */
+  peso_final?: number;
+}
+
+// ─── Knowledge Truth (v2.1) ─────────────────────────────────────────
+
+export interface KnowledgeTruth {
+  /** Skills validadas: têm autoria_verificada em pelo menos 1 evidência */
+  skills_validadas: ValidatedSkill[];
+  /** Skills inferidas: sem autoria verificada, mas com evidência */
+  skills_inferidas: ValidatedSkill[];
+  /** Skills descartadas: todas evidências são framework_generated */
+  skills_descartadas: ValidatedSkill[];
+  /** Total de evidências com autoria verificada */
+  total_evidencias_autorais: number;
+  /** Total de evidências geradas por framework */
+  total_evidencias_framework: number;
+  /** Última atualização */
+  ultima_atualizacao: string;
+}
+
+export interface ValidatedSkill {
+  nome: string;
+  categoria: SkillCategory;
+  nivel: SkillLevel;
+  score: number;
+  evidencias_autorais: number;
+  evidencias_framework: number;
+  evidencias_total: number;
 }
 
 // ─── Evidence Normalizer (Camada 2) ─────────────────────────────────
@@ -228,7 +273,7 @@ export interface SKEConfig {
 // ─── Pipeline ────────────────────────────────────────────────────────
 
 export interface PipelineResult {
-  fase: 'collect' | 'normalize' | 'extract' | 'query' | 'match-job';
+  fase: 'collect' | 'normalize' | 'extract' | 'query' | 'match-job' | 'truth';
   sucesso: boolean;
   duracao_ms: number;
   resumo: string;

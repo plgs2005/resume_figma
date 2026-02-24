@@ -163,29 +163,44 @@ function assessSkillLevel(frequency: number, depth: number, complexity: number):
 function assessDepth(evidences: Evidence[]): number {
   let score = 0;
 
-  // Mais evidências = mais profundidade
-  score += Math.min(evidences.length * 5, 30);
+  // Usar peso_final se disponível (v2.1), senão fallback para contagem
+  const hasWeights = evidences.some(e => e.peso_final !== undefined);
 
-  // Complexidade das evidências
-  const altoCount = evidences.filter(e => e.nivel_complexidade === 'alto').length;
-  const medioCount = evidences.filter(e => e.nivel_complexidade === 'medio').length;
+  if (hasWeights) {
+    // Soma dos peso_final (pondera autoria)
+    const weightSum = evidences.reduce((s, e) => s + (e.peso_final ?? 0), 0);
+    score += Math.min(weightSum * 8, 40);
+
+    // Evidências autorais valem mais
+    const autorais = evidences.filter(e => e.autoria_verificada === true).length;
+    score += autorais * 10;
+  } else {
+    // Fallback v2.0: mais evidências = mais profundidade
+    score += Math.min(evidences.length * 5, 30);
+  }
+
+  // Complexidade das evidências (ignora framework_generated)
+  const validEvs = evidences.filter(e => e.framework_generated !== true);
+  const altoCount = validEvs.filter(e => e.nivel_complexidade === 'alto').length;
+  const medioCount = validEvs.filter(e => e.nivel_complexidade === 'medio').length;
   score += altoCount * 15;
   score += medioCount * 8;
 
-  // Diversidade de tipos de fonte
-  const uniqueTypes = new Set(evidences.map(e => e.tipo));
+  // Diversidade de tipos de fonte (excluir framework)
+  const uniqueTypes = new Set(validEvs.map(e => e.tipo));
   score += uniqueTypes.size * 5;
 
-  // Diversidade de projetos
-  const uniqueProjects = new Set(evidences.filter(e => e.projeto).map(e => e.projeto));
+  // Diversidade de projetos (excluir framework)
+  const uniqueProjects = new Set(validEvs.filter(e => e.projeto).map(e => e.projeto));
   score += uniqueProjects.size * 8;
 
   return Math.min(score, 100);
 }
 
 function assessComplexity(evidences: Evidence[]): number {
+  const validEvs = evidences.filter(e => e.framework_generated !== true);
   const complexityMap = { baixo: 10, medio: 40, alto: 80 };
-  const scores = evidences.map(e => complexityMap[e.nivel_complexidade]);
+  const scores = validEvs.map(e => complexityMap[e.nivel_complexidade]);
   if (scores.length === 0) return 0;
   return Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
 }

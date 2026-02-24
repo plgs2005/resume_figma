@@ -22,7 +22,12 @@
           "nivel_complexidade": "medio",
           "projeto": "laravel/laravel",
           "id": "ca311626b85426cc",
-          "coletado_em": "2026-02-24T20:56:34.835Z"
+          "coletado_em": "2026-02-24T20:56:34.835Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-open/composer.json",
@@ -36,7 +41,12 @@
           "nivel_complexidade": "medio",
           "projeto": "laravel/laravel",
           "id": "34c1e71b17f39930",
-          "coletado_em": "2026-02-24T20:56:34.835Z"
+          "coletado_em": "2026-02-24T20:56:34.835Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-open/docker-compose.yml",
@@ -51,7 +61,12 @@
           "nivel_complexidade": "medio",
           "projeto": "laravel/laravel",
           "id": "e6f23139c774d4bd",
-          "coletado_em": "2026-02-24T20:56:34.835Z"
+          "coletado_em": "2026-02-24T20:56:34.835Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.7,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-open/Dockerfile",
@@ -63,7 +78,12 @@
           "nivel_complexidade": "medio",
           "projeto": "laravel/laravel",
           "id": "8a541066d6054dd0",
-          "coletado_em": "2026-02-24T20:56:34.835Z"
+          "coletado_em": "2026-02-24T20:56:34.835Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.7,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-open/README.md",
@@ -77,7 +97,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "laravel/laravel",
           "id": "42aec9e13e3202a5",
-          "coletado_em": "2026-02-24T20:56:34.835Z"
+          "coletado_em": "2026-02-24T20:56:34.835Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-open",
@@ -91,7 +116,12 @@
           "nivel_complexidade": "medio",
           "projeto": "laravel/laravel",
           "id": "8894222156bcfba7",
-          "coletado_em": "2026-02-24T20:56:34.857Z"
+          "coletado_em": "2026-02-24T20:56:34.857Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-open",
@@ -104,7 +134,12 @@
           "nivel_complexidade": "medio",
           "projeto": "laravel/laravel",
           "id": "3a80a5ae24fd9c50",
-          "coletado_em": "2026-02-24T20:56:34.864Z"
+          "coletado_em": "2026-02-24T20:56:34.864Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-open",
@@ -122,7 +157,12 @@
           "nivel_complexidade": "medio",
           "projeto": "laravel/laravel",
           "id": "176b383cb0b68640",
-          "coletado_em": "2026-02-24T20:56:34.864Z"
+          "coletado_em": "2026-02-24T20:56:34.864Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-open/database/migrations",
@@ -135,7 +175,12 @@
           "nivel_complexidade": "medio",
           "projeto": "laravel/laravel",
           "id": "f0c2e8088ab91c30",
-          "coletado_em": "2026-02-24T20:56:34.864Z"
+          "coletado_em": "2026-02-24T20:56:34.864Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/projects/exported-assets/grid-trading-app/package.json",
@@ -152,7 +197,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "laravel/laravel",
           "id": "6fad47004f50e3ff",
-          "coletado_em": "2026-02-24T20:56:35.188Z"
+          "coletado_em": "2026-02-24T20:56:35.188Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/projects/exported-assets/grid-trading-app/composer.json",
@@ -168,7 +218,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "laravel/laravel",
           "id": "653f4a06ad07bd4e",
-          "coletado_em": "2026-02-24T20:56:35.188Z"
+          "coletado_em": "2026-02-24T20:56:35.188Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/projects/exported-assets/grid-trading-app/README.md",
@@ -181,7 +236,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "laravel/laravel",
           "id": "bf14be656e0bf73b",
-          "coletado_em": "2026-02-24T20:56:35.188Z"
+          "coletado_em": "2026-02-24T20:56:35.188Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/projects/exported-assets/grid-trading-app",
@@ -195,7 +255,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "laravel/laravel",
           "id": "bd5ad14799328585",
-          "coletado_em": "2026-02-24T20:56:35.206Z"
+          "coletado_em": "2026-02-24T20:56:35.206Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/projects/exported-assets/grid-trading-app",
@@ -210,7 +275,12 @@
           "nivel_complexidade": "medio",
           "projeto": "laravel/laravel",
           "id": "6b0afad1a82d8912",
-          "coletado_em": "2026-02-24T20:56:35.211Z"
+          "coletado_em": "2026-02-24T20:56:35.211Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/projects/exported-assets/grid-trading-app",
@@ -225,7 +295,12 @@
           "nivel_complexidade": "medio",
           "projeto": "laravel/laravel",
           "id": "4d50c85a4c95f9f8",
-          "coletado_em": "2026-02-24T20:56:35.211Z"
+          "coletado_em": "2026-02-24T20:56:35.211Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/projects/exported-assets/grid-trading-app/database/migrations",
@@ -238,7 +313,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "laravel/laravel",
           "id": "3c264611e399ee48",
-          "coletado_em": "2026-02-24T20:56:35.211Z"
+          "coletado_em": "2026-02-24T20:56:35.211Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0
         }
       ],
       "stack": [
@@ -307,7 +387,12 @@
           "nivel_complexidade": "alto",
           "projeto": "openclaw",
           "id": "168f8e12ea9c8e2b",
-          "coletado_em": "2026-02-24T20:56:35.066Z"
+          "coletado_em": "2026-02-24T20:56:35.066Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.3,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/docker-compose.yml",
@@ -320,7 +405,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw",
           "id": "52d6288d26a88e06",
-          "coletado_em": "2026-02-24T20:56:35.066Z"
+          "coletado_em": "2026-02-24T20:56:35.066Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.7,
+          "peso_final": 0.7
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/Dockerfile",
@@ -332,7 +422,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw",
           "id": "69ada2f4a8a11819",
-          "coletado_em": "2026-02-24T20:56:35.066Z"
+          "coletado_em": "2026-02-24T20:56:35.066Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.7,
+          "peso_final": 0.7
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/README.md",
@@ -346,7 +441,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "openclaw",
           "id": "be289891ee81f864",
-          "coletado_em": "2026-02-24T20:56:35.068Z"
+          "coletado_em": "2026-02-24T20:56:35.068Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw",
@@ -365,7 +465,12 @@
           "nivel_complexidade": "alto",
           "projeto": "openclaw",
           "id": "f2a2586da5355e55",
-          "coletado_em": "2026-02-24T20:56:35.107Z"
+          "coletado_em": "2026-02-24T20:56:35.107Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw",
@@ -380,7 +485,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw",
           "id": "29d0b958eb93b8b5",
-          "coletado_em": "2026-02-24T20:56:35.116Z"
+          "coletado_em": "2026-02-24T20:56:35.116Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw",
@@ -398,7 +508,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw",
           "id": "74e7f962a512bcd1",
-          "coletado_em": "2026-02-24T20:56:35.116Z"
+          "coletado_em": "2026-02-24T20:56:35.116Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.9,
+          "peso_final": 0.9
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/.github/workflows/auto-response.yml",
@@ -412,7 +527,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw",
           "id": "739bc5f0c86527d1",
-          "coletado_em": "2026-02-24T20:56:35.116Z"
+          "coletado_em": "2026-02-24T20:56:35.116Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/.github/workflows/ci.yml",
@@ -427,7 +547,12 @@
           "nivel_complexidade": "alto",
           "projeto": "openclaw",
           "id": "a1214f7627187617",
-          "coletado_em": "2026-02-24T20:56:35.116Z"
+          "coletado_em": "2026-02-24T20:56:35.116Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/.github/workflows/docker-release.yml",
@@ -441,7 +566,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw",
           "id": "d855e40ab7b8326c",
-          "coletado_em": "2026-02-24T20:56:35.116Z"
+          "coletado_em": "2026-02-24T20:56:35.116Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/.github/workflows/install-smoke.yml",
@@ -456,7 +586,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw",
           "id": "0f1064880fbf8adc",
-          "coletado_em": "2026-02-24T20:56:35.116Z"
+          "coletado_em": "2026-02-24T20:56:35.116Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/.github/workflows/labeler.yml",
@@ -469,7 +604,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw",
           "id": "dbd79794c3eee608",
-          "coletado_em": "2026-02-24T20:56:35.116Z"
+          "coletado_em": "2026-02-24T20:56:35.116Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/.github/workflows/sandbox-common-smoke.yml",
@@ -484,7 +624,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw",
           "id": "1f23a79e572de91b",
-          "coletado_em": "2026-02-24T20:56:35.116Z"
+          "coletado_em": "2026-02-24T20:56:35.116Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/.github/workflows/stale.yml",
@@ -498,7 +643,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw",
           "id": "6332cca157a03ea6",
-          "coletado_em": "2026-02-24T20:56:35.116Z"
+          "coletado_em": "2026-02-24T20:56:35.116Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/.github/workflows/workflow-sanity.yml",
@@ -512,7 +662,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw",
           "id": "078250290ccab62f",
-          "coletado_em": "2026-02-24T20:56:35.116Z"
+          "coletado_em": "2026-02-24T20:56:35.116Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw",
@@ -524,7 +679,12 @@
           "nivel_complexidade": "alto",
           "projeto": "openclaw",
           "id": "4829aca0b170fd87",
-          "coletado_em": "2026-02-24T20:56:35.154Z"
+          "coletado_em": "2026-02-24T20:56:35.154Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         }
       ],
       "stack": [
@@ -587,7 +747,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "audiocraft",
           "id": "4357e7417b6a92cc",
-          "coletado_em": "2026-02-24T20:56:34.125Z"
+          "coletado_em": "2026-02-24T20:56:34.125Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/SUNO/audiocraft",
@@ -601,7 +766,12 @@
           "nivel_complexidade": "medio",
           "projeto": "audiocraft",
           "id": "0f228c13ab62ac3c",
-          "coletado_em": "2026-02-24T20:56:34.149Z"
+          "coletado_em": "2026-02-24T20:56:34.149Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/SUNO/audiocraft",
@@ -614,7 +784,12 @@
           "nivel_complexidade": "medio",
           "projeto": "audiocraft",
           "id": "e95338eb74aa3bcc",
-          "coletado_em": "2026-02-24T20:56:34.155Z"
+          "coletado_em": "2026-02-24T20:56:34.155Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/SUNO/audiocraft",
@@ -629,7 +804,12 @@
           "nivel_complexidade": "medio",
           "projeto": "audiocraft",
           "id": "90fa71f2c13a7b5a",
-          "coletado_em": "2026-02-24T20:56:34.155Z"
+          "coletado_em": "2026-02-24T20:56:34.155Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/SUNO/audiocraft/.github/workflows/audiocraft_docs.yml",
@@ -643,7 +823,12 @@
           "nivel_complexidade": "medio",
           "projeto": "audiocraft",
           "id": "c29a1dc0d36b1361",
-          "coletado_em": "2026-02-24T20:56:34.156Z"
+          "coletado_em": "2026-02-24T20:56:34.156Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.8,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/SUNO/audiocraft/.github/workflows/audiocraft_linter.yml",
@@ -658,7 +843,12 @@
           "nivel_complexidade": "medio",
           "projeto": "audiocraft",
           "id": "edb6a4c838afda3e",
-          "coletado_em": "2026-02-24T20:56:34.156Z"
+          "coletado_em": "2026-02-24T20:56:34.156Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.8,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/SUNO/audiocraft/.github/workflows/audiocraft_tests.yml",
@@ -672,7 +862,12 @@
           "nivel_complexidade": "medio",
           "projeto": "audiocraft",
           "id": "26792714ef494741",
-          "coletado_em": "2026-02-24T20:56:34.156Z"
+          "coletado_em": "2026-02-24T20:56:34.156Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.8,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/audiocraft/README.md",
@@ -684,7 +879,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "audiocraft",
           "id": "6a35cc94e4d07cbb",
-          "coletado_em": "2026-02-24T20:56:34.537Z"
+          "coletado_em": "2026-02-24T20:56:34.537Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/audiocraft",
@@ -697,7 +897,12 @@
           "nivel_complexidade": "medio",
           "projeto": "audiocraft",
           "id": "29149776541655af",
-          "coletado_em": "2026-02-24T20:56:34.556Z"
+          "coletado_em": "2026-02-24T20:56:34.556Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/audiocraft",
@@ -709,7 +914,12 @@
           "nivel_complexidade": "medio",
           "projeto": "audiocraft",
           "id": "c581898b32e60806",
-          "coletado_em": "2026-02-24T20:56:34.562Z"
+          "coletado_em": "2026-02-24T20:56:34.562Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/audiocraft",
@@ -722,7 +932,12 @@
           "nivel_complexidade": "medio",
           "projeto": "audiocraft",
           "id": "51be64bbbb6f33b6",
-          "coletado_em": "2026-02-24T20:56:34.562Z"
+          "coletado_em": "2026-02-24T20:56:34.562Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/audiocraft/.github/workflows/audiocraft_docs.yml",
@@ -736,7 +951,12 @@
           "nivel_complexidade": "medio",
           "projeto": "audiocraft",
           "id": "18815d7c9430dafc",
-          "coletado_em": "2026-02-24T20:56:34.562Z"
+          "coletado_em": "2026-02-24T20:56:34.562Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.8,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/audiocraft/.github/workflows/audiocraft_linter.yml",
@@ -751,7 +971,12 @@
           "nivel_complexidade": "medio",
           "projeto": "audiocraft",
           "id": "169a9ad9d26acd00",
-          "coletado_em": "2026-02-24T20:56:34.562Z"
+          "coletado_em": "2026-02-24T20:56:34.562Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.8,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/audiocraft/.github/workflows/audiocraft_tests.yml",
@@ -765,7 +990,12 @@
           "nivel_complexidade": "medio",
           "projeto": "audiocraft",
           "id": "785bb64fe6ab46f1",
-          "coletado_em": "2026-02-24T20:56:34.562Z"
+          "coletado_em": "2026-02-24T20:56:34.562Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.8,
+          "peso_final": 0
         }
       ],
       "stack": [
@@ -814,7 +1044,12 @@
           "nivel_complexidade": "alto",
           "projeto": "mondrian-vanilla",
           "id": "1ca5524449c6bd3d",
-          "coletado_em": "2026-02-24T20:56:34.446Z"
+          "coletado_em": "2026-02-24T20:56:34.446Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.3,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/agents/modrian/README.md",
@@ -824,7 +1059,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "mondrian-vanilla",
           "id": "5fe4ac0e2ecf9894",
-          "coletado_em": "2026-02-24T20:56:34.446Z"
+          "coletado_em": "2026-02-24T20:56:34.446Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/agents/modrian",
@@ -838,7 +1078,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "mondrian-vanilla",
           "id": "d43273d247e4f3b4",
-          "coletado_em": "2026-02-24T20:56:34.473Z"
+          "coletado_em": "2026-02-24T20:56:34.473Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/modrian",
@@ -851,7 +1096,12 @@
           "nivel_complexidade": "medio",
           "projeto": "mondrian-vanilla",
           "id": "bdfb3a696890a547",
-          "coletado_em": "2026-02-24T20:56:34.477Z"
+          "coletado_em": "2026-02-24T20:56:34.477Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.9,
+          "peso_final": 0.9
         },
         {
           "fonte": "/home/plgsa/agents/modrian/lib/package.json",
@@ -871,7 +1121,12 @@
           "nivel_complexidade": "alto",
           "projeto": "mondrian-vanilla",
           "id": "8de966257e2815a3",
-          "coletado_em": "2026-02-24T20:56:34.485Z"
+          "coletado_em": "2026-02-24T20:56:34.485Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.3,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/mondrian/package.json",
@@ -891,7 +1146,12 @@
           "nivel_complexidade": "alto",
           "projeto": "mondrian-vanilla",
           "id": "c70dead6bd84a35b",
-          "coletado_em": "2026-02-24T20:56:34.906Z"
+          "coletado_em": "2026-02-24T20:56:34.906Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.3,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/mondrian/README.md",
@@ -901,7 +1161,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "mondrian-vanilla",
           "id": "f2d5ca8753166ebc",
-          "coletado_em": "2026-02-24T20:56:34.906Z"
+          "coletado_em": "2026-02-24T20:56:34.906Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/mondrian",
@@ -914,7 +1179,12 @@
           "nivel_complexidade": "medio",
           "projeto": "mondrian-vanilla",
           "id": "f69d0f96164ff1af",
-          "coletado_em": "2026-02-24T20:56:34.906Z"
+          "coletado_em": "2026-02-24T20:56:34.906Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.9,
+          "peso_final": 0.9
         },
         {
           "fonte": "/home/plgsa/mondrian/lib/package.json",
@@ -934,7 +1204,12 @@
           "nivel_complexidade": "alto",
           "projeto": "mondrian-vanilla",
           "id": "b90db4e784b8c566",
-          "coletado_em": "2026-02-24T20:56:34.917Z"
+          "coletado_em": "2026-02-24T20:56:34.917Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.3,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -982,7 +1257,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@ai-coders/context",
           "id": "9db553d70e02740c",
-          "coletado_em": "2026-02-24T20:56:34.570Z"
+          "coletado_em": "2026-02-24T20:56:34.570Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.3,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/claro/ai-coders-context/README.md",
@@ -995,7 +1275,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@ai-coders/context",
           "id": "34d95b2a61d1d6cc",
-          "coletado_em": "2026-02-24T20:56:34.570Z"
+          "coletado_em": "2026-02-24T20:56:34.570Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/claro/ai-coders-context",
@@ -1008,7 +1293,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@ai-coders/context",
           "id": "c01d0c0f4f43a199",
-          "coletado_em": "2026-02-24T20:56:34.592Z"
+          "coletado_em": "2026-02-24T20:56:34.592Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/claro/ai-coders-context",
@@ -1021,7 +1311,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@ai-coders/context",
           "id": "cd0aeb3636fb8df1",
-          "coletado_em": "2026-02-24T20:56:34.597Z"
+          "coletado_em": "2026-02-24T20:56:34.597Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/claro/ai-coders-context",
@@ -1036,7 +1331,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@ai-coders/context",
           "id": "0196580344bc07f1",
-          "coletado_em": "2026-02-24T20:56:34.597Z"
+          "coletado_em": "2026-02-24T20:56:34.597Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.9,
+          "peso_final": 0.9
         },
         {
           "fonte": "/home/plgsa/claro/ai-coders-context/.github/workflows/ci.yml",
@@ -1050,7 +1350,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@ai-coders/context",
           "id": "e130d6ecba83d83b",
-          "coletado_em": "2026-02-24T20:56:34.598Z"
+          "coletado_em": "2026-02-24T20:56:34.598Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         },
         {
           "fonte": "/home/plgsa/claro/ai-coders-context/.github/workflows/release.yml",
@@ -1064,7 +1369,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@ai-coders/context",
           "id": "b9eb8373ee113041",
-          "coletado_em": "2026-02-24T20:56:34.598Z"
+          "coletado_em": "2026-02-24T20:56:34.598Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         },
         {
           "fonte": "/home/plgsa/claro/ai-coders-context",
@@ -1076,7 +1386,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@ai-coders/context",
           "id": "742938d4d241903e",
-          "coletado_em": "2026-02-24T20:56:34.600Z"
+          "coletado_em": "2026-02-24T20:56:34.600Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         }
       ],
       "stack": [
@@ -1127,7 +1442,12 @@
           "nivel_complexidade": "medio",
           "projeto": "AI-CONSULT",
           "id": "2eee8340b41f7c9f",
-          "coletado_em": "2026-02-24T20:56:34.162Z"
+          "coletado_em": "2026-02-24T20:56:34.162Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.7,
+          "peso_final": 0.7
         },
         {
           "fonte": "/home/plgsa/agents/AI-CONSULT/Dockerfile",
@@ -1140,7 +1460,12 @@
           "nivel_complexidade": "alto",
           "projeto": "AI-CONSULT",
           "id": "3e3d725b1672e3de",
-          "coletado_em": "2026-02-24T20:56:34.163Z"
+          "coletado_em": "2026-02-24T20:56:34.163Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.7,
+          "peso_final": 0.7
         },
         {
           "fonte": "/home/plgsa/agents/AI-CONSULT/README.md",
@@ -1153,7 +1478,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "AI-CONSULT",
           "id": "64f7a5c59fc74d9c",
-          "coletado_em": "2026-02-24T20:56:34.163Z"
+          "coletado_em": "2026-02-24T20:56:34.163Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/agents/AI-CONSULT",
@@ -1166,7 +1496,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "AI-CONSULT",
           "id": "ab22b578f6d40382",
-          "coletado_em": "2026-02-24T20:56:34.186Z"
+          "coletado_em": "2026-02-24T20:56:34.186Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/AI-CONSULT",
@@ -1180,7 +1515,12 @@
           "nivel_complexidade": "medio",
           "projeto": "AI-CONSULT",
           "id": "eebc817ae5d3e290",
-          "coletado_em": "2026-02-24T20:56:34.192Z"
+          "coletado_em": "2026-02-24T20:56:34.192Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/AI-CONSULT",
@@ -1196,7 +1536,12 @@
           "nivel_complexidade": "medio",
           "projeto": "AI-CONSULT",
           "id": "246b92f373456ab0",
-          "coletado_em": "2026-02-24T20:56:34.192Z"
+          "coletado_em": "2026-02-24T20:56:34.192Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.9,
+          "peso_final": 0.9
         }
       ],
       "stack": [
@@ -1237,7 +1582,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@mondrian-vanilla/claro",
           "id": "bfe19de940f39143",
-          "coletado_em": "2026-02-24T20:56:34.491Z"
+          "coletado_em": "2026-02-24T20:56:34.491Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/agents/modrian/packages/claro",
@@ -1249,7 +1599,12 @@
           "nivel_complexidade": "alto",
           "projeto": "@mondrian-vanilla/claro",
           "id": "82863e5714d9a018",
-          "coletado_em": "2026-02-24T20:56:34.499Z"
+          "coletado_em": "2026-02-24T20:56:34.499Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/mondrian/lib/packages/claro",
@@ -1262,7 +1617,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@mondrian-vanilla/claro",
           "id": "47e56910f9934249",
-          "coletado_em": "2026-02-24T20:56:34.931Z"
+          "coletado_em": "2026-02-24T20:56:34.931Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/mondrian/lib/packages/claro",
@@ -1274,7 +1634,12 @@
           "nivel_complexidade": "alto",
           "projeto": "@mondrian-vanilla/claro",
           "id": "47e52013d5a50b4f",
-          "coletado_em": "2026-02-24T20:56:34.947Z"
+          "coletado_em": "2026-02-24T20:56:34.947Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/mondrian/packages/claro",
@@ -1287,7 +1652,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@mondrian-vanilla/claro",
           "id": "83bb2f501bdcf106",
-          "coletado_em": "2026-02-24T20:56:34.947Z"
+          "coletado_em": "2026-02-24T20:56:34.947Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/mondrian/packages/claro",
@@ -1299,7 +1669,12 @@
           "nivel_complexidade": "alto",
           "projeto": "@mondrian-vanilla/claro",
           "id": "ba0bafea543e6d59",
-          "coletado_em": "2026-02-24T20:56:34.957Z"
+          "coletado_em": "2026-02-24T20:56:34.957Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -1329,7 +1704,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "claro-ins",
           "id": "23959434885aa9da",
-          "coletado_em": "2026-02-24T20:56:34.601Z"
+          "coletado_em": "2026-02-24T20:56:34.601Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.3,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins/docker-compose.yml",
@@ -1344,7 +1724,12 @@
           "nivel_complexidade": "medio",
           "projeto": "claro-ins",
           "id": "93c1e5f64b0b896f",
-          "coletado_em": "2026-02-24T20:56:34.602Z"
+          "coletado_em": "2026-02-24T20:56:34.602Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.7,
+          "peso_final": 0.7
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins/README.md",
@@ -1359,7 +1744,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "claro-ins",
           "id": "86f1faa9d74e1df8",
-          "coletado_em": "2026-02-24T20:56:34.602Z"
+          "coletado_em": "2026-02-24T20:56:34.602Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins",
@@ -1371,7 +1761,12 @@
           "nivel_complexidade": "medio",
           "projeto": "claro-ins",
           "id": "c4dde6abf43808c2",
-          "coletado_em": "2026-02-24T20:56:34.637Z"
+          "coletado_em": "2026-02-24T20:56:34.637Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins",
@@ -1386,7 +1781,12 @@
           "nivel_complexidade": "medio",
           "projeto": "claro-ins",
           "id": "81d6e5be71386abd",
-          "coletado_em": "2026-02-24T20:56:34.646Z"
+          "coletado_em": "2026-02-24T20:56:34.646Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins/.github/workflows/main.yml",
@@ -1401,7 +1801,12 @@
           "nivel_complexidade": "medio",
           "projeto": "claro-ins",
           "id": "b0cf781682d06bfd",
-          "coletado_em": "2026-02-24T20:56:34.646Z"
+          "coletado_em": "2026-02-24T20:56:34.646Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         }
       ],
       "stack": [
@@ -1447,7 +1852,12 @@
           "nivel_complexidade": "alto",
           "projeto": "apigee/devportal-kickstart-project",
           "id": "636dd403343395ad",
-          "coletado_em": "2026-02-24T20:56:34.688Z"
+          "coletado_em": "2026-02-24T20:56:34.688Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins/app/portal/README.md",
@@ -1459,7 +1869,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "apigee/devportal-kickstart-project",
           "id": "ebf32b1d81741919",
-          "coletado_em": "2026-02-24T20:56:34.688Z"
+          "coletado_em": "2026-02-24T20:56:34.688Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins/app/portal",
@@ -1471,7 +1886,12 @@
           "nivel_complexidade": "medio",
           "projeto": "apigee/devportal-kickstart-project",
           "id": "b459158edbd57713",
-          "coletado_em": "2026-02-24T20:56:34.688Z"
+          "coletado_em": "2026-02-24T20:56:34.688Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins-jardel/app/portal/composer.json",
@@ -1484,7 +1904,12 @@
           "nivel_complexidade": "alto",
           "projeto": "apigee/devportal-kickstart-project",
           "id": "e20ff19073aebd06",
-          "coletado_em": "2026-02-24T20:56:34.801Z"
+          "coletado_em": "2026-02-24T20:56:34.801Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins-jardel/app/portal/README.md",
@@ -1496,7 +1921,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "apigee/devportal-kickstart-project",
           "id": "725502dcce2fce94",
-          "coletado_em": "2026-02-24T20:56:34.801Z"
+          "coletado_em": "2026-02-24T20:56:34.801Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins-jardel/app/portal",
@@ -1508,7 +1938,12 @@
           "nivel_complexidade": "medio",
           "projeto": "apigee/devportal-kickstart-project",
           "id": "99460398b8cafa37",
-          "coletado_em": "2026-02-24T20:56:34.801Z"
+          "coletado_em": "2026-02-24T20:56:34.801Z",
+          "origem": "local",
+          "framework_generated": true,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0
         }
       ],
       "stack": [
@@ -1538,7 +1973,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "claro-ins-jardel",
           "id": "086fde4178fc8920",
-          "coletado_em": "2026-02-24T20:56:34.753Z"
+          "coletado_em": "2026-02-24T20:56:34.753Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.3,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins-jardel/docker-compose.yml",
@@ -1553,7 +1993,12 @@
           "nivel_complexidade": "medio",
           "projeto": "claro-ins-jardel",
           "id": "3b448a16efae5b24",
-          "coletado_em": "2026-02-24T20:56:34.753Z"
+          "coletado_em": "2026-02-24T20:56:34.753Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.7,
+          "peso_final": 0.7
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins-jardel/README.md",
@@ -1568,7 +2013,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "claro-ins-jardel",
           "id": "f6d4e734b3667df0",
-          "coletado_em": "2026-02-24T20:56:34.753Z"
+          "coletado_em": "2026-02-24T20:56:34.753Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins-jardel",
@@ -1580,7 +2030,12 @@
           "nivel_complexidade": "medio",
           "projeto": "claro-ins-jardel",
           "id": "9555aac5db199968",
-          "coletado_em": "2026-02-24T20:56:34.786Z"
+          "coletado_em": "2026-02-24T20:56:34.786Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins-jardel",
@@ -1595,7 +2050,12 @@
           "nivel_complexidade": "medio",
           "projeto": "claro-ins-jardel",
           "id": "036765431c7182d2",
-          "coletado_em": "2026-02-24T20:56:34.792Z"
+          "coletado_em": "2026-02-24T20:56:34.792Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins-jardel/.github/workflows/main.yml",
@@ -1610,7 +2070,12 @@
           "nivel_complexidade": "medio",
           "projeto": "claro-ins-jardel",
           "id": "ab6f25656009554d",
-          "coletado_em": "2026-02-24T20:56:34.792Z"
+          "coletado_em": "2026-02-24T20:56:34.792Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         }
       ],
       "stack": [
@@ -1662,7 +2127,12 @@
           "nivel_complexidade": "alto",
           "projeto": "resume-figma",
           "id": "735554dfede743f8",
-          "coletado_em": "2026-02-24T20:56:35.240Z"
+          "coletado_em": "2026-02-24T20:56:35.240Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.3,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/resume_figma/README.md",
@@ -1677,7 +2147,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "resume-figma",
           "id": "0ad684428de047b6",
-          "coletado_em": "2026-02-24T20:56:35.241Z"
+          "coletado_em": "2026-02-24T20:56:35.241Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/resume_figma",
@@ -1691,7 +2166,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "resume-figma",
           "id": "d13188b140242158",
-          "coletado_em": "2026-02-24T20:56:35.259Z"
+          "coletado_em": "2026-02-24T20:56:35.259Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/resume_figma",
@@ -1705,7 +2185,12 @@
           "nivel_complexidade": "medio",
           "projeto": "resume-figma",
           "id": "c51464c26e4c0a9a",
-          "coletado_em": "2026-02-24T20:56:35.264Z"
+          "coletado_em": "2026-02-24T20:56:35.264Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/resume_figma",
@@ -1719,7 +2204,12 @@
           "nivel_complexidade": "medio",
           "projeto": "resume-figma",
           "id": "56c538e06aa63977",
-          "coletado_em": "2026-02-24T20:56:35.264Z"
+          "coletado_em": "2026-02-24T20:56:35.264Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.9,
+          "peso_final": 0.9
         },
         {
           "fonte": "/home/plgsa/resume_figma",
@@ -1731,7 +2221,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "resume-figma",
           "id": "89edf9514360387b",
-          "coletado_em": "2026-02-24T20:56:35.265Z"
+          "coletado_em": "2026-02-24T20:56:35.265Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         }
       ],
       "stack": [
@@ -1774,7 +2269,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "llm_agi",
           "id": "a9114ae2bba15fcf",
-          "coletado_em": "2026-02-24T20:56:34.365Z"
+          "coletado_em": "2026-02-24T20:56:34.365Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/agents/llm_agi",
@@ -1791,7 +2291,12 @@
           "nivel_complexidade": "alto",
           "projeto": "llm_agi",
           "id": "6434d47ed4093287",
-          "coletado_em": "2026-02-24T20:56:34.389Z"
+          "coletado_em": "2026-02-24T20:56:34.389Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/llm_agi",
@@ -1805,7 +2310,12 @@
           "nivel_complexidade": "medio",
           "projeto": "llm_agi",
           "id": "8febfc206779d8b3",
-          "coletado_em": "2026-02-24T20:56:34.395Z"
+          "coletado_em": "2026-02-24T20:56:34.395Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/llm_agi",
@@ -1817,7 +2327,12 @@
           "nivel_complexidade": "medio",
           "projeto": "llm_agi",
           "id": "c5f3089d0346d6da",
-          "coletado_em": "2026-02-24T20:56:34.395Z"
+          "coletado_em": "2026-02-24T20:56:34.395Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.9,
+          "peso_final": 0.9
         },
         {
           "fonte": "/home/plgsa/agents/llm_agi/.github/workflows/claude.yml",
@@ -1831,7 +2346,12 @@
           "nivel_complexidade": "medio",
           "projeto": "llm_agi",
           "id": "b34144e180a69eee",
-          "coletado_em": "2026-02-24T20:56:34.395Z"
+          "coletado_em": "2026-02-24T20:56:34.395Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.8,
+          "peso_final": 0.8
         }
       ],
       "stack": [
@@ -1883,7 +2403,12 @@
           "nivel_complexidade": "alto",
           "projeto": "qr-gpt",
           "id": "21a633ad6e3a599c",
-          "coletado_em": "2026-02-24T20:56:35.214Z"
+          "coletado_em": "2026-02-24T20:56:35.214Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.3,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/qr_code/README.md",
@@ -1895,7 +2420,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "qr-gpt",
           "id": "840a0b287d32b8c8",
-          "coletado_em": "2026-02-24T20:56:35.214Z"
+          "coletado_em": "2026-02-24T20:56:35.214Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/qr_code",
@@ -1910,7 +2440,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "qr-gpt",
           "id": "85c67b40d725357f",
-          "coletado_em": "2026-02-24T20:56:35.233Z"
+          "coletado_em": "2026-02-24T20:56:35.233Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/qr_code",
@@ -1924,7 +2459,12 @@
           "nivel_complexidade": "medio",
           "projeto": "qr-gpt",
           "id": "5b0f63e939935e25",
-          "coletado_em": "2026-02-24T20:56:35.238Z"
+          "coletado_em": "2026-02-24T20:56:35.238Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/qr_code",
@@ -1940,7 +2480,12 @@
           "nivel_complexidade": "medio",
           "projeto": "qr-gpt",
           "id": "c4402f2bea8dd939",
-          "coletado_em": "2026-02-24T20:56:35.238Z"
+          "coletado_em": "2026-02-24T20:56:35.238Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.9,
+          "peso_final": 0.9
         }
       ],
       "stack": [
@@ -1993,7 +2538,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "figma",
           "id": "93ada1f33272fd13",
-          "coletado_em": "2026-02-24T20:56:34.194Z"
+          "coletado_em": "2026-02-24T20:56:34.194Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.3,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/agents/FIGMA/README.md",
@@ -2005,7 +2555,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "figma",
           "id": "f344af3515df602c",
-          "coletado_em": "2026-02-24T20:56:34.195Z"
+          "coletado_em": "2026-02-24T20:56:34.195Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/agents/FIGMA",
@@ -2018,7 +2573,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "figma",
           "id": "dd8024a2b7b441ba",
-          "coletado_em": "2026-02-24T20:56:34.217Z"
+          "coletado_em": "2026-02-24T20:56:34.217Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/FIGMA",
@@ -2031,7 +2591,12 @@
           "nivel_complexidade": "medio",
           "projeto": "figma",
           "id": "6a0adaaa1e445b58",
-          "coletado_em": "2026-02-24T20:56:34.221Z"
+          "coletado_em": "2026-02-24T20:56:34.221Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         }
       ],
       "stack": [
@@ -2065,7 +2630,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "localtrader",
           "id": "2a3b150ccaed0751",
-          "coletado_em": "2026-02-24T20:56:34.419Z"
+          "coletado_em": "2026-02-24T20:56:34.419Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/agents/localtrader",
@@ -2080,7 +2650,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "localtrader",
           "id": "3ec62d2692e38a3b",
-          "coletado_em": "2026-02-24T20:56:34.438Z"
+          "coletado_em": "2026-02-24T20:56:34.438Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/localtrader",
@@ -2093,7 +2668,12 @@
           "nivel_complexidade": "medio",
           "projeto": "localtrader",
           "id": "8c8cea2ab2a6bcef",
-          "coletado_em": "2026-02-24T20:56:34.442Z"
+          "coletado_em": "2026-02-24T20:56:34.442Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/localtrader",
@@ -2105,7 +2685,12 @@
           "nivel_complexidade": "medio",
           "projeto": "localtrader",
           "id": "2d21c93c2d1ad6b0",
-          "coletado_em": "2026-02-24T20:56:34.442Z"
+          "coletado_em": "2026-02-24T20:56:34.442Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.9,
+          "peso_final": 0.9
         }
       ],
       "stack": [
@@ -2140,7 +2725,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@mondrian-vanilla/martech",
           "id": "84fdc7e33ef1275e",
-          "coletado_em": "2026-02-24T20:56:34.500Z"
+          "coletado_em": "2026-02-24T20:56:34.500Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/agents/modrian/packages/martech",
@@ -2153,7 +2743,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@mondrian-vanilla/martech",
           "id": "39c5c737db92b581",
-          "coletado_em": "2026-02-24T20:56:34.500Z"
+          "coletado_em": "2026-02-24T20:56:34.500Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/mondrian/packages/martech/readme.md",
@@ -2163,7 +2758,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@mondrian-vanilla/martech",
           "id": "72a7f5fd3d1052c6",
-          "coletado_em": "2026-02-24T20:56:34.958Z"
+          "coletado_em": "2026-02-24T20:56:34.958Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/mondrian/packages/martech",
@@ -2176,7 +2776,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@mondrian-vanilla/martech",
           "id": "a363e00554cd91ed",
-          "coletado_em": "2026-02-24T20:56:34.958Z"
+          "coletado_em": "2026-02-24T20:56:34.958Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         }
       ],
       "stack": [
@@ -2204,7 +2809,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@mondrian-vanilla/shared",
           "id": "10c8e7e4ef2012d6",
-          "coletado_em": "2026-02-24T20:56:34.500Z"
+          "coletado_em": "2026-02-24T20:56:34.500Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/agents/modrian/packages/shared",
@@ -2216,7 +2826,12 @@
           "nivel_complexidade": "alto",
           "projeto": "@mondrian-vanilla/shared",
           "id": "1e1380dbeeb525bb",
-          "coletado_em": "2026-02-24T20:56:34.509Z"
+          "coletado_em": "2026-02-24T20:56:34.509Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         },
         {
           "fonte": "/home/plgsa/mondrian/packages/shared",
@@ -2230,7 +2845,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@mondrian-vanilla/shared",
           "id": "d7a2b859a58a8231",
-          "coletado_em": "2026-02-24T20:56:34.958Z"
+          "coletado_em": "2026-02-24T20:56:34.958Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/mondrian/packages/shared",
@@ -2242,7 +2862,12 @@
           "nivel_complexidade": "alto",
           "projeto": "@mondrian-vanilla/shared",
           "id": "79db411ef1b1738f",
-          "coletado_em": "2026-02-24T20:56:34.976Z"
+          "coletado_em": "2026-02-24T20:56:34.976Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -2271,7 +2896,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/nostr",
           "id": "16a03ad0af76d658",
-          "coletado_em": "2026-02-24T20:56:35.172Z"
+          "coletado_em": "2026-02-24T20:56:35.172Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0.09
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/nostr/README.md",
@@ -2283,7 +2913,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/nostr",
           "id": "73d2f9cad9dc2722",
-          "coletado_em": "2026-02-24T20:56:35.172Z"
+          "coletado_em": "2026-02-24T20:56:35.172Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/nostr",
@@ -2295,7 +2930,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/nostr",
           "id": "f5f05140f2dcd5fb",
-          "coletado_em": "2026-02-24T20:56:35.172Z"
+          "coletado_em": "2026-02-24T20:56:35.172Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/nostr",
@@ -2307,7 +2947,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/nostr",
           "id": "613580f81322c08d",
-          "coletado_em": "2026-02-24T20:56:35.173Z"
+          "coletado_em": "2026-02-24T20:56:35.173Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -2340,7 +2985,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/twitch",
           "id": "3a08dc4dddfe0109",
-          "coletado_em": "2026-02-24T20:56:35.176Z"
+          "coletado_em": "2026-02-24T20:56:35.176Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0.09
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/twitch/README.md",
@@ -2350,7 +3000,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/twitch",
           "id": "d05d5b3ec13a1948",
-          "coletado_em": "2026-02-24T20:56:35.177Z"
+          "coletado_em": "2026-02-24T20:56:35.177Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/twitch",
@@ -2362,7 +3017,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/twitch",
           "id": "52f1dcd4b81c830d",
-          "coletado_em": "2026-02-24T20:56:35.177Z"
+          "coletado_em": "2026-02-24T20:56:35.177Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/twitch",
@@ -2374,7 +3034,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/twitch",
           "id": "1148b412a66809dd",
-          "coletado_em": "2026-02-24T20:56:35.177Z"
+          "coletado_em": "2026-02-24T20:56:35.177Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -2405,7 +3070,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/voice-call",
           "id": "fe9d67975dc4b3fe",
-          "coletado_em": "2026-02-24T20:56:35.177Z"
+          "coletado_em": "2026-02-24T20:56:35.177Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0.09
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/voice-call/README.md",
@@ -2415,7 +3085,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/voice-call",
           "id": "5cf044861d3abaca",
-          "coletado_em": "2026-02-24T20:56:35.177Z"
+          "coletado_em": "2026-02-24T20:56:35.177Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/voice-call",
@@ -2427,7 +3102,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/voice-call",
           "id": "058c2134e5b2dba1",
-          "coletado_em": "2026-02-24T20:56:35.177Z"
+          "coletado_em": "2026-02-24T20:56:35.177Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/voice-call",
@@ -2439,7 +3119,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/voice-call",
           "id": "4fb11820fa1f0e8d",
-          "coletado_em": "2026-02-24T20:56:35.178Z"
+          "coletado_em": "2026-02-24T20:56:35.178Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -2473,7 +3158,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@resume/self-knowledge-engine",
           "id": "15ade75f99615b67",
-          "coletado_em": "2026-02-24T20:56:35.266Z"
+          "coletado_em": "2026-02-24T20:56:35.266Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0.09
         },
         {
           "fonte": "/home/plgsa/resume_figma/agents/self-knowledge-engine/README.md",
@@ -2492,7 +3182,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@resume/self-knowledge-engine",
           "id": "33f0a5a277dbdb13",
-          "coletado_em": "2026-02-24T20:56:35.266Z"
+          "coletado_em": "2026-02-24T20:56:35.266Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/resume_figma/agents/self-knowledge-engine",
@@ -2506,7 +3201,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@resume/self-knowledge-engine",
           "id": "076b889d1b158c4d",
-          "coletado_em": "2026-02-24T20:56:35.266Z"
+          "coletado_em": "2026-02-24T20:56:35.266Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/resume_figma/agents/self-knowledge-engine",
@@ -2518,7 +3218,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@resume/self-knowledge-engine",
           "id": "6520ef06b1b2b9f7",
-          "coletado_em": "2026-02-24T20:56:35.266Z"
+          "coletado_em": "2026-02-24T20:56:35.266Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -2563,7 +3268,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "figma-code",
           "id": "c74b217901eaa5b2",
-          "coletado_em": "2026-02-24T20:56:34.246Z"
+          "coletado_em": "2026-02-24T20:56:34.246Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/FIGMA/figma-code",
@@ -2576,7 +3286,12 @@
           "nivel_complexidade": "medio",
           "projeto": "figma-code",
           "id": "6f43e731501d6232",
-          "coletado_em": "2026-02-24T20:56:34.251Z"
+          "coletado_em": "2026-02-24T20:56:34.251Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/FIGMA/figma-code",
@@ -2591,7 +3306,12 @@
           "nivel_complexidade": "medio",
           "projeto": "figma-code",
           "id": "ed6165864f3d8ce5",
-          "coletado_em": "2026-02-24T20:56:34.251Z"
+          "coletado_em": "2026-02-24T20:56:34.251Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.9,
+          "peso_final": 0.9
         }
       ],
       "stack": [
@@ -2626,7 +3346,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai-strategy-factory",
           "id": "66cfd2b7d4b74166",
-          "coletado_em": "2026-02-24T20:56:34.257Z"
+          "coletado_em": "2026-02-24T20:56:34.257Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/agents/ai-strategy-factory",
@@ -2639,7 +3364,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai-strategy-factory",
           "id": "53a4ff5b82789bab",
-          "coletado_em": "2026-02-24T20:56:34.278Z"
+          "coletado_em": "2026-02-24T20:56:34.278Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/ai-strategy-factory",
@@ -2652,7 +3382,12 @@
           "nivel_complexidade": "medio",
           "projeto": "ai-strategy-factory",
           "id": "d0b8c4fe386b6cae",
-          "coletado_em": "2026-02-24T20:56:34.282Z"
+          "coletado_em": "2026-02-24T20:56:34.282Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.9,
+          "peso_final": 0.9
         }
       ],
       "stack": [
@@ -2682,7 +3417,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "chat_exporter",
           "id": "9d8f4f76d5d52bc5",
-          "coletado_em": "2026-02-24T20:56:34.286Z"
+          "coletado_em": "2026-02-24T20:56:34.286Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/agents/chat_exporter",
@@ -2695,7 +3435,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "chat_exporter",
           "id": "33e6b2784943ab04",
-          "coletado_em": "2026-02-24T20:56:34.306Z"
+          "coletado_em": "2026-02-24T20:56:34.306Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/chat_exporter",
@@ -2708,7 +3453,12 @@
           "nivel_complexidade": "medio",
           "projeto": "chat_exporter",
           "id": "76007f8c52818945",
-          "coletado_em": "2026-02-24T20:56:34.310Z"
+          "coletado_em": "2026-02-24T20:56:34.310Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         }
       ],
       "stack": [
@@ -2738,7 +3488,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ebook-maker",
           "id": "d242f7ed7639e639",
-          "coletado_em": "2026-02-24T20:56:34.311Z"
+          "coletado_em": "2026-02-24T20:56:34.311Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/agents/ebook-maker",
@@ -2751,7 +3506,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ebook-maker",
           "id": "dd2410ab657669e1",
-          "coletado_em": "2026-02-24T20:56:34.331Z"
+          "coletado_em": "2026-02-24T20:56:34.331Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/ebook-maker",
@@ -2763,7 +3523,12 @@
           "nivel_complexidade": "medio",
           "projeto": "ebook-maker",
           "id": "9e9b25c07875adbb",
-          "coletado_em": "2026-02-24T20:56:34.336Z"
+          "coletado_em": "2026-02-24T20:56:34.336Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         }
       ],
       "stack": [
@@ -2792,7 +3557,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "gpt_backups",
           "id": "05ca4ca6558bbe59",
-          "coletado_em": "2026-02-24T20:56:34.338Z"
+          "coletado_em": "2026-02-24T20:56:34.338Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/agents/gpt_backups",
@@ -2805,7 +3575,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "gpt_backups",
           "id": "0c307b1c412603db",
-          "coletado_em": "2026-02-24T20:56:34.358Z"
+          "coletado_em": "2026-02-24T20:56:34.358Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/agents/gpt_backups",
@@ -2817,7 +3592,12 @@
           "nivel_complexidade": "medio",
           "projeto": "gpt_backups",
           "id": "ac3a87d7882d0864",
-          "coletado_em": "2026-02-24T20:56:34.363Z"
+          "coletado_em": "2026-02-24T20:56:34.363Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         }
       ],
       "stack": [
@@ -2845,7 +3625,12 @@
           "nivel_complexidade": "alto",
           "projeto": "ccoe",
           "id": "6f510ac16e1b3c35",
-          "coletado_em": "2026-02-24T20:56:34.749Z"
+          "coletado_em": "2026-02-24T20:56:34.749Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.7,
+          "peso_final": 0.21
         },
         {
           "fonte": "/home/plgsa/claro/claro-ins-jardel/ccoe/Dockerfile",
@@ -2858,7 +3643,12 @@
           "nivel_complexidade": "alto",
           "projeto": "ccoe",
           "id": "855222ed30a1ddec",
-          "coletado_em": "2026-02-24T20:56:34.835Z"
+          "coletado_em": "2026-02-24T20:56:34.835Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.7,
+          "peso_final": 0.21
         },
         {
           "fonte": "/home/plgsa/claro/claro-open/ccoe/Dockerfile",
@@ -2870,7 +3660,12 @@
           "nivel_complexidade": "medio",
           "projeto": "ccoe",
           "id": "4beeb320ea5f98c7",
-          "coletado_em": "2026-02-24T20:56:34.869Z"
+          "coletado_em": "2026-02-24T20:56:34.869Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.7,
+          "peso_final": 0.21
         }
       ],
       "stack": [
@@ -2898,7 +3693,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "jarvis",
           "id": "9d744e0116e3b817",
-          "coletado_em": "2026-02-24T20:56:34.872Z"
+          "coletado_em": "2026-02-24T20:56:34.872Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 0.2,
+          "peso_final": 0.2
         },
         {
           "fonte": "/home/plgsa/jarvis",
@@ -2911,7 +3711,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "jarvis",
           "id": "59bfcdabc80dfb40",
-          "coletado_em": "2026-02-24T20:56:34.899Z"
+          "coletado_em": "2026-02-24T20:56:34.899Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/jarvis",
@@ -2924,7 +3729,12 @@
           "nivel_complexidade": "medio",
           "projeto": "jarvis",
           "id": "31cb313c6d867c53",
-          "coletado_em": "2026-02-24T20:56:34.904Z"
+          "coletado_em": "2026-02-24T20:56:34.904Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         }
       ],
       "stack": [
@@ -2955,7 +3765,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "openclaw-workspace",
           "id": "f4b0a4c5be4552d9",
-          "coletado_em": "2026-02-24T20:56:35.010Z"
+          "coletado_em": "2026-02-24T20:56:35.010Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace",
@@ -2967,7 +3782,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw-workspace",
           "id": "65ceeb5efece9f73",
-          "coletado_em": "2026-02-24T20:56:35.014Z"
+          "coletado_em": "2026-02-24T20:56:35.014Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace",
@@ -2979,7 +3799,12 @@
           "nivel_complexidade": "alto",
           "projeto": "openclaw-workspace",
           "id": "ca0b60a30f8c3967",
-          "coletado_em": "2026-02-24T20:56:35.064Z"
+          "coletado_em": "2026-02-24T20:56:35.064Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         }
       ],
       "stack": [
@@ -3007,7 +3832,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/bluebubbles",
           "id": "372b2fe4f71bac2d",
-          "coletado_em": "2026-02-24T20:56:35.160Z"
+          "coletado_em": "2026-02-24T20:56:35.160Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/bluebubbles",
@@ -3019,7 +3849,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/bluebubbles",
           "id": "a415c6177e30dea2",
-          "coletado_em": "2026-02-24T20:56:35.160Z"
+          "coletado_em": "2026-02-24T20:56:35.160Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/bluebubbles",
@@ -3031,7 +3866,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/bluebubbles",
           "id": "cf0d9e592d8c233c",
-          "coletado_em": "2026-02-24T20:56:35.162Z"
+          "coletado_em": "2026-02-24T20:56:35.162Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3062,7 +3902,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/feishu",
           "id": "32021d2874691c4f",
-          "coletado_em": "2026-02-24T20:56:35.164Z"
+          "coletado_em": "2026-02-24T20:56:35.164Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0.09
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/feishu",
@@ -3074,7 +3919,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/feishu",
           "id": "0b72f5733a6ef887",
-          "coletado_em": "2026-02-24T20:56:35.164Z"
+          "coletado_em": "2026-02-24T20:56:35.164Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/feishu",
@@ -3086,7 +3936,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/feishu",
           "id": "79cfcb0a88832980",
-          "coletado_em": "2026-02-24T20:56:35.164Z"
+          "coletado_em": "2026-02-24T20:56:35.164Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3114,7 +3969,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/llm-task",
           "id": "a09a973cab8214aa",
-          "coletado_em": "2026-02-24T20:56:35.167Z"
+          "coletado_em": "2026-02-24T20:56:35.167Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/llm-task",
@@ -3126,7 +3986,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/llm-task",
           "id": "620daad654a1a382",
-          "coletado_em": "2026-02-24T20:56:35.167Z"
+          "coletado_em": "2026-02-24T20:56:35.167Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/llm-task",
@@ -3138,7 +4003,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/llm-task",
           "id": "4b6c66e42756aa36",
-          "coletado_em": "2026-02-24T20:56:35.167Z"
+          "coletado_em": "2026-02-24T20:56:35.167Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3164,7 +4034,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/lobster",
           "id": "7f742a1da5897e41",
-          "coletado_em": "2026-02-24T20:56:35.167Z"
+          "coletado_em": "2026-02-24T20:56:35.167Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/lobster",
@@ -3176,7 +4051,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/lobster",
           "id": "807cd0b66e8bd707",
-          "coletado_em": "2026-02-24T20:56:35.167Z"
+          "coletado_em": "2026-02-24T20:56:35.167Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/lobster",
@@ -3188,7 +4068,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/lobster",
           "id": "0603afe0758a89b8",
-          "coletado_em": "2026-02-24T20:56:35.167Z"
+          "coletado_em": "2026-02-24T20:56:35.167Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3217,7 +4102,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/matrix",
           "id": "eb6bcd857a9882cc",
-          "coletado_em": "2026-02-24T20:56:35.167Z"
+          "coletado_em": "2026-02-24T20:56:35.167Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0.09
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/matrix",
@@ -3229,7 +4119,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/matrix",
           "id": "dba014d6d8724fa6",
-          "coletado_em": "2026-02-24T20:56:35.168Z"
+          "coletado_em": "2026-02-24T20:56:35.168Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/matrix",
@@ -3241,7 +4136,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/matrix",
           "id": "895c6a97edb4fbe0",
-          "coletado_em": "2026-02-24T20:56:35.168Z"
+          "coletado_em": "2026-02-24T20:56:35.168Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3273,7 +4173,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/msteams",
           "id": "f1535d8c31969505",
-          "coletado_em": "2026-02-24T20:56:35.170Z"
+          "coletado_em": "2026-02-24T20:56:35.170Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0.09
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/msteams",
@@ -3285,7 +4190,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/msteams",
           "id": "80700d5a73de0ff5",
-          "coletado_em": "2026-02-24T20:56:35.170Z"
+          "coletado_em": "2026-02-24T20:56:35.170Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/msteams",
@@ -3297,7 +4207,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/msteams",
           "id": "192918e5e6aa2fca",
-          "coletado_em": "2026-02-24T20:56:35.171Z"
+          "coletado_em": "2026-02-24T20:56:35.171Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3330,7 +4245,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/synology-chat",
           "id": "66af32d912c77964",
-          "coletado_em": "2026-02-24T20:56:35.174Z"
+          "coletado_em": "2026-02-24T20:56:35.174Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0.09
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/synology-chat",
@@ -3342,7 +4262,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/synology-chat",
           "id": "edd029f0de39ef68",
-          "coletado_em": "2026-02-24T20:56:35.174Z"
+          "coletado_em": "2026-02-24T20:56:35.174Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/synology-chat",
@@ -3354,7 +4279,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/synology-chat",
           "id": "204797e32c62b5bf",
-          "coletado_em": "2026-02-24T20:56:35.175Z"
+          "coletado_em": "2026-02-24T20:56:35.175Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3382,7 +4312,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/tlon",
           "id": "88d9b2da9da28efb",
-          "coletado_em": "2026-02-24T20:56:35.175Z"
+          "coletado_em": "2026-02-24T20:56:35.175Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/tlon",
@@ -3394,7 +4329,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/tlon",
           "id": "5eb384f3671849a3",
-          "coletado_em": "2026-02-24T20:56:35.176Z"
+          "coletado_em": "2026-02-24T20:56:35.176Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/tlon",
@@ -3406,7 +4346,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/tlon",
           "id": "e343a7662b04f973",
-          "coletado_em": "2026-02-24T20:56:35.176Z"
+          "coletado_em": "2026-02-24T20:56:35.176Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3432,7 +4377,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/zalo",
           "id": "a173abdcf8289e47",
-          "coletado_em": "2026-02-24T20:56:35.179Z"
+          "coletado_em": "2026-02-24T20:56:35.179Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/zalo",
@@ -3444,7 +4394,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/zalo",
           "id": "393387deee572d69",
-          "coletado_em": "2026-02-24T20:56:35.179Z"
+          "coletado_em": "2026-02-24T20:56:35.179Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/zalo",
@@ -3456,7 +4411,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/zalo",
           "id": "34599a6a13bc3951",
-          "coletado_em": "2026-02-24T20:56:35.179Z"
+          "coletado_em": "2026-02-24T20:56:35.179Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3482,7 +4442,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/zalouser",
           "id": "a22312b4e8cb2414",
-          "coletado_em": "2026-02-24T20:56:35.179Z"
+          "coletado_em": "2026-02-24T20:56:35.179Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/zalouser",
@@ -3494,7 +4459,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/zalouser",
           "id": "c70a36639c46db8e",
-          "coletado_em": "2026-02-24T20:56:35.179Z"
+          "coletado_em": "2026-02-24T20:56:35.179Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/zalouser",
@@ -3506,7 +4476,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/zalouser",
           "id": "e81d9a0b87a25009",
-          "coletado_em": "2026-02-24T20:56:35.179Z"
+          "coletado_em": "2026-02-24T20:56:35.179Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3541,7 +4516,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw-control-ui",
           "id": "20c5c1cb769cb629",
-          "coletado_em": "2026-02-24T20:56:35.185Z"
+          "coletado_em": "2026-02-24T20:56:35.185Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0.09
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/ui",
@@ -3554,7 +4534,12 @@
           "nivel_complexidade": "medio",
           "projeto": "openclaw-control-ui",
           "id": "015ff6308c58e3be",
-          "coletado_em": "2026-02-24T20:56:35.185Z"
+          "coletado_em": "2026-02-24T20:56:35.185Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/ui",
@@ -3566,7 +4551,12 @@
           "nivel_complexidade": "alto",
           "projeto": "openclaw-control-ui",
           "id": "23b3b999613e6350",
-          "coletado_em": "2026-02-24T20:56:35.188Z"
+          "coletado_em": "2026-02-24T20:56:35.188Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3604,7 +4594,12 @@
           "nivel_complexidade": "medio",
           "projeto": "plgsa",
           "id": "fd220ece4671ef6b",
-          "coletado_em": "2026-02-24T20:56:34.004Z"
+          "coletado_em": "2026-02-24T20:56:34.004Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.7,
+          "peso_final": 0.21
         },
         {
           "fonte": "/home/plgsa",
@@ -3616,7 +4611,12 @@
           "nivel_complexidade": "alto",
           "projeto": "plgsa",
           "id": "8e990dfeabcf9693",
-          "coletado_em": "2026-02-24T20:56:34.124Z"
+          "coletado_em": "2026-02-24T20:56:34.124Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3644,7 +4644,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "figma-converter",
           "id": "12bd7afeaff1a2ed",
-          "coletado_em": "2026-02-24T20:56:34.252Z"
+          "coletado_em": "2026-02-24T20:56:34.252Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/agents/FIGMA/figma-converter",
@@ -3659,7 +4664,12 @@
           "nivel_complexidade": "medio",
           "projeto": "figma-converter",
           "id": "2eedbec850d8c166",
-          "coletado_em": "2026-02-24T20:56:34.252Z"
+          "coletado_em": "2026-02-24T20:56:34.252Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         }
       ],
       "stack": [
@@ -3696,7 +4706,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "guided-llm-chat",
           "id": "7ea3c6ccf7bd7c27",
-          "coletado_em": "2026-02-24T20:56:34.405Z"
+          "coletado_em": "2026-02-24T20:56:34.405Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0.09
         },
         {
           "fonte": "/home/plgsa/agents/llm_agi/advanced_llm_apps/thinkpath_chatbot_app/README.md",
@@ -3708,7 +4723,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "guided-llm-chat",
           "id": "986e7623ec81cbc8",
-          "coletado_em": "2026-02-24T20:56:34.405Z"
+          "coletado_em": "2026-02-24T20:56:34.405Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -3737,7 +4757,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@mondrian-vanilla/utils",
           "id": "785a1020302d54b8",
-          "coletado_em": "2026-02-24T20:56:34.510Z"
+          "coletado_em": "2026-02-24T20:56:34.510Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/mondrian/packages/utils",
@@ -3749,7 +4774,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@mondrian-vanilla/utils",
           "id": "e3db94f120c8750c",
-          "coletado_em": "2026-02-24T20:56:34.976Z"
+          "coletado_em": "2026-02-24T20:56:34.976Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         }
       ],
       "stack": [
@@ -3785,7 +4815,12 @@
           "nivel_complexidade": "alto",
           "projeto": "@figma/my-make-file",
           "id": "f490ec395c53887f",
-          "coletado_em": "2026-02-24T20:56:34.568Z"
+          "coletado_em": "2026-02-24T20:56:34.568Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0.09
         },
         {
           "fonte": "/home/plgsa/claro/DAEAMDD-2346",
@@ -3797,7 +4832,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@figma/my-make-file",
           "id": "ec5ed00c2b6dbf2d",
-          "coletado_em": "2026-02-24T20:56:34.569Z"
+          "coletado_em": "2026-02-24T20:56:34.569Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3836,7 +4876,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "kangu_api",
           "id": "bbdf92dd76d01a7b",
-          "coletado_em": "2026-02-24T20:56:34.905Z"
+          "coletado_em": "2026-02-24T20:56:34.905Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.3,
+          "peso_final": 0.09
         },
         {
           "fonte": "/home/plgsa/kangu_api/README.md",
@@ -3846,7 +4891,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "kangu_api",
           "id": "7d81279ba7e683ab",
-          "coletado_em": "2026-02-24T20:56:34.905Z"
+          "coletado_em": "2026-02-24T20:56:34.905Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -3871,7 +4921,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/diagnostics-otel",
           "id": "a93ffbdf04ffd56e",
-          "coletado_em": "2026-02-24T20:56:35.163Z"
+          "coletado_em": "2026-02-24T20:56:35.163Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/diagnostics-otel",
@@ -3883,7 +4938,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/diagnostics-otel",
           "id": "4e2930b63b6ca1f0",
-          "coletado_em": "2026-02-24T20:56:35.163Z"
+          "coletado_em": "2026-02-24T20:56:35.163Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3911,7 +4971,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/discord",
           "id": "7571d3c44edf2959",
-          "coletado_em": "2026-02-24T20:56:35.163Z"
+          "coletado_em": "2026-02-24T20:56:35.163Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/discord",
@@ -3923,7 +4988,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/discord",
           "id": "3a4a0e1e8853f6d6",
-          "coletado_em": "2026-02-24T20:56:35.164Z"
+          "coletado_em": "2026-02-24T20:56:35.164Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3949,7 +5019,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/google-gemini-cli-auth",
           "id": "652532c540efc1e1",
-          "coletado_em": "2026-02-24T20:56:35.165Z"
+          "coletado_em": "2026-02-24T20:56:35.165Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/google-gemini-cli-auth",
@@ -3961,7 +5036,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/google-gemini-cli-auth",
           "id": "60cd061cf9a332a6",
-          "coletado_em": "2026-02-24T20:56:35.165Z"
+          "coletado_em": "2026-02-24T20:56:35.165Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -3986,7 +5066,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/googlechat",
           "id": "c1d146e92fd1fda6",
-          "coletado_em": "2026-02-24T20:56:35.165Z"
+          "coletado_em": "2026-02-24T20:56:35.165Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/googlechat",
@@ -3998,7 +5083,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/googlechat",
           "id": "16f775183cd3b6c2",
-          "coletado_em": "2026-02-24T20:56:35.165Z"
+          "coletado_em": "2026-02-24T20:56:35.165Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -4026,7 +5116,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/imessage",
           "id": "e54ddf41975d1f72",
-          "coletado_em": "2026-02-24T20:56:35.165Z"
+          "coletado_em": "2026-02-24T20:56:35.165Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/imessage",
@@ -4038,7 +5133,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/imessage",
           "id": "d5c2c600dea918f7",
-          "coletado_em": "2026-02-24T20:56:35.166Z"
+          "coletado_em": "2026-02-24T20:56:35.166Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -4066,7 +5166,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/irc",
           "id": "403c27933fea7656",
-          "coletado_em": "2026-02-24T20:56:35.166Z"
+          "coletado_em": "2026-02-24T20:56:35.166Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/irc",
@@ -4078,7 +5183,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/irc",
           "id": "2b60d16f7b887365",
-          "coletado_em": "2026-02-24T20:56:35.166Z"
+          "coletado_em": "2026-02-24T20:56:35.166Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -4106,7 +5216,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/line",
           "id": "66a8cd2bbd3980e1",
-          "coletado_em": "2026-02-24T20:56:35.166Z"
+          "coletado_em": "2026-02-24T20:56:35.166Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/line",
@@ -4118,7 +5233,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/line",
           "id": "82956e3541872864",
-          "coletado_em": "2026-02-24T20:56:35.166Z"
+          "coletado_em": "2026-02-24T20:56:35.166Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -4146,7 +5266,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/mattermost",
           "id": "8d08f56ff8bed6bd",
-          "coletado_em": "2026-02-24T20:56:35.169Z"
+          "coletado_em": "2026-02-24T20:56:35.169Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/mattermost",
@@ -4158,7 +5283,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/mattermost",
           "id": "c6559fa014af93ea",
-          "coletado_em": "2026-02-24T20:56:35.169Z"
+          "coletado_em": "2026-02-24T20:56:35.169Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -4186,7 +5316,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/nextcloud-talk",
           "id": "a450ea5d328bbcd2",
-          "coletado_em": "2026-02-24T20:56:35.171Z"
+          "coletado_em": "2026-02-24T20:56:35.171Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/nextcloud-talk",
@@ -4198,7 +5333,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/nextcloud-talk",
           "id": "b01dcf76a2be017c",
-          "coletado_em": "2026-02-24T20:56:35.172Z"
+          "coletado_em": "2026-02-24T20:56:35.172Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -4226,7 +5366,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/slack",
           "id": "522227cc59abb141",
-          "coletado_em": "2026-02-24T20:56:35.174Z"
+          "coletado_em": "2026-02-24T20:56:35.174Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/slack",
@@ -4238,7 +5383,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/slack",
           "id": "d6dee69c9cbbca3f",
-          "coletado_em": "2026-02-24T20:56:35.174Z"
+          "coletado_em": "2026-02-24T20:56:35.174Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -4266,7 +5416,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/telegram",
           "id": "ae023b127912d0e0",
-          "coletado_em": "2026-02-24T20:56:35.175Z"
+          "coletado_em": "2026-02-24T20:56:35.175Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/telegram",
@@ -4278,7 +5433,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/telegram",
           "id": "983c792d313c1242",
-          "coletado_em": "2026-02-24T20:56:35.175Z"
+          "coletado_em": "2026-02-24T20:56:35.175Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -4306,7 +5466,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/whatsapp",
           "id": "42b7a13bb3b2efda",
-          "coletado_em": "2026-02-24T20:56:35.178Z"
+          "coletado_em": "2026-02-24T20:56:35.178Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         },
         {
           "fonte": "/home/plgsa/openclaw-workspace/openclaw/extensions/whatsapp",
@@ -4318,7 +5483,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/whatsapp",
           "id": "ac0b286fb7abcdf8",
-          "coletado_em": "2026-02-24T20:56:35.178Z"
+          "coletado_em": "2026-02-24T20:56:35.178Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -4346,7 +5516,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "chat-with-tarots",
           "id": "4b5898dfbd2ae1ea",
-          "coletado_em": "2026-02-24T20:56:34.403Z"
+          "coletado_em": "2026-02-24T20:56:34.403Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4371,7 +5546,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "gpt_oss_critique_improvement_loop",
           "id": "59a5afe20e645393",
-          "coletado_em": "2026-02-24T20:56:34.404Z"
+          "coletado_em": "2026-02-24T20:56:34.404Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4396,7 +5576,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "resume_job_matcher",
           "id": "7b19c2f5ae525b48",
-          "coletado_em": "2026-02-24T20:56:34.404Z"
+          "coletado_em": "2026-02-24T20:56:34.404Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4422,7 +5607,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai_travel_planner_mcp_agent_team",
           "id": "6ae10ecc96646622",
-          "coletado_em": "2026-02-24T20:56:34.406Z"
+          "coletado_em": "2026-02-24T20:56:34.406Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4450,7 +5640,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "browser_mcp_agent",
           "id": "5b194087bbd11a20",
-          "coletado_em": "2026-02-24T20:56:34.406Z"
+          "coletado_em": "2026-02-24T20:56:34.406Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4477,7 +5672,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "github_mcp_agent",
           "id": "4c1f924a22a0ceae",
-          "coletado_em": "2026-02-24T20:56:34.407Z"
+          "coletado_em": "2026-02-24T20:56:34.407Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4505,7 +5705,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "multi_mcp_agent",
           "id": "fc884350d28f35bb",
-          "coletado_em": "2026-02-24T20:56:34.407Z"
+          "coletado_em": "2026-02-24T20:56:34.407Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4534,7 +5739,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "notion_mcp_agent",
           "id": "4dbe8836078cf2ce",
-          "coletado_em": "2026-02-24T20:56:34.407Z"
+          "coletado_em": "2026-02-24T20:56:34.407Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4559,7 +5769,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "agentic_rag_embedding_gemma",
           "id": "7be98af16b98201d",
-          "coletado_em": "2026-02-24T20:56:34.408Z"
+          "coletado_em": "2026-02-24T20:56:34.408Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4584,7 +5799,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "agentic_rag_gpt5",
           "id": "39d5c90d8264746e",
-          "coletado_em": "2026-02-24T20:56:34.408Z"
+          "coletado_em": "2026-02-24T20:56:34.408Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4607,7 +5827,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "agentic_rag_math_agent",
           "id": "985ccfd1a0bd2449",
-          "coletado_em": "2026-02-24T20:56:34.408Z"
+          "coletado_em": "2026-02-24T20:56:34.408Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -4628,7 +5853,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "agentic_rag_with_reasoning",
           "id": "bfab1816c65e9767",
-          "coletado_em": "2026-02-24T20:56:34.409Z"
+          "coletado_em": "2026-02-24T20:56:34.409Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -4651,7 +5881,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai_blog_search",
           "id": "e7c89e36def10222",
-          "coletado_em": "2026-02-24T20:56:34.409Z"
+          "coletado_em": "2026-02-24T20:56:34.409Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4677,7 +5912,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "autonomous_rag",
           "id": "8a4297b3ba407ed1",
-          "coletado_em": "2026-02-24T20:56:34.409Z"
+          "coletado_em": "2026-02-24T20:56:34.409Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4702,7 +5942,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "contextualai_rag_agent",
           "id": "4750d4d19de6ec84",
-          "coletado_em": "2026-02-24T20:56:34.409Z"
+          "coletado_em": "2026-02-24T20:56:34.409Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -4725,7 +5970,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "corrective_rag",
           "id": "252a484676c9ce03",
-          "coletado_em": "2026-02-24T20:56:34.409Z"
+          "coletado_em": "2026-02-24T20:56:34.409Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4748,7 +5998,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "deepseek_local_rag_agent",
           "id": "8537e4afa7f7a7c2",
-          "coletado_em": "2026-02-24T20:56:34.410Z"
+          "coletado_em": "2026-02-24T20:56:34.410Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -4769,7 +6024,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "gemini_agentic_rag",
           "id": "b9425cc517b4d9ea",
-          "coletado_em": "2026-02-24T20:56:34.410Z"
+          "coletado_em": "2026-02-24T20:56:34.410Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -4794,7 +6054,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "hybrid_search_rag",
           "id": "3db0ef4296b3419a",
-          "coletado_em": "2026-02-24T20:56:34.410Z"
+          "coletado_em": "2026-02-24T20:56:34.410Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4820,7 +6085,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "llama3.1_local_rag",
           "id": "d91f662a4363bb9f",
-          "coletado_em": "2026-02-24T20:56:34.411Z"
+          "coletado_em": "2026-02-24T20:56:34.411Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -4845,7 +6115,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "local_hybrid_search_rag",
           "id": "c00119611c9e8727",
-          "coletado_em": "2026-02-24T20:56:34.411Z"
+          "coletado_em": "2026-02-24T20:56:34.411Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4875,7 +6150,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "local_rag_agent",
           "id": "f22bbfae041043e5",
-          "coletado_em": "2026-02-24T20:56:34.411Z"
+          "coletado_em": "2026-02-24T20:56:34.411Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4903,7 +6183,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "qwen_local_rag",
           "id": "c45676efb0f59a34",
-          "coletado_em": "2026-02-24T20:56:34.411Z"
+          "coletado_em": "2026-02-24T20:56:34.411Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4930,7 +6215,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "rag-as-a-service",
           "id": "02268e79b0bb7f11",
-          "coletado_em": "2026-02-24T20:56:34.412Z"
+          "coletado_em": "2026-02-24T20:56:34.412Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4956,7 +6246,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "rag_agent_cohere",
           "id": "a00f96819555194f",
-          "coletado_em": "2026-02-24T20:56:34.412Z"
+          "coletado_em": "2026-02-24T20:56:34.412Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -4983,7 +6278,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "rag_chain",
           "id": "347ea0e8637ce646",
-          "coletado_em": "2026-02-24T20:56:34.413Z"
+          "coletado_em": "2026-02-24T20:56:34.413Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -5008,7 +6308,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "rag_database_routing",
           "id": "f87a4bec29269e90",
-          "coletado_em": "2026-02-24T20:56:34.413Z"
+          "coletado_em": "2026-02-24T20:56:34.413Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -5033,7 +6338,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "vision_rag",
           "id": "7ebf24bdf0b906b1",
-          "coletado_em": "2026-02-24T20:56:34.413Z"
+          "coletado_em": "2026-02-24T20:56:34.413Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -5058,7 +6368,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai_blog_to_podcast_agent",
           "id": "33807ffe40325a25",
-          "coletado_em": "2026-02-24T20:56:34.414Z"
+          "coletado_em": "2026-02-24T20:56:34.414Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -5083,7 +6398,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai_breakup_recovery_agent",
           "id": "2c516be922157300",
-          "coletado_em": "2026-02-24T20:56:34.414Z"
+          "coletado_em": "2026-02-24T20:56:34.414Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -5106,7 +6426,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai_data_analysis_agent",
           "id": "dd4f0f0dfe4040df",
-          "coletado_em": "2026-02-24T20:56:34.414Z"
+          "coletado_em": "2026-02-24T20:56:34.414Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5127,7 +6452,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai_data_visualisation_agent",
           "id": "c97627db772e67a8",
-          "coletado_em": "2026-02-24T20:56:34.414Z"
+          "coletado_em": "2026-02-24T20:56:34.414Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5148,7 +6478,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai_medical_imaging_agent",
           "id": "9793dda878251ec3",
-          "coletado_em": "2026-02-24T20:56:34.415Z"
+          "coletado_em": "2026-02-24T20:56:34.415Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5171,7 +6506,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai_meme_generator_agent_browseruse",
           "id": "f88e038ec0c659be",
-          "coletado_em": "2026-02-24T20:56:34.415Z"
+          "coletado_em": "2026-02-24T20:56:34.415Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -5196,7 +6536,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai_music_generator_agent",
           "id": "1f86c2a1b2778c09",
-          "coletado_em": "2026-02-24T20:56:34.415Z"
+          "coletado_em": "2026-02-24T20:56:34.415Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -5221,7 +6566,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai_reasoning_agent",
           "id": "ee3b6e59feae7969",
-          "coletado_em": "2026-02-24T20:56:34.415Z"
+          "coletado_em": "2026-02-24T20:56:34.415Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -5246,7 +6596,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai_startup_trend_analysis_agent",
           "id": "b680c0f8c552d4dc",
-          "coletado_em": "2026-02-24T20:56:34.416Z"
+          "coletado_em": "2026-02-24T20:56:34.416Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -5269,7 +6624,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "local_news_agent_openai_swarm",
           "id": "d6d822cc66fb5cb9",
-          "coletado_em": "2026-02-24T20:56:34.416Z"
+          "coletado_em": "2026-02-24T20:56:34.416Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5290,7 +6650,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "multimodal_ai_agent",
           "id": "b79ad11c24258667",
-          "coletado_em": "2026-02-24T20:56:34.416Z"
+          "coletado_em": "2026-02-24T20:56:34.416Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5311,7 +6676,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "opeani_research_agent",
           "id": "e2608ece9f2aa931",
-          "coletado_em": "2026-02-24T20:56:34.417Z"
+          "coletado_em": "2026-02-24T20:56:34.417Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5332,7 +6702,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "web_scrapping_ai_agent",
           "id": "aa4a3751d64f4afd",
-          "coletado_em": "2026-02-24T20:56:34.417Z"
+          "coletado_em": "2026-02-24T20:56:34.417Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5355,7 +6730,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "xai_finance_agent",
           "id": "a7c244063d88d983",
-          "coletado_em": "2026-02-24T20:56:34.417Z"
+          "coletado_em": "2026-02-24T20:56:34.417Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [
@@ -5378,7 +6758,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "ai_audio_tour_agent",
           "id": "70477c04f21f0a59",
-          "coletado_em": "2026-02-24T20:56:34.417Z"
+          "coletado_em": "2026-02-24T20:56:34.417Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5399,7 +6784,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "customer_support_voice_agent",
           "id": "f378b64ed375feae",
-          "coletado_em": "2026-02-24T20:56:34.418Z"
+          "coletado_em": "2026-02-24T20:56:34.418Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5420,7 +6810,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "voice_rag_openaisdk",
           "id": "6519f3447903fa56",
-          "coletado_em": "2026-02-24T20:56:34.419Z"
+          "coletado_em": "2026-02-24T20:56:34.419Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5443,7 +6838,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "nex870",
           "id": "5c6fcf31b10265e9",
-          "coletado_em": "2026-02-24T20:56:34.532Z"
+          "coletado_em": "2026-02-24T20:56:34.532Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": true,
+          "peso_base": 1,
+          "peso_final": 1
         }
       ],
       "stack": [
@@ -5466,7 +6866,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/copilot-proxy",
           "id": "0b3bdfd0c957e6a3",
-          "coletado_em": "2026-02-24T20:56:35.163Z"
+          "coletado_em": "2026-02-24T20:56:35.163Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5489,7 +6894,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/memory-lancedb",
           "id": "1a6d5d728a99c692",
-          "coletado_em": "2026-02-24T20:56:35.170Z"
+          "coletado_em": "2026-02-24T20:56:35.170Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 1,
+          "peso_final": 0.3
         }
       ],
       "stack": [
@@ -5512,7 +6922,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/minimax-portal-auth",
           "id": "1613021e7cdfcdc1",
-          "coletado_em": "2026-02-24T20:56:35.170Z"
+          "coletado_em": "2026-02-24T20:56:35.170Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5533,7 +6948,12 @@
           "nivel_complexidade": "baixo",
           "projeto": "@openclaw/open-prose",
           "id": "fdd63fb9bea10d00",
-          "coletado_em": "2026-02-24T20:56:35.173Z"
+          "coletado_em": "2026-02-24T20:56:35.173Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.2,
+          "peso_final": 0.06
         }
       ],
       "stack": [],
@@ -5556,7 +6976,12 @@
           "nivel_complexidade": "medio",
           "projeto": "@openclaw/signal",
           "id": "a2d99a747f61c754",
-          "coletado_em": "2026-02-24T20:56:35.174Z"
+          "coletado_em": "2026-02-24T20:56:35.174Z",
+          "origem": "local",
+          "framework_generated": false,
+          "autoria_verificada": false,
+          "peso_base": 0.9,
+          "peso_final": 0.27
         }
       ],
       "stack": [

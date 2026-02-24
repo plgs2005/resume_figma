@@ -15,6 +15,7 @@ import type {
   JobDescription,
   SKEConfig,
   PipelineResult,
+  KnowledgeTruth,
 } from './types.js';
 import { EvidenceCollector } from './collector.js';
 import { EvidenceNormalizer } from './normalizer.js';
@@ -22,6 +23,7 @@ import { SkillExtractor } from './extractor.js';
 import { AnswerEngine } from './answer-engine.js';
 import { PromptExporter } from './prompt-export.js';
 import type { PromptExportOptions, ExportedPrompt } from './prompt-export.js';
+import { AuthorshipVerifier } from './authorship.js';
 import { loadConfig, persistJson, safeReadJson, log, now, resolveGitHubConfig } from './utils.js';
 
 export class SelfKnowledgeEngine {
@@ -29,18 +31,21 @@ export class SelfKnowledgeEngine {
   private collector: EvidenceCollector;
   private normalizer: EvidenceNormalizer;
   private extractor: SkillExtractor;
+  private authorshipVerifier: AuthorshipVerifier;
   private answerEngine: AnswerEngine | null = null;
 
   // Cached data
   private rawEvidences: Evidence[] = [];
   private normalizedBase: NormalizedBase | null = null;
   private skillBase: SkillBase | null = null;
+  private knowledgeTruth: KnowledgeTruth | null = null;
 
   constructor(configPath?: string) {
     this.config = resolveGitHubConfig(loadConfig(configPath));
     this.collector = new EvidenceCollector(this.config);
     this.normalizer = new EvidenceNormalizer();
     this.extractor = new SkillExtractor();
+    this.authorshipVerifier = new AuthorshipVerifier(this.config.github_username);
   }
 
   // ─── Individual Pipeline Stages ──────────────────────────────────
@@ -54,6 +59,10 @@ export class SelfKnowledgeEngine {
 
     try {
       this.rawEvidences = await this.collector.collect();
+
+      // Processar autoria e pesos em todas as evidências
+      this.rawEvidences = this.authorshipVerifier.processEvidences(this.rawEvidences);
+
       persistJson(this.getOutputPath('raw-evidences.json'), this.rawEvidences);
       log.ok(`Evidências salvas em: ${this.getOutputPath('raw-evidences.json')}`);
     } catch (err) {
@@ -148,6 +157,121 @@ export class SelfKnowledgeEngine {
   }
 
   /**
+   * Fase 4: Geração do knowledge-truth.json
+   */
+  async generateTruth(): Promise<PipelineResult> {
+    const start = Date.now();
+    const errors: string[] = [];
+
+    try {
+      // Carregar dados se não estiverem em memória
+      if (!this.normalizedBase) {
+        const cached = safeReadJson<NormalizedBase>(this.getOutputPath('normalized-base.json'));
+        if (cached) this.normalizedBase = cached;
+        else throw new Error('Sem base normalizada. Execute "normalize" primeiro.');
+      }
+      if (!this.skillBase) {
+        const cached = safeReadJson<SkillBase>(this.getOutputPath('skill-base.json'));
+        if (cached) this.skillBase = cached;
+        else throw new Error('Sem skills. Execute "extract" primeiro.');
+      }
+
+      const allEvidences = this.normalizedBase.projetos.flatMap(p => p.evidencias);
+
+      // Classificar cada skill
+      const skillsValidadas: KnowledgeTruth['skills_validadas'] = [];
+      const skillsInferidas: KnowledgeTruth['skills_inferidas'] = [];
+      const skillsDescartadas: KnowledgeTruth['skills_descartadas'] = [];
+
+      for (const skill of this.skillBase.skills) {
+        // Pegar evidências desta skill
+        const evIds = new Set(skill.evidencias_ids);
+        const skillEvs = allEvidences.filter(e => evIds.has(e.id));
+
+        const autorais = skillEvs.filter(e => e.autoria_verificada === true).length;
+        const framework = skillEvs.filter(e => e.framework_generated === true).length;
+        const total = skillEvs.length;
+
+        // Score = soma dos peso_final
+        const score = skillEvs.reduce((s, e) => s + (e.peso_final ?? 0), 0);
+
+        // Classificar nível pelo score
+        let nivel = skill.nivel;
+        if (score >= 15) nivel = 'dominio-solido';
+        else if (score >= 8) nivel = 'experiencia-avancada';
+        else if (score >= 3) nivel = 'experiencia-pratica';
+        else nivel = 'conhecimento-basico';
+
+        // Regra: não classificar como avançada+ se nenhuma evidência tem autoria_verificada
+        if (autorais === 0 && (nivel === 'experiencia-avancada' || nivel === 'dominio-solido')) {
+          nivel = 'experiencia-pratica';
+        }
+
+        const validatedSkill = {
+          nome: skill.nome,
+          categoria: skill.categoria,
+          nivel,
+          score: Math.round(score * 100) / 100,
+          evidencias_autorais: autorais,
+          evidencias_framework: framework,
+          evidencias_total: total,
+        };
+
+        // Classificar em buckets
+        if (framework === total && total > 0) {
+          skillsDescartadas.push(validatedSkill);
+        } else if (autorais > 0) {
+          skillsValidadas.push(validatedSkill);
+        } else {
+          skillsInferidas.push(validatedSkill);
+        }
+      }
+
+      // Ordenar por score desc
+      skillsValidadas.sort((a, b) => b.score - a.score);
+      skillsInferidas.sort((a, b) => b.score - a.score);
+      skillsDescartadas.sort((a, b) => b.score - a.score);
+
+      const totalAutorais = allEvidences.filter(e => e.autoria_verificada === true).length;
+      const totalFramework = allEvidences.filter(e => e.framework_generated === true).length;
+
+      this.knowledgeTruth = {
+        skills_validadas: skillsValidadas,
+        skills_inferidas: skillsInferidas,
+        skills_descartadas: skillsDescartadas,
+        total_evidencias_autorais: totalAutorais,
+        total_evidencias_framework: totalFramework,
+        ultima_atualizacao: now(),
+      };
+
+      persistJson(this.getOutputPath('knowledge-truth.json'), this.knowledgeTruth);
+      log.ok(`Knowledge truth salvo em: ${this.getOutputPath('knowledge-truth.json')}`);
+
+      // Log resumo
+      log.section('KNOWLEDGE TRUTH — RESUMO');
+      log.info(`Skills validadas (autoria confirmada): ${skillsValidadas.length}`);
+      log.info(`Skills inferidas (sem autoria):        ${skillsInferidas.length}`);
+      log.info(`Skills descartadas (framework):        ${skillsDescartadas.length}`);
+      log.info(`Evidências autorais: ${totalAutorais}/${allEvidences.length}`);
+      log.info(`Evidências framework: ${totalFramework}/${allEvidences.length}`);
+
+    } catch (err) {
+      errors.push(String(err));
+      log.error(`Erro na geração do knowledge-truth: ${err}`);
+    }
+
+    return {
+      fase: 'truth',
+      sucesso: errors.length === 0,
+      duracao_ms: Date.now() - start,
+      resumo: this.knowledgeTruth
+        ? `${this.knowledgeTruth.skills_validadas.length} validadas, ${this.knowledgeTruth.skills_inferidas.length} inferidas, ${this.knowledgeTruth.skills_descartadas.length} descartadas.`
+        : 'Falha na geração do truth.',
+      erros: errors,
+    };
+  }
+
+  /**
    * Pipeline completo: collect → normalize → extract
    */
   async fullPipeline(): Promise<PipelineResult[]> {
@@ -163,6 +287,9 @@ export class SelfKnowledgeEngine {
     if (!results[results.length - 1].sucesso) return results;
 
     results.push(await this.extract());
+
+    // Gerar knowledge-truth.json
+    results.push(await this.generateTruth());
 
     const totalMs = Date.now() - startTotal;
     log.section(`PIPELINE COMPLETO — ${totalMs}ms`);

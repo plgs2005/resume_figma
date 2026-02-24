@@ -1,6 +1,6 @@
 {
     "name": "@resume/self-knowledge-engine",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "Agente factual para construção e manutenção de base de conhecimento técnico do candidato — baseado exclusivamente em evidências rastreáveis.",
     "type": "module",
     "main": "./dist/index.js",

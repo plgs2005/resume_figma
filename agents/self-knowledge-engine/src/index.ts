@@ -11,6 +11,7 @@ export { EvidenceNormalizer } from './normalizer.js';
 export { SkillExtractor } from './extractor.js';
 export { AnswerEngine } from './answer-engine.js';
 export { PromptExporter } from './prompt-export.js';
+export { AuthorshipVerifier, applyWeightsOnly } from './authorship.js';
 
 export type {
   PromptFormat,
@@ -35,4 +36,7 @@ export type {
   JobMatchResult,
   SKEConfig,
   PipelineResult,
+  EvidenceOrigin,
+  KnowledgeTruth,
+  ValidatedSkill,
 } from './types.js';

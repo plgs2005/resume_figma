@@ -1,0 +1,751 @@
+{
+  "skills_validadas": [
+    {
+      "nome": "Testes Automatizados",
+      "categoria": "testes",
+      "nivel": "dominio-solido",
+      "nivel_anterior": "dominio-solido",
+      "score": 26.91,
+      "evidencias_autorais": 23,
+      "evidencias_framework": 11,
+      "evidencias_total": 78
+    },
+    {
+      "nome": "CI/CD",
+      "categoria": "devops",
+      "nivel": "dominio-solido",
+      "nivel_anterior": "dominio-solido",
+      "score": 23.26,
+      "evidencias_autorais": 29,
+      "evidencias_framework": 10,
+      "evidencias_total": 40
+    },
+    {
+      "nome": "CI/CD Pipeline",
+      "categoria": "devops",
+      "nivel": "dominio-solido",
+      "nivel_anterior": "dominio-solido",
+      "score": 23.26,
+      "evidencias_autorais": 29,
+      "evidencias_framework": 10,
+      "evidencias_total": 40
+    },
+    {
+      "nome": "Git",
+      "categoria": "fundamentos",
+      "nivel": "dominio-solido",
+      "nivel_anterior": "dominio-solido",
+      "score": 19,
+      "evidencias_autorais": 19,
+      "evidencias_framework": 4,
+      "evidencias_total": 23
+    },
+    {
+      "nome": "Organização de Código",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-avancada",
+      "nivel_anterior": "dominio-solido",
+      "score": 12.06,
+      "evidencias_autorais": 5,
+      "evidencias_framework": 0,
+      "evidencias_total": 33
+    },
+    {
+      "nome": "Conventional Commits",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-avancada",
+      "nivel_anterior": "dominio-solido",
+      "score": 12,
+      "evidencias_autorais": 12,
+      "evidencias_framework": 2,
+      "evidencias_total": 14
+    },
+    {
+      "nome": "Refatoração Estrutural",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-avancada",
+      "nivel_anterior": "dominio-solido",
+      "score": 12,
+      "evidencias_autorais": 12,
+      "evidencias_framework": 2,
+      "evidencias_total": 14
+    },
+    {
+      "nome": "GitHub Actions",
+      "categoria": "devops",
+      "nivel": "experiencia-avancada",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 10.4,
+      "evidencias_autorais": 13,
+      "evidencias_framework": 6,
+      "evidencias_total": 19
+    },
+    {
+      "nome": "Testes",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-avancada",
+      "nivel_anterior": "dominio-solido",
+      "score": 9.67,
+      "evidencias_autorais": 15,
+      "evidencias_framework": 3,
+      "evidencias_total": 21
+    },
+    {
+      "nome": "Python",
+      "categoria": "backend",
+      "nivel": "experiencia-avancada",
+      "nivel_anterior": "dominio-solido",
+      "score": 9.64,
+      "evidencias_autorais": 13,
+      "evidencias_framework": 4,
+      "evidencias_total": 41
+    },
+    {
+      "nome": "JavaScript",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-avancada",
+      "nivel_anterior": "dominio-solido",
+      "score": 9,
+      "evidencias_autorais": 9,
+      "evidencias_framework": 2,
+      "evidencias_total": 11
+    },
+    {
+      "nome": "TypeScript",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-avancada",
+      "nivel_anterior": "dominio-solido",
+      "score": 8.95,
+      "evidencias_autorais": 16,
+      "evidencias_framework": 0,
+      "evidencias_total": 18
+    },
+    {
+      "nome": "Docker",
+      "categoria": "devops",
+      "nivel": "experiencia-avancada",
+      "nivel_anterior": "dominio-solido",
+      "score": 8.14,
+      "evidencias_autorais": 13,
+      "evidencias_framework": 3,
+      "evidencias_total": 25
+    },
+    {
+      "nome": "Containerização",
+      "categoria": "devops",
+      "nivel": "experiencia-avancada",
+      "nivel_anterior": "dominio-solido",
+      "score": 8.14,
+      "evidencias_autorais": 13,
+      "evidencias_framework": 3,
+      "evidencias_total": 25
+    },
+    {
+      "nome": "Testes em CI",
+      "categoria": "testes",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 8,
+      "evidencias_autorais": 10,
+      "evidencias_framework": 6,
+      "evidencias_total": 16
+    },
+    {
+      "nome": "React",
+      "categoria": "frontend",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "dominio-solido",
+      "score": 6.92,
+      "evidencias_autorais": 10,
+      "evidencias_framework": 1,
+      "evidencias_total": 23
+    },
+    {
+      "nome": "Tooling",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "dominio-solido",
+      "score": 6.84,
+      "evidencias_autorais": 7,
+      "evidencias_framework": 4,
+      "evidencias_total": 13
+    },
+    {
+      "nome": "Documentação",
+      "categoria": "produto",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "dominio-solido",
+      "score": 6.3,
+      "evidencias_autorais": 7,
+      "evidencias_framework": 2,
+      "evidencias_total": 9
+    },
+    {
+      "nome": "Documentação Técnica",
+      "categoria": "produto",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "dominio-solido",
+      "score": 6.3,
+      "evidencias_autorais": 7,
+      "evidencias_framework": 2,
+      "evidencias_total": 9
+    },
+    {
+      "nome": "Design System",
+      "categoria": "frontend",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "dominio-solido",
+      "score": 5.28,
+      "evidencias_autorais": 5,
+      "evidencias_framework": 3,
+      "evidencias_total": 16
+    },
+    {
+      "nome": "Environment Config",
+      "categoria": "seguranca",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 4.77,
+      "evidencias_autorais": 5,
+      "evidencias_framework": 2,
+      "evidencias_total": 8
+    },
+    {
+      "nome": "Microsserviços",
+      "categoria": "arquitetura",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 4.66,
+      "evidencias_autorais": 6,
+      "evidencias_framework": 3,
+      "evidencias_total": 10
+    },
+    {
+      "nome": "Docker Compose",
+      "categoria": "devops",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 4.6,
+      "evidencias_autorais": 6,
+      "evidencias_framework": 2,
+      "evidencias_total": 8
+    },
+    {
+      "nome": "Componentização",
+      "categoria": "frontend",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 4.59,
+      "evidencias_autorais": 3,
+      "evidencias_framework": 1,
+      "evidencias_total": 11
+    },
+    {
+      "nome": "Refatoração",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 4,
+      "evidencias_autorais": 4,
+      "evidencias_framework": 1,
+      "evidencias_total": 5
+    },
+    {
+      "nome": "Performance",
+      "categoria": "performance",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 4,
+      "evidencias_autorais": 4,
+      "evidencias_framework": 0,
+      "evidencias_total": 4
+    },
+    {
+      "nome": "TypeScript/React",
+      "categoria": "frontend",
+      "nivel": "experiencia-pratica",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 3,
+      "evidencias_autorais": 3,
+      "evidencias_framework": 0,
+      "evidencias_total": 3
+    },
+    {
+      "nome": "Build Pipeline",
+      "categoria": "devops",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "dominio-solido",
+      "score": 2.76,
+      "evidencias_autorais": 8,
+      "evidencias_framework": 2,
+      "evidencias_total": 14
+    },
+    {
+      "nome": "Docker em CI",
+      "categoria": "devops",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 2.4,
+      "evidencias_autorais": 3,
+      "evidencias_framework": 0,
+      "evidencias_total": 3
+    },
+    {
+      "nome": "Shell",
+      "categoria": "fundamentos",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 2,
+      "evidencias_autorais": 2,
+      "evidencias_framework": 1,
+      "evidencias_total": 3
+    },
+    {
+      "nome": "Node.js",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "dominio-solido",
+      "score": 1.89,
+      "evidencias_autorais": 7,
+      "evidencias_framework": 1,
+      "evidencias_total": 14
+    },
+    {
+      "nome": "Bundler",
+      "categoria": "frontend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 1.68,
+      "evidencias_autorais": 5,
+      "evidencias_framework": 2,
+      "evidencias_total": 9
+    },
+    {
+      "nome": "Database Migrations",
+      "categoria": "banco-de-dados",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 1.67,
+      "evidencias_autorais": 2,
+      "evidencias_framework": 3,
+      "evidencias_total": 6
+    },
+    {
+      "nome": "Linting em CI",
+      "categoria": "fundamentos",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 1.6,
+      "evidencias_autorais": 2,
+      "evidencias_framework": 2,
+      "evidencias_total": 4
+    },
+    {
+      "nome": "Deploy Automatizado",
+      "categoria": "devops",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 1.6,
+      "evidencias_autorais": 2,
+      "evidencias_framework": 0,
+      "evidencias_total": 2
+    },
+    {
+      "nome": "Jest",
+      "categoria": "testes",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 1.59,
+      "evidencias_autorais": 5,
+      "evidencias_framework": 0,
+      "evidencias_total": 6
+    },
+    {
+      "nome": "MySQL",
+      "categoria": "banco-de-dados",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 1.46,
+      "evidencias_autorais": 2,
+      "evidencias_framework": 2,
+      "evidencias_total": 5
+    },
+    {
+      "nome": "Zod",
+      "categoria": "fundamentos",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "dominio-solido",
+      "score": 1.44,
+      "evidencias_autorais": 3,
+      "evidencias_framework": 0,
+      "evidencias_total": 9
+    },
+    {
+      "nome": "Validação",
+      "categoria": "fundamentos",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "dominio-solido",
+      "score": 1.44,
+      "evidencias_autorais": 3,
+      "evidencias_framework": 0,
+      "evidencias_total": 9
+    },
+    {
+      "nome": "Webpack",
+      "categoria": "frontend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 1.2,
+      "evidencias_autorais": 4,
+      "evidencias_framework": 0,
+      "evidencias_total": 4
+    },
+    {
+      "nome": "Multi-stage Build",
+      "categoria": "performance",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 1.12,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 3
+    },
+    {
+      "nome": "Swift",
+      "categoria": "fundamentos",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 1,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "Kotlin",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 1,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "Go",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 1,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "SQL",
+      "categoria": "banco-de-dados",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 1,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "Tailwind CSS",
+      "categoria": "frontend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 0.69,
+      "evidencias_autorais": 2,
+      "evidencias_framework": 2,
+      "evidencias_total": 5
+    },
+    {
+      "nome": "CSS",
+      "categoria": "frontend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 0.69,
+      "evidencias_autorais": 2,
+      "evidencias_framework": 2,
+      "evidencias_total": 5
+    },
+    {
+      "nome": "Playwright",
+      "categoria": "testes",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0.69,
+      "evidencias_autorais": 2,
+      "evidencias_framework": 0,
+      "evidencias_total": 3
+    },
+    {
+      "nome": "E2E",
+      "categoria": "testes",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0.69,
+      "evidencias_autorais": 2,
+      "evidencias_framework": 0,
+      "evidencias_total": 3
+    },
+    {
+      "nome": "APIs RESTful",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 0.65,
+      "evidencias_autorais": 2,
+      "evidencias_framework": 3,
+      "evidencias_total": 7
+    },
+    {
+      "nome": "Linting",
+      "categoria": "fundamentos",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 0.6,
+      "evidencias_autorais": 2,
+      "evidencias_framework": 0,
+      "evidencias_total": 2
+    },
+    {
+      "nome": "Vite",
+      "categoria": "frontend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 0.48,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 2,
+      "evidencias_total": 5
+    },
+    {
+      "nome": "Vitest",
+      "categoria": "testes",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 0.48,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 3
+    },
+    {
+      "nome": "PHP",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 0.46,
+      "evidencias_autorais": 2,
+      "evidencias_framework": 10,
+      "evidencias_total": 13
+    },
+    {
+      "nome": "HTTP Client",
+      "categoria": "integracao",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0.39,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 2,
+      "evidencias_total": 4
+    },
+    {
+      "nome": "Express.js",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0.39,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 2
+    },
+    {
+      "nome": "Next.js",
+      "categoria": "frontend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0.3,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "SSR",
+      "categoria": "frontend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0.3,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "Django",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "conhecimento-basico",
+      "score": 0.2,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "Redis",
+      "categoria": "banco-de-dados",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "conhecimento-basico",
+      "score": 0.2,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "REST API",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "conhecimento-basico",
+      "score": 0.2,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "Estratégias de Cache",
+      "categoria": "performance",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "conhecimento-basico",
+      "score": 0.2,
+      "evidencias_autorais": 1,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    }
+  ],
+  "skills_inferidas": [
+    {
+      "nome": "AWS",
+      "categoria": "devops",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-avancada",
+      "score": 0.36,
+      "evidencias_autorais": 0,
+      "evidencias_framework": 0,
+      "evidencias_total": 6
+    },
+    {
+      "nome": "Migrations",
+      "categoria": "banco-de-dados",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0.27,
+      "evidencias_autorais": 0,
+      "evidencias_framework": 2,
+      "evidencias_total": 3
+    },
+    {
+      "nome": "PostgreSQL",
+      "categoria": "banco-de-dados",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0.18,
+      "evidencias_autorais": 0,
+      "evidencias_framework": 0,
+      "evidencias_total": 3
+    },
+    {
+      "nome": "React Router",
+      "categoria": "frontend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0.09,
+      "evidencias_autorais": 0,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "SPA",
+      "categoria": "frontend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0.09,
+      "evidencias_autorais": 0,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "Laravel",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0.06,
+      "evidencias_autorais": 0,
+      "evidencias_framework": 3,
+      "evidencias_total": 4
+    },
+    {
+      "nome": "GraphQL",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "conhecimento-basico",
+      "score": 0.06,
+      "evidencias_autorais": 0,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "GCP",
+      "categoria": "devops",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "conhecimento-basico",
+      "score": 0.06,
+      "evidencias_autorais": 0,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    },
+    {
+      "nome": "Microservices",
+      "categoria": "arquitetura",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "conhecimento-basico",
+      "score": 0.06,
+      "evidencias_autorais": 0,
+      "evidencias_framework": 0,
+      "evidencias_total": 1
+    }
+  ],
+  "skills_descartadas": [
+    {
+      "nome": "Symfony",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0,
+      "evidencias_autorais": 0,
+      "evidencias_framework": 2,
+      "evidencias_total": 2
+    },
+    {
+      "nome": "API Backend",
+      "categoria": "arquitetura",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "experiencia-pratica",
+      "score": 0,
+      "evidencias_autorais": 0,
+      "evidencias_framework": 2,
+      "evidencias_total": 2
+    },
+    {
+      "nome": "PHPUnit",
+      "categoria": "testes",
+      "nivel": "conhecimento-basico",
+      "nivel_anterior": "conhecimento-basico",
+      "score": 0,
+      "evidencias_autorais": 0,
+      "evidencias_framework": 1,
+      "evidencias_total": 1
+    }
+  ],
+  "total_evidencias_autorais": 97,
+  "total_evidencias_framework": 36,
+  "ultima_atualizacao": "2026-02-24T22:51:33.212Z"
+}
