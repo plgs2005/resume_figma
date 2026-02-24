@@ -58,6 +58,17 @@ Se algum comando falhar ou retornar versao inferior, instale/atualize antes de p
 
 Siga **todos os passos abaixo na ordem exata** para executar o projeto localmente.
 
+**6 passos sequenciais (resumo):**
+1. Clone do repositório
+2. Fix de imports do Figma Make
+3. Instalação de dependências
+4. Conferência de pacotes (`npm ls`)
+5. Dev server (`npm run dev`)
+6. Build de produção (`npm run build`)
+
+> **IMPORTANTE - Diferenca Figma Make vs Local:**
+> O projeto foi criado no Figma Make, que possui um runtime proprio. Para rodar localmente com Vite, sao necessarios arquivos de infraestrutura (`index.html`, `main.tsx`, `vite.config.ts`, `tsconfig.json`) que NAO existem dentro do Figma Make (ele os gera internamente). Alem disso, o Figma Make usa imports com versao embutida (ex: `from "lucide-react@0.487.0"`) que precisam ser convertidos para o formato npm padrao (ex: `from "lucide-react"`). O Passo 2 abaixo cuida dessa conversao.
+
 ### Passo 1 - Clonar o repositorio
 
 ```bash
@@ -82,7 +93,7 @@ O projeto foi desenvolvido no **Figma Make**, que usa uma sintaxe especial de im
 
 ```bash
 chmod +x scripts/fix-figma-imports.sh
-./scripts/fix-figma-imports.sh
+npm run fix-imports
 ```
 
 **No Windows (PowerShell):**
@@ -103,7 +114,7 @@ Get-ChildItem -Recurse -Include *.ts,*.tsx | ForEach-Object {
 
 ```bash
 chmod +x scripts/fix-figma-imports.sh
-./scripts/fix-figma-imports.sh
+npm run fix-imports
 ```
 
 **O que o script faz:**
@@ -253,8 +264,11 @@ Voce devera ver o curriculo completo renderizado com:
 Para gerar os arquivos otimizados para deploy:
 
 ```bash
-# Verificacao de tipos TypeScript + build Vite
+# Build rapido (recomendado - ignora erros TS em componentes nao utilizados)
 npm run build
+
+# OU build com verificacao de tipos (requer fix-imports executado antes)
+npm run build:strict
 ```
 
 **Saida esperada:**
@@ -285,9 +299,13 @@ Acesse `http://localhost:4173/` para visualizar a versao de producao.
 | Comando | Descricao |
 |---------|-----------|
 | `npm run dev` | Inicia servidor de desenvolvimento (Vite + HMR) na porta 5173 |
-| `npm run build` | Verifica tipos TypeScript + gera build de producao em `dist/` |
+| `npm run build` | Gera build de producao em `dist/` (sem verificacao de tipos) |
+| `npm run build:strict` | Verifica tipos TypeScript + gera build de producao |
 | `npm run preview` | Serve a build de producao localmente na porta 4173 |
 | `npm run type-check` | Verifica tipos TypeScript sem gerar build |
+| `npm run fix-imports` | Corrige imports versionados do Figma Make (Passo 2) |
+
+> **Nota sobre `build` vs `build:strict`:** O `npm run build` ignora erros de TypeScript nos 47 componentes Shadcn/ui que nao sao utilizados diretamente pelo curriculo. Use `npm run build:strict` apenas apos corrigir todos os imports com `npm run fix-imports`.
 
 ---
 
@@ -357,6 +375,11 @@ resume_figma/
 │   ├── DESIGN_SYSTEM.md             # Design system detalhado
 │   └── DEVELOPMENT.md               # Guia de desenvolvimento
 │
+├── ALIGNMENT_GUIDE.md               # Guia rápido de alinhamento
+├── SETUP_LOCAL.md                   # Setup local detalhado
+├── MAKE_VS_LOCAL.md                 # Comparação Make vs Local
+├── ARCHITECTURE_DIAGRAMS.md         # Diagramas de arquitetura
+├── COMMANDS.md                      # Comandos práticos
 ├── Attributions.md                  # Licencas de terceiros
 ├── CHANGELOG.md                     # Historico de alteracoes
 ├── PRINT_FIX_SUMMARY.md             # Documentacao do fix de impressao
@@ -381,7 +404,7 @@ resume_figma/
 | Biblioteca | Versao | Funcao |
 |-----------|--------|--------|
 | **Shadcn/ui** (Radix UI) | variadas | 47 componentes UI acessiveis |
-| **Lucide React** | 0.487.x | Icones (Mail, Phone, Download, Printer, etc.) |
+| **Assets do Figma (CDN)** | — | Ícones carregados por URL no `App.tsx` |
 | **class-variance-authority** | 0.7.x | Variantes de componentes |
 | **clsx** + **tailwind-merge** | 2.1.x / 2.6.x | Merge de classes CSS |
 
@@ -483,9 +506,53 @@ nvm use 20
 
 ---
 
+## Sugestoes para proximos passos
+
+1. **Fazer commit de todos os arquivos novos** no GitHub:
+  - `package.json`, `index.html`, `main.tsx`, `vite.config.ts`
+  - `tsconfig*.json`, `vite-env.d.ts`, `.gitignore`
+  - `scripts/fix-figma-imports.sh`
+  - `README.md` atualizado
+
+2. **Testar o fluxo completo localmente** apos o clone:
+  - `npm run fix-imports`
+  - `npm install`
+  - `npm run dev`
+  - `npm run build`
+
+3. **Manter o atalho `npm run fix-imports`** no `package.json`
+  - Ele ja existe e deve permanecer como padrao.
+
+---
+
 ## Documentacao Completa
 
-- **[Guidelines.md](guidelines/Guidelines.md)** - Documentacao tecnica completa
+### Guias de Alinhamento Make ↔ Local
+
+> **NOVO:** Guias especializados criados em 23/02/2026 para facilitar o setup e entendimento da diferenca entre o ambiente Figma Make e o repositorio local.
+
+- ⭐ **[ALIGNMENT_GUIDE.md](ALIGNMENT_GUIDE.md)** - **COMECE AQUI!** Resumo executivo de todos os guias
+- 📘 **[SETUP_LOCAL.md](SETUP_LOCAL.md)** - Guia completo de setup passo a passo
+  - Como os ícones são carregados (assets do Figma)
+  - Arquivos indispensáveis (Vite, TypeScript, CSS)
+  - Ajustes obrigatórios (fix-imports, install)
+  - CSS/Reset obrigatórios (globals.css)
+  - Troubleshooting
+- 📗 **[MAKE_VS_LOCAL.md](MAKE_VS_LOCAL.md)** - Comparação visual Make vs Local
+  - O que é idêntico vs diferente
+  - Checklist de validação
+- 📙 **[ARCHITECTURE_DIAGRAMS.md](ARCHITECTURE_DIAGRAMS.md)** - Diagramas de arquitetura
+  - Fluxo de ícones (Figma assets → DOM)
+  - Fluxo de estilos (Tailwind → Browser)
+  - HTML2PDF.js e Print API
+- 📕 **[COMMANDS.md](COMMANDS.md)** - Comandos práticos de terminal
+  - Setup inicial
+  - Desenvolvimento diário
+  - Troubleshooting
+
+### Documentação Técnica Original
+
+- **[Guidelines.md](guidelines/Guidelines.md)** - Documentacao tecnica completa (10k+ palavras)
   - Decisoes de arquitetura
   - Padroes de codigo (naming, estrutura, Tailwind)
   - Design system (cores, tipografia, espacamento)
