@@ -1,0 +1,625 @@
+{
+  "vaga": {
+    "titulo": "Senior Software Engineer / Tech Lead — Startup FinTech",
+    "requisitos": [
+      {
+        "nome": "React",
+        "obrigatorio": true
+      },
+      {
+        "nome": "TypeScript",
+        "obrigatorio": true
+      },
+      {
+        "nome": "Node.js",
+        "obrigatorio": true
+      },
+      {
+        "nome": "Express.js",
+        "obrigatorio": true
+      },
+      {
+        "nome": "PostgreSQL",
+        "obrigatorio": true
+      },
+      {
+        "nome": "Docker",
+        "obrigatorio": true
+      },
+      {
+        "nome": "CI/CD",
+        "obrigatorio": true
+      },
+      {
+        "nome": "REST API",
+        "obrigatorio": true
+      },
+      {
+        "nome": "Testes Automatizados",
+        "obrigatorio": true
+      },
+      {
+        "nome": "Git",
+        "obrigatorio": true
+      },
+      {
+        "nome": "Python",
+        "obrigatorio": true
+      },
+      {
+        "nome": "GraphQL",
+        "obrigatorio": true
+      },
+      {
+        "nome": "AWS",
+        "obrigatorio": true
+      },
+      {
+        "nome": "Kubernetes",
+        "obrigatorio": true
+      },
+      {
+        "nome": "Redis",
+        "obrigatorio": true
+      },
+      {
+        "nome": "Next.js",
+        "obrigatorio": true
+      },
+      {
+        "nome": "Terraform",
+        "obrigatorio": true
+      }
+    ],
+    "texto_original": "Senior Software Engineer / Tech Lead — Startup FinTech\n\nSobre a Vaga:\nEstamos procurando um Tech Lead para liderar nosso time de engenharia de produto.\n\nRequisitos Obrigatórios:\n- 5+ anos de experiência com TypeScript e React\n- Experiência sólida com Node.js e Express\n- PostgreSQL ou banco relacional\n- Docker e containerização\n- CI/CD pipelines (GitHub Actions)\n- REST APIs\n- Testes automatizados (Jest, Vitest ou similares)\n- Git e code review\n\nRequisitos Desejáveis:\n- Python para scripts e automação\n- GraphQL\n- AWS (ECS, Lambda, S3)\n- Kubernetes\n- Redis e caching\n- Next.js / SSR\n- Terraform / IaC\n- Arquitetura de microsserviços\n\nResponsabilidades:\n- Liderar equipe de 5-8 engenheiros\n- Definir arquitetura de microsserviços\n- Code review e mentoria técnica\n- Implementar e manter pipelines CI/CD\n- Garantir qualidade com testes automatizados\n- Documentação técnica\n\nStack Principal: TypeScript, React, Node.js, PostgreSQL, Docker\n"
+  },
+  "aderencia": 88,
+  "matches": [
+    {
+      "requisito": {
+        "nome": "React",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "React",
+        "categoria": "backend",
+        "nivel": "dominio-solido",
+        "padroes": [],
+        "frequencia": 13,
+        "profundidade": 100,
+        "evidencias_ids": [
+          "90fa71f2c13a7b5a",
+          "1ca5524449c6bd3d",
+          "8de966257e2815a3",
+          "c70dead6bd84a35b",
+          "b90db4e784b8c566",
+          "bfe19de940f39143",
+          "47e56910f9934249",
+          "83bb2f501bdcf106",
+          "735554dfede743f8",
+          "0ad684428de047b6",
+          "56c538e06aa63977",
+          "21a633ad6e3a599c",
+          "c4402f2bea8dd939",
+          "39c5c737db92b581",
+          "a363e00554cd91ed",
+          "10c8e7e4ef2012d6",
+          "d7a2b859a58a8231",
+          "33f0a5a277dbdb13",
+          "ed6165864f3d8ce5",
+          "372b2fe4f71bac2d",
+          "12bd7afeaff1a2ed",
+          "f490ec395c53887f",
+          "a00f96819555194f"
+        ],
+        "descricao": "React utilizado em 13 projeto(s). Profundidade técnica: 100/100."
+      },
+      "aderencia": 100
+    },
+    {
+      "requisito": {
+        "nome": "TypeScript",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "TypeScript",
+        "categoria": "backend",
+        "nivel": "dominio-solido",
+        "padroes": [],
+        "frequencia": 7,
+        "profundidade": 100,
+        "evidencias_ids": [
+          "168f8e12ea9c8e2b",
+          "be289891ee81f864",
+          "f2a2586da5355e55",
+          "1ca5524449c6bd3d",
+          "d43273d247e4f3b4",
+          "8de966257e2815a3",
+          "c70dead6bd84a35b",
+          "b90db4e784b8c566",
+          "9db553d70e02740c",
+          "c01d0c0f4f43a199",
+          "735554dfede743f8",
+          "0ad684428de047b6",
+          "d13188b140242158",
+          "6434d47ed4093287",
+          "21a633ad6e3a599c",
+          "85c67b40d725357f",
+          "15ade75f99615b67",
+          "33f0a5a277dbdb13"
+        ],
+        "descricao": "TypeScript utilizado em 7 projeto(s). Profundidade técnica: 100/100."
+      },
+      "aderencia": 100
+    },
+    {
+      "requisito": {
+        "nome": "Node.js",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "Node.js",
+        "categoria": "frontend",
+        "nivel": "dominio-solido",
+        "padroes": [],
+        "frequencia": 14,
+        "profundidade": 100,
+        "evidencias_ids": [
+          "42aec9e13e3202a5",
+          "168f8e12ea9c8e2b",
+          "34d95b2a61d1d6cc",
+          "86f1faa9d74e1df8",
+          "f6d4e734b3667df0",
+          "0ad684428de047b6",
+          "2a3b150ccaed0751",
+          "33f0a5a277dbdb13",
+          "d242f7ed7639e639",
+          "f1535d8c31969505",
+          "986e7623ec81cbc8",
+          "5b194087bbd11a20",
+          "4c1f924a22a0ceae",
+          "fc884350d28f35bb"
+        ],
+        "descricao": "Node.js utilizado em 14 projeto(s). Profundidade técnica: 100/100."
+      },
+      "aderencia": 100
+    },
+    {
+      "requisito": {
+        "nome": "Express.js",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "Express.js",
+        "categoria": "backend",
+        "nivel": "experiencia-pratica",
+        "padroes": [],
+        "frequencia": 2,
+        "profundidade": 46,
+        "evidencias_ids": [
+          "168f8e12ea9c8e2b",
+          "f1535d8c31969505"
+        ],
+        "descricao": "Express.js utilizado em 2 projeto(s). Profundidade técnica: 46/100."
+      },
+      "aderencia": 75
+    },
+    {
+      "requisito": {
+        "nome": "PostgreSQL",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "PostgreSQL",
+        "categoria": "devops",
+        "nivel": "experiencia-pratica",
+        "padroes": [],
+        "frequencia": 3,
+        "profundidade": 44,
+        "evidencias_ids": [
+          "8a4297b3ba407ed1",
+          "3db0ef4296b3419a",
+          "c00119611c9e8727"
+        ],
+        "descricao": "PostgreSQL utilizado em 3 projeto(s). Profundidade técnica: 44/100."
+      },
+      "aderencia": 74
+    },
+    {
+      "requisito": {
+        "nome": "Docker",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "Docker",
+        "categoria": "frontend",
+        "nivel": "dominio-solido",
+        "padroes": [],
+        "frequencia": 13,
+        "profundidade": 100,
+        "evidencias_ids": [
+          "e6f23139c774d4bd",
+          "8a541066d6054dd0",
+          "176b383cb0b68640",
+          "52d6288d26a88e06",
+          "69ada2f4a8a11819",
+          "be289891ee81f864",
+          "74e7f962a512bcd1",
+          "2eee8340b41f7c9f",
+          "3e3d725b1672e3de",
+          "64f7a5c59fc74d9c",
+          "246b92f373456ab0",
+          "93c1e5f64b0b896f",
+          "86f1faa9d74e1df8",
+          "3b448a16efae5b24",
+          "f6d4e734b3667df0",
+          "73d2f9cad9dc2722",
+          "33f0a5a277dbdb13",
+          "6f510ac16e1b3c35",
+          "855222ed30a1ddec",
+          "4beeb320ea5f98c7",
+          "9d744e0116e3b817",
+          "fd220ece4671ef6b",
+          "8a4297b3ba407ed1",
+          "f22bbfae041043e5",
+          "c45676efb0f59a34"
+        ],
+        "descricao": "Docker utilizado em 13 projeto(s). Profundidade técnica: 100/100."
+      },
+      "aderencia": 100
+    },
+    {
+      "requisito": {
+        "nome": "CI/CD",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "CI/CD",
+        "categoria": "frontend",
+        "nivel": "dominio-solido",
+        "padroes": [],
+        "frequencia": 16,
+        "profundidade": 100,
+        "evidencias_ids": [
+          "3a80a5ae24fd9c50",
+          "6b0afad1a82d8912",
+          "29d0b958eb93b8b5",
+          "739bc5f0c86527d1",
+          "a1214f7627187617",
+          "d855e40ab7b8326c",
+          "0f1064880fbf8adc",
+          "dbd79794c3eee608",
+          "1f23a79e572de91b",
+          "6332cca157a03ea6",
+          "078250290ccab62f",
+          "e95338eb74aa3bcc",
+          "c29a1dc0d36b1361",
+          "edb6a4c838afda3e",
+          "26792714ef494741",
+          "c581898b32e60806",
+          "18815d7c9430dafc",
+          "169a9ad9d26acd00",
+          "785bb64fe6ab46f1",
+          "34d95b2a61d1d6cc",
+          "e130d6ecba83d83b",
+          "b9eb8373ee113041",
+          "eebc817ae5d3e290",
+          "86f1faa9d74e1df8",
+          "81d6e5be71386abd",
+          "b0cf781682d06bfd",
+          "f6d4e734b3667df0",
+          "036765431c7182d2",
+          "ab6f25656009554d",
+          "0ad684428de047b6",
+          "c51464c26e4c0a9a",
+          "8febfc206779d8b3",
+          "b34144e180a69eee",
+          "5b0f63e939935e25",
+          "6a0adaaa1e445b58",
+          "8c8cea2ab2a6bcef",
+          "33f0a5a277dbdb13",
+          "6f43e731501d6232",
+          "9e9b25c07875adbb",
+          "31cb313c6d867c53"
+        ],
+        "descricao": "CI/CD utilizado em 16 projeto(s). Profundidade técnica: 100/100."
+      },
+      "aderencia": 100
+    },
+    {
+      "requisito": {
+        "nome": "REST API",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "REST API",
+        "categoria": "backend",
+        "nivel": "conhecimento-basico",
+        "padroes": [],
+        "frequencia": 1,
+        "profundidade": 18,
+        "evidencias_ids": [
+          "2a3b150ccaed0751"
+        ],
+        "descricao": "REST API utilizado em 1 projeto(s). Profundidade técnica: 18/100."
+      },
+      "aderencia": 57
+    },
+    {
+      "requisito": {
+        "nome": "Testes Automatizados",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "Testes",
+        "categoria": "frontend",
+        "nivel": "dominio-solido",
+        "padroes": [],
+        "frequencia": 13,
+        "profundidade": 100,
+        "evidencias_ids": [
+          "3a80a5ae24fd9c50",
+          "653f4a06ad07bd4e",
+          "6b0afad1a82d8912",
+          "168f8e12ea9c8e2b",
+          "29d0b958eb93b8b5",
+          "1ca5524449c6bd3d",
+          "8de966257e2815a3",
+          "c70dead6bd84a35b",
+          "b90db4e784b8c566",
+          "9db553d70e02740c",
+          "23959434885aa9da",
+          "81d6e5be71386abd",
+          "086fde4178fc8920",
+          "036765431c7182d2",
+          "5b0f63e939935e25",
+          "15ade75f99615b67",
+          "6f43e731501d6232",
+          "ac3a87d7882d0864",
+          "31cb313c6d867c53",
+          "20c5c1cb769cb629",
+          "f490ec395c53887f"
+        ],
+        "descricao": "Testes utilizado em 13 projeto(s). Profundidade técnica: 100/100."
+      },
+      "aderencia": 100
+    },
+    {
+      "requisito": {
+        "nome": "Git",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "Git",
+        "categoria": "frontend",
+        "nivel": "dominio-solido",
+        "padroes": [],
+        "frequencia": 21,
+        "profundidade": 100,
+        "evidencias_ids": [
+          "8894222156bcfba7",
+          "bd5ad14799328585",
+          "f2a2586da5355e55",
+          "0f228c13ab62ac3c",
+          "29149776541655af",
+          "d43273d247e4f3b4",
+          "c01d0c0f4f43a199",
+          "ab22b578f6d40382",
+          "c4dde6abf43808c2",
+          "9555aac5db199968",
+          "d13188b140242158",
+          "6434d47ed4093287",
+          "85c67b40d725357f",
+          "dd8024a2b7b441ba",
+          "3ec62d2692e38a3b",
+          "c74b217901eaa5b2",
+          "53a4ff5b82789bab",
+          "33e6b2784943ab04",
+          "dd2410ab657669e1",
+          "0c307b1c412603db",
+          "59bfcdabc80dfb40",
+          "f4b0a4c5be4552d9",
+          "5c6fcf31b10265e9"
+        ],
+        "descricao": "Git utilizado em 21 projeto(s). Profundidade técnica: 100/100."
+      },
+      "aderencia": 100
+    },
+    {
+      "requisito": {
+        "nome": "Python",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "Python",
+        "categoria": "backend",
+        "nivel": "dominio-solido",
+        "padroes": [],
+        "frequencia": 33,
+        "profundidade": 100,
+        "evidencias_ids": [
+          "f2a2586da5355e55",
+          "4357e7417b6a92cc",
+          "0f228c13ab62ac3c",
+          "6a35cc94e4d07cbb",
+          "29149776541655af",
+          "64f7a5c59fc74d9c",
+          "ab22b578f6d40382",
+          "6434d47ed4093287",
+          "f344af3515df602c",
+          "dd8024a2b7b441ba",
+          "2a3b150ccaed0751",
+          "3ec62d2692e38a3b",
+          "66cfd2b7d4b74166",
+          "53a4ff5b82789bab",
+          "d242f7ed7639e639",
+          "9d744e0116e3b817",
+          "59bfcdabc80dfb40",
+          "12bd7afeaff1a2ed",
+          "4b5898dfbd2ae1ea",
+          "7b19c2f5ae525b48",
+          "6ae10ecc96646622",
+          "5b194087bbd11a20",
+          "4c1f924a22a0ceae",
+          "fc884350d28f35bb",
+          "4dbe8836078cf2ce",
+          "7be98af16b98201d",
+          "39d5c90d8264746e",
+          "e7c89e36def10222",
+          "c00119611c9e8727",
+          "f22bbfae041043e5",
+          "c45676efb0f59a34",
+          "02268e79b0bb7f11",
+          "347ea0e8637ce646",
+          "7ebf24bdf0b906b1",
+          "33807ffe40325a25",
+          "2c516be922157300",
+          "f88e038ec0c659be",
+          "1f86c2a1b2778c09",
+          "ee3b6e59feae7969",
+          "b680c0f8c552d4dc",
+          "a7c244063d88d983"
+        ],
+        "descricao": "Python utilizado em 33 projeto(s). Profundidade técnica: 100/100."
+      },
+      "aderencia": 100
+    },
+    {
+      "requisito": {
+        "nome": "GraphQL",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "GraphQL",
+        "categoria": "fundamentos",
+        "nivel": "conhecimento-basico",
+        "padroes": [
+          "api-graphql"
+        ],
+        "frequencia": 1,
+        "profundidade": 18,
+        "evidencias_ids": [
+          "33f0a5a277dbdb13"
+        ],
+        "descricao": "GraphQL utilizado em 1 projeto(s). Profundidade técnica: 18/100."
+      },
+      "aderencia": 57
+    },
+    {
+      "requisito": {
+        "nome": "AWS",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "AWS",
+        "categoria": "devops",
+        "nivel": "experiencia-avancada",
+        "padroes": [],
+        "frequencia": 6,
+        "profundidade": 83,
+        "evidencias_ids": [
+          "59a5afe20e645393",
+          "252a484676c9ce03",
+          "3db0ef4296b3419a",
+          "c00119611c9e8727",
+          "a00f96819555194f",
+          "f87a4bec29269e90"
+        ],
+        "descricao": "AWS utilizado em 6 projeto(s). Profundidade técnica: 83/100."
+      },
+      "aderencia": 88
+    },
+    {
+      "requisito": {
+        "nome": "Redis",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "Redis",
+        "categoria": "frontend",
+        "nivel": "conhecimento-basico",
+        "padroes": [],
+        "frequencia": 1,
+        "profundidade": 18,
+        "evidencias_ids": [
+          "840a0b287d32b8c8"
+        ],
+        "descricao": "Redis utilizado em 1 projeto(s). Profundidade técnica: 18/100."
+      },
+      "aderencia": 57
+    },
+    {
+      "requisito": {
+        "nome": "Next.js",
+        "obrigatorio": true
+      },
+      "skill": {
+        "nome": "Next.js",
+        "categoria": "frontend",
+        "nivel": "experiencia-pratica",
+        "padroes": [],
+        "frequencia": 1,
+        "profundidade": 33,
+        "evidencias_ids": [
+          "21a633ad6e3a599c"
+        ],
+        "descricao": "Next.js utilizado em 1 projeto(s). Profundidade técnica: 33/100."
+      },
+      "aderencia": 68
+    }
+  ],
+  "gaps": [
+    {
+      "requisito": {
+        "nome": "Kubernetes",
+        "obrigatorio": true
+      },
+      "sugestao": "Gap obrigatório: Kubernetes. Sem evidência de experiência prática."
+    },
+    {
+      "requisito": {
+        "nome": "Terraform",
+        "obrigatorio": true
+      },
+      "sugestao": "Gap obrigatório: Terraform. Sem evidência de experiência prática."
+    }
+  ],
+  "bullets": [
+    "Experiência comprovada com React (dominio solido) no projeto audiocraft. React utilizado em 13 projeto(s). Profundidade técnica: 100/100.",
+    "Experiência comprovada com TypeScript (dominio solido) no projeto openclaw. TypeScript utilizado em 7 projeto(s). Profundidade técnica: 100/100.",
+    "Experiência comprovada com Node.js (dominio solido) no projeto laravel/laravel. Node.js utilizado em 14 projeto(s). Profundidade técnica: 100/100.",
+    "Experiência comprovada com Docker (dominio solido) no projeto laravel/laravel. Docker utilizado em 13 projeto(s). Profundidade técnica: 100/100.",
+    "Experiência comprovada com CI/CD (dominio solido) no projeto laravel/laravel. CI/CD utilizado em 16 projeto(s). Profundidade técnica: 100/100.",
+    "Experiência comprovada com Testes (dominio solido) no projeto laravel/laravel. Testes utilizado em 13 projeto(s). Profundidade técnica: 100/100.",
+    "Experiência comprovada com Git (dominio solido) no projeto laravel/laravel. Git utilizado em 21 projeto(s). Profundidade técnica: 100/100.",
+    "Experiência comprovada com Python (dominio solido) no projeto openclaw. Python utilizado em 33 projeto(s). Profundidade técnica: 100/100."
+  ],
+  "pontos_fortes": [
+    "React: dominio solido — evidenciado em 13 projeto(s)",
+    "TypeScript: dominio solido — evidenciado em 7 projeto(s)",
+    "Node.js: dominio solido — evidenciado em 14 projeto(s)",
+    "Express.js: experiencia pratica — evidenciado em 2 projeto(s)",
+    "PostgreSQL: experiencia pratica — evidenciado em 3 projeto(s)",
+    "Docker: dominio solido — evidenciado em 13 projeto(s)",
+    "CI/CD: dominio solido — evidenciado em 16 projeto(s)",
+    "Testes Automatizados: dominio solido — evidenciado em 13 projeto(s)",
+    "Git: dominio solido — evidenciado em 21 projeto(s)",
+    "Python: dominio solido — evidenciado em 33 projeto(s)",
+    "AWS: experiencia avancada — evidenciado em 6 projeto(s)"
+  ],
+  "pontos_fracos": [
+    "Kubernetes: sem evidência prática encontrada (requisito obrigatório)",
+    "Terraform: sem evidência prática encontrada (requisito obrigatório)"
+  ],
+  "riscos_entrevista": [
+    "ALTO: 2 requisito(s) obrigatório(s) sem evidência: Kubernetes, Terraform",
+    "MÉDIO: 3 requisito(s) com apenas conhecimento básico: REST API, GraphQL, Redis"
+  ],
+  "ajustes_keywords": [
+    {
+      "atual": "Testes",
+      "sugerido": "Testes Automatizados",
+      "motivo": "A vaga usa \"Testes Automatizados\" — ajustar nomenclatura no currículo para melhor match ATS."
+    }
+  ]
+}

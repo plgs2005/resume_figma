@@ -1,0 +1,37 @@
+{
+    "name": "@resume/self-knowledge-engine",
+    "version": "1.0.0",
+    "description": "Agente factual para construção e manutenção de base de conhecimento técnico do candidato — baseado exclusivamente em evidências rastreáveis.",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "bin": {
+        "ske": "./dist/cli.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch",
+        "start": "node --enable-source-maps dist/cli.js",
+        "collect": "node --enable-source-maps dist/cli.js collect",
+        "normalize": "node --enable-source-maps dist/cli.js normalize",
+        "extract": "node --enable-source-maps dist/cli.js extract",
+        "query": "node --enable-source-maps dist/cli.js query",
+        "match-job": "node --enable-source-maps dist/cli.js match-job",
+        "full-pipeline": "node --enable-source-maps dist/cli.js full-pipeline",
+        "scan": "node --enable-source-maps dist/cli.js full-pipeline --scan /home/plgsa",
+        "export": "npx tsc bridge/export.ts --outDir bridge/dist --module Node16 --moduleResolution Node16 --target ES2022 --esModuleInterop --skipLibCheck && node bridge/dist/export.js",
+        "refresh": "npm run build && npm run scan && npm run export",
+        "test": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs",
+        "test:watch": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs --watch"
+    },
+    "devDependencies": {
+        "typescript": "^5.7.3",
+        "@types/node": "^22.0.0",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.2.0",
+        "@types/jest": "^29.5.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}

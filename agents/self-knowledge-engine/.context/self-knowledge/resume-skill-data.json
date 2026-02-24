@@ -1,0 +1,299 @@
+{
+  "gerado_em": "2026-02-24T21:04:41.020Z",
+  "fonte": "SelfKnowledgeEngine v1.0",
+  "resumo": {
+    "total_skills": 74,
+    "total_projetos_escaneados": 109,
+    "total_evidencias": 285,
+    "padroes_engenharia": 12
+  },
+  "por_nivel": {
+    "dominio_solido": [
+      "Build Pipeline",
+      "Docker",
+      "Node.js",
+      "Git",
+      "JavaScript",
+      "Testes",
+      "CI/CD",
+      "Testes Automatizados",
+      "Tooling",
+      "Conventional Commits",
+      "Zod",
+      "Validação",
+      "TypeScript",
+      "Python",
+      "Organização de Código",
+      "Documentação",
+      "React",
+      "Refatoração Estrutural",
+      "CI/CD Pipeline",
+      "Containerização",
+      "Design System",
+      "Documentação Técnica"
+    ],
+    "experiencia_avancada": [
+      "Tailwind CSS",
+      "CSS",
+      "Vite",
+      "Bundler",
+      "PHP",
+      "Docker Compose",
+      "Environment Config",
+      "Refatoração",
+      "GitHub Actions",
+      "Testes em CI",
+      "Componentização",
+      "Jest",
+      "APIs RESTful",
+      "Microsserviços",
+      "Database Migrations",
+      "Webpack",
+      "MySQL",
+      "Performance",
+      "AWS",
+      "Vitest",
+      "Multi-stage Build",
+      "Linting em CI",
+      "Linting"
+    ],
+    "experiencia_pratica": [
+      "Shell",
+      "HTTP Client",
+      "TypeScript/React",
+      "Migrations",
+      "Laravel",
+      "Symfony",
+      "Docker em CI",
+      "Playwright",
+      "E2E",
+      "Deploy Automatizado",
+      "Express.js",
+      "PostgreSQL",
+      "API Backend",
+      "Swift",
+      "Kotlin",
+      "Go",
+      "SQL",
+      "Next.js",
+      "SSR",
+      "React Router",
+      "SPA"
+    ],
+    "conhecimento_basico": [
+      "PHPUnit",
+      "Django",
+      "Redis",
+      "REST API",
+      "GraphQL",
+      "GCP",
+      "Microservices",
+      "Estratégias de Cache"
+    ]
+  },
+  "categorias": {
+    "backend": [
+      "PHP",
+      "Node.js",
+      "Python",
+      "APIs RESTful",
+      "Laravel",
+      "Symfony",
+      "Express.js",
+      "Kotlin",
+      "Go",
+      "Django",
+      "REST API",
+      "GraphQL"
+    ],
+    "frontend": [
+      "Tailwind CSS",
+      "CSS",
+      "Vite",
+      "Bundler",
+      "React",
+      "Componentização",
+      "Design System",
+      "Webpack",
+      "TypeScript/React",
+      "Next.js",
+      "SSR",
+      "React Router",
+      "SPA"
+    ],
+    "devops": [
+      "Build Pipeline",
+      "Docker",
+      "Docker Compose",
+      "CI/CD",
+      "GitHub Actions",
+      "CI/CD Pipeline",
+      "Containerização",
+      "AWS",
+      "Docker em CI",
+      "Deploy Automatizado",
+      "GCP"
+    ],
+    "banco-de-dados": [
+      "Database Migrations",
+      "MySQL",
+      "Migrations",
+      "PostgreSQL",
+      "SQL",
+      "Redis"
+    ],
+    "testes": [
+      "Testes Automatizados",
+      "Testes em CI",
+      "Jest",
+      "Vitest",
+      "Playwright",
+      "E2E",
+      "PHPUnit"
+    ],
+    "arquitetura": [
+      "Microsserviços",
+      "API Backend",
+      "Microservices"
+    ],
+    "fundamentos": [
+      "Git",
+      "JavaScript",
+      "Testes",
+      "Tooling",
+      "Conventional Commits",
+      "Refatoração",
+      "Zod",
+      "Validação",
+      "TypeScript",
+      "Organização de Código",
+      "Refatoração Estrutural",
+      "Linting em CI",
+      "Shell",
+      "Linting",
+      "Swift"
+    ],
+    "performance": [
+      "Performance",
+      "Multi-stage Build",
+      "Estratégias de Cache"
+    ],
+    "integracao": [
+      "HTTP Client"
+    ],
+    "produto": [
+      "Documentação",
+      "Documentação Técnica"
+    ],
+    "seguranca": [
+      "Environment Config"
+    ],
+    "escalabilidade": []
+  },
+  "destaques": [
+    {
+      "skill": "Testes Automatizados",
+      "nivel": "dominio solido",
+      "projetos": 45,
+      "profundidade": 100
+    },
+    {
+      "skill": "Python",
+      "nivel": "dominio solido",
+      "projetos": 33,
+      "profundidade": 100
+    },
+    {
+      "skill": "Organização de Código",
+      "nivel": "dominio solido",
+      "projetos": 32,
+      "profundidade": 100
+    },
+    {
+      "skill": "Git",
+      "nivel": "dominio solido",
+      "projetos": 21,
+      "profundidade": 100
+    },
+    {
+      "skill": "CI/CD",
+      "nivel": "dominio solido",
+      "projetos": 16,
+      "profundidade": 100
+    },
+    {
+      "skill": "CI/CD Pipeline",
+      "nivel": "dominio solido",
+      "projetos": 16,
+      "profundidade": 100
+    },
+    {
+      "skill": "Node.js",
+      "nivel": "dominio solido",
+      "projetos": 14,
+      "profundidade": 100
+    },
+    {
+      "skill": "Conventional Commits",
+      "nivel": "dominio solido",
+      "projetos": 14,
+      "profundidade": 100
+    },
+    {
+      "skill": "Refatoração Estrutural",
+      "nivel": "dominio solido",
+      "projetos": 14,
+      "profundidade": 100
+    },
+    {
+      "skill": "Docker",
+      "nivel": "dominio solido",
+      "projetos": 13,
+      "profundidade": 100
+    },
+    {
+      "skill": "Testes",
+      "nivel": "dominio solido",
+      "projetos": 13,
+      "profundidade": 100
+    },
+    {
+      "skill": "React",
+      "nivel": "dominio solido",
+      "projetos": 13,
+      "profundidade": 100
+    },
+    {
+      "skill": "Containerização",
+      "nivel": "dominio solido",
+      "projetos": 13,
+      "profundidade": 100
+    },
+    {
+      "skill": "Build Pipeline",
+      "nivel": "dominio solido",
+      "projetos": 10,
+      "profundidade": 100
+    },
+    {
+      "skill": "JavaScript",
+      "nivel": "dominio solido",
+      "projetos": 10,
+      "profundidade": 100
+    }
+  ],
+  "padroes": [
+    "separacao-camadas",
+    "estrategia-cache",
+    "refatoracao-estrutural",
+    "testes-automatizados",
+    "ci-cd",
+    "containerizacao",
+    "api-rest",
+    "api-graphql",
+    "microservicos",
+    "design-system",
+    "migrations",
+    "documentacao"
+  ]
+}

@@ -1,0 +1,34 @@
+Senior Software Engineer / Tech Lead — Startup FinTech
+
+Sobre a Vaga:
+Estamos procurando um Tech Lead para liderar nosso time de engenharia de produto.
+
+Requisitos Obrigatórios:
+- 5+ anos de experiência com TypeScript e React
+- Experiência sólida com Node.js e Express
+- PostgreSQL ou banco relacional
+- Docker e containerização
+- CI/CD pipelines (GitHub Actions)
+- REST APIs
+- Testes automatizados (Jest, Vitest ou similares)
+- Git e code review
+
+Requisitos Desejáveis:
+- Python para scripts e automação
+- GraphQL
+- AWS (ECS, Lambda, S3)
+- Kubernetes
+- Redis e caching
+- Next.js / SSR
+- Terraform / IaC
+- Arquitetura de microsserviços
+
+Responsabilidades:
+- Liderar equipe de 5-8 engenheiros
+- Definir arquitetura de microsserviços
+- Code review e mentoria técnica
+- Implementar e manter pipelines CI/CD
+- Garantir qualidade com testes automatizados
+- Documentação técnica
+
+Stack Principal: TypeScript, React, Node.js, PostgreSQL, Docker

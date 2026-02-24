@@ -1,0 +1,33 @@
+{
+    "titulo": "Senior Software Engineer / Tech Lead",
+    "empresa": "Startup FinTech",
+    "requisitos_obrigatorios": [
+        "TypeScript",
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Docker",
+        "CI/CD",
+        "REST API",
+        "Testes Automatizados"
+    ],
+    "requisitos_desejaveis": [
+        "Python",
+        "GraphQL",
+        "AWS",
+        "Kubernetes",
+        "Redis",
+        "Next.js",
+        "Terraform",
+        "Microservices"
+    ],
+    "responsabilidades": [
+        "Liderar equipe de 5-8 engenheiros",
+        "Definir arquitetura de microsserviços",
+        "Code review e mentoria",
+        "Implementar pipelines CI/CD",
+        "Garantir qualidade com testes automatizados"
+    ],
+    "nivel": "senior",
+    "stack_principal": "TypeScript/React/Node.js"
+}

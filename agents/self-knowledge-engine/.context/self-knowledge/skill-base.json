@@ -1,0 +1,1755 @@
+{
+  "atualizado_em": "2026-02-24T20:56:35.284Z",
+  "total_skills": 74,
+  "skills": [
+    {
+      "nome": "Tailwind CSS",
+      "categoria": "frontend",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 4,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "ca311626b85426cc",
+        "6fad47004f50e3ff",
+        "735554dfede743f8",
+        "21a633ad6e3a599c",
+        "f490ec395c53887f"
+      ],
+      "descricao": "Tailwind CSS utilizado em 4 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "CSS",
+      "categoria": "frontend",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 4,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "ca311626b85426cc",
+        "6fad47004f50e3ff",
+        "735554dfede743f8",
+        "21a633ad6e3a599c",
+        "f490ec395c53887f"
+      ],
+      "descricao": "CSS utilizado em 4 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Vite",
+      "categoria": "frontend",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 4,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "ca311626b85426cc",
+        "6fad47004f50e3ff",
+        "735554dfede743f8",
+        "20c5c1cb769cb629",
+        "f490ec395c53887f"
+      ],
+      "descricao": "Vite utilizado em 4 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Bundler",
+      "categoria": "frontend",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 5,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "ca311626b85426cc",
+        "6fad47004f50e3ff",
+        "1ca5524449c6bd3d",
+        "8de966257e2815a3",
+        "c70dead6bd84a35b",
+        "b90db4e784b8c566",
+        "735554dfede743f8",
+        "20c5c1cb769cb629",
+        "f490ec395c53887f"
+      ],
+      "descricao": "Bundler utilizado em 5 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Build Pipeline",
+      "categoria": "devops",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 10,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "ca311626b85426cc",
+        "6fad47004f50e3ff",
+        "168f8e12ea9c8e2b",
+        "1ca5524449c6bd3d",
+        "8de966257e2815a3",
+        "c70dead6bd84a35b",
+        "b90db4e784b8c566",
+        "9db553d70e02740c",
+        "735554dfede743f8",
+        "21a633ad6e3a599c",
+        "15ade75f99615b67",
+        "20c5c1cb769cb629",
+        "7ea3c6ccf7bd7c27",
+        "f490ec395c53887f"
+      ],
+      "descricao": "Build Pipeline utilizado em 10 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "PHP",
+      "categoria": "backend",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 5,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "34c1e71b17f39930",
+        "42aec9e13e3202a5",
+        "8894222156bcfba7",
+        "653f4a06ad07bd4e",
+        "bf14be656e0bf73b",
+        "bd5ad14799328585",
+        "86f1faa9d74e1df8",
+        "636dd403343395ad",
+        "ebf32b1d81741919",
+        "e20ff19073aebd06",
+        "725502dcce2fce94",
+        "f6d4e734b3667df0",
+        "33f0a5a277dbdb13"
+      ],
+      "descricao": "PHP utilizado em 5 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Docker",
+      "categoria": "devops",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 13,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "e6f23139c774d4bd",
+        "8a541066d6054dd0",
+        "176b383cb0b68640",
+        "52d6288d26a88e06",
+        "69ada2f4a8a11819",
+        "be289891ee81f864",
+        "74e7f962a512bcd1",
+        "2eee8340b41f7c9f",
+        "3e3d725b1672e3de",
+        "64f7a5c59fc74d9c",
+        "246b92f373456ab0",
+        "93c1e5f64b0b896f",
+        "86f1faa9d74e1df8",
+        "3b448a16efae5b24",
+        "f6d4e734b3667df0",
+        "73d2f9cad9dc2722",
+        "33f0a5a277dbdb13",
+        "6f510ac16e1b3c35",
+        "855222ed30a1ddec",
+        "4beeb320ea5f98c7",
+        "9d744e0116e3b817",
+        "fd220ece4671ef6b",
+        "8a4297b3ba407ed1",
+        "f22bbfae041043e5",
+        "c45676efb0f59a34"
+      ],
+      "descricao": "Docker utilizado em 13 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Docker Compose",
+      "categoria": "devops",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 5,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "e6f23139c774d4bd",
+        "176b383cb0b68640",
+        "52d6288d26a88e06",
+        "74e7f962a512bcd1",
+        "2eee8340b41f7c9f",
+        "246b92f373456ab0",
+        "93c1e5f64b0b896f",
+        "3b448a16efae5b24"
+      ],
+      "descricao": "Docker Compose utilizado em 5 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Node.js",
+      "categoria": "backend",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 14,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "42aec9e13e3202a5",
+        "168f8e12ea9c8e2b",
+        "34d95b2a61d1d6cc",
+        "86f1faa9d74e1df8",
+        "f6d4e734b3667df0",
+        "0ad684428de047b6",
+        "2a3b150ccaed0751",
+        "33f0a5a277dbdb13",
+        "d242f7ed7639e639",
+        "f1535d8c31969505",
+        "986e7623ec81cbc8",
+        "5b194087bbd11a20",
+        "4c1f924a22a0ceae",
+        "fc884350d28f35bb"
+      ],
+      "descricao": "Node.js utilizado em 14 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Git",
+      "categoria": "fundamentos",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 21,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "8894222156bcfba7",
+        "bd5ad14799328585",
+        "f2a2586da5355e55",
+        "0f228c13ab62ac3c",
+        "29149776541655af",
+        "d43273d247e4f3b4",
+        "c01d0c0f4f43a199",
+        "ab22b578f6d40382",
+        "c4dde6abf43808c2",
+        "9555aac5db199968",
+        "d13188b140242158",
+        "6434d47ed4093287",
+        "85c67b40d725357f",
+        "dd8024a2b7b441ba",
+        "3ec62d2692e38a3b",
+        "c74b217901eaa5b2",
+        "53a4ff5b82789bab",
+        "33e6b2784943ab04",
+        "dd2410ab657669e1",
+        "0c307b1c412603db",
+        "59bfcdabc80dfb40",
+        "f4b0a4c5be4552d9",
+        "5c6fcf31b10265e9"
+      ],
+      "descricao": "Git utilizado em 21 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "JavaScript",
+      "categoria": "fundamentos",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 10,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "8894222156bcfba7",
+        "bd5ad14799328585",
+        "f2a2586da5355e55",
+        "d43273d247e4f3b4",
+        "6434d47ed4093287",
+        "85c67b40d725357f",
+        "3ec62d2692e38a3b",
+        "c74b217901eaa5b2",
+        "33e6b2784943ab04",
+        "dd2410ab657669e1",
+        "0c307b1c412603db"
+      ],
+      "descricao": "JavaScript utilizado em 10 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Testes",
+      "categoria": "fundamentos",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 13,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "3a80a5ae24fd9c50",
+        "653f4a06ad07bd4e",
+        "6b0afad1a82d8912",
+        "168f8e12ea9c8e2b",
+        "29d0b958eb93b8b5",
+        "1ca5524449c6bd3d",
+        "8de966257e2815a3",
+        "c70dead6bd84a35b",
+        "b90db4e784b8c566",
+        "9db553d70e02740c",
+        "23959434885aa9da",
+        "81d6e5be71386abd",
+        "086fde4178fc8920",
+        "036765431c7182d2",
+        "5b0f63e939935e25",
+        "15ade75f99615b67",
+        "6f43e731501d6232",
+        "ac3a87d7882d0864",
+        "31cb313c6d867c53",
+        "20c5c1cb769cb629",
+        "f490ec395c53887f"
+      ],
+      "descricao": "Testes utilizado em 13 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "CI/CD",
+      "categoria": "devops",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 16,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "3a80a5ae24fd9c50",
+        "6b0afad1a82d8912",
+        "29d0b958eb93b8b5",
+        "739bc5f0c86527d1",
+        "a1214f7627187617",
+        "d855e40ab7b8326c",
+        "0f1064880fbf8adc",
+        "dbd79794c3eee608",
+        "1f23a79e572de91b",
+        "6332cca157a03ea6",
+        "078250290ccab62f",
+        "e95338eb74aa3bcc",
+        "c29a1dc0d36b1361",
+        "edb6a4c838afda3e",
+        "26792714ef494741",
+        "c581898b32e60806",
+        "18815d7c9430dafc",
+        "169a9ad9d26acd00",
+        "785bb64fe6ab46f1",
+        "34d95b2a61d1d6cc",
+        "e130d6ecba83d83b",
+        "b9eb8373ee113041",
+        "eebc817ae5d3e290",
+        "86f1faa9d74e1df8",
+        "81d6e5be71386abd",
+        "b0cf781682d06bfd",
+        "f6d4e734b3667df0",
+        "036765431c7182d2",
+        "ab6f25656009554d",
+        "0ad684428de047b6",
+        "c51464c26e4c0a9a",
+        "8febfc206779d8b3",
+        "b34144e180a69eee",
+        "5b0f63e939935e25",
+        "6a0adaaa1e445b58",
+        "8c8cea2ab2a6bcef",
+        "33f0a5a277dbdb13",
+        "6f43e731501d6232",
+        "9e9b25c07875adbb",
+        "31cb313c6d867c53"
+      ],
+      "descricao": "CI/CD utilizado em 16 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Testes Automatizados",
+      "categoria": "testes",
+      "nivel": "dominio-solido",
+      "padroes": [
+        "testes-automatizados"
+      ],
+      "frequencia": 45,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "176b383cb0b68640",
+        "4d50c85a4c95f9f8",
+        "168f8e12ea9c8e2b",
+        "4829aca0b170fd87",
+        "90fa71f2c13a7b5a",
+        "51be64bbbb6f33b6",
+        "1ca5524449c6bd3d",
+        "8de966257e2815a3",
+        "c70dead6bd84a35b",
+        "b90db4e784b8c566",
+        "9db553d70e02740c",
+        "742938d4d241903e",
+        "82863e5714d9a018",
+        "47e52013d5a50b4f",
+        "ba0bafea543e6d59",
+        "89edf9514360387b",
+        "93ada1f33272fd13",
+        "10c8e7e4ef2012d6",
+        "1e1380dbeeb525bb",
+        "d7a2b859a58a8231",
+        "79db411ef1b1738f",
+        "613580f81322c08d",
+        "1148b412a66809dd",
+        "4fb11820fa1f0e8d",
+        "15ade75f99615b67",
+        "076b889d1b158c4d",
+        "6520ef06b1b2b9f7",
+        "ca0b60a30f8c3967",
+        "cf0d9e592d8c233c",
+        "79cfcb0a88832980",
+        "4b6c66e42756aa36",
+        "0603afe0758a89b8",
+        "895c6a97edb4fbe0",
+        "192918e5e6aa2fca",
+        "204797e32c62b5bf",
+        "e343a7662b04f973",
+        "34599a6a13bc3951",
+        "e81d9a0b87a25009",
+        "20c5c1cb769cb629",
+        "23b3b999613e6350",
+        "8e990dfeabcf9693",
+        "785a1020302d54b8",
+        "e3db94f120c8750c",
+        "f490ec395c53887f",
+        "ec5ed00c2b6dbf2d",
+        "bbdf92dd76d01a7b",
+        "4e2930b63b6ca1f0",
+        "3a4a0e1e8853f6d6",
+        "60cd061cf9a332a6",
+        "16f775183cd3b6c2",
+        "d5c2c600dea918f7",
+        "2b60d16f7b887365",
+        "82956e3541872864",
+        "c6559fa014af93ea",
+        "b01dcf76a2be017c",
+        "d6dee69c9cbbca3f",
+        "983c792d313c1242",
+        "ac0b286fb7abcdf8",
+        "1a6d5d728a99c692",
+        "653f4a06ad07bd4e",
+        "739bc5f0c86527d1",
+        "a1214f7627187617",
+        "0f1064880fbf8adc",
+        "1f23a79e572de91b",
+        "6332cca157a03ea6",
+        "c29a1dc0d36b1361",
+        "edb6a4c838afda3e",
+        "26792714ef494741",
+        "18815d7c9430dafc",
+        "169a9ad9d26acd00",
+        "785bb64fe6ab46f1",
+        "e130d6ecba83d83b",
+        "b9eb8373ee113041",
+        "23959434885aa9da",
+        "b0cf781682d06bfd",
+        "086fde4178fc8920",
+        "ab6f25656009554d",
+        "b34144e180a69eee"
+      ],
+      "descricao": "Testes Automatizados utilizado em 42 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Tooling",
+      "categoria": "fundamentos",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 10,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "176b383cb0b68640",
+        "4d50c85a4c95f9f8",
+        "74e7f962a512bcd1",
+        "bdfb3a696890a547",
+        "f69d0f96164ff1af",
+        "0196580344bc07f1",
+        "b459158edbd57713",
+        "99460398b8cafa37",
+        "56c538e06aa63977",
+        "c4402f2bea8dd939",
+        "076b889d1b158c4d",
+        "ed6165864f3d8ce5",
+        "015ff6308c58e3be"
+      ],
+      "descricao": "Tooling utilizado em 10 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Environment Config",
+      "categoria": "seguranca",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 7,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "176b383cb0b68640",
+        "4d50c85a4c95f9f8",
+        "74e7f962a512bcd1",
+        "0196580344bc07f1",
+        "246b92f373456ab0",
+        "c4402f2bea8dd939",
+        "d0b8c4fe386b6cae",
+        "2eedbec850d8c166"
+      ],
+      "descricao": "Environment Config utilizado em 7 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Conventional Commits",
+      "categoria": "fundamentos",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 14,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "6b0afad1a82d8912",
+        "29d0b958eb93b8b5",
+        "e95338eb74aa3bcc",
+        "cd0aeb3636fb8df1",
+        "eebc817ae5d3e290",
+        "81d6e5be71386abd",
+        "036765431c7182d2",
+        "c51464c26e4c0a9a",
+        "8febfc206779d8b3",
+        "5b0f63e939935e25",
+        "6a0adaaa1e445b58",
+        "8c8cea2ab2a6bcef",
+        "76007f8c52818945",
+        "65ceeb5efece9f73"
+      ],
+      "descricao": "Conventional Commits utilizado em 14 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Refatoração",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 5,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "6b0afad1a82d8912",
+        "29d0b958eb93b8b5",
+        "cd0aeb3636fb8df1",
+        "c51464c26e4c0a9a",
+        "8febfc206779d8b3"
+      ],
+      "descricao": "Refatoração utilizado em 5 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Zod",
+      "categoria": "fundamentos",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 9,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "168f8e12ea9c8e2b",
+        "9db553d70e02740c",
+        "21a633ad6e3a599c",
+        "16a03ad0af76d658",
+        "3a08dc4dddfe0109",
+        "fe9d67975dc4b3fe",
+        "32021d2874691c4f",
+        "eb6bcd857a9882cc",
+        "66af32d912c77964"
+      ],
+      "descricao": "Zod utilizado em 9 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Validação",
+      "categoria": "fundamentos",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 9,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "168f8e12ea9c8e2b",
+        "9db553d70e02740c",
+        "21a633ad6e3a599c",
+        "16a03ad0af76d658",
+        "3a08dc4dddfe0109",
+        "fe9d67975dc4b3fe",
+        "32021d2874691c4f",
+        "eb6bcd857a9882cc",
+        "66af32d912c77964"
+      ],
+      "descricao": "Validação utilizado em 9 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "TypeScript",
+      "categoria": "fundamentos",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 7,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "168f8e12ea9c8e2b",
+        "be289891ee81f864",
+        "f2a2586da5355e55",
+        "1ca5524449c6bd3d",
+        "d43273d247e4f3b4",
+        "8de966257e2815a3",
+        "c70dead6bd84a35b",
+        "b90db4e784b8c566",
+        "9db553d70e02740c",
+        "c01d0c0f4f43a199",
+        "735554dfede743f8",
+        "0ad684428de047b6",
+        "d13188b140242158",
+        "6434d47ed4093287",
+        "21a633ad6e3a599c",
+        "85c67b40d725357f",
+        "15ade75f99615b67",
+        "33f0a5a277dbdb13"
+      ],
+      "descricao": "TypeScript utilizado em 7 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Python",
+      "categoria": "backend",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 33,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "f2a2586da5355e55",
+        "4357e7417b6a92cc",
+        "0f228c13ab62ac3c",
+        "6a35cc94e4d07cbb",
+        "29149776541655af",
+        "64f7a5c59fc74d9c",
+        "ab22b578f6d40382",
+        "6434d47ed4093287",
+        "f344af3515df602c",
+        "dd8024a2b7b441ba",
+        "2a3b150ccaed0751",
+        "3ec62d2692e38a3b",
+        "66cfd2b7d4b74166",
+        "53a4ff5b82789bab",
+        "d242f7ed7639e639",
+        "9d744e0116e3b817",
+        "59bfcdabc80dfb40",
+        "12bd7afeaff1a2ed",
+        "4b5898dfbd2ae1ea",
+        "7b19c2f5ae525b48",
+        "6ae10ecc96646622",
+        "5b194087bbd11a20",
+        "4c1f924a22a0ceae",
+        "fc884350d28f35bb",
+        "4dbe8836078cf2ce",
+        "7be98af16b98201d",
+        "39d5c90d8264746e",
+        "e7c89e36def10222",
+        "c00119611c9e8727",
+        "f22bbfae041043e5",
+        "c45676efb0f59a34",
+        "02268e79b0bb7f11",
+        "347ea0e8637ce646",
+        "7ebf24bdf0b906b1",
+        "33807ffe40325a25",
+        "2c516be922157300",
+        "f88e038ec0c659be",
+        "1f86c2a1b2778c09",
+        "ee3b6e59feae7969",
+        "b680c0f8c552d4dc",
+        "a7c244063d88d983"
+      ],
+      "descricao": "Python utilizado em 33 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Organização de Código",
+      "categoria": "fundamentos",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 32,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "74e7f962a512bcd1",
+        "bdfb3a696890a547",
+        "f69d0f96164ff1af",
+        "0196580344bc07f1",
+        "c4402f2bea8dd939",
+        "f5f05140f2dcd5fb",
+        "52f1dcd4b81c830d",
+        "058c2134e5b2dba1",
+        "076b889d1b158c4d",
+        "a415c6177e30dea2",
+        "0b72f5733a6ef887",
+        "620daad654a1a382",
+        "807cd0b66e8bd707",
+        "dba014d6d8724fa6",
+        "80700d5a73de0ff5",
+        "edd029f0de39ef68",
+        "5eb384f3671849a3",
+        "393387deee572d69",
+        "c70a36639c46db8e",
+        "015ff6308c58e3be",
+        "2eedbec850d8c166",
+        "a93ffbdf04ffd56e",
+        "7571d3c44edf2959",
+        "c1d146e92fd1fda6",
+        "e54ddf41975d1f72",
+        "403c27933fea7656",
+        "66a8cd2bbd3980e1",
+        "8d08f56ff8bed6bd",
+        "a450ea5d328bbcd2",
+        "522227cc59abb141",
+        "ae023b127912d0e0",
+        "42b7a13bb3b2efda",
+        "a2d99a747f61c754"
+      ],
+      "descricao": "Organização de Código utilizado em 32 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Documentação",
+      "categoria": "produto",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 8,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "74e7f962a512bcd1",
+        "90fa71f2c13a7b5a",
+        "51be64bbbb6f33b6",
+        "0196580344bc07f1",
+        "246b92f373456ab0",
+        "c5f3089d0346d6da",
+        "2d21c93c2d1ad6b0",
+        "ed6165864f3d8ce5",
+        "d0b8c4fe386b6cae"
+      ],
+      "descricao": "Documentação utilizado em 8 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "GitHub Actions",
+      "categoria": "devops",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 6,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "739bc5f0c86527d1",
+        "a1214f7627187617",
+        "d855e40ab7b8326c",
+        "0f1064880fbf8adc",
+        "dbd79794c3eee608",
+        "1f23a79e572de91b",
+        "6332cca157a03ea6",
+        "078250290ccab62f",
+        "c29a1dc0d36b1361",
+        "edb6a4c838afda3e",
+        "26792714ef494741",
+        "18815d7c9430dafc",
+        "169a9ad9d26acd00",
+        "785bb64fe6ab46f1",
+        "e130d6ecba83d83b",
+        "b9eb8373ee113041",
+        "b0cf781682d06bfd",
+        "ab6f25656009554d",
+        "b34144e180a69eee"
+      ],
+      "descricao": "GitHub Actions utilizado em 6 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Testes em CI",
+      "categoria": "testes",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 6,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "739bc5f0c86527d1",
+        "a1214f7627187617",
+        "0f1064880fbf8adc",
+        "1f23a79e572de91b",
+        "6332cca157a03ea6",
+        "c29a1dc0d36b1361",
+        "edb6a4c838afda3e",
+        "26792714ef494741",
+        "18815d7c9430dafc",
+        "169a9ad9d26acd00",
+        "785bb64fe6ab46f1",
+        "e130d6ecba83d83b",
+        "b9eb8373ee113041",
+        "b0cf781682d06bfd",
+        "ab6f25656009554d",
+        "b34144e180a69eee"
+      ],
+      "descricao": "Testes em CI utilizado em 6 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "React",
+      "categoria": "frontend",
+      "nivel": "dominio-solido",
+      "padroes": [],
+      "frequencia": 13,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "90fa71f2c13a7b5a",
+        "1ca5524449c6bd3d",
+        "8de966257e2815a3",
+        "c70dead6bd84a35b",
+        "b90db4e784b8c566",
+        "bfe19de940f39143",
+        "47e56910f9934249",
+        "83bb2f501bdcf106",
+        "735554dfede743f8",
+        "0ad684428de047b6",
+        "56c538e06aa63977",
+        "21a633ad6e3a599c",
+        "c4402f2bea8dd939",
+        "39c5c737db92b581",
+        "a363e00554cd91ed",
+        "10c8e7e4ef2012d6",
+        "d7a2b859a58a8231",
+        "33f0a5a277dbdb13",
+        "ed6165864f3d8ce5",
+        "372b2fe4f71bac2d",
+        "12bd7afeaff1a2ed",
+        "f490ec395c53887f",
+        "a00f96819555194f"
+      ],
+      "descricao": "React utilizado em 13 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Componentização",
+      "categoria": "frontend",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 7,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "90fa71f2c13a7b5a",
+        "bfe19de940f39143",
+        "47e56910f9934249",
+        "83bb2f501bdcf106",
+        "56c538e06aa63977",
+        "c4402f2bea8dd939",
+        "39c5c737db92b581",
+        "a363e00554cd91ed",
+        "10c8e7e4ef2012d6",
+        "d7a2b859a58a8231",
+        "ed6165864f3d8ce5"
+      ],
+      "descricao": "Componentização utilizado em 7 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Jest",
+      "categoria": "testes",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 3,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "1ca5524449c6bd3d",
+        "8de966257e2815a3",
+        "c70dead6bd84a35b",
+        "b90db4e784b8c566",
+        "9db553d70e02740c",
+        "15ade75f99615b67"
+      ],
+      "descricao": "Jest utilizado em 3 projeto(s). Profundidade técnica: 100/100."
+    },
+    {
+      "nome": "Refatoração Estrutural",
+      "categoria": "fundamentos",
+      "nivel": "dominio-solido",
+      "padroes": [
+        "refatoracao-estrutural"
+      ],
+      "frequencia": 14,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "6b0afad1a82d8912",
+        "29d0b958eb93b8b5",
+        "e95338eb74aa3bcc",
+        "cd0aeb3636fb8df1",
+        "eebc817ae5d3e290",
+        "81d6e5be71386abd",
+        "036765431c7182d2",
+        "c51464c26e4c0a9a",
+        "8febfc206779d8b3",
+        "5b0f63e939935e25",
+        "6a0adaaa1e445b58",
+        "8c8cea2ab2a6bcef",
+        "76007f8c52818945",
+        "65ceeb5efece9f73"
+      ],
+      "descricao": "Prática de refatoração contínua. Identificado em 14 projeto(s) com base em 14 evidência(s)."
+    },
+    {
+      "nome": "CI/CD Pipeline",
+      "categoria": "devops",
+      "nivel": "dominio-solido",
+      "padroes": [
+        "ci-cd"
+      ],
+      "frequencia": 16,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "3a80a5ae24fd9c50",
+        "6b0afad1a82d8912",
+        "29d0b958eb93b8b5",
+        "739bc5f0c86527d1",
+        "a1214f7627187617",
+        "d855e40ab7b8326c",
+        "0f1064880fbf8adc",
+        "dbd79794c3eee608",
+        "1f23a79e572de91b",
+        "6332cca157a03ea6",
+        "078250290ccab62f",
+        "e95338eb74aa3bcc",
+        "c29a1dc0d36b1361",
+        "edb6a4c838afda3e",
+        "26792714ef494741",
+        "c581898b32e60806",
+        "18815d7c9430dafc",
+        "169a9ad9d26acd00",
+        "785bb64fe6ab46f1",
+        "34d95b2a61d1d6cc",
+        "e130d6ecba83d83b",
+        "b9eb8373ee113041",
+        "eebc817ae5d3e290",
+        "86f1faa9d74e1df8",
+        "81d6e5be71386abd",
+        "b0cf781682d06bfd",
+        "f6d4e734b3667df0",
+        "036765431c7182d2",
+        "ab6f25656009554d",
+        "0ad684428de047b6",
+        "c51464c26e4c0a9a",
+        "8febfc206779d8b3",
+        "b34144e180a69eee",
+        "5b0f63e939935e25",
+        "6a0adaaa1e445b58",
+        "8c8cea2ab2a6bcef",
+        "33f0a5a277dbdb13",
+        "6f43e731501d6232",
+        "9e9b25c07875adbb",
+        "31cb313c6d867c53"
+      ],
+      "descricao": "Pipeline de integração e deploy contínuo. Identificado em 16 projeto(s) com base em 40 evidência(s)."
+    },
+    {
+      "nome": "Containerização",
+      "categoria": "devops",
+      "nivel": "dominio-solido",
+      "padroes": [
+        "containerizacao"
+      ],
+      "frequencia": 13,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "e6f23139c774d4bd",
+        "8a541066d6054dd0",
+        "176b383cb0b68640",
+        "52d6288d26a88e06",
+        "69ada2f4a8a11819",
+        "be289891ee81f864",
+        "74e7f962a512bcd1",
+        "2eee8340b41f7c9f",
+        "3e3d725b1672e3de",
+        "64f7a5c59fc74d9c",
+        "246b92f373456ab0",
+        "93c1e5f64b0b896f",
+        "86f1faa9d74e1df8",
+        "3b448a16efae5b24",
+        "f6d4e734b3667df0",
+        "73d2f9cad9dc2722",
+        "33f0a5a277dbdb13",
+        "6f510ac16e1b3c35",
+        "855222ed30a1ddec",
+        "4beeb320ea5f98c7",
+        "9d744e0116e3b817",
+        "fd220ece4671ef6b",
+        "8a4297b3ba407ed1",
+        "f22bbfae041043e5",
+        "c45676efb0f59a34"
+      ],
+      "descricao": "Containerização de aplicações. Identificado em 13 projeto(s) com base em 25 evidência(s)."
+    },
+    {
+      "nome": "APIs RESTful",
+      "categoria": "backend",
+      "nivel": "experiencia-avancada",
+      "padroes": [
+        "api-rest"
+      ],
+      "frequencia": 5,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "34c1e71b17f39930",
+        "653f4a06ad07bd4e",
+        "bf14be656e0bf73b",
+        "168f8e12ea9c8e2b",
+        "2a3b150ccaed0751",
+        "33f0a5a277dbdb13",
+        "f1535d8c31969505"
+      ],
+      "descricao": "Desenvolvimento de APIs RESTful. Identificado em 5 projeto(s) com base em 7 evidência(s)."
+    },
+    {
+      "nome": "Microsserviços",
+      "categoria": "arquitetura",
+      "nivel": "experiencia-avancada",
+      "padroes": [
+        "microservicos"
+      ],
+      "frequencia": 6,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "e6f23139c774d4bd",
+        "176b383cb0b68640",
+        "4d50c85a4c95f9f8",
+        "52d6288d26a88e06",
+        "74e7f962a512bcd1",
+        "2eee8340b41f7c9f",
+        "246b92f373456ab0",
+        "93c1e5f64b0b896f",
+        "3b448a16efae5b24",
+        "fc884350d28f35bb"
+      ],
+      "descricao": "Arquitetura de microsserviços. Identificado em 6 projeto(s) com base em 10 evidência(s)."
+    },
+    {
+      "nome": "Design System",
+      "categoria": "frontend",
+      "nivel": "dominio-solido",
+      "padroes": [
+        "design-system"
+      ],
+      "frequencia": 9,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "ca311626b85426cc",
+        "6fad47004f50e3ff",
+        "90fa71f2c13a7b5a",
+        "bfe19de940f39143",
+        "47e56910f9934249",
+        "83bb2f501bdcf106",
+        "735554dfede743f8",
+        "56c538e06aa63977",
+        "21a633ad6e3a599c",
+        "c4402f2bea8dd939",
+        "39c5c737db92b581",
+        "a363e00554cd91ed",
+        "10c8e7e4ef2012d6",
+        "d7a2b859a58a8231",
+        "ed6165864f3d8ce5",
+        "f490ec395c53887f"
+      ],
+      "descricao": "Implementação de Design System. Identificado em 9 projeto(s) com base em 16 evidência(s)."
+    },
+    {
+      "nome": "Database Migrations",
+      "categoria": "banco-de-dados",
+      "nivel": "experiencia-avancada",
+      "padroes": [
+        "migrations"
+      ],
+      "frequencia": 4,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "e6f23139c774d4bd",
+        "f0c2e8088ab91c30",
+        "3c264611e399ee48",
+        "93c1e5f64b0b896f",
+        "3b448a16efae5b24",
+        "2eedbec850d8c166"
+      ],
+      "descricao": "Versionamento de schema de banco de dados. Identificado em 4 projeto(s) com base em 6 evidência(s)."
+    },
+    {
+      "nome": "Documentação Técnica",
+      "categoria": "produto",
+      "nivel": "dominio-solido",
+      "padroes": [
+        "documentacao"
+      ],
+      "frequencia": 8,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "74e7f962a512bcd1",
+        "90fa71f2c13a7b5a",
+        "51be64bbbb6f33b6",
+        "0196580344bc07f1",
+        "246b92f373456ab0",
+        "c5f3089d0346d6da",
+        "2d21c93c2d1ad6b0",
+        "ed6165864f3d8ce5",
+        "d0b8c4fe386b6cae"
+      ],
+      "descricao": "Prática de documentação técnica. Identificado em 8 projeto(s) com base em 9 evidência(s)."
+    },
+    {
+      "nome": "Webpack",
+      "categoria": "frontend",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 93,
+      "evidencias_ids": [
+        "1ca5524449c6bd3d",
+        "8de966257e2815a3",
+        "c70dead6bd84a35b",
+        "b90db4e784b8c566"
+      ],
+      "descricao": "Webpack utilizado em 1 projeto(s). Profundidade técnica: 93/100."
+    },
+    {
+      "nome": "MySQL",
+      "categoria": "banco-de-dados",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 4,
+      "profundidade": 91,
+      "evidencias_ids": [
+        "e6f23139c774d4bd",
+        "42aec9e13e3202a5",
+        "93c1e5f64b0b896f",
+        "3b448a16efae5b24",
+        "3db0ef4296b3419a"
+      ],
+      "descricao": "MySQL utilizado em 4 projeto(s). Profundidade técnica: 91/100."
+    },
+    {
+      "nome": "Performance",
+      "categoria": "performance",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 4,
+      "profundidade": 89,
+      "evidencias_ids": [
+        "eebc817ae5d3e290",
+        "81d6e5be71386abd",
+        "036765431c7182d2",
+        "76007f8c52818945"
+      ],
+      "descricao": "Performance utilizado em 4 projeto(s). Profundidade técnica: 89/100."
+    },
+    {
+      "nome": "AWS",
+      "categoria": "devops",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 6,
+      "profundidade": 83,
+      "evidencias_ids": [
+        "59a5afe20e645393",
+        "252a484676c9ce03",
+        "3db0ef4296b3419a",
+        "c00119611c9e8727",
+        "a00f96819555194f",
+        "f87a4bec29269e90"
+      ],
+      "descricao": "AWS utilizado em 6 projeto(s). Profundidade técnica: 83/100."
+    },
+    {
+      "nome": "Vitest",
+      "categoria": "testes",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 3,
+      "profundidade": 82,
+      "evidencias_ids": [
+        "168f8e12ea9c8e2b",
+        "20c5c1cb769cb629",
+        "f490ec395c53887f"
+      ],
+      "descricao": "Vitest utilizado em 3 projeto(s). Profundidade técnica: 82/100."
+    },
+    {
+      "nome": "Multi-stage Build",
+      "categoria": "performance",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 2,
+      "profundidade": 81,
+      "evidencias_ids": [
+        "3e3d725b1672e3de",
+        "6f510ac16e1b3c35",
+        "855222ed30a1ddec"
+      ],
+      "descricao": "Multi-stage Build utilizado em 2 projeto(s). Profundidade técnica: 81/100."
+    },
+    {
+      "nome": "Linting em CI",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 2,
+      "profundidade": 80,
+      "evidencias_ids": [
+        "a1214f7627187617",
+        "078250290ccab62f",
+        "edb6a4c838afda3e",
+        "169a9ad9d26acd00"
+      ],
+      "descricao": "Linting em CI utilizado em 2 projeto(s). Profundidade técnica: 80/100."
+    },
+    {
+      "nome": "Shell",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 3,
+      "profundidade": 67,
+      "evidencias_ids": [
+        "f2a2586da5355e55",
+        "0f228c13ab62ac3c",
+        "3ec62d2692e38a3b"
+      ],
+      "descricao": "Shell utilizado em 3 projeto(s). Profundidade técnica: 67/100."
+    },
+    {
+      "nome": "HTTP Client",
+      "categoria": "integracao",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 3,
+      "profundidade": 65,
+      "evidencias_ids": [
+        "ca311626b85426cc",
+        "6fad47004f50e3ff",
+        "9db553d70e02740c",
+        "7ea3c6ccf7bd7c27"
+      ],
+      "descricao": "HTTP Client utilizado em 3 projeto(s). Profundidade técnica: 65/100."
+    },
+    {
+      "nome": "Linting",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-avancada",
+      "padroes": [],
+      "frequencia": 2,
+      "profundidade": 61,
+      "evidencias_ids": [
+        "168f8e12ea9c8e2b",
+        "21a633ad6e3a599c"
+      ],
+      "descricao": "Linting utilizado em 2 projeto(s). Profundidade técnica: 61/100."
+    },
+    {
+      "nome": "TypeScript/React",
+      "categoria": "frontend",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 3,
+      "profundidade": 59,
+      "evidencias_ids": [
+        "d13188b140242158",
+        "6434d47ed4093287",
+        "85c67b40d725357f"
+      ],
+      "descricao": "TypeScript/React utilizado em 3 projeto(s). Profundidade técnica: 59/100."
+    },
+    {
+      "nome": "Migrations",
+      "categoria": "banco-de-dados",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 2,
+      "profundidade": 57,
+      "evidencias_ids": [
+        "f0c2e8088ab91c30",
+        "3c264611e399ee48",
+        "2eedbec850d8c166"
+      ],
+      "descricao": "Migrations utilizado em 2 projeto(s). Profundidade técnica: 57/100."
+    },
+    {
+      "nome": "Laravel",
+      "categoria": "backend",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 2,
+      "profundidade": 54,
+      "evidencias_ids": [
+        "34c1e71b17f39930",
+        "653f4a06ad07bd4e",
+        "bf14be656e0bf73b",
+        "33f0a5a277dbdb13"
+      ],
+      "descricao": "Laravel utilizado em 2 projeto(s). Profundidade técnica: 54/100."
+    },
+    {
+      "nome": "Symfony",
+      "categoria": "backend",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 53,
+      "evidencias_ids": [
+        "636dd403343395ad",
+        "e20ff19073aebd06"
+      ],
+      "descricao": "Symfony utilizado em 1 projeto(s). Profundidade técnica: 53/100."
+    },
+    {
+      "nome": "Docker em CI",
+      "categoria": "devops",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 52,
+      "evidencias_ids": [
+        "d855e40ab7b8326c",
+        "0f1064880fbf8adc",
+        "1f23a79e572de91b"
+      ],
+      "descricao": "Docker em CI utilizado em 1 projeto(s). Profundidade técnica: 52/100."
+    },
+    {
+      "nome": "Playwright",
+      "categoria": "testes",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 3,
+      "profundidade": 52,
+      "evidencias_ids": [
+        "23959434885aa9da",
+        "086fde4178fc8920",
+        "20c5c1cb769cb629"
+      ],
+      "descricao": "Playwright utilizado em 3 projeto(s). Profundidade técnica: 52/100."
+    },
+    {
+      "nome": "E2E",
+      "categoria": "testes",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 3,
+      "profundidade": 52,
+      "evidencias_ids": [
+        "23959434885aa9da",
+        "086fde4178fc8920",
+        "20c5c1cb769cb629"
+      ],
+      "descricao": "E2E utilizado em 3 projeto(s). Profundidade técnica: 52/100."
+    },
+    {
+      "nome": "Deploy Automatizado",
+      "categoria": "devops",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 2,
+      "profundidade": 47,
+      "evidencias_ids": [
+        "b0cf781682d06bfd",
+        "ab6f25656009554d"
+      ],
+      "descricao": "Deploy Automatizado utilizado em 2 projeto(s). Profundidade técnica: 47/100."
+    },
+    {
+      "nome": "Express.js",
+      "categoria": "backend",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 2,
+      "profundidade": 46,
+      "evidencias_ids": [
+        "168f8e12ea9c8e2b",
+        "f1535d8c31969505"
+      ],
+      "descricao": "Express.js utilizado em 2 projeto(s). Profundidade técnica: 46/100."
+    },
+    {
+      "nome": "PostgreSQL",
+      "categoria": "banco-de-dados",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 3,
+      "profundidade": 44,
+      "evidencias_ids": [
+        "8a4297b3ba407ed1",
+        "3db0ef4296b3419a",
+        "c00119611c9e8727"
+      ],
+      "descricao": "PostgreSQL utilizado em 3 projeto(s). Profundidade técnica: 44/100."
+    },
+    {
+      "nome": "API Backend",
+      "categoria": "arquitetura",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 39,
+      "evidencias_ids": [
+        "176b383cb0b68640",
+        "4d50c85a4c95f9f8"
+      ],
+      "descricao": "API Backend utilizado em 1 projeto(s). Profundidade técnica: 39/100."
+    },
+    {
+      "nome": "Swift",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 33,
+      "evidencias_ids": [
+        "f2a2586da5355e55"
+      ],
+      "descricao": "Swift utilizado em 1 projeto(s). Profundidade técnica: 33/100."
+    },
+    {
+      "nome": "Kotlin",
+      "categoria": "backend",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 33,
+      "evidencias_ids": [
+        "f2a2586da5355e55"
+      ],
+      "descricao": "Kotlin utilizado em 1 projeto(s). Profundidade técnica: 33/100."
+    },
+    {
+      "nome": "Go",
+      "categoria": "backend",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 33,
+      "evidencias_ids": [
+        "f2a2586da5355e55"
+      ],
+      "descricao": "Go utilizado em 1 projeto(s). Profundidade técnica: 33/100."
+    },
+    {
+      "nome": "SQL",
+      "categoria": "banco-de-dados",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 33,
+      "evidencias_ids": [
+        "6434d47ed4093287"
+      ],
+      "descricao": "SQL utilizado em 1 projeto(s). Profundidade técnica: 33/100."
+    },
+    {
+      "nome": "Next.js",
+      "categoria": "frontend",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 33,
+      "evidencias_ids": [
+        "21a633ad6e3a599c"
+      ],
+      "descricao": "Next.js utilizado em 1 projeto(s). Profundidade técnica: 33/100."
+    },
+    {
+      "nome": "SSR",
+      "categoria": "frontend",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 33,
+      "evidencias_ids": [
+        "21a633ad6e3a599c"
+      ],
+      "descricao": "SSR utilizado em 1 projeto(s). Profundidade técnica: 33/100."
+    },
+    {
+      "nome": "React Router",
+      "categoria": "frontend",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 33,
+      "evidencias_ids": [
+        "f490ec395c53887f"
+      ],
+      "descricao": "React Router utilizado em 1 projeto(s). Profundidade técnica: 33/100."
+    },
+    {
+      "nome": "SPA",
+      "categoria": "frontend",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 33,
+      "evidencias_ids": [
+        "f490ec395c53887f"
+      ],
+      "descricao": "SPA utilizado em 1 projeto(s). Profundidade técnica: 33/100."
+    },
+    {
+      "nome": "PHPUnit",
+      "categoria": "testes",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 18,
+      "evidencias_ids": [
+        "653f4a06ad07bd4e"
+      ],
+      "descricao": "PHPUnit utilizado em 1 projeto(s). Profundidade técnica: 18/100."
+    },
+    {
+      "nome": "Django",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 18,
+      "evidencias_ids": [
+        "be289891ee81f864"
+      ],
+      "descricao": "Django utilizado em 1 projeto(s). Profundidade técnica: 18/100."
+    },
+    {
+      "nome": "Redis",
+      "categoria": "banco-de-dados",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 18,
+      "evidencias_ids": [
+        "840a0b287d32b8c8"
+      ],
+      "descricao": "Redis utilizado em 1 projeto(s). Profundidade técnica: 18/100."
+    },
+    {
+      "nome": "REST API",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 18,
+      "evidencias_ids": [
+        "2a3b150ccaed0751"
+      ],
+      "descricao": "REST API utilizado em 1 projeto(s). Profundidade técnica: 18/100."
+    },
+    {
+      "nome": "GraphQL",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "padroes": [
+        "api-graphql"
+      ],
+      "frequencia": 1,
+      "profundidade": 18,
+      "evidencias_ids": [
+        "33f0a5a277dbdb13"
+      ],
+      "descricao": "GraphQL utilizado em 1 projeto(s). Profundidade técnica: 18/100."
+    },
+    {
+      "nome": "GCP",
+      "categoria": "devops",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 18,
+      "evidencias_ids": [
+        "6ae10ecc96646622"
+      ],
+      "descricao": "GCP utilizado em 1 projeto(s). Profundidade técnica: 18/100."
+    },
+    {
+      "nome": "Microservices",
+      "categoria": "arquitetura",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 18,
+      "evidencias_ids": [
+        "fc884350d28f35bb"
+      ],
+      "descricao": "Microservices utilizado em 1 projeto(s). Profundidade técnica: 18/100."
+    },
+    {
+      "nome": "Estratégias de Cache",
+      "categoria": "performance",
+      "nivel": "conhecimento-basico",
+      "padroes": [
+        "estrategia-cache"
+      ],
+      "frequencia": 1,
+      "profundidade": 18,
+      "evidencias_ids": [
+        "840a0b287d32b8c8"
+      ],
+      "descricao": "Implementação de estratégias de cache. Identificado em 1 projeto(s) com base em 1 evidência(s)."
+    }
+  ],
+  "por_nivel": {
+    "conhecimento-basico": [
+      "PHPUnit",
+      "Django",
+      "Redis",
+      "REST API",
+      "GraphQL",
+      "GCP",
+      "Microservices",
+      "Estratégias de Cache"
+    ],
+    "experiencia-pratica": [
+      "Shell",
+      "HTTP Client",
+      "TypeScript/React",
+      "Migrations",
+      "Laravel",
+      "Symfony",
+      "Docker em CI",
+      "Playwright",
+      "E2E",
+      "Deploy Automatizado",
+      "Express.js",
+      "PostgreSQL",
+      "API Backend",
+      "Swift",
+      "Kotlin",
+      "Go",
+      "SQL",
+      "Next.js",
+      "SSR",
+      "React Router",
+      "SPA"
+    ],
+    "experiencia-avancada": [
+      "Tailwind CSS",
+      "CSS",
+      "Vite",
+      "Bundler",
+      "PHP",
+      "Docker Compose",
+      "Environment Config",
+      "Refatoração",
+      "GitHub Actions",
+      "Testes em CI",
+      "Componentização",
+      "Jest",
+      "APIs RESTful",
+      "Microsserviços",
+      "Database Migrations",
+      "Webpack",
+      "MySQL",
+      "Performance",
+      "AWS",
+      "Vitest",
+      "Multi-stage Build",
+      "Linting em CI",
+      "Linting"
+    ],
+    "dominio-solido": [
+      "Build Pipeline",
+      "Docker",
+      "Node.js",
+      "Git",
+      "JavaScript",
+      "Testes",
+      "CI/CD",
+      "Testes Automatizados",
+      "Tooling",
+      "Conventional Commits",
+      "Zod",
+      "Validação",
+      "TypeScript",
+      "Python",
+      "Organização de Código",
+      "Documentação",
+      "React",
+      "Refatoração Estrutural",
+      "CI/CD Pipeline",
+      "Containerização",
+      "Design System",
+      "Documentação Técnica"
+    ]
+  },
+  "por_categoria": {
+    "arquitetura": [
+      "Microsserviços",
+      "API Backend",
+      "Microservices"
+    ],
+    "fundamentos": [
+      "Git",
+      "JavaScript",
+      "Testes",
+      "Tooling",
+      "Conventional Commits",
+      "Refatoração",
+      "Zod",
+      "Validação",
+      "TypeScript",
+      "Organização de Código",
+      "Refatoração Estrutural",
+      "Linting em CI",
+      "Shell",
+      "Linting",
+      "Swift"
+    ],
+    "performance": [
+      "Performance",
+      "Multi-stage Build",
+      "Estratégias de Cache"
+    ],
+    "escalabilidade": [],
+    "testes": [
+      "Testes Automatizados",
+      "Testes em CI",
+      "Jest",
+      "Vitest",
+      "Playwright",
+      "E2E",
+      "PHPUnit"
+    ],
+    "devops": [
+      "Build Pipeline",
+      "Docker",
+      "Docker Compose",
+      "CI/CD",
+      "GitHub Actions",
+      "CI/CD Pipeline",
+      "Containerização",
+      "AWS",
+      "Docker em CI",
+      "Deploy Automatizado",
+      "GCP"
+    ],
+    "produto": [
+      "Documentação",
+      "Documentação Técnica"
+    ],
+    "seguranca": [
+      "Environment Config"
+    ],
+    "banco-de-dados": [
+      "Database Migrations",
+      "MySQL",
+      "Migrations",
+      "PostgreSQL",
+      "SQL",
+      "Redis"
+    ],
+    "frontend": [
+      "Tailwind CSS",
+      "CSS",
+      "Vite",
+      "Bundler",
+      "React",
+      "Componentização",
+      "Design System",
+      "Webpack",
+      "TypeScript/React",
+      "Next.js",
+      "SSR",
+      "React Router",
+      "SPA"
+    ],
+    "backend": [
+      "PHP",
+      "Node.js",
+      "Python",
+      "APIs RESTful",
+      "Laravel",
+      "Symfony",
+      "Express.js",
+      "Kotlin",
+      "Go",
+      "Django",
+      "REST API",
+      "GraphQL"
+    ],
+    "integracao": [
+      "HTTP Client"
+    ]
+  },
+  "padroes_identificados": [
+    "separacao-camadas",
+    "estrategia-cache",
+    "refatoracao-estrutural",
+    "testes-automatizados",
+    "ci-cd",
+    "containerizacao",
+    "api-rest",
+    "api-graphql",
+    "microservicos",
+    "design-system",
+    "migrations",
+    "documentacao"
+  ]
+}
