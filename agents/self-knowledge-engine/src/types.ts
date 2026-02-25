@@ -48,6 +48,14 @@ export interface Evidence {
   peso_base?: number;
   /** Peso final após ajustes de autoria/framework */
   peso_final?: number;
+
+  // ─── Commit Detail Fields (v3.0) ──────────────────────────────
+  /** Análises de commit individuais associadas a esta evidência */
+  commit_analyses?: CommitAnalysis[];
+  /** Nível de profundidade da alteração (1-4) */
+  depth_level?: DepthLevel;
+  /** Módulo arquitetural predominante */
+  modulo_tipo?: ModuleType;
 }
 
 // ─── Knowledge Truth (v2.1) ─────────────────────────────────────────
@@ -169,6 +177,18 @@ export interface ExtractedSkill {
   evidencias_ids: string[];
   /** Descrição factual consolidada */
   descricao: string;
+
+  // ─── Campos v3.0 (Commit-Based Analysis) ─────────────────────
+  /** Confidence score (0-100) — baseado em frequência + profundidade real */
+  confidence?: number;
+  /** Justificativa do nível atribuído */
+  justificativa?: string;
+  /** Profundidade média dos commits que tocam esta skill (1-4) */
+  depth_medio?: number;
+  /** Quantidade de commits autorais que sustentam esta skill */
+  commits_autorais?: number;
+  /** Se a skill foi inferida por stack do projeto (marcada para revisão) */
+  inferida_por_stack?: boolean;
 }
 
 export interface SkillBase {
@@ -268,6 +288,120 @@ export interface SKEConfig {
   ignore_patterns: string[];
   /** Profundidade máxima de diretório */
   max_depth: number;
+}
+
+// ─── Commit Analysis (v3.0) ──────────────────────────────────────────
+
+/** Análise individual de um commit Git */
+export interface CommitAnalysis {
+  /** Hash do commit */
+  hash: string;
+  /** Autor do commit (nome) */
+  autor: string;
+  /** Email do autor */
+  autor_email: string;
+  /** Data do commit (ISO) */
+  data: string;
+  /** Mensagem do commit */
+  mensagem: string;
+  /** Arquivos modificados neste commit */
+  arquivos_modificados: CommitFileChange[];
+  /** Total de linhas adicionadas */
+  linhas_adicionadas: number;
+  /** Total de linhas removidas */
+  linhas_removidas: number;
+  /** Se o autor é o usuário configurado */
+  is_own_commit: boolean;
+  /** Nível de profundidade da alteração (1-4) */
+  depth_level: DepthLevel;
+  /** Domínios técnicos tocados neste commit */
+  dominios: string[];
+  /** Peso arquitetural do commit */
+  peso_arquitetural: number;
+}
+
+/** Alteração de arquivo dentro de um commit */
+export interface CommitFileChange {
+  /** Caminho do arquivo */
+  caminho: string;
+  /** Extensão do arquivo */
+  extensao: string;
+  /** Linhas adicionadas */
+  adicionadas: number;
+  /** Linhas removidas */
+  removidas: number;
+  /** Classificação do arquivo */
+  classificacao: FileClassification;
+  /** Domínio técnico inferido pela extensão */
+  dominio: string;
+  /** Se é arquivo de dependência/scaffold (não conta como evidência) */
+  is_dependency: boolean;
+  /** Módulo arquitetural (core, superficial, config, etc.) */
+  modulo_tipo: ModuleType;
+}
+
+/** Classificação de arquivo por origem */
+export type FileClassification =
+  | 'codigo-autoral'      // Código escrito pelo dev
+  | 'scaffold'            // Gerado por CLI/framework
+  | 'dependencia'         // node_modules, vendor, etc.
+  | 'configuracao'        // tsconfig, eslint, etc.
+  | 'documentacao'        // README, docs
+  | 'teste'               // Arquivos de teste
+  | 'migracao'            // Migrations de BD
+  | 'asset';              // Imagens, fontes, etc.
+
+/** Tipo de módulo arquitetural */
+export type ModuleType =
+  | 'core'                // domain, services, middleware, auth, infra
+  | 'feature'             // components, pages, routes
+  | 'test'                // testes
+  | 'config'              // configuração
+  | 'docs'                // documentação
+  | 'superficial';        // README, changelog, assets
+
+/** Nível de profundidade da alteração (1-4) */
+export type DepthLevel = 1 | 2 | 3 | 4;
+// 1 = ajuste superficial (typo, config, README)
+// 2 = implementação funcional (novo componente, rota, etc.)
+// 3 = refatoração estrutural (reorganizar módulos, renomear camadas)
+// 4 = alteração crítica (auth, middleware, domain, infra)
+
+/** Peso por contexto arquitetural */
+export interface ArchitecturalWeight {
+  /** Domínio técnico */
+  dominio: string;
+  /** Peso multiplicador (1.0 = normal, >1 = aumento) */
+  peso: number;
+  /** Justificativa */
+  motivo: string;
+}
+
+/** Resultado de confidence scoring para uma skill */
+export interface ConfidenceResult {
+  /** Nome da skill */
+  skill: string;
+  /** Frequência: em quantos commits/projetos aparece */
+  frequencia: number;
+  /** Profundidade média dos commits (1-4) */
+  profundidade_media: number;
+  /** Score de confiança (0-100) */
+  confidence: number;
+  /** Nível final calculado */
+  nivel_final: SkillLevel;
+  /** Justificativa do nível atribuído */
+  justificativa: string;
+  /** Se houve rebaixamento, por quê */
+  rebaixamento_motivo?: string;
+  /** Se houve promoção, evidências que sustentam */
+  promocao_evidencias?: string[];
+}
+
+/** Mapa de extensão → domínio técnico */
+export interface ExtensionDomainMap {
+  extensao: string;
+  dominio: string;
+  categoria: SkillCategory;
 }
 
 // ─── Pipeline ────────────────────────────────────────────────────────

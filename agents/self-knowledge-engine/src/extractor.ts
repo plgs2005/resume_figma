@@ -1,11 +1,19 @@
 /**
- * SelfKnowledgeEngine — Camada 3: Skill Extractor
+ * SelfKnowledgeEngine — Camada 3: Skill Extractor (v3.0)
  *
  * Responsável por:
  * - Identificar padrões reais de engenharia
  * - Determinar frequência de uso e profundidade técnica
  * - Classificar nível de habilidade
  * - Tudo baseado exclusivamente em evidência factual
+ *
+ * ALTERAÇÕES v3.0:
+ * - Confidence scoring: frequência + profundidade = nível final
+ * - Nunca rebaixar habilidade sem justificar com dados
+ * - Nunca promover habilidade sem múltiplas evidências fortes
+ * - NÃO inferir habilidade apenas porque o projeto usa tecnologia X
+ * - Apenas commits modificados pelo usuário contam
+ * - Sistema de profundidade (1-4) baseado em commit real
  */
 
 import type {
@@ -16,6 +24,7 @@ import type {
   SkillCategory,
   EngineeringPattern,
   Evidence,
+  ConfidenceResult,
 } from './types.js';
 import { now, log } from './utils.js';
 import { STACK_TO_CATEGORY } from './normalizer.js';
@@ -149,9 +158,103 @@ const PATTERN_RULES: PatternRule[] = [
   },
 ];
 
-// ─── Skill Level Assessment ─────────────────────────────────────────
+// ─── Skill Level Assessment (v3.0 — Confidence-based) ───────────────
 
-function assessSkillLevel(frequency: number, depth: number, complexity: number): SkillLevel {
+/**
+ * v3.0: Calcula o nível de skill baseado em confidence scoring.
+ * Nunca promove sem múltiplas evidências fortes.
+ * Nunca rebaixa sem justificativa.
+ */
+function assessSkillLevelWithConfidence(
+  frequency: number,
+  _depth: number,
+  complexity: number,
+  evidences: Evidence[]
+): ConfidenceResult {
+  // Contar evidências autorais (commit com autoria verificada)
+  const autorais = evidences.filter(e => e.autoria_verificada === true);
+  const commitEvidences = evidences.filter(e => e.tipo === 'commit');
+  const commitAutorais = commitEvidences.filter(e => e.autoria_verificada === true);
+
+  // Calcular profundidade média real dos commits (1-4)
+  const depthLevels = evidences
+    .filter(e => e.depth_level !== undefined)
+    .map(e => e.depth_level as number);
+  const avgDepth = depthLevels.length > 0
+    ? depthLevels.reduce((a, b) => a + b, 0) / depthLevels.length
+    : 1;
+
+  // ─── Confidence Score (0-100) ────────────────────────────────
+  // Baseado em: frequência de commits autorais + profundidade real + complexidade
+  let confidence = 0;
+
+  // Fator 1: Frequência de commits autorais (max 35 pts)
+  confidence += Math.min(commitAutorais.length * 5, 35);
+
+  // Fator 2: Profundidade média dos commits (max 30 pts)
+  confidence += Math.min(avgDepth * 7.5, 30);
+
+  // Fator 3: Diversidade de projetos com evidência autoral (max 20 pts)
+  const projectsWithAutoral = new Set(autorais.filter(e => e.projeto).map(e => e.projeto));
+  confidence += Math.min(projectsWithAutoral.size * 10, 20);
+
+  // Fator 4: Complexidade das evidências (max 15 pts)
+  const complexityBonus = complexity * 0.15;
+  confidence += Math.min(complexityBonus, 15);
+
+  confidence = Math.min(Math.round(confidence), 100);
+
+  // ─── Nível Final ─────────────────────────────────────────────
+  let nivel: SkillLevel;
+  let justificativa: string;
+  let rebaixamento_motivo: string | undefined;
+  let promocao_evidencias: string[] | undefined;
+
+  if (confidence >= 75 && commitAutorais.length >= 5 && avgDepth >= 3) {
+    nivel = 'dominio-solido';
+    justificativa = `Confidence ${confidence}/100. ${commitAutorais.length} commits autorais, profundidade média ${avgDepth.toFixed(1)}/4, ${projectsWithAutoral.size} projeto(s).`;
+    promocao_evidencias = commitAutorais.slice(0, 3).map(e => e.descricao.slice(0, 80));
+  } else if (confidence >= 50 && commitAutorais.length >= 3 && avgDepth >= 2) {
+    nivel = 'experiencia-avancada';
+    justificativa = `Confidence ${confidence}/100. ${commitAutorais.length} commits autorais, profundidade média ${avgDepth.toFixed(1)}/4.`;
+  } else if (confidence >= 25 && commitAutorais.length >= 1) {
+    nivel = 'experiencia-pratica';
+    justificativa = `Confidence ${confidence}/100. ${commitAutorais.length} commit(s) autoral(is).`;
+  } else {
+    nivel = 'conhecimento-basico';
+    justificativa = `Confidence ${confidence}/100. Evidência insuficiente para nível superior.`;
+
+    // Justificativa de rebaixamento se tinha evidências mas sem autoria
+    if (evidences.length > 0 && commitAutorais.length === 0) {
+      rebaixamento_motivo = `Nenhum commit autoral encontrado. ${evidences.length} evidência(s) sem autoria verificada não são suficientes para promoção.`;
+    }
+  }
+
+  // ─── Proteção contra promoção sem evidência forte ────────────
+  // REGRA: Nunca promover skill sem múltiplas evidências de commit autoral
+  if (nivel !== 'conhecimento-basico' && commitAutorais.length === 0) {
+    nivel = 'conhecimento-basico';
+    rebaixamento_motivo = `Rebaixado: nenhum commit autoral. Stack do projeto não conta como prova de habilidade.`;
+    justificativa += ` REBAIXADO: sem commits autorais.`;
+  }
+
+  return {
+    skill: '',
+    frequencia: frequency,
+    profundidade_media: avgDepth,
+    confidence,
+    nivel_final: nivel,
+    justificativa,
+    rebaixamento_motivo,
+    promocao_evidencias,
+  };
+}
+
+/**
+ * Fallback para compatibilidade: assess simples sem confidence.
+ * Usado apenas quando não há dados de commit v3.0.
+ */
+export function assessSkillLevel(frequency: number, depth: number, complexity: number): SkillLevel {
   const score = (frequency * 0.3) + (depth * 0.4) + (complexity * 0.3);
 
   if (score >= 75) return 'dominio-solido';
@@ -251,7 +354,7 @@ export class SkillExtractor {
     return result;
   }
 
-  // ─── Tech Skills Extraction ──────────────────────────────────────
+  // ─── Tech Skills Extraction (v3.0 — Commit-based) ────────────
 
   private extractTechSkills(base: NormalizedBase): ExtractedSkill[] {
     // Agregar todas as stacks de todos os projetos
@@ -285,10 +388,40 @@ export class SkillExtractor {
       // Ignorar items genéricos demais
       if (['Frontend', 'Backend', 'Database', 'DevOps'].includes(tech)) continue;
 
+      // ─── v3.0: Verificar se tem evidências de commit autoral ───
+      const commitEvidences = data.evidences.filter(e => e.tipo === 'commit');
+      const autorais = data.evidences.filter(e => e.autoria_verificada === true);
+      const hasAuthoralEvidence = autorais.length > 0;
+
+      // v3.0: Se NÃO tem evidência autoral, marcar como inferida por stack
+      // e rebaixar para conhecimento-basico
+      const isStackInferred = !hasAuthoralEvidence && commitEvidences.length === 0;
+
       const frequency = data.projects.size;
       const depth = assessDepth(data.evidences);
       const complexity = assessComplexity(data.evidences);
-      const level = assessSkillLevel(frequency * 10, depth, complexity);
+
+      // v3.0: Usar confidence scoring se tiver evidências de commit
+      let level: SkillLevel;
+      let confidence: number | undefined;
+      let justificativa: string | undefined;
+      let depthMedio: number | undefined;
+      let commitsAutorais: number | undefined;
+
+      if (commitEvidences.length > 0 || autorais.length > 0) {
+        // Usar confidence scoring (v3.0)
+        const result = assessSkillLevelWithConfidence(frequency, depth, complexity, data.evidences);
+        level = result.nivel_final;
+        confidence = result.confidence;
+        justificativa = result.justificativa;
+        depthMedio = result.profundidade_media;
+        commitsAutorais = autorais.filter(e => e.tipo === 'commit').length;
+      } else {
+        // Sem commits → conhecimento-basico (não infere por stack)
+        level = 'conhecimento-basico';
+        confidence = 0;
+        justificativa = `Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.`;
+      }
 
       const categories = Array.from(data.categories);
       const primaryCategory = categories[0] || 'fundamentos';
@@ -301,7 +434,13 @@ export class SkillExtractor {
         frequencia: frequency,
         profundidade: depth,
         evidencias_ids: data.evidences.map(e => e.id),
-        descricao: `${tech} utilizado em ${frequency} projeto(s). Profundidade técnica: ${depth}/100.`,
+        descricao: `${tech} utilizado em ${frequency} projeto(s). Profundidade técnica: ${depth}/100.${isStackInferred ? ' ⚠️ INFERIDA POR STACK — sem commits autorais.' : ''}`,
+        // Campos v3.0
+        confidence,
+        justificativa,
+        depth_medio: depthMedio,
+        commits_autorais: commitsAutorais,
+        inferida_por_stack: isStackInferred,
       });
     }
 
@@ -330,7 +469,7 @@ export class SkillExtractor {
     return identifiedPatterns;
   }
 
-  // ─── Pattern Skills ──────────────────────────────────────────────
+  // ─── Pattern Skills (v3.0 — Commit-based) ────────────────────
 
   private extractPatternSkills(patterns: EngineeringPattern[], allEvidences: Evidence[]): ExtractedSkill[] {
     const skills: ExtractedSkill[] = [];
@@ -347,11 +486,30 @@ export class SkillExtractor {
 
       if (relatedEvidences.length === 0) continue;
 
+      // v3.0: Filtrar apenas evidências com autoria verificada para pontuar
+      const autorais = relatedEvidences.filter(e => e.autoria_verificada === true);
+      const hasAuthoralEvidence = autorais.length > 0;
+
       const uniqueProjects = new Set(relatedEvidences.filter(e => e.projeto).map(e => e.projeto));
       const frequency = uniqueProjects.size;
       const depth = assessDepth(relatedEvidences);
       const complexity = assessComplexity(relatedEvidences);
-      const level = assessSkillLevel(frequency * 10, depth, complexity);
+
+      // v3.0: Usar confidence scoring
+      let level: SkillLevel;
+      let confidence: number | undefined;
+      let justificativa: string | undefined;
+
+      if (hasAuthoralEvidence) {
+        const result = assessSkillLevelWithConfidence(frequency, depth, complexity, relatedEvidences);
+        level = result.nivel_final;
+        confidence = result.confidence;
+        justificativa = result.justificativa;
+      } else {
+        level = 'conhecimento-basico';
+        confidence = 0;
+        justificativa = `Padrão detectado na stack, mas sem commits autorais confirmados.`;
+      }
 
       // Determinar categoria primária do padrão
       const categoryMap: Record<string, SkillCategory> = {
@@ -385,7 +543,12 @@ export class SkillExtractor {
         frequencia: frequency,
         profundidade: depth,
         evidencias_ids: relatedEvidences.map(e => e.id),
-        descricao: `${rule.descricao}. Identificado em ${frequency} projeto(s) com base em ${relatedEvidences.length} evidência(s).`,
+        descricao: `${rule.descricao}. Identificado em ${frequency} projeto(s) com base em ${relatedEvidences.length} evidência(s).${!hasAuthoralEvidence ? ' ⚠️ Sem commits autorais — não promovido.' : ''}`,
+        // Campos v3.0
+        confidence,
+        justificativa,
+        commits_autorais: autorais.filter(e => e.tipo === 'commit').length,
+        inferida_por_stack: !hasAuthoralEvidence,
       });
     }
 
@@ -497,11 +660,29 @@ export class SkillExtractor {
   }
 
   private printSummary(base: SkillBase): void {
-    console.log('\n📊 RESUMO DE SKILLS:');
+    console.log('\n📊 RESUMO DE SKILLS (v3.0 — Confidence-based):');
     console.log(`   Domínio sólido:        ${base.por_nivel['dominio-solido'].length} skills`);
     console.log(`   Experiência avançada:   ${base.por_nivel['experiencia-avancada'].length} skills`);
     console.log(`   Experiência prática:    ${base.por_nivel['experiencia-pratica'].length} skills`);
     console.log(`   Conhecimento básico:    ${base.por_nivel['conhecimento-basico'].length} skills`);
     console.log(`   Padrões de engenharia:  ${base.padroes_identificados.length}`);
+
+    // v3.0: Mostrar skills inferidas por stack (que foram rebaixadas)
+    const inferidas = base.skills.filter(s => s.inferida_por_stack);
+    if (inferidas.length > 0) {
+      console.log(`\n   ⚠️  Skills inferidas por stack (rebaixadas): ${inferidas.length}`);
+      for (const s of inferidas.slice(0, 5)) {
+        console.log(`      - ${s.nome} (confidence: ${s.confidence ?? 0}/100)`);
+      }
+    }
+
+    // v3.0: Mostrar skills com alta confidence
+    const highConfidence = base.skills.filter(s => (s.confidence ?? 0) >= 75);
+    if (highConfidence.length > 0) {
+      console.log(`\n   ✅ Skills com alta confidence (≥75): ${highConfidence.length}`);
+      for (const s of highConfidence.slice(0, 5)) {
+        console.log(`      - ${s.nome} (confidence: ${s.confidence}/100, commits autorais: ${s.commits_autorais ?? 0})`);
+      }
+    }
   }
 }

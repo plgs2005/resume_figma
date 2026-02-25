@@ -3,7 +3,7 @@
  */
 
 import { SkillExtractor } from '../src/extractor';
-import type { NormalizedBase, Evidence } from '../src/types';
+import type { NormalizedBase, Evidence, DepthLevel } from '../src/types';
 
 function makeNormalizedBase(overrides: Partial<NormalizedBase> = {}): NormalizedBase {
   return {
@@ -39,6 +39,13 @@ function makeEvidence(partial: Partial<Evidence> = {}): Evidence {
     nivel_complexidade: partial.nivel_complexidade || 'medio',
     coletado_em: partial.coletado_em || new Date().toISOString(),
     projeto: partial.projeto || 'test-project',
+    // v3.0 fields
+    autoria_verificada: partial.autoria_verificada,
+    framework_generated: partial.framework_generated,
+    depth_level: partial.depth_level,
+    modulo_tipo: partial.modulo_tipo,
+    peso_base: partial.peso_base,
+    peso_final: partial.peso_final,
   };
 }
 
@@ -148,5 +155,119 @@ describe('SkillExtractor', () => {
     expect(reactSkill!.profundidade).toBeGreaterThan(0);
     expect(['conhecimento-basico', 'experiencia-pratica', 'experiencia-avancada', 'dominio-solido'])
       .toContain(reactSkill!.nivel);
+  });
+
+  // ─── v3.0: Confidence Scoring Tests ──────────────────────────
+
+  it('should NOT promote skill without autoral commits (v3.0)', () => {
+    // Cenário: skill detectada via stack/config, mas sem commits autorais
+    const base = makeNormalizedBase({
+      total_evidencias_brutas: 2,
+      total_evidencias_unicas: 2,
+      projetos: [
+        {
+          nome: 'config-only-project',
+          caminho: '/test/config-only',
+          stack: ['Redis', 'Docker'],
+          categorias: ['performance', 'devops'],
+          complexidade: 'medio',
+          evidencias: [
+            makeEvidence({
+              tipo: 'config',
+              stack_detectada: ['Redis', 'Docker'],
+              nivel_complexidade: 'medio',
+              autoria_verificada: false,
+            }),
+            makeEvidence({
+              tipo: 'readme',
+              stack_detectada: ['Redis', 'Docker'],
+              nivel_complexidade: 'baixo',
+              autoria_verificada: false,
+            }),
+          ],
+        },
+      ],
+    });
+
+    const result = extractor.extract(base);
+    const redisSkill = result.skills.find(s => s.nome === 'Redis');
+
+    expect(redisSkill).toBeDefined();
+    // v3.0: Sem commits autorais → conhecimento-basico
+    expect(redisSkill!.nivel).toBe('conhecimento-basico');
+    // Deve estar marcada como inferida por stack
+    expect(redisSkill!.inferida_por_stack).toBe(true);
+  });
+
+  it('should promote skill WITH autoral commit evidence (v3.0)', () => {
+    // Cenário: múltiplos commits autorais em diferentes projetos
+    const autoraisEvidences = Array.from({ length: 6 }, (_, i) =>
+      makeEvidence({
+        id: `ev-autoral-${i}`,
+        tipo: 'commit',
+        projeto: `proj-${i % 3}`,
+        stack_detectada: ['TypeScript'],
+        nivel_complexidade: i > 3 ? 'alto' : 'medio',
+        autoria_verificada: true,
+        depth_level: (i > 3 ? 3 : 2) as DepthLevel,
+      })
+    );
+
+    const base = makeNormalizedBase({
+      total_evidencias_brutas: autoraisEvidences.length,
+      total_evidencias_unicas: autoraisEvidences.length,
+      projetos: [
+        {
+          nome: 'real-project',
+          caminho: '/test/real',
+          stack: ['TypeScript'],
+          categorias: ['fundamentos'],
+          complexidade: 'alto',
+          evidencias: autoraisEvidences,
+        },
+      ],
+    });
+
+    const result = extractor.extract(base);
+    const tsSkill = result.skills.find(s => s.nome === 'TypeScript');
+
+    expect(tsSkill).toBeDefined();
+    // v3.0: Com commits autorais → nível superior
+    expect(tsSkill!.nivel).not.toBe('conhecimento-basico');
+    expect(tsSkill!.confidence).toBeGreaterThan(0);
+    expect(tsSkill!.commits_autorais).toBeGreaterThan(0);
+    expect(tsSkill!.inferida_por_stack).toBe(false);
+  });
+
+  it('should include confidence and justificativa fields (v3.0)', () => {
+    const base = makeNormalizedBase({
+      total_evidencias_brutas: 1,
+      total_evidencias_unicas: 1,
+      projetos: [
+        {
+          nome: 'test-project',
+          caminho: '/test',
+          stack: ['React'],
+          categorias: ['frontend'],
+          complexidade: 'medio',
+          evidencias: [
+            makeEvidence({
+              tipo: 'commit',
+              stack_detectada: ['React'],
+              autoria_verificada: true,
+            }),
+          ],
+        },
+      ],
+    });
+
+    const result = extractor.extract(base);
+    const skill = result.skills.find(s => s.nome === 'React');
+
+    expect(skill).toBeDefined();
+    expect(skill!.confidence).toBeDefined();
+    expect(typeof skill!.confidence).toBe('number');
+    expect(skill!.justificativa).toBeDefined();
+    expect(typeof skill!.justificativa).toBe('string');
   });
 });

@@ -1,8 +1,8 @@
 # SelfKnowledgeEngine — Relatório de Skills
 
-**Gerado em:** 2026-02-24T22:49:20.678Z
-**Total de skills:** 17
-**Padrões de engenharia:** 7
+**Gerado em:** 2026-02-25T12:15:30.738Z
+**Total de skills:** 34
+**Padrões de engenharia:** 9
 
 ---
 
@@ -10,58 +10,96 @@
 
 ### 🟡 Experiência Prática
 
-- Testes Automatizados
+- Documentação
+- TypeScript
+- Documentação Técnica
+- CSS
+- React/TypeScript
+- Shell Script
+- CI/CD
+- CI/CD Pipeline
+- Testes
+- HTML
+- Conventional Commits
+- Refatoração
+- Refatoração Estrutural
 
 ### ⚪ Conhecimento Básico
 
-- Organização de Código
-- Tooling
-- TypeScript
-- Jest
-- Testes
-- Build Pipeline
 - React
+- Testes Automatizados
+- Design System
+- Tooling
+- Build Pipeline
+- Tailwind CSS
+- Vite
+- Bundler
+- Componentização
 - Node.js
+- YAML Config
+- Git
+- TypeScript/React
+- Organização de Código
+- Jest
 - Docker
 - Laravel
 - PHP
 - GraphQL
-- CI/CD
-- CI/CD Pipeline
 - Containerização
 - APIs RESTful
 
 ## Padrões de Engenharia Identificados
 
 - separacao-camadas
+- refatoracao-estrutural
 - testes-automatizados
 - ci-cd
 - containerizacao
 - api-rest
 - api-graphql
+- design-system
 - documentacao
 
 ## Skills por Categoria
 
 ### fundamentos
-- Organização de Código
-- Tooling
 - TypeScript
+- React/TypeScript
+- Shell Script
+- Tooling
 - Testes
+- HTML
+- Conventional Commits
+- Refatoração
+- Refatoração Estrutural
+- YAML Config
+- Git
+- Organização de Código
 
 ### testes
 - Testes Automatizados
 - Jest
 
 ### devops
-- Build Pipeline
-- Docker
 - CI/CD
 - CI/CD Pipeline
+- Build Pipeline
+- Docker
 - Containerização
 
+### produto
+- Documentação
+- Documentação Técnica
+
 ### frontend
+- CSS
 - React
+- Design System
+- Tailwind CSS
+- Vite
+- Bundler
+- Componentização
+- TypeScript/React
 
 ### backend
 - Node.js

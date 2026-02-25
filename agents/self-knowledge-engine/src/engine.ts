@@ -138,6 +138,16 @@ export class SelfKnowledgeEngine {
       persistJson(this.getOutputPath('skill-base.json'), this.skillBase);
       log.ok(`Base de skills salva em: ${this.getOutputPath('skill-base.json')}`);
 
+      // v3.0: Log de confidence scoring
+      const inferidas = this.skillBase.skills.filter(s => s.inferida_por_stack);
+      const highConf = this.skillBase.skills.filter(s => (s.confidence ?? 0) >= 75);
+      if (inferidas.length > 0) {
+        log.warn(`${inferidas.length} skill(s) foram inferidas por stack e REBAIXADAS (sem commits autorais).`);
+      }
+      if (highConf.length > 0) {
+        log.ok(`${highConf.length} skill(s) com alta confidence (≥75) baseada em commits autorais.`);
+      }
+
       // Gerar relatório legível
       this.generateSkillReport();
     } catch (err) {
@@ -195,16 +205,27 @@ export class SelfKnowledgeEngine {
         // Score = soma dos peso_final
         const score = skillEvs.reduce((s, e) => s + (e.peso_final ?? 0), 0);
 
-        // Classificar nível pelo score
+        // v3.0: Usar confidence da skill se disponível, senão fallback para score
         let nivel = skill.nivel;
-        if (score >= 15) nivel = 'dominio-solido';
+        const confidence = skill.confidence ?? 0;
+
+        if (confidence > 0) {
+          // v3.0: Nível baseado em confidence scoring (já calculado no extractor)
+          nivel = skill.nivel;
+        } else if (score >= 15) nivel = 'dominio-solido';
         else if (score >= 8) nivel = 'experiencia-avancada';
         else if (score >= 3) nivel = 'experiencia-pratica';
         else nivel = 'conhecimento-basico';
 
-        // Regra: não classificar como avançada+ se nenhuma evidência tem autoria_verificada
+        // Regra v3.0: não classificar como avançada+ se nenhuma evidência tem autoria_verificada
+        // E sem commits autorais confirmados
         if (autorais === 0 && (nivel === 'experiencia-avancada' || nivel === 'dominio-solido')) {
           nivel = 'experiencia-pratica';
+        }
+
+        // Regra v3.0: se skill foi inferida por stack, nunca promover além de básico
+        if (skill.inferida_por_stack && nivel !== 'conhecimento-basico') {
+          nivel = 'conhecimento-basico';
         }
 
         const validatedSkill = {

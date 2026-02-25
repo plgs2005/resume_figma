@@ -1,11 +1,15 @@
 /**
- * SelfKnowledgeEngine — Camada 2: Evidence Normalizer
+ * SelfKnowledgeEngine — Camada 2: Evidence Normalizer (v3.0)
  *
  * Responsável por:
  * - Remover duplicações
  * - Agrupar evidências por projeto
  * - Classificar por categoria
  * - Gerar base consolidada estruturada
+ * - [v3.0] Filtrar evidências por classificação de arquivo
+ * - [v3.0] Rebaixar peso de config/readme/scaffold
+ * - [v3.0] Priorizar evidências com commit_analyses (autoria real)
+ * - [v3.0] NÃO inferir habilidade apenas por stack do projeto
  */
 
 import type {
@@ -196,8 +200,13 @@ export class EvidenceNormalizer {
     const unique = this.deduplicate(rawEvidences);
     log.step(`Após deduplicação: ${unique.length} (removidas ${totalBruto - unique.length})`);
 
-    // 2. Agrupar por projeto
-    const projects = this.groupByProject(unique);
+    // 2. [v3.0] Classificar e filtrar evidências fracas
+    const classified = this.classifyEvidenceStrength(unique);
+    log.step(`Após classificação de força: ${classified.strong.length} fortes, ${classified.weak.length} fracas, ${classified.discarded.length} descartadas`);
+
+    // 3. Agrupar por projeto (usar evidências fortes + fracas com flag)
+    const allValid = [...classified.strong, ...classified.weak];
+    const projects = this.groupByProject(allValid);
     log.step(`Projetos identificados: ${projects.length}`);
 
     // 3. Classificar por categoria
@@ -214,6 +223,69 @@ export class EvidenceNormalizer {
 
     log.ok('Base normalizada gerada com sucesso.');
     return result;
+  }
+
+  // ─── Evidence Strength Classification (v3.0) ─────────────────
+
+  /**
+   * Classifica evidências em fortes, fracas e descartadas.
+   *
+   * REGRAS:
+   * - Evidências de commit com autoria verificada → FORTE
+   * - Evidências de teste/migration com autoria → FORTE
+   * - Evidências de config/readme → FRACA (não prova skill)
+   * - Evidências de framework_generated → DESCARTADA
+   * - Evidências de github-api sem commits autorais → FRACA
+   */
+  private classifyEvidenceStrength(evidences: Evidence[]): {
+    strong: Evidence[];
+    weak: Evidence[];
+    discarded: Evidence[];
+  } {
+    const strong: Evidence[] = [];
+    const weak: Evidence[] = [];
+    const discarded: Evidence[] = [];
+
+    for (const ev of evidences) {
+      // Descartada: framework generated
+      if (ev.framework_generated === true) {
+        discarded.push(ev);
+        continue;
+      }
+
+      // Tipos que NÃO podem provar skill sozinhos
+      const weakTypes: string[] = ['config', 'readme', 'github-api'];
+
+      if (weakTypes.includes(ev.tipo)) {
+        // Config/README/GitHub-API → evidência fraca
+        // Reduzir peso para evitar inflação
+        weak.push({ ...ev, peso_final: Math.min(ev.peso_final ?? 0.1, 0.1) });
+        continue;
+      }
+
+      // Commit com autoria verificada → FORTE
+      if (ev.tipo === 'commit' && ev.autoria_verificada) {
+        strong.push(ev);
+        continue;
+      }
+
+      // Commit sem autoria verificada → FRACA
+      if (ev.tipo === 'commit' && !ev.autoria_verificada) {
+        weak.push({ ...ev, peso_final: (ev.peso_final ?? 0) * 0.2 });
+        continue;
+      }
+
+      // Teste, migration, CI, docker, arquivo com autoria → FORTE
+      if (ev.autoria_verificada) {
+        strong.push(ev);
+        continue;
+      }
+
+      // Resto → FRACA
+      weak.push(ev);
+    }
+
+    return { strong, weak, discarded };
   }
 
   // ─── Deduplication ───────────────────────────────────────────────

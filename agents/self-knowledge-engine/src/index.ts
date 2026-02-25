@@ -12,6 +12,7 @@ export { SkillExtractor } from './extractor.js';
 export { AnswerEngine } from './answer-engine.js';
 export { PromptExporter } from './prompt-export.js';
 export { AuthorshipVerifier, applyWeightsOnly } from './authorship.js';
+export { CommitAnalyzer } from './commit-analyzer.js';
 
 export type {
   PromptFormat,
@@ -39,4 +40,12 @@ export type {
   EvidenceOrigin,
   KnowledgeTruth,
   ValidatedSkill,
+  CommitAnalysis,
+  CommitFileChange,
+  FileClassification,
+  ModuleType,
+  DepthLevel,
+  ArchitecturalWeight,
+  ConfidenceResult,
+  ExtensionDomainMap,
 } from './types.js';

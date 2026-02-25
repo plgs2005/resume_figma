@@ -24,6 +24,7 @@ import {
   now,
   log,
 } from './utils.js';
+import { CommitAnalyzer } from './commit-analyzer.js';
 
 // ─── Stack Detection Maps ────────────────────────────────────────────
 
@@ -105,9 +106,11 @@ const FILE_PATTERN_STACK = [
 export class EvidenceCollector {
   private config: SKEConfig;
   private evidences: Evidence[] = [];
+  private commitAnalyzer: CommitAnalyzer;
 
   constructor(config: SKEConfig) {
     this.config = config;
+    this.commitAnalyzer = new CommitAnalyzer(config.github_username || '');
   }
 
   /**
@@ -404,59 +407,74 @@ export class EvidenceCollector {
     }
   }
 
-  // ─── Git History Analysis ────────────────────────────────────────
+  // ─── Git History Analysis (v3.0 — Commit-level) ──────────────
 
   private collectFromGitHistory(dir: string, projectName: string): void {
     if (!existsSync(join(dir, '.git'))) return;
 
     try {
-      // Contar commits
-      const commitCount = execSync('git rev-list --count HEAD', {
-        cwd: dir,
-        encoding: 'utf-8',
-        timeout: 10000,
-      }).trim();
+      // v3.0: Analisar commits individualmente via CommitAnalyzer
+      const commitAnalyses = this.commitAnalyzer.analyzeRepository(dir, 200);
 
-      // Obter branches
-      const branches = execSync('git branch -a --no-color', {
-        cwd: dir,
-        encoding: 'utf-8',
-        timeout: 10000,
-      }).trim().split('\n').map(b => b.trim().replace('* ', '')).filter(Boolean);
+      if (commitAnalyses.length === 0) {
+        log.warn(`Nenhum commit encontrado em: ${dir}`);
+        return;
+      }
 
-      // Linguagens por extensão
+      // Filtrar apenas commits do usuário (autoria real)
+      const ownCommits = commitAnalyses.filter(c => c.is_own_commit);
+      const totalCommits = commitAnalyses.length;
+
+      log.step(`Git: ${totalCommits} commits totais, ${ownCommits.length} autorais em ${projectName}`);
+
+      // Criar evidência de commit para CADA commit autoral
+      // Isso garante que o agente analise autoria REAL por commit
+      for (const commit of ownCommits) {
+        // Ignorar commits que tocam apenas dependências/scaffold
+        const authoralFiles = commit.arquivos_modificados.filter(f => !f.is_dependency && f.classificacao !== 'scaffold');
+        if (authoralFiles.length === 0) continue;
+
+        // Extrair domínios técnicos REAIS (do código modificado, não da stack do projeto)
+        const dominios = commit.dominios.filter(d => d !== 'Outro');
+        const stack = [...new Set(dominios)];
+
+        // Determinar complexidade baseada na profundidade do commit
+        const complexity: ComplexityLevel =
+          commit.depth_level >= 4 ? 'alto' :
+          commit.depth_level >= 3 ? 'medio' :
+          commit.depth_level >= 2 ? 'medio' : 'baixo';
+
+        // Descrição factual do commit
+        const filesDesc = authoralFiles.slice(0, 5).map(f => f.caminho).join(', ');
+        const moreFiles = authoralFiles.length > 5 ? ` e mais ${authoralFiles.length - 5}` : '';
+
+        this.addEvidence({
+          fonte: dir,
+          tipo: 'commit',
+          descricao: `Commit ${commit.hash.slice(0, 7)}: "${commit.mensagem}". ${authoralFiles.length} arquivo(s) autoral(is) modificado(s) (${filesDesc}${moreFiles}). +${commit.linhas_adicionadas}/-${commit.linhas_removidas} linhas. Profundidade: ${commit.depth_level}/4. Peso arquitetural: ${commit.peso_arquitetural.toFixed(1)}.`,
+          stack_detectada: stack.length > 0 ? stack : ['Git'],
+          nivel_complexidade: complexity,
+          projeto: projectName,
+        });
+      }
+
+      // Criar evidência resumo do repositório (para contexto, não para inferência de skill)
       const langStats = this.getGitLanguageStats(dir);
-
-      // Frequência de commits (últimos 6 meses)
-      const recentCommits = execSync(
-        'git rev-list --count --since="6 months ago" HEAD',
-        { cwd: dir, encoding: 'utf-8', timeout: 10000 }
-      ).trim();
-
-      // Verificar tags (releases)
-      const tags = execSync('git tag -l', {
-        cwd: dir,
-        encoding: 'utf-8',
-        timeout: 10000,
-      }).trim().split('\n').filter(Boolean);
-
-      const complexity = parseInt(commitCount) > 500 ? 'alto' :
-                         parseInt(commitCount) > 100 ? 'medio' : 'baixo';
 
       this.addEvidence({
         fonte: dir,
         tipo: 'commit',
-        descricao: `Repositório Git com ${commitCount} commits totais, ${recentCommits} nos últimos 6 meses. ${branches.length} branches. ${tags.length} tags/releases. ${langStats.length > 0 ? `Linguagens: ${langStats.join(', ')}.` : ''}`,
+        descricao: `Resumo do repositório Git "${projectName}": ${totalCommits} commits totais, ${ownCommits.length} autorais (${((ownCommits.length / totalCommits) * 100).toFixed(0)}%). Profundidade média: ${ownCommits.length > 0 ? (ownCommits.reduce((s, c) => s + c.depth_level, 0) / ownCommits.length).toFixed(1) : '0'}/4. ${langStats.length > 0 ? `Linguagens: ${langStats.join(', ')}.` : ''}`,
         stack_detectada: ['Git', ...langStats],
-        nivel_complexidade: complexity,
+        nivel_complexidade: totalCommits > 500 ? 'alto' : totalCommits > 100 ? 'medio' : 'baixo',
         projeto: projectName,
       });
 
-      // Coletar mensagens de commit recentes para padrões
+      // Coletar padrões de commit (Conventional Commits, etc.)
       this.collectCommitPatterns(dir, projectName);
 
-    } catch {
-      log.warn(`Falha ao ler histórico Git de: ${dir}`);
+    } catch (err) {
+      log.warn(`Falha ao analisar histórico Git de: ${dir} — ${err}`);
     }
   }
 
