@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const emailIcon =
   "https://www.figma.com/api/mcp/asset/429e2d36-12e8-4e69-a200-07bbd82d4675";
