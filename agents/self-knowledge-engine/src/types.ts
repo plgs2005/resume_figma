@@ -404,10 +404,175 @@ export interface ExtensionDomainMap {
   categoria: SkillCategory;
 }
 
+// ─── Project Discovery (Etapa 0) ─────────────────────────────────────
+
+/** Indicador de projeto encontrado em um diretório */
+export interface ProjectIndicator {
+  /** Tipo do indicador (ex: '.git', 'package.json', 'Dockerfile') */
+  tipo: string;
+  /** Caminho absoluto do indicador */
+  caminho: string;
+}
+
+/** Score de relevância calculado para priorização */
+export interface ProjectRelevanceScore {
+  /** Score total (soma dos componentes) */
+  total: number;
+  /** Pontos por commits autorais (+++ até 30) */
+  commits_autorais: number;
+  /** Pontos por tamanho/n. de arquivos (++ até 20) */
+  tamanho: number;
+  /** Pontos por presença de infra docker/ci (++ até 20) */
+  infra: number;
+  /** Pontos por atualização recente (+ até 10) */
+  atualizado_recentemente: number;
+}
+
+/** Projeto descoberto (local ou remoto) */
+export interface DiscoveredProject {
+  /** Hash único baseado no caminho/URL */
+  id: string;
+  /** Nome do projeto */
+  nome: string;
+  /** Path absoluto (local) ou URL (remoto) */
+  caminho: string;
+  /** Origem do projeto */
+  origem: 'local' | 'github' | 'gitlab';
+  /** Indicadores encontrados no diretório */
+  indicadores: ProjectIndicator[];
+  /** Linguagens detectadas (nome → bytes, do GitHub API ou extensão local) */
+  linguagens?: Record<string, number>;
+  /** Branch default */
+  default_branch?: string;
+  /** Último push (ISO date) */
+  last_push?: string;
+  /** Visibilidade */
+  visibility?: 'public' | 'private';
+  /** URL do repositório (remoto) */
+  url?: string;
+  /** Provider (github/gitlab) */
+  provider?: string;
+  /** Score de relevância calculado */
+  relevancia: ProjectRelevanceScore;
+  /** Se foi selecionado para análise detalhada */
+  selected_for_analysis: boolean;
+}
+
+/** Catálogo completo de projetos descobertos */
+export interface ProjectsCatalog {
+  /** Versão do schema */
+  versao: string;
+  /** Timestamp de geração (ISO) */
+  gerado_em: string;
+  /** Path raiz usado para varredura local */
+  root_path?: string;
+  /** Username GitHub usado */
+  github_user?: string;
+  /** Total de projetos descobertos */
+  total_descobertos: number;
+  /** Total selecionados para análise */
+  total_selecionados: number;
+  /** Projetos descobertos */
+  projetos: DiscoveredProject[];
+  /** Avisos (ex: "REMOTO: limitado a públicos") */
+  avisos: string[];
+}
+
+/** Configuração específica do discovery */
+export interface DiscoveryConfig {
+  /** Path raiz para varredura local */
+  root_path: string;
+  /** Username GitHub (opcional) */
+  github_user?: string;
+  /** Username GitLab (opcional) */
+  gitlab_user?: string;
+  /** Token GitHub (opcional — sem token = apenas públicos) */
+  github_token?: string;
+  /** Token GitLab (opcional) */
+  gitlab_token?: string;
+  /** Máximo de projetos selecionados para análise */
+  max_selected: number;
+  /** Profundidade máxima de busca em diretórios */
+  max_depth: number;
+  /** Padrões de diretório a ignorar */
+  ignore_patterns: string[];
+}
+
+// ─── Identity Resolution Engine ──────────────────────────────────────
+
+/** Fonte de onde uma identidade foi descoberta */
+export type IdentitySource = 'git-local' | 'github-api' | 'commit-history' | 'git-config';
+
+/** Identidade normalizada para comparação */
+export interface NormalizedIdentity {
+  /** Nome original (antes da normalização) */
+  original: string;
+  /** Nome normalizado (lowercase, sem pontos, trim) */
+  normalized: string;
+  /** Fingerprint hash para comparação rápida */
+  fingerprint: string;
+  /** Tipo: nome ou email */
+  tipo: 'nome' | 'email';
+}
+
+/** Cluster de identidades agrupadas */
+export interface IdentityCluster {
+  /** ID único do cluster */
+  cluster_id: string;
+  /** Nomes detectados neste cluster */
+  nomes_detectados: string[];
+  /** Emails detectados neste cluster */
+  emails_detectados: string[];
+  /** Fontes de onde vieram as identidades */
+  sources: IdentitySource[];
+  /** Confiança de que pertencem ao mesmo usuário (0-100) */
+  confidence: number;
+}
+
+/** Identidade primária consolidada */
+export interface PrimaryIdentity {
+  /** Nome canônico escolhido (mais frequente ou do git config) */
+  nome_canonico: string;
+  /** Todos os emails associados */
+  emails: string[];
+  /** Todos os usernames associados */
+  usernames: string[];
+}
+
+/** Perfil de identidade persistido */
+export interface IdentityProfile {
+  /** Versão do schema */
+  versao: string;
+  /** Timestamp de geração */
+  gerado_em: string;
+  /** Identidade primária consolidada */
+  primary_identity: PrimaryIdentity;
+  /** Clusters de aliases descobertos (apenas do universo filtrado do usuário) */
+  aliases: IdentityCluster[];
+  /** Total de clusters encontrados (apenas relevantes, pós-filtro) */
+  total_clusters: number;
+  /** Total de autores escaneados no git log (antes do filtro) */
+  total_authors_scanned: number;
+  /** Total de autores que passaram no filtro de relevância */
+  total_authors_filtered: number;
+}
+
+/** Configuração do Identity Resolution */
+export interface IdentityResolutionConfig {
+  /** Path raiz para varredura local */
+  root_path: string;
+  /** Username GitHub (opcional) */
+  github_user?: string;
+  /** Token GitHub (opcional) */
+  github_token?: string;
+  /** Caminhos de projetos descobertos (do discovery) */
+  project_paths?: string[];
+}
+
 // ─── Pipeline ────────────────────────────────────────────────────────
 
 export interface PipelineResult {
-  fase: 'collect' | 'normalize' | 'extract' | 'query' | 'match-job' | 'truth';
+  fase: 'discovery' | 'identity-resolution' | 'collect' | 'normalize' | 'extract' | 'query' | 'match-job' | 'truth';
   sucesso: boolean;
   duracao_ms: number;
   resumo: string;

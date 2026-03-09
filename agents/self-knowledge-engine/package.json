@@ -12,6 +12,7 @@
         "build": "tsc",
         "dev": "tsc --watch",
         "start": "node --enable-source-maps dist/cli.js",
+        "discovery": "node --enable-source-maps dist/cli.js discovery",
         "collect": "node --enable-source-maps dist/cli.js collect",
         "normalize": "node --enable-source-maps dist/cli.js normalize",
         "extract": "node --enable-source-maps dist/cli.js extract",

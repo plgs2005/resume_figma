@@ -16,6 +16,10 @@ import type {
   SKEConfig,
   PipelineResult,
   KnowledgeTruth,
+  ProjectsCatalog,
+  DiscoveryConfig,
+  IdentityProfile,
+  IdentityResolutionConfig,
 } from './types.js';
 import { EvidenceCollector } from './collector.js';
 import { EvidenceNormalizer } from './normalizer.js';
@@ -24,6 +28,8 @@ import { AnswerEngine } from './answer-engine.js';
 import { PromptExporter } from './prompt-export.js';
 import type { PromptExportOptions, ExportedPrompt } from './prompt-export.js';
 import { AuthorshipVerifier } from './authorship.js';
+import { ProjectDiscovery } from './project-discovery.js';
+import { IdentityResolver } from './identity-resolver.js';
 import { loadConfig, persistJson, safeReadJson, log, now, resolveGitHubConfig } from './utils.js';
 
 export class SelfKnowledgeEngine {
@@ -35,6 +41,8 @@ export class SelfKnowledgeEngine {
   private answerEngine: AnswerEngine | null = null;
 
   // Cached data
+  private projectsCatalog: ProjectsCatalog | null = null;
+  private identityProfile: IdentityProfile | null = null;
   private rawEvidences: Evidence[] = [];
   private normalizedBase: NormalizedBase | null = null;
   private skillBase: SkillBase | null = null;
@@ -49,6 +57,125 @@ export class SelfKnowledgeEngine {
   }
 
   // ─── Individual Pipeline Stages ──────────────────────────────────
+
+  /**
+   * Fase 0: Project Discovery
+   * Descobre e cataloga todos os projetos relevantes antes de qualquer análise.
+   */
+  async discovery(overrides?: Partial<DiscoveryConfig>): Promise<PipelineResult> {
+    const start = Date.now();
+    const errors: string[] = [];
+
+    try {
+      const discoveryConfig: DiscoveryConfig = {
+        root_path: overrides?.root_path || this.config.scan_paths[0] || process.cwd(),
+        github_user: overrides?.github_user || this.config.github_username,
+        github_token: overrides?.github_token || this.config.github_token,
+        max_selected: overrides?.max_selected || 20,
+        max_depth: overrides?.max_depth || this.config.max_depth,
+        ignore_patterns: overrides?.ignore_patterns || this.config.ignore_patterns,
+      };
+
+      const discoverer = new ProjectDiscovery(discoveryConfig);
+      this.projectsCatalog = await discoverer.discover();
+
+      persistJson(this.getOutputPath('projects-catalog.json'), this.projectsCatalog);
+      log.ok(`Catálogo salvo em: ${this.getOutputPath('projects-catalog.json')}`);
+
+      // Atualizar scan_paths com os projetos selecionados (locais)
+      const selectedPaths = ProjectDiscovery.getSelectedPaths(this.projectsCatalog);
+      if (selectedPaths.length > 0) {
+        this.config.scan_paths = selectedPaths;
+        this.collector = new EvidenceCollector(this.config);
+        log.ok(`Pipeline configurado para ${selectedPaths.length} projeto(s) selecionado(s).`);
+      }
+    } catch (err) {
+      errors.push(String(err));
+      log.error(`Erro no discovery: ${err}`);
+    }
+
+    return {
+      fase: 'discovery',
+      sucesso: errors.length === 0,
+      duracao_ms: Date.now() - start,
+      resumo: this.projectsCatalog
+        ? `${this.projectsCatalog.total_descobertos} projetos descobertos, ${this.projectsCatalog.total_selecionados} selecionados.`
+        : 'Falha no discovery.',
+      erros: errors,
+    };
+  }
+
+  /**
+   * Retorna o catálogo de projetos (se já executou discovery).
+   */
+  getProjectsCatalog(): ProjectsCatalog | null {
+    if (!this.projectsCatalog) {
+      const cached = safeReadJson<ProjectsCatalog>(this.getOutputPath('projects-catalog.json'));
+      if (cached) this.projectsCatalog = cached;
+    }
+    return this.projectsCatalog;
+  }
+
+  /**
+   * Fase 0.5: Identity Resolution
+   * Consolida todas as identidades do usuário antes da análise de commits.
+   */
+  async identityResolution(overrides?: Partial<IdentityResolutionConfig>): Promise<PipelineResult> {
+    const start = Date.now();
+    const errors: string[] = [];
+
+    try {
+      // Obter project paths do catálogo se disponível
+      const catalog = this.getProjectsCatalog();
+      const projectPaths = catalog
+        ? ProjectDiscovery.getSelectedPaths(catalog)
+        : undefined;
+
+      const identityConfig: IdentityResolutionConfig = {
+        root_path: overrides?.root_path || this.config.scan_paths[0] || process.cwd(),
+        github_user: overrides?.github_user || this.config.github_username,
+        github_token: overrides?.github_token || this.config.github_token,
+        project_paths: overrides?.project_paths || projectPaths,
+      };
+
+      const resolver = new IdentityResolver(identityConfig);
+      this.identityProfile = await resolver.resolve();
+
+      persistJson(this.getOutputPath('identity-profile.json'), this.identityProfile);
+      log.ok(`Identity profile salvo em: ${this.getOutputPath('identity-profile.json')}`);
+
+      // Atualizar AuthorshipVerifier com identidades consolidadas
+      const consolidated = IdentityResolver.getConsolidatedIdentifiers(this.identityProfile);
+      log.ok(`Identidade primária: "${this.identityProfile.primary_identity.nome_canonico}"`);
+      log.ok(`Emails consolidados: ${consolidated.emails.length}`);
+      log.ok(`Usernames: ${consolidated.usernames.join(', ') || '(nenhum)'}`);
+
+    } catch (err) {
+      errors.push(String(err));
+      log.error(`Erro no identity resolution: ${err}`);
+    }
+
+    return {
+      fase: 'identity-resolution',
+      sucesso: errors.length === 0,
+      duracao_ms: Date.now() - start,
+      resumo: this.identityProfile
+        ? `${this.identityProfile.total_clusters} cluster(s), identidade primária: "${this.identityProfile.primary_identity.nome_canonico}"`
+        : 'Falha no identity resolution.',
+      erros: errors,
+    };
+  }
+
+  /**
+   * Retorna o perfil de identidade (se já executou identity-resolution).
+   */
+  getIdentityProfile(): IdentityProfile | null {
+    if (!this.identityProfile) {
+      const cached = safeReadJson<IdentityProfile>(this.getOutputPath('identity-profile.json'));
+      if (cached) this.identityProfile = cached;
+    }
+    return this.identityProfile;
+  }
 
   /**
    * Fase 1: Coleta de evidências
@@ -300,6 +427,18 @@ export class SelfKnowledgeEngine {
     const startTotal = Date.now();
 
     const results: PipelineResult[] = [];
+
+    // Etapa 0: Discovery (sempre primeiro)
+    results.push(await this.discovery());
+    if (!results[results.length - 1].sucesso) {
+      log.warn('Discovery falhou, continuando com scan_paths do config...');
+    }
+
+    // Etapa 0.5: Identity Resolution
+    results.push(await this.identityResolution());
+    if (!results[results.length - 1].sucesso) {
+      log.warn('Identity resolution falhou, continuando com username do config...');
+    }
 
     results.push(await this.collect());
     if (!results[results.length - 1].sucesso) return results;

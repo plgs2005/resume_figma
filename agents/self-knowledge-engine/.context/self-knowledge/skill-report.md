@@ -1,7 +1,7 @@
 # SelfKnowledgeEngine — Relatório de Skills
 
-**Gerado em:** 2026-02-25T12:15:30.738Z
-**Total de skills:** 34
+**Gerado em:** 2026-02-25T20:20:57.564Z
+**Total de skills:** 42
 **Padrões de engenharia:** 9
 
 ---
@@ -10,103 +10,127 @@
 
 ### 🟡 Experiência Prática
 
-- Documentação
-- TypeScript
-- Documentação Técnica
-- CSS
-- React/TypeScript
 - Shell Script
+- YAML Config
+- SCSS
+- JavaScript
+- Documentação
+- PHP
+- JavaScript (ESM)
+- CSS
+- Documentação Técnica
+- Python
+- TypeScript
 - CI/CD
 - CI/CD Pipeline
 - Testes
 - HTML
+- Ruby
 - Conventional Commits
-- Refatoração
+- Performance
 - Refatoração Estrutural
 
 ### ⚪ Conhecimento Básico
 
-- React
-- Testes Automatizados
-- Design System
-- Tooling
-- Build Pipeline
-- Tailwind CSS
-- Vite
-- Bundler
-- Componentização
-- Node.js
-- YAML Config
-- Git
-- TypeScript/React
-- Organização de Código
-- Jest
 - Docker
-- Laravel
-- PHP
-- GraphQL
 - Containerização
-- APIs RESTful
+- Testes Automatizados
+- Arquitetura Modular
+- Tooling
+- Separação de Camadas
+- Docker Compose
+- MySQL
+- Database Migrations
+- Git
+- Organização de Código
+- Environment Config
+- Multi-stage Build
+- Webpack
+- Bundler
+- Build Pipeline
+- Symfony
+- Playwright
+- E2E
+- Node.js
+- GitHub Actions
+- Testes em CI
+- Deploy Automatizado
 
 ## Padrões de Engenharia Identificados
 
 - separacao-camadas
 - refatoracao-estrutural
+- tuning-banco
 - testes-automatizados
 - ci-cd
 - containerizacao
-- api-rest
-- api-graphql
-- design-system
+- orm-query-builder
+- migrations
 - documentacao
 
 ## Skills por Categoria
 
+### arquitetura
+- Arquitetura Modular
+- Separação de Camadas
+
 ### fundamentos
-- TypeScript
-- React/TypeScript
 - Shell Script
-- Tooling
-- Testes
-- HTML
-- Conventional Commits
-- Refatoração
-- Refatoração Estrutural
 - YAML Config
+- SCSS
+- JavaScript
+- JavaScript (ESM)
+- TypeScript
+- Testes
+- Tooling
+- HTML
+- Ruby
+- Conventional Commits
+- Refatoração Estrutural
 - Git
 - Organização de Código
 
+### performance
+- Performance
+- Multi-stage Build
+
 ### testes
 - Testes Automatizados
-- Jest
+- Playwright
+- E2E
+- Testes em CI
 
 ### devops
-- CI/CD
-- CI/CD Pipeline
-- Build Pipeline
 - Docker
 - Containerização
+- CI/CD
+- CI/CD Pipeline
+- Docker Compose
+- Build Pipeline
+- GitHub Actions
+- Deploy Automatizado
 
 ### produto
 - Documentação
 - Documentação Técnica
 
+### seguranca
+- Environment Config
+
+### banco-de-dados
+- MySQL
+- Database Migrations
+
 ### frontend
 - CSS
-- React
-- Design System
-- Tailwind CSS
-- Vite
+- Webpack
 - Bundler
-- Componentização
-- TypeScript/React
 
 ### backend
-- Node.js
-- Laravel
 - PHP
-- GraphQL
-- APIs RESTful
+- Python
+- Symfony
+- Node.js
 
 ---
 

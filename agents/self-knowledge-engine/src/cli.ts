@@ -4,10 +4,12 @@
  * SelfKnowledgeEngine — CLI
  *
  * Uso:
+ *   ske discovery             Descobre e cataloga projetos (local + GitHub)
+ *   ske identity             Resolve e consolida identidades do usuário
  *   ske collect              Coleta evidências de projetos locais e GitHub
  *   ske normalize            Normaliza e agrupa evidências
  *   ske extract              Extrai skills e padrões
- *   ske full-pipeline        Executa pipeline completo (collect → normalize → extract)
+ *   ske full-pipeline        Executa pipeline completo (discovery → collect → normalize → extract)
  *   ske query "pergunta"     Consulta a base factual
  *   ske match-job "arquivo"  Cruza descrição de vaga com base factual
  *   ske match-multi "dir"    Compara perfil vs N vagas (ranking)
@@ -16,9 +18,11 @@
  *
  * Flags:
  *   --config <path>          Caminho para arquivo de configuração
+ *   --root <path>            Path raiz para discovery de projetos (padrão: /home/user)
  *   --scan <path>            Diretório adicional para escanear
  *   --github-token <token>   Token GitHub para API (ou env GITHUB_TOKEN)
  *   --github-user <user>     Username GitHub (ou env GITHUB_USERNAME)
+ *   --max-selected <N>       Máximo de projetos selecionados no discovery (padrão: 20)
  *   --vaga <arquivo>         Arquivo de vaga (para prompt com job context)
  *   --formato <formato>      Formato do prompt
  *   --idioma <pt-br|en>      Idioma do prompt
@@ -29,7 +33,7 @@ import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
 import { join, resolve, basename } from 'node:path';
 import { SelfKnowledgeEngine } from './engine.js';
 import { log, safeReadJson } from './utils.js';
-import type { SKEConfig } from './types.js';
+import type { SKEConfig, DiscoveryConfig, ProjectsCatalog, IdentityProfile, IdentityResolutionConfig } from './types.js';
 import type { PromptFormat } from './prompt-export.js';
 
 // ─── Argument Parsing ───────────────────────────────────────────────
@@ -111,7 +115,7 @@ async function main(): Promise<void> {
 
   console.log(`
 ╔═══════════════════════════════════════════════════════╗
-║   SelfKnowledgeEngine v2.0                           ║
+║   SelfKnowledgeEngine v3.0                           ║
 ║   Agente factual de conhecimento técnico             ║
 ║   Modo: ${command.padEnd(44)}║
 ╚═══════════════════════════════════════════════════════╝
@@ -119,6 +123,51 @@ async function main(): Promise<void> {
 
   try {
     switch (command) {
+      case 'discovery': {
+        const discoveryOverrides: Partial<DiscoveryConfig> = {};
+        if (flags.root) discoveryOverrides.root_path = resolve(flags.root);
+        if (flags['github-user']) discoveryOverrides.github_user = flags['github-user'];
+        if (flags['github-token']) discoveryOverrides.github_token = flags['github-token'];
+        if (flags['max-selected']) discoveryOverrides.max_selected = parseInt(flags['max-selected'], 10);
+
+        const result = await engine.discovery(discoveryOverrides);
+        log.info(result.resumo);
+
+        // Exibir resumo do catálogo
+        const catalog = engine.getProjectsCatalog();
+        if (catalog) {
+          showDiscoverySummary(catalog);
+        }
+
+        if (!result.sucesso) {
+          log.error(`Erros: ${result.erros.join(', ')}`);
+          process.exit(1);
+        }
+        break;
+      }
+
+      case 'identity': {
+        const identityOverrides: Partial<IdentityResolutionConfig> = {};
+        if (flags.root) identityOverrides.root_path = resolve(flags.root);
+        if (flags['github-user']) identityOverrides.github_user = flags['github-user'];
+        if (flags['github-token']) identityOverrides.github_token = flags['github-token'];
+
+        const result = await engine.identityResolution(identityOverrides);
+        log.info(result.resumo);
+
+        // Exibir resumo do perfil
+        const profile = engine.getIdentityProfile();
+        if (profile) {
+          showIdentitySummary(profile);
+        }
+
+        if (!result.sucesso) {
+          log.error(`Erros: ${result.erros.join(', ')}`);
+          process.exit(1);
+        }
+        break;
+      }
+
       case 'collect': {
         const result = await engine.collect();
         log.info(result.resumo);
@@ -354,6 +403,74 @@ async function main(): Promise<void> {
   }
 }
 
+// ─── Discovery Summary ──────────────────────────────────────────────
+
+function showDiscoverySummary(catalog: ProjectsCatalog): void {
+  console.log('\n📂 CATÁLOGO DE PROJETOS DESCOBERTOS:');
+  console.log('═'.repeat(80));
+  console.log(
+    '  #  │ Score │ Origem  │ Selecionado │ Nome'
+  );
+  console.log('─'.repeat(80));
+
+  for (let i = 0; i < catalog.projetos.length; i++) {
+    const p = catalog.projetos[i];
+    const icon = p.selected_for_analysis ? '✅' : '  ';
+    const score = String(p.relevancia.total).padStart(3);
+    const origem = p.origem.padEnd(7);
+    console.log(
+      `  ${String(i + 1).padStart(2)} │  ${score} │ ${origem} │ ${icon}          │ ${p.nome}`
+    );
+  }
+
+  console.log('═'.repeat(80));
+  console.log(`  Total: ${catalog.total_descobertos} | Selecionados: ${catalog.total_selecionados}`);
+
+  if (catalog.avisos.length > 0) {
+    console.log('\n  ⚠️  Avisos:');
+    for (const aviso of catalog.avisos) {
+      console.log(`     - ${aviso}`);
+    }
+  }
+  console.log('');
+}
+
+// ─── Identity Summary ────────────────────────────────────────────────
+
+function showIdentitySummary(profile: IdentityProfile): void {
+  console.log('\n🔍 IDENTITY RESOLUTION — RESULTADO:');
+  console.log('═'.repeat(80));
+
+  // Identidade primária
+  console.log('\n  IDENTIDADE PRIMARIA:');
+  console.log(`    Nome:      ${profile.primary_identity.nome_canonico}`);
+  console.log(`    Emails:    ${profile.primary_identity.emails.join(', ') || '(nenhum)'}`);
+  console.log(`    Usernames: ${profile.primary_identity.usernames.join(', ') || '(nenhum)'}`);
+
+  // Clusters
+  console.log(`\n  CLUSTERS ENCONTRADOS: ${profile.total_clusters}`);
+  console.log('─'.repeat(80));
+  console.log(
+    '  #  │ Conf. │ Nomes                          │ Emails                         │ Fontes'
+  );
+  console.log('─'.repeat(80));
+
+  for (let i = 0; i < profile.aliases.length; i++) {
+    const c = profile.aliases[i];
+    const nomes = c.nomes_detectados.slice(0, 2).join(', ');
+    const emails = c.emails_detectados.slice(0, 2).join(', ');
+    const fontes = c.sources.join(', ');
+    console.log(
+      `  ${String(i + 1).padStart(2)} │ ${String(c.confidence).padStart(4)}% │ ${nomes.padEnd(30).slice(0, 30)} │ ${emails.padEnd(30).slice(0, 30)} │ ${fontes}`
+    );
+  }
+
+  console.log('═'.repeat(80));
+  console.log(`  Total aliases: ${profile.aliases.length}`);
+  console.log(`  identity-profile.json criado com sucesso.`);
+  console.log('');
+}
+
 // ─── Status ─────────────────────────────────────────────────────────
 
 async function showStatus(engine: SelfKnowledgeEngine): Promise<void> {
@@ -365,8 +482,21 @@ async function showStatus(engine: SelfKnowledgeEngine): Promise<void> {
   console.log(`   Scan paths: ${config.scan_paths.join(', ')}`);
   console.log(`   GitHub: ${config.github_username ? `✅ ${config.github_username}` : '❌ não configurado'}`);
 
+  // Verificar catálogo de discovery
+  const catalogPath = join(outputDir, 'projects-catalog.json');
+  if (existsSync(catalogPath)) {
+    const catalog = safeReadJson<ProjectsCatalog>(catalogPath);
+    if (catalog) {
+      console.log(`\n   📂 Discovery: ${catalog.total_descobertos} projetos, ${catalog.total_selecionados} selecionados (${catalog.gerado_em.slice(0, 19)})`);
+    }
+  } else {
+    console.log('\n   📂 Discovery: não executado ainda');
+  }
+
   // Verificar arquivos de base
   const files = [
+    { name: 'projects-catalog.json', label: 'Catálogo de projetos' },
+    { name: 'identity-profile.json', label: 'Perfil de identidade' },
     { name: 'raw-evidences.json', label: 'Evidências brutas' },
     { name: 'normalized-base.json', label: 'Base normalizada' },
     { name: 'skill-base.json', label: 'Base de skills' },
@@ -479,10 +609,12 @@ function generateJobMatchReport(result: import('./types.js').JobMatchResult): st
 function showHelp(): void {
   console.log(`
 COMANDOS:
+  discovery               Descobre e cataloga projetos locais + remotos
+  identity                Resolve e consolida identidades do usuário (git + GitHub)
   collect               Coleta evidências de projetos locais e GitHub
   normalize             Normaliza e agrupa evidências
   extract               Extrai skills e padrões de engenharia
-  full-pipeline         Executa pipeline completo (collect → normalize → extract)
+  full-pipeline         Executa pipeline completo (discovery → collect → normalize → extract)
   query "pergunta"      Consulta a base factual com uma pergunta
   match-job <file>      Cruza descrição de vaga com base factual
   match-multi <dir>     Compara perfil vs N vagas — gera ranking
@@ -499,9 +631,11 @@ FORMATOS DE PROMPT:
 
 FLAGS:
   --config <path>           Caminho para config.json
+  --root <path>             Path raiz para discovery (padrão: primeiro scan_path)
   --scan <path>             Diretório adicional para escanear
   --github-token <token>    Token GitHub (ou env GITHUB_TOKEN / GH_TOKEN)
   --github-user <username>  Username GitHub (ou env GITHUB_USERNAME / GH_USER)
+  --max-selected <N>        Máximo de projetos selecionados no discovery (padrão: 20)
   --titulo <titulo>         Título da vaga (para match-job)
   --empresa <empresa>       Empresa da vaga (para match-job)
   --vaga <arquivo>          Arquivo de vaga (para prompt com job context)
@@ -511,6 +645,10 @@ FLAGS:
   --max-skills <N>          Máximo de skills no contexto do prompt
 
 EXEMPLOS:
+  node dist/cli.js discovery --root /home/user --github-user meuuser
+  node dist/cli.js discovery --root /home/user --github-user meuuser --github-token ghp_xxx
+  node dist/cli.js discovery --root /home/user --max-selected 10
+  node dist/cli.js identity --root /home/user --github-user meuuser --github-token ghp_xxx
   node dist/cli.js full-pipeline
   node dist/cli.js full-pipeline --scan /home/user/projetos
   node dist/cli.js full-pipeline --github-token ghp_xxx --github-user meuuser

@@ -1,7 +1,186 @@
 {
-  "atualizado_em": "2026-02-25T12:15:30.730Z",
-  "total_skills": 34,
+  "atualizado_em": "2026-02-25T20:20:57.562Z",
+  "total_skills": 42,
   "skills": [
+    {
+      "nome": "Shell Script",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "061f7f685b3379f2",
+        "a6bca0c2265d247f",
+        "62b86b7e6574c682",
+        "37521f916e871fcd",
+        "db38f76ce84ae775",
+        "e17774f1cf28882c",
+        "220dc927581a43ed",
+        "48171d59e5360c2e",
+        "6c2424d2c60e0e4d",
+        "d5be12591a78514b",
+        "c34a1e5e0aca2b08",
+        "9d4c83235ab9e6f5",
+        "77da3cb32d77ebd1",
+        "097209f3538dd8c6",
+        "0d2ad0e65bdaf0fd",
+        "ed7b418702411812",
+        "0fd9a1f39a2c78a0",
+        "1f979c110ede9ea8",
+        "bab31a85e28f6f02",
+        "0701edea37e71169",
+        "8aef3e9d9f831e89",
+        "45641f03a81ac8fe",
+        "89453247e1d85e8b",
+        "44f58914c920f25f"
+      ],
+      "descricao": "Shell Script utilizado em 1 projeto(s). Profundidade técnica: 100/100.",
+      "confidence": 60,
+      "justificativa": "Confidence 60/100. 24 commit(s) autoral(is).",
+      "depth_medio": 1,
+      "commits_autorais": 24,
+      "inferida_por_stack": false
+    },
+    {
+      "nome": "YAML Config",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "651347d06f711643",
+        "bf4118360444bfde",
+        "62b86b7e6574c682",
+        "01b2335b5c3d3fb1",
+        "37521f916e871fcd",
+        "79da60e71ffaa505",
+        "e17774f1cf28882c",
+        "21c3e7cffbb63337",
+        "df4dcea701482e31",
+        "220dc927581a43ed",
+        "48171d59e5360c2e",
+        "22dd5f8993c7b501",
+        "d5be12591a78514b",
+        "c34a1e5e0aca2b08",
+        "9d4c83235ab9e6f5",
+        "77da3cb32d77ebd1",
+        "ed7b418702411812",
+        "f470736293e641ec",
+        "ee396492d7c7ff75",
+        "0fd9a1f39a2c78a0",
+        "c03333e8fd6a57c2",
+        "8ab91c8210e3c945",
+        "69c9a77abc0fdc20",
+        "1f979c110ede9ea8",
+        "153d77a4c34a7f21",
+        "bab31a85e28f6f02",
+        "ea0a40921e3962b9",
+        "541e4bc899341e07",
+        "0701edea37e71169",
+        "a055f6a3c325fa76",
+        "ff3045342cdd25d1",
+        "60543047757b8700",
+        "8aef3e9d9f831e89",
+        "f1eb2d77707548a0",
+        "b85e898dd3c26b4f",
+        "44f58914c920f25f",
+        "8f9ec36dab622d18"
+      ],
+      "descricao": "YAML Config utilizado em 1 projeto(s). Profundidade técnica: 100/100.",
+      "confidence": 59,
+      "justificativa": "Confidence 59/100. 37 commit(s) autoral(is).",
+      "depth_medio": 1,
+      "commits_autorais": 37,
+      "inferida_por_stack": false
+    },
+    {
+      "nome": "SCSS",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "bf4118360444bfde",
+        "db3023bc5c91c188",
+        "ed4383bf92255616",
+        "df4dcea701482e31",
+        "9d4c83235ab9e6f5",
+        "77da3cb32d77ebd1",
+        "0d2ad0e65bdaf0fd",
+        "ee396492d7c7ff75",
+        "0fd9a1f39a2c78a0",
+        "c03333e8fd6a57c2",
+        "8ab91c8210e3c945",
+        "b22550aa3c2e78c9",
+        "69c9a77abc0fdc20",
+        "1f979c110ede9ea8",
+        "153d77a4c34a7f21",
+        "34a19f6fe5a66488",
+        "bab31a85e28f6f02",
+        "541e4bc899341e07",
+        "a055f6a3c325fa76",
+        "ac8b23aa05deab78",
+        "60543047757b8700",
+        "8aef3e9d9f831e89",
+        "44f58914c920f25f"
+      ],
+      "descricao": "SCSS utilizado em 1 projeto(s). Profundidade técnica: 100/100.",
+      "confidence": 60,
+      "justificativa": "Confidence 60/100. 23 commit(s) autoral(is).",
+      "depth_medio": 1,
+      "commits_autorais": 23,
+      "inferida_por_stack": false
+    },
+    {
+      "nome": "JavaScript",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "bf4118360444bfde",
+        "dc025f76d601b1e6",
+        "045b0a1ef58c53bc",
+        "db38f76ce84ae775",
+        "ed4383bf92255616",
+        "79da60e71ffaa505",
+        "e17774f1cf28882c",
+        "21c3e7cffbb63337",
+        "df4dcea701482e31",
+        "220dc927581a43ed",
+        "48171d59e5360c2e",
+        "6c2424d2c60e0e4d",
+        "22dd5f8993c7b501",
+        "d5be12591a78514b",
+        "9d4c83235ab9e6f5",
+        "77da3cb32d77ebd1",
+        "0d2ad0e65bdaf0fd",
+        "ee396492d7c7ff75",
+        "0fd9a1f39a2c78a0",
+        "8ab91c8210e3c945",
+        "153d77a4c34a7f21",
+        "bab31a85e28f6f02",
+        "541e4bc899341e07",
+        "0701edea37e71169",
+        "a055f6a3c325fa76",
+        "ac8b23aa05deab78",
+        "ff3045342cdd25d1",
+        "60543047757b8700",
+        "8aef3e9d9f831e89",
+        "b85e898dd3c26b4f",
+        "44f58914c920f25f"
+      ],
+      "descricao": "JavaScript utilizado em 1 projeto(s). Profundidade técnica: 100/100.",
+      "confidence": 60,
+      "justificativa": "Confidence 60/100. 31 commit(s) autoral(is).",
+      "depth_medio": 1,
+      "commits_autorais": 31,
+      "inferida_por_stack": false
+    },
     {
       "nome": "Documentação",
       "categoria": "produto",
@@ -10,39 +189,149 @@
       "frequencia": 1,
       "profundidade": 100,
       "evidencias_ids": [
-        "5af9409ba0f4ddbd",
-        "ab55491eb43084ca",
-        "8becf69d0d2009ec",
-        "2974c4e0bc949143"
+        "f6fc60512a83ac36",
+        "62b86b7e6574c682",
+        "120a6549923983aa",
+        "79da60e71ffaa505",
+        "e17774f1cf28882c",
+        "6c2424d2c60e0e4d",
+        "22dd5f8993c7b501",
+        "d5be12591a78514b",
+        "9d4c83235ab9e6f5",
+        "77da3cb32d77ebd1",
+        "097209f3538dd8c6",
+        "ed7b418702411812",
+        "f470736293e641ec",
+        "0fd9a1f39a2c78a0",
+        "c03333e8fd6a57c2",
+        "8ab91c8210e3c945",
+        "1f979c110ede9ea8",
+        "153d77a4c34a7f21",
+        "34a19f6fe5a66488",
+        "bab31a85e28f6f02",
+        "541e4bc899341e07",
+        "0701edea37e71169",
+        "8aef3e9d9f831e89",
+        "f1eb2d77707548a0"
       ],
       "descricao": "Documentação utilizado em 1 projeto(s). Profundidade técnica: 100/100.",
-      "confidence": 41,
-      "justificativa": "Confidence 41/100. 4 commit(s) autoral(is).",
+      "confidence": 59,
+      "justificativa": "Confidence 59/100. 24 commit(s) autoral(is).",
       "depth_medio": 1,
-      "commits_autorais": 4,
+      "commits_autorais": 24,
       "inferida_por_stack": false
     },
     {
-      "nome": "TypeScript",
-      "categoria": "fundamentos",
+      "nome": "PHP",
+      "categoria": "backend",
       "nivel": "experiencia-pratica",
       "padroes": [],
       "frequencia": 2,
       "profundidade": 100,
       "evidencias_ids": [
-        "8becf69d0d2009ec",
-        "2974c4e0bc949143",
-        "2aa2ebbe64652183",
-        "735554dfede743f8",
-        "0ad684428de047b6",
-        "c6a243629b45706d",
-        "22faf409a05623ab"
+        "a6bca0c2265d247f",
+        "eb576298072031cd",
+        "62b86b7e6574c682",
+        "045b0a1ef58c53bc",
+        "120a6549923983aa",
+        "01b2335b5c3d3fb1",
+        "db3023bc5c91c188",
+        "ed4383bf92255616",
+        "79da60e71ffaa505",
+        "e17774f1cf28882c",
+        "21c3e7cffbb63337",
+        "df4dcea701482e31",
+        "220dc927581a43ed",
+        "48171d59e5360c2e",
+        "6c2424d2c60e0e4d",
+        "22dd5f8993c7b501",
+        "d5be12591a78514b",
+        "c34a1e5e0aca2b08",
+        "9d4c83235ab9e6f5",
+        "77da3cb32d77ebd1",
+        "0fd9a1f39a2c78a0",
+        "1f979c110ede9ea8",
+        "153d77a4c34a7f21",
+        "541e4bc899341e07",
+        "a055f6a3c325fa76",
+        "ac8b23aa05deab78",
+        "ff3045342cdd25d1",
+        "60543047757b8700",
+        "8aef3e9d9f831e89",
+        "f1eb2d77707548a0",
+        "b85e898dd3c26b4f",
+        "44f58914c920f25f",
+        "8f9ec36dab622d18",
+        "86f1faa9d74e1df8",
+        "b3c9b5ebfded8b83"
       ],
-      "descricao": "TypeScript utilizado em 2 projeto(s). Profundidade técnica: 100/100.",
-      "confidence": 37,
-      "justificativa": "Confidence 37/100. 3 commit(s) autoral(is).",
+      "descricao": "PHP utilizado em 2 projeto(s). Profundidade técnica: 100/100.",
+      "confidence": 60,
+      "justificativa": "Confidence 60/100. 33 commit(s) autoral(is).",
       "depth_medio": 1,
-      "commits_autorais": 3,
+      "commits_autorais": 33,
+      "inferida_por_stack": false
+    },
+    {
+      "nome": "JavaScript (ESM)",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "79da60e71ffaa505",
+        "e1c6379d403e7d9d",
+        "e17774f1cf28882c",
+        "48171d59e5360c2e",
+        "0d2ad0e65bdaf0fd",
+        "ee396492d7c7ff75",
+        "0fd9a1f39a2c78a0",
+        "c03333e8fd6a57c2",
+        "8ab91c8210e3c945",
+        "1f979c110ede9ea8",
+        "153d77a4c34a7f21",
+        "bab31a85e28f6f02",
+        "541e4bc899341e07",
+        "a055f6a3c325fa76",
+        "60543047757b8700"
+      ],
+      "descricao": "JavaScript (ESM) utilizado em 1 projeto(s). Profundidade técnica: 100/100.",
+      "confidence": 59,
+      "justificativa": "Confidence 59/100. 15 commit(s) autoral(is).",
+      "depth_medio": 1,
+      "commits_autorais": 15,
+      "inferida_por_stack": false
+    },
+    {
+      "nome": "CSS",
+      "categoria": "frontend",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 100,
+      "evidencias_ids": [
+        "9d4c83235ab9e6f5",
+        "ee396492d7c7ff75",
+        "0fd9a1f39a2c78a0",
+        "c03333e8fd6a57c2",
+        "8ab91c8210e3c945",
+        "ea0a40921e3962b9",
+        "541e4bc899341e07",
+        "a055f6a3c325fa76",
+        "ac8b23aa05deab78",
+        "ff3045342cdd25d1",
+        "60543047757b8700",
+        "8aef3e9d9f831e89",
+        "b85e898dd3c26b4f",
+        "44f58914c920f25f",
+        "8f9ec36dab622d18"
+      ],
+      "descricao": "CSS utilizado em 1 projeto(s). Profundidade técnica: 100/100.",
+      "confidence": 60,
+      "justificativa": "Confidence 60/100. 15 commit(s) autoral(is).",
+      "depth_medio": 1,
+      "commits_autorais": 15,
       "inferida_por_stack": false
     },
     {
@@ -55,130 +344,109 @@
       "frequencia": 1,
       "profundidade": 100,
       "evidencias_ids": [
-        "5af9409ba0f4ddbd",
-        "ab55491eb43084ca",
-        "8becf69d0d2009ec",
-        "2974c4e0bc949143"
+        "f6fc60512a83ac36",
+        "62b86b7e6574c682",
+        "120a6549923983aa",
+        "79da60e71ffaa505",
+        "e17774f1cf28882c",
+        "6c2424d2c60e0e4d",
+        "22dd5f8993c7b501",
+        "d5be12591a78514b",
+        "9d4c83235ab9e6f5",
+        "77da3cb32d77ebd1",
+        "097209f3538dd8c6",
+        "ed7b418702411812",
+        "f470736293e641ec",
+        "0fd9a1f39a2c78a0",
+        "c03333e8fd6a57c2",
+        "8ab91c8210e3c945",
+        "1f979c110ede9ea8",
+        "153d77a4c34a7f21",
+        "34a19f6fe5a66488",
+        "bab31a85e28f6f02",
+        "541e4bc899341e07",
+        "0701edea37e71169",
+        "8aef3e9d9f831e89",
+        "f1eb2d77707548a0"
       ],
-      "descricao": "Prática de documentação técnica. Identificado em 1 projeto(s) com base em 4 evidência(s).",
-      "confidence": 41,
-      "justificativa": "Confidence 41/100. 4 commit(s) autoral(is).",
-      "commits_autorais": 4,
+      "descricao": "Prática de documentação técnica. Identificado em 1 projeto(s) com base em 24 evidência(s).",
+      "confidence": 59,
+      "justificativa": "Confidence 59/100. 24 commit(s) autoral(is).",
+      "commits_autorais": 24,
       "inferida_por_stack": false
     },
     {
-      "nome": "CSS",
-      "categoria": "frontend",
+      "nome": "Python",
+      "categoria": "backend",
       "nivel": "experiencia-pratica",
       "padroes": [],
       "frequencia": 1,
-      "profundidade": 95.8,
+      "profundidade": 98,
       "evidencias_ids": [
-        "c6118bcb54d6d525",
-        "2974c4e0bc949143",
-        "735554dfede743f8"
+        "b85e898dd3c26b4f",
+        "89453247e1d85e8b",
+        "44f58914c920f25f"
       ],
-      "descricao": "CSS utilizado em 1 projeto(s). Profundidade técnica: 95.8/100.",
-      "confidence": 35,
-      "justificativa": "Confidence 35/100. 2 commit(s) autoral(is).",
-      "depth_medio": 1,
-      "commits_autorais": 2,
-      "inferida_por_stack": false
-    },
-    {
-      "nome": "React",
-      "categoria": "frontend",
-      "nivel": "conhecimento-basico",
-      "padroes": [],
-      "frequencia": 2,
-      "profundidade": 93.28,
-      "evidencias_ids": [
-        "56c538e06aa63977",
-        "735554dfede743f8",
-        "0ad684428de047b6",
-        "22faf409a05623ab"
-      ],
-      "descricao": "React utilizado em 2 projeto(s). Profundidade técnica: 93.28/100.",
-      "confidence": 23,
-      "justificativa": "Confidence 23/100. Evidência insuficiente para nível superior.",
-      "depth_medio": 1,
-      "commits_autorais": 0,
-      "inferida_por_stack": false
-    },
-    {
-      "nome": "React/TypeScript",
-      "categoria": "fundamentos",
-      "nivel": "experiencia-pratica",
-      "padroes": [],
-      "frequencia": 1,
-      "profundidade": 91,
-      "evidencias_ids": [
-        "c6118bcb54d6d525",
-        "31a847836f6dc3ee",
-        "2974c4e0bc949143"
-      ],
-      "descricao": "React/TypeScript utilizado em 1 projeto(s). Profundidade técnica: 91/100.",
-      "confidence": 39,
-      "justificativa": "Confidence 39/100. 3 commit(s) autoral(is).",
+      "descricao": "Python utilizado em 1 projeto(s). Profundidade técnica: 98/100.",
+      "confidence": 40,
+      "justificativa": "Confidence 40/100. 3 commit(s) autoral(is).",
       "depth_medio": 1,
       "commits_autorais": 3,
       "inferida_por_stack": false
     },
     {
-      "nome": "Testes Automatizados",
-      "categoria": "testes",
+      "nome": "Docker",
+      "categoria": "devops",
       "nivel": "conhecimento-basico",
-      "padroes": [
-        "testes-automatizados"
-      ],
+      "padroes": [],
       "frequencia": 2,
-      "profundidade": 78.28,
+      "profundidade": 77.08,
       "evidencias_ids": [
-        "e278322f287cd1e9",
-        "c6a243629b45706d",
-        "076b889d1b158c4d",
-        "b1053eef68446ec7"
+        "93c1e5f64b0b896f",
+        "86f1faa9d74e1df8",
+        "6f510ac16e1b3c35"
       ],
-      "descricao": "Testes Automatizados utilizado em 2 projeto(s). Profundidade técnica: 78.28/100.",
-      "confidence": 22,
-      "justificativa": "Confidence 22/100. Evidência insuficiente para nível superior.",
+      "descricao": "Docker utilizado em 2 projeto(s). Profundidade técnica: 77.08/100.",
+      "confidence": 24,
+      "justificativa": "Confidence 24/100. Evidência insuficiente para nível superior.",
       "depth_medio": 1,
       "commits_autorais": 0,
       "inferida_por_stack": false
     },
     {
-      "nome": "Design System",
-      "categoria": "frontend",
+      "nome": "Containerização",
+      "categoria": "devops",
       "nivel": "conhecimento-basico",
       "padroes": [
-        "design-system"
+        "containerizacao"
       ],
-      "frequencia": 1,
-      "profundidade": 69,
+      "frequencia": 2,
+      "profundidade": 77.08,
       "evidencias_ids": [
-        "56c538e06aa63977",
-        "735554dfede743f8"
+        "93c1e5f64b0b896f",
+        "86f1faa9d74e1df8",
+        "6f510ac16e1b3c35"
       ],
-      "descricao": "Implementação de Design System. Identificado em 1 projeto(s) com base em 2 evidência(s).",
-      "confidence": 27,
-      "justificativa": "Confidence 27/100. Evidência insuficiente para nível superior.",
+      "descricao": "Containerização de aplicações. Identificado em 2 projeto(s) com base em 3 evidência(s).",
+      "confidence": 24,
+      "justificativa": "Confidence 24/100. Evidência insuficiente para nível superior.",
       "commits_autorais": 0,
       "inferida_por_stack": false
     },
     {
-      "nome": "Shell Script",
+      "nome": "TypeScript",
       "categoria": "fundamentos",
       "nivel": "experiencia-pratica",
       "padroes": [],
       "frequencia": 1,
-      "profundidade": 65,
+      "profundidade": 72,
       "evidencias_ids": [
-        "19a6eb28eba79c88",
-        "2974c4e0bc949143"
+        "60543047757b8700",
+        "8aef3e9d9f831e89"
       ],
-      "descricao": "Shell Script utilizado em 1 projeto(s). Profundidade técnica: 65/100.",
-      "confidence": 34,
-      "justificativa": "Confidence 34/100. 2 commit(s) autoral(is).",
+      "descricao": "TypeScript utilizado em 1 projeto(s). Profundidade técnica: 72/100.",
+      "confidence": 37,
+      "justificativa": "Confidence 37/100. 2 commit(s) autoral(is).",
       "depth_medio": 1,
       "commits_autorais": 2,
       "inferida_por_stack": false
@@ -188,16 +456,16 @@
       "categoria": "devops",
       "nivel": "experiencia-pratica",
       "padroes": [],
-      "frequencia": 2,
-      "profundidade": 63.28,
+      "frequencia": 1,
+      "profundidade": 69.72,
       "evidencias_ids": [
-        "2984db4d760ec105",
-        "0ad684428de047b6",
-        "22faf409a05623ab"
+        "81d6e5be71386abd",
+        "86f1faa9d74e1df8",
+        "b0cf781682d06bfd"
       ],
-      "descricao": "CI/CD utilizado em 2 projeto(s). Profundidade técnica: 63.28/100.",
-      "confidence": 26,
-      "justificativa": "Confidence 26/100. 1 commit(s) autoral(is).",
+      "descricao": "CI/CD utilizado em 1 projeto(s). Profundidade técnica: 69.72/100.",
+      "confidence": 27,
+      "justificativa": "Confidence 27/100. 1 commit(s) autoral(is).",
       "depth_medio": 1,
       "commits_autorais": 1,
       "inferida_por_stack": false
@@ -209,18 +477,71 @@
       "padroes": [
         "ci-cd"
       ],
-      "frequencia": 2,
-      "profundidade": 63.28,
+      "frequencia": 1,
+      "profundidade": 69.72,
       "evidencias_ids": [
-        "2984db4d760ec105",
-        "0ad684428de047b6",
-        "22faf409a05623ab"
+        "81d6e5be71386abd",
+        "86f1faa9d74e1df8",
+        "b0cf781682d06bfd"
       ],
-      "descricao": "Pipeline de integração e deploy contínuo. Identificado em 2 projeto(s) com base em 3 evidência(s).",
-      "confidence": 26,
-      "justificativa": "Confidence 26/100. 1 commit(s) autoral(is).",
+      "descricao": "Pipeline de integração e deploy contínuo. Identificado em 1 projeto(s) com base em 3 evidência(s).",
+      "confidence": 27,
+      "justificativa": "Confidence 27/100. 1 commit(s) autoral(is).",
       "commits_autorais": 1,
       "inferida_por_stack": false
+    },
+    {
+      "nome": "Testes Automatizados",
+      "categoria": "testes",
+      "nivel": "conhecimento-basico",
+      "padroes": [
+        "testes-automatizados"
+      ],
+      "frequencia": 2,
+      "profundidade": 68.88,
+      "evidencias_ids": [
+        "471e2b4b0e98afa7",
+        "23959434885aa9da",
+        "b0cf781682d06bfd"
+      ],
+      "descricao": "Testes Automatizados utilizado em 1 projeto(s). Profundidade técnica: 30.16/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
+      "confidence": 0,
+      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
+      "inferida_por_stack": true
+    },
+    {
+      "nome": "Testes",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 54.8,
+      "evidencias_ids": [
+        "81d6e5be71386abd",
+        "23959434885aa9da"
+      ],
+      "descricao": "Testes utilizado em 1 projeto(s). Profundidade técnica: 54.8/100.",
+      "confidence": 26,
+      "justificativa": "Confidence 26/100. 1 commit(s) autoral(is).",
+      "depth_medio": 1,
+      "commits_autorais": 1,
+      "inferida_por_stack": false
+    },
+    {
+      "nome": "Arquitetura Modular",
+      "categoria": "arquitetura",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 2,
+      "profundidade": 48.32,
+      "evidencias_ids": [
+        "471e2b4b0e98afa7",
+        "6222412ab170ab52"
+      ],
+      "descricao": "Arquitetura Modular utilizado em 2 projeto(s). Profundidade técnica: 48.32/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
+      "confidence": 0,
+      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
+      "inferida_por_stack": true
     },
     {
       "nome": "Tooling",
@@ -228,53 +549,34 @@
       "nivel": "conhecimento-basico",
       "padroes": [],
       "frequencia": 2,
-      "profundidade": 56.36,
+      "profundidade": 48.32,
       "evidencias_ids": [
-        "56c538e06aa63977",
-        "076b889d1b158c4d"
+        "471e2b4b0e98afa7",
+        "6222412ab170ab52"
       ],
-      "descricao": "Tooling utilizado em 2 projeto(s). Profundidade técnica: 56.36/100.",
-      "confidence": 24,
-      "justificativa": "Confidence 24/100. Evidência insuficiente para nível superior.",
-      "depth_medio": 1,
-      "commits_autorais": 0,
-      "inferida_por_stack": false
+      "descricao": "Tooling utilizado em 2 projeto(s). Profundidade técnica: 48.32/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
+      "confidence": 0,
+      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
+      "inferida_por_stack": true
     },
     {
-      "nome": "Testes",
-      "categoria": "fundamentos",
-      "nivel": "experiencia-pratica",
-      "padroes": [],
-      "frequencia": 2,
-      "profundidade": 52.72,
-      "evidencias_ids": [
-        "2984db4d760ec105",
-        "c6a243629b45706d"
-      ],
-      "descricao": "Testes utilizado em 2 projeto(s). Profundidade técnica: 52.72/100.",
-      "confidence": 26,
-      "justificativa": "Confidence 26/100. 1 commit(s) autoral(is).",
-      "depth_medio": 1,
-      "commits_autorais": 1,
-      "inferida_por_stack": false
-    },
-    {
-      "nome": "Build Pipeline",
-      "categoria": "devops",
+      "nome": "Separação de Camadas",
+      "categoria": "arquitetura",
       "nivel": "conhecimento-basico",
-      "padroes": [],
-      "frequencia": 2,
-      "profundidade": 47.519999999999996,
-      "evidencias_ids": [
-        "735554dfede743f8",
-        "c6a243629b45706d"
+      "padroes": [
+        "separacao-camadas"
       ],
-      "descricao": "Build Pipeline utilizado em 2 projeto(s). Profundidade técnica: 47.519999999999996/100.",
-      "confidence": 24,
-      "justificativa": "Confidence 24/100. Evidência insuficiente para nível superior.",
-      "depth_medio": 1,
+      "frequencia": 2,
+      "profundidade": 48.32,
+      "evidencias_ids": [
+        "471e2b4b0e98afa7",
+        "6222412ab170ab52"
+      ],
+      "descricao": "Separação de responsabilidades em camadas distintas. Identificado em 2 projeto(s) com base em 2 evidência(s). ⚠️ Sem commits autorais — não promovido.",
+      "confidence": 0,
+      "justificativa": "Padrão detectado na stack, mas sem commits autorais confirmados.",
       "commits_autorais": 0,
-      "inferida_por_stack": false
+      "inferida_por_stack": true
     },
     {
       "nome": "HTML",
@@ -282,11 +584,28 @@
       "nivel": "experiencia-pratica",
       "padroes": [],
       "frequencia": 1,
+      "profundidade": 46,
+      "evidencias_ids": [
+        "9d4c83235ab9e6f5"
+      ],
+      "descricao": "HTML utilizado em 1 projeto(s). Profundidade técnica: 46/100.",
+      "confidence": 35,
+      "justificativa": "Confidence 35/100. 1 commit(s) autoral(is).",
+      "depth_medio": 1,
+      "commits_autorais": 1,
+      "inferida_por_stack": false
+    },
+    {
+      "nome": "Ruby",
+      "categoria": "fundamentos",
+      "nivel": "experiencia-pratica",
+      "padroes": [],
+      "frequencia": 1,
       "profundidade": 39,
       "evidencias_ids": [
-        "2974c4e0bc949143"
+        "45641f03a81ac8fe"
       ],
-      "descricao": "HTML utilizado em 1 projeto(s). Profundidade técnica: 39/100.",
+      "descricao": "Ruby utilizado em 1 projeto(s). Profundidade técnica: 39/100.",
       "confidence": 29,
       "justificativa": "Confidence 29/100. 1 commit(s) autoral(is).",
       "depth_medio": 1,
@@ -301,7 +620,7 @@
       "frequencia": 1,
       "profundidade": 39,
       "evidencias_ids": [
-        "2984db4d760ec105"
+        "81d6e5be71386abd"
       ],
       "descricao": "Conventional Commits utilizado em 1 projeto(s). Profundidade técnica: 39/100.",
       "confidence": 29,
@@ -311,16 +630,16 @@
       "inferida_por_stack": false
     },
     {
-      "nome": "Refatoração",
-      "categoria": "fundamentos",
+      "nome": "Performance",
+      "categoria": "performance",
       "nivel": "experiencia-pratica",
       "padroes": [],
       "frequencia": 1,
       "profundidade": 39,
       "evidencias_ids": [
-        "2984db4d760ec105"
+        "81d6e5be71386abd"
       ],
-      "descricao": "Refatoração utilizado em 1 projeto(s). Profundidade técnica: 39/100.",
+      "descricao": "Performance utilizado em 1 projeto(s). Profundidade técnica: 39/100.",
       "confidence": 29,
       "justificativa": "Confidence 29/100. 1 commit(s) autoral(is).",
       "depth_medio": 1,
@@ -337,7 +656,7 @@
       "frequencia": 1,
       "profundidade": 39,
       "evidencias_ids": [
-        "2984db4d760ec105"
+        "81d6e5be71386abd"
       ],
       "descricao": "Prática de refatoração contínua. Identificado em 1 projeto(s) com base em 1 evidência(s).",
       "confidence": 29,
@@ -346,67 +665,16 @@
       "inferida_por_stack": false
     },
     {
-      "nome": "Tailwind CSS",
-      "categoria": "frontend",
+      "nome": "Docker Compose",
+      "categoria": "devops",
       "nivel": "conhecimento-basico",
       "padroes": [],
       "frequencia": 1,
-      "profundidade": 38.8,
+      "profundidade": 36.6,
       "evidencias_ids": [
-        "735554dfede743f8"
+        "93c1e5f64b0b896f"
       ],
-      "descricao": "Tailwind CSS utilizado em 1 projeto(s). Profundidade técnica: 38.8/100.",
-      "confidence": 30,
-      "justificativa": "Confidence 30/100. Evidência insuficiente para nível superior.",
-      "depth_medio": 1,
-      "commits_autorais": 0,
-      "inferida_por_stack": false
-    },
-    {
-      "nome": "Vite",
-      "categoria": "frontend",
-      "nivel": "conhecimento-basico",
-      "padroes": [],
-      "frequencia": 1,
-      "profundidade": 38.8,
-      "evidencias_ids": [
-        "735554dfede743f8"
-      ],
-      "descricao": "Vite utilizado em 1 projeto(s). Profundidade técnica: 38.8/100.",
-      "confidence": 30,
-      "justificativa": "Confidence 30/100. Evidência insuficiente para nível superior.",
-      "depth_medio": 1,
-      "commits_autorais": 0,
-      "inferida_por_stack": false
-    },
-    {
-      "nome": "Bundler",
-      "categoria": "frontend",
-      "nivel": "conhecimento-basico",
-      "padroes": [],
-      "frequencia": 1,
-      "profundidade": 38.8,
-      "evidencias_ids": [
-        "735554dfede743f8"
-      ],
-      "descricao": "Bundler utilizado em 1 projeto(s). Profundidade técnica: 38.8/100.",
-      "confidence": 30,
-      "justificativa": "Confidence 30/100. Evidência insuficiente para nível superior.",
-      "depth_medio": 1,
-      "commits_autorais": 0,
-      "inferida_por_stack": false
-    },
-    {
-      "nome": "Componentização",
-      "categoria": "frontend",
-      "nivel": "conhecimento-basico",
-      "padroes": [],
-      "frequencia": 1,
-      "profundidade": 38.2,
-      "evidencias_ids": [
-        "56c538e06aa63977"
-      ],
-      "descricao": "Componentização utilizado em 1 projeto(s). Profundidade técnica: 38.2/100.",
+      "descricao": "Docker Compose utilizado em 1 projeto(s). Profundidade técnica: 36.6/100.",
       "confidence": 24,
       "justificativa": "Confidence 24/100. Evidência insuficiente para nível superior.",
       "depth_medio": 1,
@@ -414,38 +682,38 @@
       "inferida_por_stack": false
     },
     {
-      "nome": "Node.js",
-      "categoria": "backend",
+      "nome": "MySQL",
+      "categoria": "banco-de-dados",
       "nivel": "conhecimento-basico",
       "padroes": [],
-      "frequencia": 2,
-      "profundidade": 32.28,
+      "frequencia": 1,
+      "profundidade": 36.6,
       "evidencias_ids": [
-        "0ad684428de047b6",
-        "22faf409a05623ab"
+        "93c1e5f64b0b896f"
       ],
-      "descricao": "Node.js utilizado em 2 projeto(s). Profundidade técnica: 32.28/100.",
-      "confidence": 19,
-      "justificativa": "Confidence 19/100. Evidência insuficiente para nível superior.",
+      "descricao": "MySQL utilizado em 1 projeto(s). Profundidade técnica: 36.6/100.",
+      "confidence": 24,
+      "justificativa": "Confidence 24/100. Evidência insuficiente para nível superior.",
       "depth_medio": 1,
       "commits_autorais": 0,
       "inferida_por_stack": false
     },
     {
-      "nome": "YAML Config",
-      "categoria": "fundamentos",
+      "nome": "Database Migrations",
+      "categoria": "banco-de-dados",
       "nivel": "conhecimento-basico",
-      "padroes": [],
-      "frequencia": 1,
-      "profundidade": 31,
-      "evidencias_ids": [
-        "5af9409ba0f4ddbd"
+      "padroes": [
+        "migrations"
       ],
-      "descricao": "YAML Config utilizado em 1 projeto(s). Profundidade técnica: 31/100.",
+      "frequencia": 1,
+      "profundidade": 36.6,
+      "evidencias_ids": [
+        "93c1e5f64b0b896f"
+      ],
+      "descricao": "Versionamento de schema de banco de dados. Identificado em 1 projeto(s) com base em 1 evidência(s).",
       "confidence": 24,
       "justificativa": "Confidence 24/100. Evidência insuficiente para nível superior.",
-      "depth_medio": 1,
-      "commits_autorais": 1,
+      "commits_autorais": 0,
       "inferida_por_stack": false
     },
     {
@@ -456,26 +724,9 @@
       "frequencia": 1,
       "profundidade": 31,
       "evidencias_ids": [
-        "2aa2ebbe64652183"
+        "aa2795caa427a4ac"
       ],
       "descricao": "Git utilizado em 1 projeto(s). Profundidade técnica: 31/100.",
-      "confidence": 24,
-      "justificativa": "Confidence 24/100. Evidência insuficiente para nível superior.",
-      "depth_medio": 1,
-      "commits_autorais": 1,
-      "inferida_por_stack": false
-    },
-    {
-      "nome": "TypeScript/React",
-      "categoria": "frontend",
-      "nivel": "conhecimento-basico",
-      "padroes": [],
-      "frequencia": 1,
-      "profundidade": 31,
-      "evidencias_ids": [
-        "2aa2ebbe64652183"
-      ],
-      "descricao": "TypeScript/React utilizado em 1 projeto(s). Profundidade técnica: 31/100.",
       "confidence": 24,
       "justificativa": "Confidence 24/100. Evidência insuficiente para nível superior.",
       "depth_medio": 1,
@@ -488,234 +739,327 @@
       "nivel": "conhecimento-basico",
       "padroes": [],
       "frequencia": 1,
-      "profundidade": 23.16,
+      "profundidade": 30.16,
       "evidencias_ids": [
-        "076b889d1b158c4d"
+        "471e2b4b0e98afa7"
       ],
-      "descricao": "Organização de Código utilizado em 1 projeto(s). Profundidade técnica: 23.16/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
+      "descricao": "Organização de Código utilizado em 1 projeto(s). Profundidade técnica: 30.16/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
       "confidence": 0,
       "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
       "inferida_por_stack": true
     },
     {
-      "nome": "Jest",
+      "nome": "Environment Config",
+      "categoria": "seguranca",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 30.16,
+      "evidencias_ids": [
+        "471e2b4b0e98afa7"
+      ],
+      "descricao": "Environment Config utilizado em 1 projeto(s). Profundidade técnica: 30.16/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
+      "confidence": 0,
+      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
+      "inferida_por_stack": true
+    },
+    {
+      "nome": "Multi-stage Build",
+      "categoria": "performance",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 29.68,
+      "evidencias_ids": [
+        "6f510ac16e1b3c35"
+      ],
+      "descricao": "Multi-stage Build utilizado em 1 projeto(s). Profundidade técnica: 29.68/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
+      "confidence": 0,
+      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
+      "inferida_por_stack": true
+    },
+    {
+      "nome": "Webpack",
+      "categoria": "frontend",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 28.72,
+      "evidencias_ids": [
+        "6238fad4846006b3"
+      ],
+      "descricao": "Webpack utilizado em 1 projeto(s). Profundidade técnica: 28.72/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
+      "confidence": 0,
+      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
+      "inferida_por_stack": true
+    },
+    {
+      "nome": "Bundler",
+      "categoria": "frontend",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 28.72,
+      "evidencias_ids": [
+        "6238fad4846006b3"
+      ],
+      "descricao": "Bundler utilizado em 1 projeto(s). Profundidade técnica: 28.72/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
+      "confidence": 0,
+      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
+      "inferida_por_stack": true
+    },
+    {
+      "nome": "Build Pipeline",
+      "categoria": "devops",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 28.72,
+      "evidencias_ids": [
+        "6238fad4846006b3"
+      ],
+      "descricao": "Build Pipeline utilizado em 1 projeto(s). Profundidade técnica: 28.72/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
+      "confidence": 0,
+      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
+      "inferida_por_stack": true
+    },
+    {
+      "nome": "Symfony",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 28.72,
+      "evidencias_ids": [
+        "b3c9b5ebfded8b83"
+      ],
+      "descricao": "Symfony utilizado em 1 projeto(s). Profundidade técnica: 28.72/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
+      "confidence": 0,
+      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
+      "inferida_por_stack": true
+    },
+    {
+      "nome": "Playwright",
       "categoria": "testes",
       "nivel": "conhecimento-basico",
       "padroes": [],
       "frequencia": 1,
-      "profundidade": 13.719999999999999,
+      "profundidade": 23.8,
       "evidencias_ids": [
-        "c6a243629b45706d"
+        "23959434885aa9da"
       ],
-      "descricao": "Jest utilizado em 1 projeto(s). Profundidade técnica: 13.719999999999999/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
-      "confidence": 0,
-      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
-      "inferida_por_stack": true
+      "descricao": "Playwright utilizado em 1 projeto(s). Profundidade técnica: 23.8/100.",
+      "confidence": 19,
+      "justificativa": "Confidence 19/100. Evidência insuficiente para nível superior.",
+      "depth_medio": 1,
+      "commits_autorais": 0,
+      "inferida_por_stack": false
     },
     {
-      "nome": "Docker",
+      "nome": "E2E",
+      "categoria": "testes",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 23.8,
+      "evidencias_ids": [
+        "23959434885aa9da"
+      ],
+      "descricao": "E2E utilizado em 1 projeto(s). Profundidade técnica: 23.8/100.",
+      "confidence": 19,
+      "justificativa": "Confidence 19/100. Evidência insuficiente para nível superior.",
+      "depth_medio": 1,
+      "commits_autorais": 0,
+      "inferida_por_stack": false
+    },
+    {
+      "nome": "Node.js",
+      "categoria": "backend",
+      "nivel": "conhecimento-basico",
+      "padroes": [],
+      "frequencia": 1,
+      "profundidade": 23.8,
+      "evidencias_ids": [
+        "86f1faa9d74e1df8"
+      ],
+      "descricao": "Node.js utilizado em 1 projeto(s). Profundidade técnica: 23.8/100.",
+      "confidence": 19,
+      "justificativa": "Confidence 19/100. Evidência insuficiente para nível superior.",
+      "depth_medio": 1,
+      "commits_autorais": 0,
+      "inferida_por_stack": false
+    },
+    {
+      "nome": "GitHub Actions",
       "categoria": "devops",
       "nivel": "conhecimento-basico",
       "padroes": [],
       "frequencia": 1,
-      "profundidade": 13.48,
+      "profundidade": 22.92,
       "evidencias_ids": [
-        "22faf409a05623ab"
+        "b0cf781682d06bfd"
       ],
-      "descricao": "Docker utilizado em 1 projeto(s). Profundidade técnica: 13.48/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
+      "descricao": "GitHub Actions utilizado em 1 projeto(s). Profundidade técnica: 22.92/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
       "confidence": 0,
       "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
       "inferida_por_stack": true
     },
     {
-      "nome": "Laravel",
-      "categoria": "backend",
+      "nome": "Testes em CI",
+      "categoria": "testes",
       "nivel": "conhecimento-basico",
       "padroes": [],
       "frequencia": 1,
-      "profundidade": 13.48,
+      "profundidade": 22.92,
       "evidencias_ids": [
-        "22faf409a05623ab"
+        "b0cf781682d06bfd"
       ],
-      "descricao": "Laravel utilizado em 1 projeto(s). Profundidade técnica: 13.48/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
+      "descricao": "Testes em CI utilizado em 1 projeto(s). Profundidade técnica: 22.92/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
       "confidence": 0,
       "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
       "inferida_por_stack": true
     },
     {
-      "nome": "PHP",
-      "categoria": "backend",
-      "nivel": "conhecimento-basico",
-      "padroes": [],
-      "frequencia": 1,
-      "profundidade": 13.48,
-      "evidencias_ids": [
-        "22faf409a05623ab"
-      ],
-      "descricao": "PHP utilizado em 1 projeto(s). Profundidade técnica: 13.48/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
-      "confidence": 0,
-      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
-      "inferida_por_stack": true
-    },
-    {
-      "nome": "GraphQL",
-      "categoria": "backend",
-      "nivel": "conhecimento-basico",
-      "padroes": [
-        "api-graphql"
-      ],
-      "frequencia": 1,
-      "profundidade": 13.48,
-      "evidencias_ids": [
-        "22faf409a05623ab"
-      ],
-      "descricao": "GraphQL utilizado em 1 projeto(s). Profundidade técnica: 13.48/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
-      "confidence": 0,
-      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
-      "inferida_por_stack": true
-    },
-    {
-      "nome": "Containerização",
+      "nome": "Deploy Automatizado",
       "categoria": "devops",
       "nivel": "conhecimento-basico",
-      "padroes": [
-        "containerizacao"
-      ],
+      "padroes": [],
       "frequencia": 1,
-      "profundidade": 13.48,
+      "profundidade": 22.92,
       "evidencias_ids": [
-        "22faf409a05623ab"
+        "b0cf781682d06bfd"
       ],
-      "descricao": "Containerização de aplicações. Identificado em 1 projeto(s) com base em 1 evidência(s). ⚠️ Sem commits autorais — não promovido.",
+      "descricao": "Deploy Automatizado utilizado em 1 projeto(s). Profundidade técnica: 22.92/100. ⚠️ INFERIDA POR STACK — sem commits autorais.",
       "confidence": 0,
-      "justificativa": "Padrão detectado na stack, mas sem commits autorais confirmados.",
-      "commits_autorais": 0,
-      "inferida_por_stack": true
-    },
-    {
-      "nome": "APIs RESTful",
-      "categoria": "backend",
-      "nivel": "conhecimento-basico",
-      "padroes": [
-        "api-rest"
-      ],
-      "frequencia": 1,
-      "profundidade": 13.48,
-      "evidencias_ids": [
-        "22faf409a05623ab"
-      ],
-      "descricao": "Desenvolvimento de APIs RESTful. Identificado em 1 projeto(s) com base em 1 evidência(s). ⚠️ Sem commits autorais — não promovido.",
-      "confidence": 0,
-      "justificativa": "Padrão detectado na stack, mas sem commits autorais confirmados.",
-      "commits_autorais": 0,
+      "justificativa": "Sem commits autorais. Skill inferida apenas pela presença na stack do projeto — NÃO promovida.",
       "inferida_por_stack": true
     }
   ],
   "por_nivel": {
     "conhecimento-basico": [
-      "React",
-      "Testes Automatizados",
-      "Design System",
-      "Tooling",
-      "Build Pipeline",
-      "Tailwind CSS",
-      "Vite",
-      "Bundler",
-      "Componentização",
-      "Node.js",
-      "YAML Config",
-      "Git",
-      "TypeScript/React",
-      "Organização de Código",
-      "Jest",
       "Docker",
-      "Laravel",
-      "PHP",
-      "GraphQL",
       "Containerização",
-      "APIs RESTful"
+      "Testes Automatizados",
+      "Arquitetura Modular",
+      "Tooling",
+      "Separação de Camadas",
+      "Docker Compose",
+      "MySQL",
+      "Database Migrations",
+      "Git",
+      "Organização de Código",
+      "Environment Config",
+      "Multi-stage Build",
+      "Webpack",
+      "Bundler",
+      "Build Pipeline",
+      "Symfony",
+      "Playwright",
+      "E2E",
+      "Node.js",
+      "GitHub Actions",
+      "Testes em CI",
+      "Deploy Automatizado"
     ],
     "experiencia-pratica": [
-      "Documentação",
-      "TypeScript",
-      "Documentação Técnica",
-      "CSS",
-      "React/TypeScript",
       "Shell Script",
+      "YAML Config",
+      "SCSS",
+      "JavaScript",
+      "Documentação",
+      "PHP",
+      "JavaScript (ESM)",
+      "CSS",
+      "Documentação Técnica",
+      "Python",
+      "TypeScript",
       "CI/CD",
       "CI/CD Pipeline",
       "Testes",
       "HTML",
+      "Ruby",
       "Conventional Commits",
-      "Refatoração",
+      "Performance",
       "Refatoração Estrutural"
     ],
     "experiencia-avancada": [],
     "dominio-solido": []
   },
   "por_categoria": {
-    "arquitetura": [],
+    "arquitetura": [
+      "Arquitetura Modular",
+      "Separação de Camadas"
+    ],
     "fundamentos": [
-      "TypeScript",
-      "React/TypeScript",
       "Shell Script",
-      "Tooling",
-      "Testes",
-      "HTML",
-      "Conventional Commits",
-      "Refatoração",
-      "Refatoração Estrutural",
       "YAML Config",
+      "SCSS",
+      "JavaScript",
+      "JavaScript (ESM)",
+      "TypeScript",
+      "Testes",
+      "Tooling",
+      "HTML",
+      "Ruby",
+      "Conventional Commits",
+      "Refatoração Estrutural",
       "Git",
       "Organização de Código"
     ],
-    "performance": [],
+    "performance": [
+      "Performance",
+      "Multi-stage Build"
+    ],
     "escalabilidade": [],
     "testes": [
       "Testes Automatizados",
-      "Jest"
+      "Playwright",
+      "E2E",
+      "Testes em CI"
     ],
     "devops": [
+      "Docker",
+      "Containerização",
       "CI/CD",
       "CI/CD Pipeline",
+      "Docker Compose",
       "Build Pipeline",
-      "Docker",
-      "Containerização"
+      "GitHub Actions",
+      "Deploy Automatizado"
     ],
     "produto": [
       "Documentação",
       "Documentação Técnica"
     ],
-    "seguranca": [],
-    "banco-de-dados": [],
+    "seguranca": [
+      "Environment Config"
+    ],
+    "banco-de-dados": [
+      "MySQL",
+      "Database Migrations"
+    ],
     "frontend": [
       "CSS",
-      "React",
-      "Design System",
-      "Tailwind CSS",
-      "Vite",
-      "Bundler",
-      "Componentização",
-      "TypeScript/React"
+      "Webpack",
+      "Bundler"
     ],
     "backend": [
-      "Node.js",
-      "Laravel",
       "PHP",
-      "GraphQL",
-      "APIs RESTful"
+      "Python",
+      "Symfony",
+      "Node.js"
     ],
     "integracao": []
   },
   "padroes_identificados": [
     "separacao-camadas",
     "refatoracao-estrutural",
+    "tuning-banco",
     "testes-automatizados",
     "ci-cd",
     "containerizacao",
-    "api-rest",
-    "api-graphql",
-    "design-system",
+    "orm-query-builder",
+    "migrations",
     "documentacao"
   ]
 }
