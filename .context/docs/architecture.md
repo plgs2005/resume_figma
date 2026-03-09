@@ -30,11 +30,9 @@ The system is primarily a Single Page Application (SPA) implemented with React a
 
 # Architectural Layers
 
-- **UI Components**: Reusable and composable components for user interfaces (`components/ui/`, `resume/components/ui/`)
-- **Figma Integration**: Components and utilities encapsulating interaction with Figma design files (`components/figma/`, `resume/components/figma/`)
 - **Business Logic / Services**: Core domain logic and data manipulation (`src/services/`)
 - **Content Generators**: Modules responsible for generating resume content programmatically (`src/generators/`)
-- **Utilities**: Helper functions and abstractions to support other layers (`components/ui/utils.ts`, etc.)
+- **Utilities**: Helper functions and abstractions to support other layers (`src/components/ui/utils.ts`, etc.)
 
 > See [`codebase-map.json`](./codebase-map.json) for complete symbol counts and dependency graphs.
 
@@ -51,22 +49,21 @@ The system is primarily a Single Page Application (SPA) implemented with React a
 # Entry Points
 
 - [`src/main.tsx`](src/main.tsx) - Application bootstrap and root component mounting.
-- [`components/ui/index.ts`](components/ui/index.ts) - Aggregated exports for UI components and utilities.
-- [`resume/main.tsx`](resume/main.tsx) - Entry for the resume-specific sub-application portion.
+- [`src/components/ui/index.ts`](src/components/ui/index.ts) - Aggregated exports for UI components and utilities.
 - Various component directories expose entry points through `index.ts` files for composability.
 
 # Public API
 
 | Symbol             | Type         | Location                                  |
 |--------------------|--------------|-------------------------------------------|
-| `ChartConfig`      | Type         | `components/ui/chart.tsx:11`               |
-| `cn`               | Function     | `components/ui/utils.ts:4`                  |
-| `useIsMobile`      | Hook         | `components/ui/use-mobile.ts:5`             |
-| `ImageWithFallback`| Component    | `components/figma/ImageWithFallback.tsx:6` |
-| `TooltipProvider`  | Component    | `components/ui/tooltip.tsx:8`               |
-| `Tabs`             | Component    | `components/ui/tabs.tsx:8`                  |
-| `Switch`           | Component    | `components/ui/switch.tsx:8`                 |
-| `useSidebar`       | Hook         | `components/ui/sidebar.tsx:47`               |
+| `ChartConfig`      | Type         | `src/components/ui/chart.tsx:11`               |
+| `cn`               | Function     | `src/components/ui/utils.ts:4`                  |
+| `useIsMobile`      | Hook         | `src/components/ui/use-mobile.ts:5`             |
+| `ImageWithFallback`| Component    | `src/components/figma/ImageWithFallback.tsx:6` |
+| `TooltipProvider`  | Component    | `src/components/ui/tooltip.tsx:8`               |
+| `Tabs`             | Component    | `src/components/ui/tabs.tsx:8`                  |
+| `Switch`           | Component    | `src/components/ui/switch.tsx:8`                 |
+| `useSidebar`       | Hook         | `src/components/ui/sidebar.tsx:47`               |
 
 # Internal System Boundaries
 
@@ -117,9 +114,8 @@ graph TD
 
 # Top Directories Snapshot
 
-- `components/ui/` (~150 files) — Core user interface elements and utilities.
-- `resume/components/ui/` (~120 files) — Resume-specific UI components.
-- `components/figma/` (~30 files) — Figma integration components and utilities.
+- `src/components/ui/` (~150 files) — Core user interface elements and utilities.
+- `src/components/figma/` (~30 files) — Figma integration components and utilities.
 - `src/services/` (~40 files) — Business services and domain logic.
 - `src/generators/` (~20 files) — Resume content and artifact generators.
 

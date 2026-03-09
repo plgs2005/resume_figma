@@ -80,7 +80,7 @@ cd resume_figma
 
 ```bash
 ls -la
-# Deve mostrar: App.tsx, package.json, index.html, vite.config.ts, etc.
+# Deve mostrar: src/, docs/, package.json, index.html, vite.config.ts, etc.
 ```
 
 ---
@@ -339,10 +339,6 @@ Acesse `http://localhost:4173/` para visualizar a versao de producao.
 resume_figma/
 │
 ├── index.html                       # Entry point HTML (Vite)
-├── main.tsx                         # Ponto de montagem React (ReactDOM.createRoot)
-├── App.tsx                          # Componente principal do curriculo
-├── vite-env.d.ts                    # Tipos Vite + declaracao window.html2pdf
-│
 ├── package.json                     # Dependencias e scripts npm
 ├── vite.config.ts                   # Config Vite (React + Tailwind v4 plugins)
 ├── tsconfig.json                    # Config TypeScript raiz (references)
@@ -350,39 +346,44 @@ resume_figma/
 ├── tsconfig.node.json               # Config TypeScript para vite.config.ts
 ├── .gitignore                       # Arquivos ignorados pelo Git
 │
+├── src/                             # Codigo-fonte da aplicacao
+│   ├── main.tsx                     # Ponto de montagem React (ReactDOM.createRoot)
+│   ├── App.tsx                      # Componente principal do curriculo
+│   ├── vite-env.d.ts                # Tipos Vite + declaracao window.html2pdf
+│   ├── styles/
+│   │   └── globals.css              # Tailwind v4 config + design tokens + estilos base
+│   └── components/
+│       ├── figma/
+│       │   └── ImageWithFallback.tsx # Componente de imagem com fallback
+│       └── ui/                      # 47 componentes Shadcn/ui
+│           ├── accordion.tsx
+│           ├── button.tsx
+│           ├── card.tsx
+│           ├── dialog.tsx
+│           ├── ... (43 componentes adicionais)
+│           ├── utils.ts             # Utilidade cn() (clsx + tailwind-merge)
+│           └── use-mobile.ts        # Hook de deteccao mobile
+│
+├── docs/                            # Documentacao interna
+│   ├── guidelines/
+│   │   ├── Guidelines.md            # Documentacao tecnica completa (1000+ linhas)
+│   │   ├── DESIGN_SYSTEM.md         # Design system detalhado
+│   │   └── DEVELOPMENT.md           # Guia de desenvolvimento
+│   ├── ALIGNMENT_GUIDE.md           # Guia rapido de alinhamento
+│   ├── SETUP_LOCAL.md               # Setup local detalhado
+│   ├── MAKE_VS_LOCAL.md             # Comparacao Make vs Local
+│   ├── ARCHITECTURE_DIAGRAMS.md     # Diagramas de arquitetura
+│   ├── COMMANDS.md                  # Comandos praticos
+│   └── PRINT_FIX_SUMMARY.md         # Documentacao do fix de impressao
+│
 ├── scripts/
 │   └── fix-figma-imports.sh         # Script para corrigir imports do Figma Make
 │
-├── styles/
-│   └── globals.css                  # Tailwind v4 config + design tokens + estilos base
+├── agents/                          # Sub-projetos de agentes AI
+│   └── self-knowledge-engine/       # Motor de auto-conhecimento
 │
-├── components/
-│   ├── figma/
-│   │   └── ImageWithFallback.tsx    # Componente de imagem com fallback
-│   └── ui/                          # 47 componentes Shadcn/ui
-│       ├── accordion.tsx
-│       ├── alert-dialog.tsx
-│       ├── alert.tsx
-│       ├── button.tsx
-│       ├── card.tsx
-│       ├── dialog.tsx
-│       ├── ... (44 componentes adicionais)
-│       ├── utils.ts                 # Utilidade cn() (clsx + tailwind-merge)
-│       └── use-mobile.ts            # Hook de deteccao mobile
-│
-├── guidelines/
-│   ├── Guidelines.md                # Documentacao tecnica completa (1000+ linhas)
-│   ├── DESIGN_SYSTEM.md             # Design system detalhado
-│   └── DEVELOPMENT.md               # Guia de desenvolvimento
-│
-├── ALIGNMENT_GUIDE.md               # Guia rápido de alinhamento
-├── SETUP_LOCAL.md                   # Setup local detalhado
-├── MAKE_VS_LOCAL.md                 # Comparação Make vs Local
-├── ARCHITECTURE_DIAGRAMS.md         # Diagramas de arquitetura
-├── COMMANDS.md                      # Comandos práticos
 ├── Attributions.md                  # Licencas de terceiros
 ├── CHANGELOG.md                     # Historico de alteracoes
-├── PRINT_FIX_SUMMARY.md             # Documentacao do fix de impressao
 └── README.md                        # Este arquivo
 ```
 
@@ -446,14 +447,14 @@ chmod +x scripts/fix-figma-imports.sh
 Verifique se o `globals.css` comeca com `@import "tailwindcss";`:
 
 ```bash
-head -1 styles/globals.css
+head -1 src/styles/globals.css
 # Esperado: @import "tailwindcss";
 ```
 
 Se nao tiver, adicione manualmente:
 
 ```bash
-echo '@import "tailwindcss";' | cat - styles/globals.css > temp && mv temp styles/globals.css
+echo '@import "tailwindcss";' | cat - src/styles/globals.css > temp && mv temp src/styles/globals.css
 ```
 
 ### Problema: Porta 5173 ja em uso
@@ -531,35 +532,35 @@ nvm use 20
 
 > **NOVO:** Guias especializados criados em 23/02/2026 para facilitar o setup e entendimento da diferenca entre o ambiente Figma Make e o repositorio local.
 
-- ⭐ **[ALIGNMENT_GUIDE.md](ALIGNMENT_GUIDE.md)** - **COMECE AQUI!** Resumo executivo de todos os guias
-- 📘 **[SETUP_LOCAL.md](SETUP_LOCAL.md)** - Guia completo de setup passo a passo
+- ⭐ **[ALIGNMENT_GUIDE.md](docs/ALIGNMENT_GUIDE.md)** - **COMECE AQUI!** Resumo executivo de todos os guias
+- 📘 **[SETUP_LOCAL.md](docs/SETUP_LOCAL.md)** - Guia completo de setup passo a passo
   - Como os ícones são carregados (assets do Figma)
   - Arquivos indispensáveis (Vite, TypeScript, CSS)
   - Ajustes obrigatórios (fix-imports, install)
   - CSS/Reset obrigatórios (globals.css)
   - Troubleshooting
-- 📗 **[MAKE_VS_LOCAL.md](MAKE_VS_LOCAL.md)** - Comparação visual Make vs Local
+- 📗 **[MAKE_VS_LOCAL.md](docs/MAKE_VS_LOCAL.md)** - Comparação visual Make vs Local
   - O que é idêntico vs diferente
   - Checklist de validação
-- 📙 **[ARCHITECTURE_DIAGRAMS.md](ARCHITECTURE_DIAGRAMS.md)** - Diagramas de arquitetura
+- 📙 **[ARCHITECTURE_DIAGRAMS.md](docs/ARCHITECTURE_DIAGRAMS.md)** - Diagramas de arquitetura
   - Fluxo de ícones (Figma assets → DOM)
   - Fluxo de estilos (Tailwind → Browser)
   - HTML2PDF.js e Print API
-- 📕 **[COMMANDS.md](COMMANDS.md)** - Comandos práticos de terminal
+- 📕 **[COMMANDS.md](docs/COMMANDS.md)** - Comandos práticos de terminal
   - Setup inicial
   - Desenvolvimento diário
   - Troubleshooting
 
 ### Documentação Técnica Original
 
-- **[Guidelines.md](guidelines/Guidelines.md)** - Documentacao tecnica completa (10k+ palavras)
+- **[Guidelines.md](docs/guidelines/Guidelines.md)** - Documentacao tecnica completa (10k+ palavras)
   - Decisoes de arquitetura
   - Padroes de codigo (naming, estrutura, Tailwind)
   - Design system (cores, tipografia, espacamento)
   - Otimizacoes ATS e impressao A4
   - Workflow de desenvolvimento
-- **[DESIGN_SYSTEM.md](guidelines/DESIGN_SYSTEM.md)** - Design system detalhado
-- **[DEVELOPMENT.md](guidelines/DEVELOPMENT.md)** - Guia de desenvolvimento
+- **[DESIGN_SYSTEM.md](docs/guidelines/DESIGN_SYSTEM.md)** - Design system detalhado
+- **[DEVELOPMENT.md](docs/guidelines/DEVELOPMENT.md)** - Guia de desenvolvimento
 - **[CHANGELOG.md](CHANGELOG.md)** - Historico de alteracoes
 - **[Attributions.md](Attributions.md)** - Licencas de terceiros
 

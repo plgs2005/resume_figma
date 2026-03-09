@@ -20,6 +20,9 @@ dist/
 .context/self-knowledge/knowledge-truth.json
 .context/self-knowledge/skill-report.md
 
+# Build artifacts
+*.zip
+
 # OS / IDE
 .DS_Store
 *.swp

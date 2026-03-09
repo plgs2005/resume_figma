@@ -17,8 +17,7 @@ The Resume Figma project streamlines the creation and management of visually app
 
 - [`src/main.tsx`](../src/main.tsx#L1) — Application bootstrap and React root component entry.
 - [`src/cli.ts`](../src/cli.ts#L1) — Command-line interface utilities and commands (if exists).
-- [`components/ui/index.ts`](../components/ui/index.ts#L1) — Main exports for UI components and utilities.
-- [`resume/components/ui/index.ts`](../resume/components/ui/index.ts#L1) — UI components specific to resume features.
+- [`src/components/ui/index.ts`](../components/ui/index.ts#L1) — Main exports for UI components and utilities.
 
 ## Key Exports
 
@@ -27,9 +26,8 @@ Please refer to [`codebase-map.json`](./codebase-map.json) for a comprehensive l
 ## File Structure & Code Organization
 
 - `src/` — Core application source code, including React application entry and Figma integration logic.
-- `components/ui/` — Reusable UI components and utility functions shared across the project.
-- `resume/components/ui/` — UI components tailored specifically for the resume creation and rendering.
-- `components/figma/` — Components and utilities dealing directly with Figma API and design aspects.
+- `src/components/ui/` — Reusable UI components and utility functions shared across the project.
+- `src/components/figma/` — Components and utilities dealing directly with Figma API and design aspects.
 - `docs/` — Project documentation files.
 - `tests/` — Automated tests and fixture data.
 
@@ -43,7 +41,7 @@ The frontend architecture relies heavily on **React** with a component-driven de
 
 ## UI & Interaction Libraries
 
-UI components adopt a modular and accessible design, incorporating reusable elements like tooltips, tabs, switches, and dropdowns, built from scratch within `components/ui/`. The library emphasizes responsive behavior, theming consistency, and accessibility, providing a foundation for both desktop and mobile interactions. Keyboard navigation and ARIA support are implicitly supported via composable UI primitives.
+UI components adopt a modular and accessible design, incorporating reusable elements like tooltips, tabs, switches, and dropdowns, built from scratch within `src/components/ui/`. The library emphasizes responsive behavior, theming consistency, and accessibility, providing a foundation for both desktop and mobile interactions. Keyboard navigation and ARIA support are implicitly supported via composable UI primitives.
 
 ## Development Tools Overview
 

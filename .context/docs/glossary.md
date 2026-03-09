@@ -32,17 +32,17 @@ The project extensively uses TypeScript for type safety and maintainability. Bel
 - [`FormItemContextValue`](components/ui/form.tsx#L68)  
   Context shape used for handling form item validation and state.
 
-*Note: For full paths and detailed definitions, refer to the source files in the repository under `components/ui/` and `resume/components/ui/` directories.*
+*Note: For full paths and detailed definitions, refer to the source files in the repository under `src/components/ui/` and `src/components/ui/` directories.*
 
 ## Enumerations
 
 Enumerations are used across the codebase to represent fixed, discrete values with semantic meaning:
 
-- `PaginationDirection` (likely in `components/ui/pagination.tsx`)  
+- `PaginationDirection` (likely in `src/components/ui/pagination.tsx`)  
   Defines directions for pagination controls such as `Next`, `Previous`.
-- `SelectItemState` (likely in `components/ui/select.tsx`)  
+- `SelectItemState` (likely in `src/components/ui/select.tsx`)  
   States for select dropdown items like `Selected`, `Disabled`.
-- `CarouselPluginType` (in `components/ui/carousel.tsx`)  
+- `CarouselPluginType` (in `src/components/ui/carousel.tsx`)  
   Enumerates types of plugins applicable to carousel behavior and extensions.
 
 *For exact enum names, locations, and complete value lists, consult the source files indicated.*
@@ -53,19 +53,19 @@ These terms appear frequently in the codebase and are critical to understanding 
 
 - **ChartConfig**  
   *Relevance*: Enables customized chart configurations used in data visualization across resumes or dashboard components.  
-  *Codebase*: `components/ui/chart.tsx`, `resume/components/ui/chart.tsx`
+  *Codebase*: `src/components/ui/chart.tsx`, `src/components/ui/chart.tsx`
 - **useIsMobile**  
   *Relevance*: React hook that detects mobile viewport for responsive rendering decisions.  
-  *Codebase*: `components/ui/use-mobile.ts`, `resume/components/ui/use-mobile.ts`
+  *Codebase*: `src/components/ui/use-mobile.ts`, `src/components/ui/use-mobile.ts`
 - **TooltipProvider**  
   *Relevance*: Context provider facilitating tooltip display logic, ensuring consistent behavior throughout UI components.  
-  *Codebase*: `components/ui/tooltip.tsx`
+  *Codebase*: `src/components/ui/tooltip.tsx`
 - **SidesPanelGroup**  
   *Relevance*: UI pattern for resizable panels, helping organize workspace layouts dynamically.  
-  *Codebase*: `components/ui/resizable.tsx`
+  *Codebase*: `src/components/ui/resizable.tsx`
 - **DropdownMenu**  
   *Relevance*: Core navigation and selection UI component enabling hierarchical menu structures.  
-  *Codebase*: `components/ui/dropdown-menu.tsx`
+  *Codebase*: `src/components/ui/dropdown-menu.tsx`
 
 ## Acronyms & Abbreviations
 

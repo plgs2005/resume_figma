@@ -36,7 +36,7 @@ The `docs/` folder contains in-depth markdown files covering all major aspects o
 
 The project repository contains the following top-level files and directories:  
 
-- Source and UI components (e.g., `components/`, `resume/components/`)  
+- Source and UI components (e.g., `src/components/`, `src/components/`)  
 - Entry points and configuration files (`main.tsx`, `package.json`, `vite.config.ts`)  
 - TypeScript configurations (`tsconfig.json`, etc.)  
 - Additional documentation and changelogs (`CHANGELOG.md`, `README.md`)  
@@ -54,9 +54,9 @@ The project repository contains the following top-level files and directories:
 
 ## Cross-References
 
-- Many UI components follow consistent conventions documented in the architecture and can be found under `components/ui` and `resume/components/ui`.  
+- Many UI components follow consistent conventions documented in the architecture and can be found under `src/components/ui` and `resume/components/ui`.  
 - Utility functions, hooks (e.g., `useIsMobile`), and shared types like `ChartConfig` are defined in these UI directories and adhere to patterns described in the architectural guides.  
-- The modular component design supports flexible resume-building features, integrated with Figma-based UI elements located in `components/figma` and `resume/components/figma`.
+- The modular component design supports flexible resume-building features, integrated with Figma-based UI elements located in `src/components/figma` and `resume/components/figma`.
 
 ---
 

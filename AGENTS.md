@@ -19,14 +19,25 @@
 - Confirm the built artefacts in `dist/` match the new source changes.
 
 ## Repository map
-- `App.tsx/` — explain what lives here and when agents should edit it.
-- `Attributions.md/` — explain what lives here and when agents should edit it.
-- `CHANGELOG.md/` — explain what lives here and when agents should edit it.
-- `components/` — explain what lives here and when agents should edit it.
-- `guidelines/` — explain what lives here and when agents should edit it.
-- `index.html/` — explain what lives here and when agents should edit it.
-- `main.tsx/` — explain what lives here and when agents should edit it.
-- `package.json/` — explain what lives here and when agents should edit it.
+- `src/` — Application source code (React + TypeScript).
+  - `src/App.tsx` — Main resume/CV component. Edit for content or layout changes.
+  - `src/main.tsx` — React entry point (ReactDOM.createRoot). Rarely needs editing.
+  - `src/vite-env.d.ts` — Vite type declarations. Edit to add global type augmentations.
+  - `src/components/ui/` — 47 Shadcn/ui components. Add new UI primitives here.
+  - `src/components/figma/` — Figma integration components (ImageWithFallback).
+  - `src/styles/globals.css` — Tailwind v4 config, design tokens, global styles.
+- `docs/` — Internal documentation and guidelines.
+  - `docs/guidelines/` — Design system, development guide, technical docs.
+  - `docs/ALIGNMENT_GUIDE.md`, `SETUP_LOCAL.md`, etc. — Setup and architecture guides.
+- `agents/` — AI agent sub-projects (e.g., `self-knowledge-engine/`).
+- `.context/` — Generated AI context artefacts (deterministic, regenerable).
+- `scripts/` — Build and maintenance scripts (e.g., `fix-figma-imports.sh`).
+- `public/` — Static assets served as-is by Vite.
+- `index.html` — Vite HTML entry point. Edit to change meta tags or CDN scripts.
+- `package.json` — Dependencies and npm scripts. Edit for dep changes.
+- `Attributions.md` — Third-party licences. Update when adding dependencies.
+- `CHANGELOG.md` — Version history. Update on every release.
+- `README.md` — Project overview and quickstart guide.
 
 ## AI Context References
 - Documentation index: `.context/docs/README.md`

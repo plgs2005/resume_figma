@@ -79,7 +79,6 @@ Automation in the project improves code quality and developer efficiency with mi
   - Enables immediate feedback and live reload when editing components or UI.
 
 - **Code Generators / Scaffolding**
-  - While no dedicated code generators are currently defined, scripts for adding UI components or utilities should follow the project conventions seen in `components/ui` and `resume/components/ui`.
 
 ## IDE / Editor Setup
 
@@ -105,7 +104,7 @@ Using these editor plugins and configurations enhances development speed and red
     ```
 - **Snippets and Templates**
   - Create code snippets for common UI components (e.g., `Input`, `Label`, `Select`) to speed up typical component scaffolding.
-  - Follow component structure and style conventions as found in `components/ui` for consistency.
+  - Follow component structure and style conventions as found in `src/components/ui` for consistency.
 
 ## Productivity Tips
 

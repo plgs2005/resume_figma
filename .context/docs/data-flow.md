@@ -8,9 +8,9 @@ Throughout its lifecycle, data flows between several core modules including inpu
 
 - **src/** → `utils`, `config`
 - **components/ui/** → `utils`
-- **components/figma/** → `components/ui`, `utils`
-- **resume/components/ui/** → `utils`, `components/ui`
-- **resume/components/figma/** → `components/figma`, `utils`
+- **components/figma/** → `src/components/ui`, `utils`
+- **src/components/ui/** → `utils`, `src/components/ui`
+- **src/components/figma/** → `src/components/figma`, `utils`
 - **services/** → `utils`
 - **utils/** → standalone or shared helper functions with no external dependencies
 

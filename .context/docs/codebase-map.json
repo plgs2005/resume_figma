@@ -138,8 +138,8 @@
         "name": "Utils",
         "description": "Shared utilities and helpers",
         "directories": [
-          "components/ui",
-          "resume/components/ui"
+          "src/components/ui",
+          "src/components/ui"
         ],
         "symbolCount": 2,
         "dependsOn": []
@@ -148,10 +148,10 @@
         "name": "Components",
         "description": "UI components and views",
         "directories": [
-          "components/ui",
-          "resume/components/ui",
-          "components/figma",
-          "resume/components/figma"
+          "src/components/ui",
+          "src/components/ui",
+          "src/components/figma",
+          "src/components/figma"
         ],
         "symbolCount": 170,
         "dependsOn": []
@@ -177,350 +177,350 @@
       {
         "name": "cn",
         "kind": "function",
-        "file": "components/ui/utils.ts",
+        "file": "src/components/ui/utils.ts",
         "line": 4,
         "exported": true
       },
       {
         "name": "cn",
         "kind": "function",
-        "file": "resume/components/ui/utils.ts",
+        "file": "src/components/ui/utils.ts",
         "line": 4,
         "exported": true
       },
       {
         "name": "ImageWithFallback",
         "kind": "function",
-        "file": "components/figma/ImageWithFallback.tsx",
+        "file": "src/components/figma/ImageWithFallback.tsx",
         "line": 6,
         "exported": true
       },
       {
         "name": "ImageWithFallback",
         "kind": "function",
-        "file": "resume/components/figma/ImageWithFallback.tsx",
+        "file": "src/components/figma/ImageWithFallback.tsx",
         "line": 6,
         "exported": true
       },
       {
         "name": "useIsMobile",
         "kind": "function",
-        "file": "components/ui/use-mobile.ts",
+        "file": "src/components/ui/use-mobile.ts",
         "line": 5,
         "exported": true
       },
       {
         "name": "useIsMobile",
         "kind": "function",
-        "file": "resume/components/ui/use-mobile.ts",
+        "file": "src/components/ui/use-mobile.ts",
         "line": 5,
         "exported": true
       },
       {
         "name": "AccordionContent",
         "kind": "function",
-        "file": "components/ui/accordion.tsx",
+        "file": "src/components/ui/accordion.tsx",
         "line": 50,
         "exported": false
       },
       {
         "name": "AccordionContent",
         "kind": "function",
-        "file": "resume/components/ui/accordion.tsx",
+        "file": "src/components/ui/accordion.tsx",
         "line": 50,
         "exported": false
       },
       {
         "name": "AccordionItem",
         "kind": "function",
-        "file": "components/ui/accordion.tsx",
+        "file": "src/components/ui/accordion.tsx",
         "line": 15,
         "exported": false
       },
       {
         "name": "AccordionItem",
         "kind": "function",
-        "file": "resume/components/ui/accordion.tsx",
+        "file": "src/components/ui/accordion.tsx",
         "line": 15,
         "exported": false
       },
       {
         "name": "AccordionTrigger",
         "kind": "function",
-        "file": "components/ui/accordion.tsx",
+        "file": "src/components/ui/accordion.tsx",
         "line": 28,
         "exported": false
       },
       {
         "name": "AccordionTrigger",
         "kind": "function",
-        "file": "resume/components/ui/accordion.tsx",
+        "file": "src/components/ui/accordion.tsx",
         "line": 28,
         "exported": false
       },
       {
         "name": "AlertDialogAction",
         "kind": "function",
-        "file": "components/ui/alert-dialog.tsx",
+        "file": "src/components/ui/alert-dialog.tsx",
         "line": 121,
         "exported": false
       },
       {
         "name": "AlertDialogAction",
         "kind": "function",
-        "file": "resume/components/ui/alert-dialog.tsx",
+        "file": "src/components/ui/alert-dialog.tsx",
         "line": 121,
         "exported": false
       },
       {
         "name": "AlertDialogCancel",
         "kind": "function",
-        "file": "components/ui/alert-dialog.tsx",
+        "file": "src/components/ui/alert-dialog.tsx",
         "line": 133,
         "exported": false
       },
       {
         "name": "AlertDialogCancel",
         "kind": "function",
-        "file": "resume/components/ui/alert-dialog.tsx",
+        "file": "src/components/ui/alert-dialog.tsx",
         "line": 133,
         "exported": false
       },
       {
         "name": "AlertDialogDescription",
         "kind": "function",
-        "file": "components/ui/alert-dialog.tsx",
+        "file": "src/components/ui/alert-dialog.tsx",
         "line": 108,
         "exported": false
       },
       {
         "name": "AlertDialogDescription",
         "kind": "function",
-        "file": "resume/components/ui/alert-dialog.tsx",
+        "file": "src/components/ui/alert-dialog.tsx",
         "line": 108,
         "exported": false
       },
       {
         "name": "AlertDialogPortal",
         "kind": "function",
-        "file": "components/ui/alert-dialog.tsx",
+        "file": "src/components/ui/alert-dialog.tsx",
         "line": 23,
         "exported": false
       },
       {
         "name": "AlertDialogPortal",
         "kind": "function",
-        "file": "resume/components/ui/alert-dialog.tsx",
+        "file": "src/components/ui/alert-dialog.tsx",
         "line": 23,
         "exported": false
       },
       {
         "name": "AlertDialogTrigger",
         "kind": "function",
-        "file": "components/ui/alert-dialog.tsx",
+        "file": "src/components/ui/alert-dialog.tsx",
         "line": 15,
         "exported": false
       },
       {
         "name": "AlertDialogTrigger",
         "kind": "function",
-        "file": "resume/components/ui/alert-dialog.tsx",
+        "file": "src/components/ui/alert-dialog.tsx",
         "line": 15,
         "exported": false
       },
       {
         "name": "Badge",
         "kind": "function",
-        "file": "components/ui/badge.tsx",
+        "file": "src/components/ui/badge.tsx",
         "line": 28,
         "exported": false
       },
       {
         "name": "Badge",
         "kind": "function",
-        "file": "resume/components/ui/badge.tsx",
+        "file": "src/components/ui/badge.tsx",
         "line": 28,
         "exported": false
       },
       {
         "name": "Breadcrumb",
         "kind": "function",
-        "file": "components/ui/breadcrumb.tsx",
+        "file": "src/components/ui/breadcrumb.tsx",
         "line": 7,
         "exported": false
       },
       {
         "name": "Breadcrumb",
         "kind": "function",
-        "file": "resume/components/ui/breadcrumb.tsx",
+        "file": "src/components/ui/breadcrumb.tsx",
         "line": 7,
         "exported": false
       },
       {
         "name": "Carousel",
         "kind": "function",
-        "file": "components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 45,
         "exported": false
       },
       {
         "name": "Carousel",
         "kind": "function",
-        "file": "resume/components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 45,
         "exported": false
       },
       {
         "name": "CarouselNext",
         "kind": "function",
-        "file": "components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 204,
         "exported": false
       },
       {
         "name": "CarouselNext",
         "kind": "function",
-        "file": "resume/components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 204,
         "exported": false
       },
       {
         "name": "ChartContainer",
         "kind": "function",
-        "file": "components/ui/chart.tsx",
+        "file": "src/components/ui/chart.tsx",
         "line": 37,
         "exported": false
       },
       {
         "name": "ChartContainer",
         "kind": "function",
-        "file": "resume/components/ui/chart.tsx",
+        "file": "src/components/ui/chart.tsx",
         "line": 37,
         "exported": false
       },
       {
         "name": "Checkbox",
         "kind": "function",
-        "file": "components/ui/checkbox.tsx",
+        "file": "src/components/ui/checkbox.tsx",
         "line": 9,
         "exported": false
       },
       {
         "name": "Checkbox",
         "kind": "function",
-        "file": "resume/components/ui/checkbox.tsx",
+        "file": "src/components/ui/checkbox.tsx",
         "line": 9,
         "exported": false
       },
       {
         "name": "CollapsibleContent",
         "kind": "function",
-        "file": "components/ui/collapsible.tsx",
+        "file": "src/components/ui/collapsible.tsx",
         "line": 22,
         "exported": false
       },
       {
         "name": "CollapsibleContent",
         "kind": "function",
-        "file": "resume/components/ui/collapsible.tsx",
+        "file": "src/components/ui/collapsible.tsx",
         "line": 22,
         "exported": false
       },
       {
         "name": "CollapsibleTrigger",
         "kind": "function",
-        "file": "components/ui/collapsible.tsx",
+        "file": "src/components/ui/collapsible.tsx",
         "line": 11,
         "exported": false
       },
       {
         "name": "CollapsibleTrigger",
         "kind": "function",
-        "file": "resume/components/ui/collapsible.tsx",
+        "file": "src/components/ui/collapsible.tsx",
         "line": 11,
         "exported": false
       },
       {
         "name": "ContextMenuGroup",
         "kind": "function",
-        "file": "components/ui/context-menu.tsx",
+        "file": "src/components/ui/context-menu.tsx",
         "line": 23,
         "exported": false
       },
       {
         "name": "ContextMenuGroup",
         "kind": "function",
-        "file": "resume/components/ui/context-menu.tsx",
+        "file": "src/components/ui/context-menu.tsx",
         "line": 23,
         "exported": false
       },
       {
         "name": "ContextMenuPortal",
         "kind": "function",
-        "file": "components/ui/context-menu.tsx",
+        "file": "src/components/ui/context-menu.tsx",
         "line": 31,
         "exported": false
       },
       {
         "name": "ContextMenuPortal",
         "kind": "function",
-        "file": "resume/components/ui/context-menu.tsx",
+        "file": "src/components/ui/context-menu.tsx",
         "line": 31,
         "exported": false
       },
       {
         "name": "ContextMenuRadioGroup",
         "kind": "function",
-        "file": "components/ui/context-menu.tsx",
+        "file": "src/components/ui/context-menu.tsx",
         "line": 45,
         "exported": false
       },
       {
         "name": "ContextMenuRadioGroup",
         "kind": "function",
-        "file": "resume/components/ui/context-menu.tsx",
+        "file": "src/components/ui/context-menu.tsx",
         "line": 45,
         "exported": false
       },
       {
         "name": "ContextMenuRadioItem",
         "kind": "function",
-        "file": "components/ui/context-menu.tsx",
+        "file": "src/components/ui/context-menu.tsx",
         "line": 163,
         "exported": false
       },
       {
         "name": "ContextMenuRadioItem",
         "kind": "function",
-        "file": "resume/components/ui/context-menu.tsx",
+        "file": "src/components/ui/context-menu.tsx",
         "line": 163,
         "exported": false
       },
       {
         "name": "ContextMenuSub",
         "kind": "function",
-        "file": "components/ui/context-menu.tsx",
+        "file": "src/components/ui/context-menu.tsx",
         "line": 39,
         "exported": false
       },
       {
         "name": "ContextMenuSub",
         "kind": "function",
-        "file": "resume/components/ui/context-menu.tsx",
+        "file": "src/components/ui/context-menu.tsx",
         "line": 39,
         "exported": false
       },
       {
         "name": "ContextMenuTrigger",
         "kind": "function",
-        "file": "components/ui/context-menu.tsx",
+        "file": "src/components/ui/context-menu.tsx",
         "line": 15,
         "exported": false
       },
       {
         "name": "ContextMenuTrigger",
         "kind": "function",
-        "file": "resume/components/ui/context-menu.tsx",
+        "file": "src/components/ui/context-menu.tsx",
         "line": 15,
         "exported": false
       }
@@ -529,147 +529,147 @@
       {
         "name": "ChartConfig",
         "kind": "type",
-        "file": "components/ui/chart.tsx",
+        "file": "src/components/ui/chart.tsx",
         "line": 11,
         "exported": true
       },
       {
         "name": "ChartConfig",
         "kind": "type",
-        "file": "resume/components/ui/chart.tsx",
+        "file": "src/components/ui/chart.tsx",
         "line": 11,
         "exported": true
       },
       {
         "name": "CarouselApi",
         "kind": "type",
-        "file": "components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 12,
         "exported": false
       },
       {
         "name": "CarouselApi",
         "kind": "type",
-        "file": "resume/components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 12,
         "exported": false
       },
       {
         "name": "CarouselContextProps",
         "kind": "type",
-        "file": "components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 24,
         "exported": false
       },
       {
         "name": "CarouselContextProps",
         "kind": "type",
-        "file": "resume/components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 24,
         "exported": false
       },
       {
         "name": "CarouselOptions",
         "kind": "type",
-        "file": "components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 14,
         "exported": false
       },
       {
         "name": "CarouselOptions",
         "kind": "type",
-        "file": "resume/components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 14,
         "exported": false
       },
       {
         "name": "CarouselPlugin",
         "kind": "type",
-        "file": "components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 15,
         "exported": false
       },
       {
         "name": "CarouselPlugin",
         "kind": "type",
-        "file": "resume/components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 15,
         "exported": false
       },
       {
         "name": "CarouselProps",
         "kind": "type",
-        "file": "components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 17,
         "exported": false
       },
       {
         "name": "CarouselProps",
         "kind": "type",
-        "file": "resume/components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 17,
         "exported": false
       },
       {
         "name": "ChartContextProps",
         "kind": "type",
-        "file": "components/ui/chart.tsx",
+        "file": "src/components/ui/chart.tsx",
         "line": 21,
         "exported": false
       },
       {
         "name": "ChartContextProps",
         "kind": "type",
-        "file": "resume/components/ui/chart.tsx",
+        "file": "src/components/ui/chart.tsx",
         "line": 21,
         "exported": false
       },
       {
         "name": "FormFieldContextValue",
         "kind": "type",
-        "file": "components/ui/form.tsx",
+        "file": "src/components/ui/form.tsx",
         "line": 21,
         "exported": false
       },
       {
         "name": "FormFieldContextValue",
         "kind": "type",
-        "file": "resume/components/ui/form.tsx",
+        "file": "src/components/ui/form.tsx",
         "line": 21,
         "exported": false
       },
       {
         "name": "FormItemContextValue",
         "kind": "type",
-        "file": "components/ui/form.tsx",
+        "file": "src/components/ui/form.tsx",
         "line": 68,
         "exported": false
       },
       {
         "name": "FormItemContextValue",
         "kind": "type",
-        "file": "resume/components/ui/form.tsx",
+        "file": "src/components/ui/form.tsx",
         "line": 68,
         "exported": false
       },
       {
         "name": "SidebarContextProps",
         "kind": "type",
-        "file": "components/ui/sidebar.tsx",
+        "file": "src/components/ui/sidebar.tsx",
         "line": 35,
         "exported": false
       },
       {
         "name": "UseCarouselParameters",
         "kind": "type",
-        "file": "components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 13,
         "exported": false
       },
       {
         "name": "UseCarouselParameters",
         "kind": "type",
-        "file": "resume/components/ui/carousel.tsx",
+        "file": "src/components/ui/carousel.tsx",
         "line": 13,
         "exported": false
       }
@@ -680,56 +680,56 @@
     {
       "name": "ChartConfig",
       "kind": "type",
-      "file": "components/ui/chart.tsx",
+      "file": "src/components/ui/chart.tsx",
       "line": 11,
       "exported": true
     },
     {
       "name": "ChartConfig",
       "kind": "type",
-      "file": "resume/components/ui/chart.tsx",
+      "file": "src/components/ui/chart.tsx",
       "line": 11,
       "exported": true
     },
     {
       "name": "cn",
       "kind": "function",
-      "file": "components/ui/utils.ts",
+      "file": "src/components/ui/utils.ts",
       "line": 4,
       "exported": true
     },
     {
       "name": "cn",
       "kind": "function",
-      "file": "resume/components/ui/utils.ts",
+      "file": "src/components/ui/utils.ts",
       "line": 4,
       "exported": true
     },
     {
       "name": "ImageWithFallback",
       "kind": "function",
-      "file": "components/figma/ImageWithFallback.tsx",
+      "file": "src/components/figma/ImageWithFallback.tsx",
       "line": 6,
       "exported": true
     },
     {
       "name": "ImageWithFallback",
       "kind": "function",
-      "file": "resume/components/figma/ImageWithFallback.tsx",
+      "file": "src/components/figma/ImageWithFallback.tsx",
       "line": 6,
       "exported": true
     },
     {
       "name": "useIsMobile",
       "kind": "function",
-      "file": "components/ui/use-mobile.ts",
+      "file": "src/components/ui/use-mobile.ts",
       "line": 5,
       "exported": true
     },
     {
       "name": "useIsMobile",
       "kind": "function",
-      "file": "resume/components/ui/use-mobile.ts",
+      "file": "src/components/ui/use-mobile.ts",
       "line": 5,
       "exported": true
     }
@@ -737,19 +737,19 @@
   "dependencies": {
     "mostImported": [
       {
-        "file": "/home/plgsa/resume_figma/components/ui/utils.ts",
+        "file": "/home/plgsa/resume_figma/src/components/ui/utils.ts",
         "importedBy": 43
       },
       {
-        "file": "/home/plgsa/resume_figma/resume/components/ui/utils.ts",
+        "file": "/home/plgsa/resume_figma/src/components/ui/utils.ts",
         "importedBy": 42
       },
       {
-        "file": "/home/plgsa/resume_figma/components/ui/button.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/button.tsx",
         "importedBy": 5
       },
       {
-        "file": "/home/plgsa/resume_figma/resume/components/ui/button.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/button.tsx",
         "importedBy": 4
       },
       {
@@ -757,55 +757,55 @@
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/styles/globals.css",
+        "file": "/home/plgsa/resume_figma/src/styles/globals.css",
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/components/ui/toggle.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/toggle.tsx",
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/components/ui/use-mobile.ts",
+        "file": "/home/plgsa/resume_figma/src/components/ui/use-mobile.ts",
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/components/ui/input.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/input.tsx",
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/components/ui/separator.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/separator.tsx",
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/components/ui/sheet.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/sheet.tsx",
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/components/ui/skeleton.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/skeleton.tsx",
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/components/ui/tooltip.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/tooltip.tsx",
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/components/ui/label.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/label.tsx",
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/components/ui/dialog.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/dialog.tsx",
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/resume/components/ui/toggle.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/toggle.tsx",
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/resume/components/ui/label.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/label.tsx",
         "importedBy": 1
       },
       {
-        "file": "/home/plgsa/resume_figma/resume/components/ui/dialog.tsx",
+        "file": "/home/plgsa/resume_figma/src/components/ui/dialog.tsx",
         "importedBy": 1
       }
     ]
