@@ -1,19 +1,72 @@
 import { useEffect, useState } from "react";
 
-const emailIcon =
-  "https://www.figma.com/api/mcp/asset/429e2d36-12e8-4e69-a200-07bbd82d4675";
-const phoneIcon =
-  "https://www.figma.com/api/mcp/asset/ff46e5e0-8132-4d62-a474-5e9bc24a0bc6";
-const locationIcon =
-  "https://www.figma.com/api/mcp/asset/63487193-e814-4a15-8b90-f6eee1593f62";
-const linkedinIcon =
-  "https://www.figma.com/api/mcp/asset/cf2d799c-27d4-4e1d-b7d3-8983075deb63";
-const externalIcon =
-  "https://www.figma.com/api/mcp/asset/042cf5a8-e8e8-4411-b0c1-bc53f87031d3";
-const downloadIcon =
-  "https://www.figma.com/api/mcp/asset/35bf4095-b366-4df8-aa7e-8bb52b07c7d8";
-const printIcon =
-  "https://www.figma.com/api/mcp/asset/8da78b2d-fb52-421c-bf10-003f7621be91";
+/* ── Inline SVG icon components (replacing expired Figma MCP asset URLs) ── */
+
+const IconEmail = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+    className={className}>
+    <rect width="20" height="16" x="2" y="4" rx="2" />
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+  </svg>
+);
+
+const IconPhone = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+    className={className}>
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+  </svg>
+);
+
+const IconLocation = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+    className={className}>
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>
+);
+
+const IconLinkedin = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+    className={className}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const IconExternalLink = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+    className={className}>
+    <path d="M15 3h6v6" />
+    <path d="M10 14 21 3" />
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+  </svg>
+);
+
+const IconDownload = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+    className={className}>
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+    <polyline points="7 10 12 15 17 10" />
+    <line x1="12" x2="12" y1="15" y2="3" />
+  </svg>
+);
+
+const IconPrint = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+    className={className}>
+    <polyline points="6 9 6 2 18 2 18 9" />
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+    <rect width="12" height="8" x="6" y="14" />
+  </svg>
+);
 
 export default function App() {
   const [isReady, setIsReady] = useState(false);
@@ -77,11 +130,7 @@ export default function App() {
           className="size-16 rounded-full bg-[#009966] shadow-[0px_20px_25px_0px_rgba(0,0,0,0.1),0px_8px_10px_0px_rgba(0,0,0,0.1)] transition-transform hover:scale-105"
           title="Exportar PDF (Visual)"
         >
-          <img
-            src={downloadIcon}
-            alt="Exportar PDF"
-            className="mx-auto size-6"
-          />
+          <IconDownload className="mx-auto size-6 text-white" />
         </button>
 
         <button
@@ -89,11 +138,7 @@ export default function App() {
           className="size-16 rounded-full bg-[#0f172b] shadow-[0px_20px_25px_0px_rgba(0,0,0,0.1),0px_8px_10px_0px_rgba(0,0,0,0.1)] transition-transform hover:scale-105"
           title="Imprimir / PDF para ATS (Texto Selecionável)"
         >
-          <img
-            src={printIcon}
-            alt="Imprimir"
-            className="mx-auto size-6"
-          />
+          <IconPrint className="mx-auto size-6 text-white" />
         </button>
       </div>
 
@@ -119,15 +164,15 @@ export default function App() {
                 href="mailto:plgsantos@icloud.com"
                 className="flex items-center gap-2 hover:text-white transition-colors"
               >
-                <img src={emailIcon} alt="" className="size-4" />
+                <IconEmail className="size-4" />
                 <span>plgsantos@icloud.com</span>
               </a>
               <div className="flex items-center gap-2">
-                <img src={phoneIcon} alt="" className="size-4" />
+                <IconPhone className="size-4" />
                 <span>+55 (11) 95090-3204</span>
               </div>
               <div className="flex items-center gap-2">
-                <img src={locationIcon} alt="" className="size-4" />
+                <IconLocation className="size-4" />
                 <span>Itatiba - SP, Brasil</span>
               </div>
             </div>
@@ -137,9 +182,9 @@ export default function App() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-white transition-colors"
             >
-              <img src={linkedinIcon} alt="" className="size-4" />
+              <IconLinkedin className="size-4" />
               <span>linkedin.com/in/pedrolucassantos</span>
-              <img src={externalIcon} alt="" className="size-3" />
+              <IconExternalLink className="size-3" />
             </a>
           </div>
         </header>
