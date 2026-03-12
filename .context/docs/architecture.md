@@ -1,126 +1,128 @@
+---
+type: doc
+name: architecture
+description: Arquitetura do sistema, componentes e padrões de design
+category: architecture
+generated: 2026-03-12
+status: filled
+---
+
 # Architecture Notes
 
-The system is architected as a modular monolithic React application focusing on a resume-building experience tightly integrated with Figma for design components. The design emphasizes reusable UI components, layered abstractions for business logic, and integration with external APIs in a way that promotes maintainability and scalability. The current architecture centers around component-driven development, enabling composition and fine-grained control over UI behaviors and state management.
+## Visão Geral
 
-Key motivations for this design include:
+Resume Figma é uma **SPA monolítica React** com um sub-projeto Node.js (Self-Knowledge Engine). A arquitetura é orientada a agentes client-side que processam dados factual do candidato e descrições de vagas para gerar currículos tailored em tempo real, sem backend server.
 
-- Reuse of UI components across different parts of the application for consistency and reduced maintenance.
-- Separation of concerns through distinct architectural layers, yielding clear demarcation between presentation, business logic, and data handling.
-- Facilitating integration with Figma and other design tools by encapsulating Figma-specific logic into dedicated directories for better unit testing and future extensibility.
-- Supporting a responsive and dynamic user interface that adapts gracefully to different device sizes using hooks and utility functions such as `useIsMobile`.
+## Topologia
 
-# System Architecture Overview
-
-The system is primarily a Single Page Application (SPA) implemented with React and TypeScript, deployed as a monolithic front-end bundle. It does not currently adopt a microservices or distributed architecture but organizes concerns into modular directories to encourage scalability and codebase hygiene.
-
-### Topology and Deployment
-
-- Monolithic React SPA hosted on a static web server or CDN.
-- No backend server component within the repository; external services such as Figma APIs are consumed directly via client libraries.
-- Build tools and bundlers (e.g., Vite) manage development and production builds, optimizing for performance and cacheability.
-
-### Request Flow and Control
-
-- User interactions funnel through high-level components and pages rendered on the client.
-- Control pivots between:
-  - **Presentation Layer** (UI components) for layout and rendering.
-  - **Service Layer** (business logic services) for action orchestration.
-  - **Integration Layer** (resume and figma-specific components) for external system interaction.
-- Reactive hooks and context providers handle state synchronization and runtime behavior adjustments.
-
-# Architectural Layers
-
-- **Business Logic / Services**: Core domain logic and data manipulation (`src/services/`)
-- **Content Generators**: Modules responsible for generating resume content programmatically (`src/generators/`)
-- **Utilities**: Helper functions and abstractions to support other layers (`src/components/ui/utils.ts`, etc.)
-
-> See [`codebase-map.json`](./codebase-map.json) for complete symbol counts and dependency graphs.
-
-# Detected Design Patterns
-
-| Pattern             | Confidence | Locations                     | Description                                                               |
-|---------------------|------------|-------------------------------|---------------------------------------------------------------------------|
-| Factory             | High       | `LLMClientFactory`             | Provides centralized creation of Large Language Model client instances.    |
-| Hook-based State    | Very High  | `useIsMobile`                  | React hooks pattern for encapsulating responsive state logic.              |
-| Context Provider    | High       | `TooltipProvider`, `SidebarContext` | Provides contextual state and behaviors to descendant components.           |
-| Component Composition | Very High | UI components base directories | Modular UI design allowing flexible component assembly and reuse.          |
-| Higher-Order Components | Medium    | DropdownMenu, NavigationMenu   | Encapsulate common UI interaction patterns and behaviors.                   |
-
-# Entry Points
-
-- [`src/main.tsx`](src/main.tsx) - Application bootstrap and root component mounting.
-- [`src/components/ui/index.ts`](src/components/ui/index.ts) - Aggregated exports for UI components and utilities.
-- Various component directories expose entry points through `index.ts` files for composability.
-
-# Public API
-
-| Symbol             | Type         | Location                                  |
-|--------------------|--------------|-------------------------------------------|
-| `ChartConfig`      | Type         | `src/components/ui/chart.tsx:11`               |
-| `cn`               | Function     | `src/components/ui/utils.ts:4`                  |
-| `useIsMobile`      | Hook         | `src/components/ui/use-mobile.ts:5`             |
-| `ImageWithFallback`| Component    | `src/components/figma/ImageWithFallback.tsx:6` |
-| `TooltipProvider`  | Component    | `src/components/ui/tooltip.tsx:8`               |
-| `Tabs`             | Component    | `src/components/ui/tabs.tsx:8`                  |
-| `Switch`           | Component    | `src/components/ui/switch.tsx:8`                 |
-| `useSidebar`       | Hook         | `src/components/ui/sidebar.tsx:47`               |
-
-# Internal System Boundaries
-
-The system is demarcated primarily by the domains of user interface, business logic, and external integration. Bounded contexts include:
-
-- **UI Layer**: Owns state relevant to presentation and interaction components; manages visual-related business rules.
-- **Resume Domain**: Encapsulates resume-related content generation and data handling.
-- **Figma Integration**: Separately encapsulated logic and components for working with Figma to isolate third-party API contracts and prevent contamination of core domain logic.
-- **Utilities Layer**: Shared helpers for cross-cutting concerns that do not introduce dependencies between other layers.
-
-Synchronization between these domains occurs through well-defined component props, hooks, and React context providers enforcing clear contract boundaries.
-
-# External Service Dependencies
-
-- **Figma API**: Utilized for design integration purposes. Authentication is typically managed through OAuth or API tokens.
-- **Potential cloud storage or CDN**: For serving static assets and deployed SPA bundles.
-- Authentication details and rate limits are managed internally or delegated to the API clients without exposed custom rate limiting.
-
-Failure considerations primarily involve fallback UI rendering (`ImageWithFallback` component) and error boundary components to prevent UI crashes on external API failure.
-
-# Key Decisions & Trade-offs
-
-- Chose React monolithic SPA architecture for rapid UI development and component reuse over microservices or backend-driven rendering.
-- React Hooks and Context APIs were selected to manage state and dependency injection for their simplicity and idiomatic React patterns.
-- Abstracted Figma integration into dedicated components to keep third-party dependencies isolated and replaceable.
-- Opted for in-browser content generation and rendering to improve responsiveness but with considerations for client-side performance.
-
-This approach balances developer ergonomics and user experience while maintaining scalability for future additions of serverless functions or APIs.
-
-# Diagrams
-
-```mermaid
-graph TD
-    A[User Interaction] --> B[UI Components Layer]
-    B --> C{State Management}
-    C --> D[Context Providers / Hooks]
-    B --> E[Resume Domain Logic]
-    E --> F[Figma Integration Layer]
-    F --> G[Figma API / External Services]
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      Browser (SPA)                          │
+│  ┌──────────┐  ┌──────────────┐  ┌──────────────────────┐  │
+│  │AppRouter │→ │ Workspace    │→ │ Pages                │  │
+│  │(React    │  │ Layout       │  │ (Home/Sources/       │  │
+│  │ Router)  │  │ (Sidebar)    │  │  Profile/Jobs/Resume)│  │
+│  └──────────┘  └──────────────┘  └──────────────────────┘  │
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │              Agent Pipeline (client-side)            │   │
+│  │  ┌──────────┐ ┌────────────┐ ┌───────────────────┐  │   │
+│  │  │   Lens   │ │Job Analyzer│ │ Resume Builder     │  │   │
+│  │  │(scoring) │ │(parse+match│ │(tailored generation│  │   │
+│  │  └──────────┘ └────────────┘ └───────────────────┘  │   │
+│  │         ↕              ↕               ↕             │   │
+│  │  ┌──────────────────────────────────────────────┐    │   │
+│  │  │    Orchestrator (singleton, subscribe/notify) │    │   │
+│  │  └──────────────────────────────────────────────┘    │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                          ↕ fetch                            │
+│                 public/skill-data.json                       │
+└─────────────────────────────────────────────────────────────┘
+                          ↑ export
+┌─────────────────────────────────────────────────────────────┐
+│            Self-Knowledge Engine (Node.js CLI)              │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────────┐  │
+│  │Collector │→│Normalizer│→│Extractor │→│Answer Engine │  │
+│  │(git,pkg, │ │(dedup,   │ │(patterns,│ │(queries,     │  │
+│  │ github)  │ │ classify)│ │ levels)  │ │ job-match)   │  │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────────┘  │
+│                                                             │
+│  bridge/export.ts → public/skill-data.json                  │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-# Risks & Constraints
+## Camadas Arquiteturais
 
-- SPA architecture places dependency on client device for performance; less suited for low-powered or legacy browsers.
-- External APIs such as Figma may have unpredictable rate limits or outages affecting integration reliability.
-- Monolithic deployment can complicate scaling specific features independently without introducing microservices.
-- SEO and initial load times can be impacted by client-side rendering, so static prerendering or SSR enhancements may be needed.
+### 1. Presentation Layer (React)
+- **AppRouter** (`src/AppRouter.tsx`): React Router v7 com 6 rotas + redirect.
+- **WorkspaceLayout**: Sidebar persistente + Outlet para páginas.
+- **App.tsx**: Componente monolítico de renderização do currículo (669 linhas).
+- **Componentes UI**: 47 componentes Shadcn/ui baseados em Radix UI primitives.
+- **JobPanel**: Painel lateral com 3 modos de entrada (texto, URL, imagem/OCR).
 
-# Top Directories Snapshot
+### 2. Agent Layer (Client-Side)
+- **Orchestrator** (`src/agents/orchestrator.ts`): Singleton que gerencia o pipeline completo.
+- **useOrchestrator** (`src/agents/useOrchestrator.ts`): Hook React que expõe estado reativo.
+- **Job Analyzer** (`src/agents/job-analyzer.ts`): Parseia vagas, detecta tecnologias via regex, calcula match.
+- **Resume Builder** (`src/agents/resume-builder.ts`): Gera ResumeData tailored sem mutar o original.
+- **Lens** (`src/agents/lens.ts`): Scoring e priorização de relevância (senioridade, liderança, temas de negócio).
 
-- `src/components/ui/` (~150 files) — Core user interface elements and utilities.
-- `src/components/figma/` (~30 files) — Figma integration components and utilities.
-- `src/services/` (~40 files) — Business services and domain logic.
-- `src/generators/` (~20 files) — Resume content and artifact generators.
+### 3. Data Layer
+- **ResumeData** (`src/types/resume.ts`): Schema tipado com 204 linhas cobrindo pessoal, skills, experiências, projetos, formação.
+- **resume-default.ts**: Dados estáticos factual do candidato (306 linhas).
+- **pipeline-store.ts**: Estado do fluxo Career Intelligence em 4 passos (Sources→Profile→Jobs→Resume).
+- **config-store.ts**: Persistência de configurações.
+- **execution-ledger/store**: Rastreamento de execuções do pipeline.
 
-# Related Resources
+### 4. Skills System
+- **SkillGraph** (`src/skills/skill-graph.ts`): Grafo de relacionamentos (424 linhas) com nodes (skill, project, experience, technology, category) e edges (usedIn, relatedTo, dependsOn, evidencedBy).
+- **skill-merger.ts**: Merge de skills de múltiplas fontes.
+- **skill-normalizer.ts**: Normalização de nomes de skills.
 
-- [Project Overview](./project-overview.md)
-- [Data Flow](./data-flow.md)
-- [Codebase Map](./codebase-map.json)
+### 5. SKE Bridge
+- **ske-bridge.ts** (`src/lib/ske-bridge.ts`): Carrega `skill-data.json`, faz lookup fuzzy de skills, enriquece ResumeData com scores de confiança.
+
+## Padrões de Design Detectados
+
+| Padrão | Confiança | Localização | Descrição |
+|--------|-----------|-------------|-----------|
+| Singleton + Observer | Alta | `orchestrator.ts` | Estado global com subscribe/notify para reatividade |
+| Immutable Data | Alta | `resume-builder.ts` | Nunca muta original; retorna nova instância |
+| Pipeline/Chain | Alta | `orchestrator.ts` | Estágios sequenciais: resolve → load → analyze → build |
+| Strategy | Alta | `lens.ts` | Pesos configuráveis para scoring de relevância |
+| Bridge | Alta | `ske-bridge.ts` | Conecta dados offline (SKE) ao app React |
+| Hook Pattern | Alta | `useOrchestrator.ts` | Encapsula estado reativo do pipeline em hook React |
+| Schema Contract | Alta | `types/resume.ts` | Contrato tipado entre agentes e componente visual |
+| Grafo | Média | `skill-graph.ts` | Grafo de adjacência para queries de relacionamento |
+
+## Pipeline de Agentes
+
+```
+Input (texto/URL/imagem)
+  ↓  resolveJobInput()
+Texto normalizado
+  ↓  loadSKEData()
+SKE carregado (skill-data.json)
+  ↓  analyzeJob()
+JobAnalysis { parsed, match, gaps, dimensões }
+  ↓  buildTailoredResume()
+ResumeData tailored { skills reordenadas, experiências marcadas, job_match }
+  ↓  compareTailored() + suggestSummaryAdjustments()
+PipelineResult { aderência antes/depois, sugestões }
+```
+
+## Decisões Arquiteturais
+
+1. **Client-side only**: Todo processamento roda no browser. Sem backend server. O SKE gera JSON offline.
+2. **Dados imutáveis**: O resume-builder nunca muta o defaultResumeData. Sempre retorna cópia.
+3. **Schema-first**: O `ResumeData` é o contrato central. Agentes produzem, App.tsx consome.
+4. **Singleton com subscribe**: Evita prop drilling. Padrão análogo ao Zustand sem dependência.
+5. **Tailwind v4**: Design tokens via CSS custom properties (não config JS). Tema light/dark.
+6. **Monorepo leve**: SKE é sub-projeto em `agents/` com seu próprio package.json.
+
+## Riscos & Restrições
+
+- Performance depende do dispositivo do usuário (SPA client-side).
+- Sem SSR: impacto em SEO e tempo de carregamento inicial.
+- O SKE precisa rodar offline e exportar antes do app consumir.
+- Regex-based job parsing tem limitações vs NLP real.

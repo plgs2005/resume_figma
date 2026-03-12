@@ -1,84 +1,78 @@
+---
+type: doc
+name: testing-strategy
+description: Estratégia de testes, frameworks e cobertura
+category: quality
+generated: 2026-03-12
+status: filled
+---
+
 # Testing Strategy
 
-Maintaining high quality throughout the codebase is achieved by adopting a rigorous testing strategy that covers different layers of the application, automated testing pipelines, and enforceable quality gates. Our approach emphasizes early detection of defects, prevention of regressions, and ensuring that new contributions meet established standards.
+## Visão Geral
 
-We leverage automated testing frameworks integrated with continuous integration (CI) workflows to run tests on every commit and pull request. This guarantees that code changes are continuously validated across unit, integration, and end-to-end levels. Additionally, linting and formatting tools help maintain code consistency, reducing technical debt and improving readability.
+O projeto tem duas áreas de teste:
 
-By requiring minimum test coverage thresholds and enforcing quality gates before merges, we keep technical quality high and reduce the risk of bugs reaching production. This structured approach encourages clear, maintainable, and reliable software development.
+1. **SKE (Self-Knowledge Engine)**: Suite completa com Jest — 32 testes em 5 suites.
+2. **React App (resume_figma)**: Sem suite de testes configurada atualmente. A validação é feita via build + type-check.
 
-# Test Types
+## SKE — Framework de Testes
 
-- **Unit**:
-  - Framework: [Jest](https://jestjs.io/)
-  - Description: Tests individual functions or components in isolation to ensure expected behavior.
-  - File naming convention: `*.test.ts`, `*.test.tsx`
-  - Tooling: Jest runner with built-in mocking and assertion capabilities.
-  
-- **Integration**:
-  - Framework: [Jest](https://jestjs.io/) combined with libraries like React Testing Library for UI component interaction tests.
-  - Description: Verify the interaction between multiple components or modules, such as API integration, form submission workflows, and component composition scenarios.
-  - File naming convention: `*.integration.test.ts`, `*.integration.test.tsx`
-  - Tooling: Jest with React Testing Library to simulate user interactions and test real data flows.
-  
-- **E2E (End-to-End)**:
-  - Framework: [Cypress](https://www.cypress.io/) or equivalent
-  - Description: Tests simulate real user scenarios against a running instance of the application, covering critical workflows like user authentication, navigation, and complex UI flows.
-  - File naming convention: Organized under `/e2e` or `/cypress/integration/` directories following Cypress conventions.
-  - Tooling: Cypress test runner with browser automation, video recording, and time-travel debugging.
+| Aspecto | Detalhe |
+|---------|---------|
+| Framework | Jest 29.7 |
+| Transpilação | ts-jest (ESM via `--experimental-vm-modules`) |
+| Config | `jest.config.cjs` |
+| Execução | `npm test` ou `npm run test:watch` |
+| Suites | 5 |
+| Testes | 32 |
 
-# Running Tests
+### Suites de Teste
 
-- Run all tests (unit + integration):
-  ```bash
-  npm run test
-  ```
-- Run tests in watch mode (re-run tests on file changes):
-  ```bash
-  npm run test -- --watch
-  ```
-- Generate and view test coverage report:
-  ```bash
-  npm run test -- --coverage
-  ```
-- Run E2E tests locally (example with Cypress):
-  ```bash
-  npm run e2e
-  ```
-- Open E2E test runner UI interactively:
-  ```bash
-  npm run e2e:open
-  ```
+| Suite | Arquivo | Responsabilidade |
+|-------|---------|-----------------|
+| Utils | `__tests__/utils.test.ts` | Funções utilitárias compartilhadas |
+| Normalizer | `__tests__/normalizer.test.ts` | Deduplicação e classificação de evidências |
+| Extractor | `__tests__/extractor.test.ts` | Extração de skills e padrões |
+| Answer Engine | `__tests__/answer-engine.test.ts` | Motor de respostas factuais |
+| Prompt Export | `__tests__/prompt-export.test.ts` | Geração de prompts para LLMs |
+| Authorship | `__tests__/authorship.test.ts` | Atribuição de autoria |
+| Commit Analyzer | `__tests__/commit-analyzer.test.ts` | Análise de histórico git |
+| Identity Resolver | `__tests__/identity-resolver.test.ts` | Resolução de identidade |
+| Project Discovery | `__tests__/project-discovery.test.ts` | Descoberta de projetos |
 
-# Quality Gates
+### Executando Testes SKE
 
-- **Coverage thresholds**:
-  - Minimum 80% line coverage across the overall codebase.
-  - At least 75% coverage on branches and functions to ensure critical execution paths are tested.
-- **Linting and formatting**:
-  - Code must pass ESLint checks with zero errors.
-  - Code must comply with Prettier formatting rules.
-- **Pull requests**:
-  - All tests must pass before merging.
-  - Code reviews enforce testing scope and quality.
-  - No new warnings or errors in test or build logs.
-- **Flaky tests**:
-  - Tests identified as flaky must be either fixed or quarantined before merging.
-- **CI enforcement**:
-  - Quality gates are integrated into the CI pipeline to block merges failing any criteria.
+```bash
+cd agents/self-knowledge-engine
+npm test                    # Executa todos
+npm run test:watch          # Modo watch
+npm test -- --verbose       # Saída detalhada
+npm test -- utils           # Suite específica
+```
 
-# Troubleshooting
+## React App — Validação
 
-Some test suites occasionally experience flakiness due to timing issues with async operations or external API dependencies. When encountering intermittent test failures:
+Atualmente o app React não possui testes automatizados. A validação é feita por:
 
-- Retry the tests to confirm whether the failure is consistent.
-- Ensure the latest dependencies and environment setup are used.
-- Check for environment quirk explanations in CI logs, such as network delays or resource constraints.
-- Utilize Jest’s `--runInBand` to run tests serially if concurrency causes conflicts.
-- Mock external APIs to reduce dependencies on unreliable network conditions.
-- Report persistent flaky tests to the team for investigation and remediation.
+1. **Type-check**: `npm run type-check` (tsc --noEmit)
+2. **Build**: `npm run build` (Vite build estrito)
+3. **Visual**: Inspeção manual via dev server
+4. **Build:strict**: `npm run build:strict` (tsc -b + vite build)
 
-Long-running tests, especially in E2E suites, can be optimized by limiting browser sessions or targeting focused scenarios. Developers should use test filtering and selective runs to maintain rapid feedback loops during development.
+## Estratégia Recomendada para Futuro
 
-# Related Resources
+| Tipo | Framework | Alvo |
+|------|-----------|------|
+| Unitário (agentes) | Vitest | `src/agents/*.ts` — job-analyzer, resume-builder, lens |
+| Unitário (skills) | Vitest | `src/skills/*.ts` — skill-graph, merger, normalizer |
+| Componente | Testing Library | `src/components/` — JobPanel, workspace pages |
+| E2E | Playwright | Fluxo completo: abrir app → colar vaga → ver currículo tailored |
 
-- [Development Workflow](./development-workflow.md) – Describes branch strategy, commit process, and CI/CD pipeline details.
+## Guidelines para Novos Testes
+
+- Cada novo agente deve ter testes unitários correspondentes
+- Testes devem usar dados mockados (não depender de filesystem real)
+- Padrão de nomenclatura: `__tests__/nome-modulo.test.ts`
+- Cobertura mínima recomendada: 80% para módulos de agentes
+- Rode `npm run build && npm test` antes de PRs (conforme AGENTS.md)

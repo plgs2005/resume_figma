@@ -1,116 +1,70 @@
-# Refactoring Specialist Agent Playbook
-
+---
+type: agent
+name: refactoring-specialist
+description: Especialista em decomposição de arquivos grandes (App.tsx, JobPanel.tsx), extração de padrões compartilhados e melhoria de type safety.
+generated: 2026-03-12
+status: filled
 ---
 
-## Mission
+# Refactoring Specialist Playbook
 
-The Refactoring Specialist agent supports the development team by identifying, assessing, and improving code quality across the codebase. It specializes in detecting code smells, redundant patterns, duplicated utilities, and architectural inconsistencies, delivering actionable refactoring suggestions or performing safe, incremental code improvements. This agent should be engaged during the code quality review phases, prior to major releases, or whenever technical debt reduction and maintainability enhancements are prioritized.
+## Responsabilidades
 
----
+- Decompor `App.tsx` (669 linhas) em componentes menores e focados.
+- Decompor `JobPanel.tsx` (711 linhas) em sub-componentes com responsabilidades claras.
+- Extrair padrões repetidos em utilitários compartilhados (`src/lib/`).
+- Melhorar type safety eliminando `any`, `as unknown`, e type assertions inseguras.
+- Consolidar patterns de state management (subscribe/notify) em abstração reutilizável.
+- Reduzir acoplamento entre módulos mantendo a interface `ResumeData` como contrato.
 
-## Responsibilities
+## Arquivos-Chave
 
-- Analyze code modules, especially shared utilities and UI components, to identify redundant or duplicated code and opportunities for consolidation.
-- Detect code smells such as overly complex functions, poor naming conventions, tightly coupled modules, and inconsistent patterns.
-- Propose and apply refactorings to improve code readability, modularity, and reusability while maintaining behavior.
-- Cross-verify code consistency between similarly purposed modules (e.g., duplicated utility functions across component directories).
-- Collaborate on updating or creating testing scaffolds and documentation tied to refactored components.
-- Ensure all refactoring is aligned with existing coding standards and project architecture.
+| Arquivo | Função |
+|---|---|
+| `src/App.tsx` (669 linhas) | **PRIORIDADE 1**: Decomposição urgente — mistura layout, data fetching, print logic |
+| `src/components/JobPanel.tsx` (711 linhas) | **PRIORIDADE 2**: Decomposição — mistura form, analysis display, scoring |
+| `src/agents/orchestrator.ts` (292 linhas) | Pipeline coordinator — extrair step handlers |
+| `src/agents/job-analyzer.ts` (318 linhas) | Candidato a split: parsing vs matching vs scoring |
+| `src/skills/skill-graph.ts` (424 linhas) | Algoritmos de grafo — extrair traversal utilities |
+| `src/lib/pipeline-store.ts` (323 linhas) | Store pattern — extrair base class/factory |
+| `src/lib/ske-bridge.ts` (292 linhas) | Bridge — separar loading de transformação |
+| `src/types/resume.ts` | Schema — pode necessitar split em sub-types |
+| `src/agents/useOrchestrator.ts` | Hook — pode estar fazendo demais |
 
----
+## Workflow
 
-## Best Practices
+1. **Inventariar arquivos grandes**: Identificar arquivos com 300+ linhas. Priorizar por complexidade ciclomática e número de responsabilidades.
+2. **App.tsx decomposição** (669 linhas):
+   - Extrair seções do currículo em componentes: `ResumeHeader`, `ExperienceSection`, `SkillsSection`, `EducationSection`, `ProjectsSection`.
+   - Mover print-specific logic para `usePrintLayout` hook.
+   - Mover data loading/transformation para custom hook `useResumeData`.
+   - App.tsx final: ~100-150 linhas fazendo composição de seções.
+3. **JobPanel.tsx decomposição** (711 linhas):
+   - Separar: `JobInputForm` (input textarea + paste), `JobAnalysisResult` (display de análise), `JobMatchScoring` (scores e métricas).
+   - Extrair lógica de estado para `useJobAnalysis` hook.
+   - JobPanel final: ~100-150 linhas compondo sub-componentes.
+4. **Extrair padrão store**:
+   - `pipeline-store.ts`, `execution-store.ts`, `config-store.ts` seguem mesmo pattern singleton+subscribe.
+   - Extrair `createStore<T>()` factory function em `src/lib/create-store.ts`.
+5. **Type safety audit**:
+   - `grep -r "as any" src/` — eliminar cada ocorrência.
+   - `grep -r "as unknown" src/` — substituir por type guards.
+   - Verificar que todos os `Object.keys()` são tipados corretamente.
+6. **Testar após cada refactoring**: Rodar `npm run build` após cada extração. Refactoring não deve mudar comportamento — apenas estrutura.
 
-- **Prioritize shared utilities and UI components**, as these areas contain duplicated `cn` function implementations and potential overlap (`components/ui/utils.ts` and `resume/components/ui/utils.ts`).
-- **Encapsulate refactorings in small, incremental commits** that isolate behavior-preserving changes for easier review and rollback.
-- **Maintain and extend existing naming conventions and code style**, including consistent usage of helper functions, to preserve codebase uniformity.
-- **Preserve or improve test coverage** alongside refactoring efforts; add unit tests if gaps exist when restructuring code.
-- **Document notable refactorings and rationale** within PR descriptions and update related documentation.
-- Utilize static code analysis and linting tools, if configured, to monitor adherence to best practices after refactoring.
-- Where duplication is found (e.g., duplicated utility exports), analyze feasibility to unify into single source modules.
+## Convenções
 
----
+- **Um componente, uma responsabilidade**: Componente com mais de 200 linhas provavelmente faz demais.
+- **Extract, don't rewrite**: Mover código existente para novo arquivo. Não reescrever lógica durante refactoring.
+- **Manter exports**: Ao extrair de `App.tsx`, manter o export default. Imports externos não devem mudar.
+- **Incremental**: Um PR por extração. Não decompor tudo de uma vez — risco de regressão.
+- **Type guards over assertions**: `if (isResumeData(data))` é melhor que `data as ResumeData`.
 
-## Key Project Resources
+## Pitfalls Comuns
 
-- [Main Documentation](README.md)
-- [Project Overview and Architecture](docs/README.md)
-- [Contributor Guide & Agent Handbook](../../AGENTS.md)
-
----
-
-## Repository Starting Points
-
-- `components/ui` – Shared UI components and utilities used across the project.
-- `resume/components/ui` – Resume-specific UI components and utilities, containing duplicated references to utility functions.
-- `components/ui/utils.ts` – Utility functions used by UI components.
-- `resume/components/ui/utils.ts` – Parallel utility implementations for resume components.
-
----
-
-## Key Files
-
-- `components/ui/utils.ts`: Contains shared helper functions, notably the exported `cn` function, important for consistent styling.
-- `resume/components/ui/utils.ts`: Contains a parallel `cn` export and other utilities, potential duplication candidate.
-- `components/ui`: Directory housing reusable UI components which may benefit from improved modularity and decoupling.
-- `resume/components/ui`: Directory with resume-specific UI elements requiring alignment with core UI standards.
-
----
-
-## Architecture Context
-
-- **Utils Layer**  
-  - Locations: `components/ui/utils.ts`, `resume/components/ui/utils.ts`  
-  - Key exports: `cn` function in both locations, representing duplicate utilities.  
-  - Focus on reducing duplication and improving utility reuse between core and resume components.
-
-- **UI Components Layer**  
-  - Shared and resume-specific UI components under respective `ui` directories.  
-  - Opportunity to standardize component props patterns and styling helpers.
-
----
-
-## Key Symbols for This Agent
-
-- `cn` function (exported)  
-  - `components/ui/utils.ts` @ line 4  
-  - `resume/components/ui/utils.ts` @ line 4  
-  - Inspect both implementations for unification or consolidation.
-
----
-
-## Documentation Touchpoints
-
-- `README.md` – Project overview and setup instructions.
-- `docs/README.md` – Architectural descriptions, coding standards, and conventions.
-- Contribution guidelines (within `../../AGENTS.md`) describing team workflows and quality expectations.
-
----
-
-## Collaboration Checklist
-
-- [ ] Confirm duplication and redundancy of utility functions across `components/ui/utils.ts` and `resume/components/ui/utils.ts`.
-- [ ] Review related UI component modules for inconsistent usage of utilities or styling helpers.
-- [ ] Suggest or perform incremental refactorings to consolidate utilities without breaking functionality.
-- [ ] Coordinate with QA to verify test coverage and recommend new tests if critical paths are modified.
-- [ ] Update documentation referencing affected utilities and components.
-- [ ] Submit pull requests with clear descriptions, including rationales for refactorings and impact analysis.
-
----
-
-## Hand-off Notes
-
-Upon completing a refactoring cycle, the agent should summarize:
-
-- The scope and extent of changes made (e.g., unified utility functions).
-- Remaining risks such as untested edge cases or areas flagged for further cleanup.
-- Recommendations for follow-up actions like introducing architectural patterns or automated checks.
-- Documentation updates required for maintainers and contributors.
-
----
-
-## Related Resources
-
-- [Project Documentation Index](./docs/README.md)
-- [General Project README](./README.md)
-- [Agent and Contributor Guidelines](./../../AGENTS.md)
+- **Refactoring + feature no mesmo PR**: Misturar mudança estrutural com nova funcionalidade. Impossível revisar. Separar.
+- **Prop drilling após split**: Decompor `App.tsx` em 5 componentes pode criar prop drilling de 3+ níveis. Usar Context ou hooks, não props cascateados.
+- **Circular imports após extração**: Mover código de A para B, mas B já importa A. Verificar com `madge --circular src/`.
+- **Testes quebrados por path change**: SKE testes importam paths relativos. Mover arquivo sem atualizar imports quebra testes silenciosamente.
+- **Store factory over-abstraction**: Extrair `createStore<T>()` é útil, mas não forçar se stores têm lógica específica significativa. Abstração prematura.
+- **Print regression**: Decompor `App.tsx` pode quebrar print layout se CSS selectors dependem de estrutura DOM específica. Testar Ctrl+P.

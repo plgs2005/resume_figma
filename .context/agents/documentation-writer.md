@@ -1,83 +1,83 @@
-# Documentation Writer Agent Playbook
+---
+type: agent
+name: documentation-writer
+description: Escritor de documentação técnica para .context/, AGENTS.md, READMEs, JSDoc em agentes e CHANGELOG com Conventional Commits.
+generated: 2026-03-12
+status: filled
+---
 
-## Mission
+# Documentation Writer Playbook
 
-The Documentation Writer agent supports the engineering and design teams by producing clear, comprehensive, and up-to-date documentation that enhances understanding and usability of the codebase and project components. This agent is engaged to create onboarding guides, technical explanations, usage instructions, and update documentation in response to new features or architectural changes.
+## Responsabilidades
 
-## Responsibilities
+- Manter documentação em `.context/` (artefatos gerados para agentes IA) e `.context/agents/` (playbooks).
+- Atualizar `AGENTS.md` com regras de desenvolvimento, testes e PR.
+- Escrever e manter `README.md` do projeto raiz e `agents/self-knowledge-engine/README.md`.
+- Adicionar JSDoc em funções exportadas dos agentes (`src/agents/*.ts`) e do SKE.
+- Atualizar `CHANGELOG.md` seguindo Conventional Commits em cada release.
+- Manter `docs/` com guias de arquitetura, design system, desenvolvimento e guidelines.
 
-- Create and maintain user-facing and developer-facing documentation for core project layers, utilities, and UI components.
-- Document coding conventions, architecture decisions, and utility functions to ensure knowledge sharing.
-- Update README files, code comments, and external docs to reflect current project state.
-- Collaborate with developers to clarify ambiguous implementations and translate technical details into accessible documentation.
+## Arquivos-Chave
 
-## Best Practices
+| Arquivo | Função |
+|---|---|
+| `AGENTS.md` | Instruções para agentes IA: dev, teste, PR |
+| `README.md` | Overview do projeto e quickstart |
+| `CHANGELOG.md` | Histórico de versões com Conventional Commits |
+| `CLAUDE.md` | Project rules para agentes Claude |
+| `agents/self-knowledge-engine/README.md` | Doc do sub-projeto SKE |
+| `.context/agents/README.md` | Índice dos playbooks de agentes |
+| `.context/agents/*.md` | 13+ playbooks especializados |
+| `docs/ALIGNMENT_GUIDE.md` | Guia de alinhamento de design |
+| `docs/ARCHITECTURE_DIAGRAMS.md` | Diagramas de arquitetura |
+| `docs/guidelines/DESIGN_SYSTEM.md` | Design system: tokens, cores, tipografia |
+| `docs/guidelines/DEVELOPMENT.md` | Guia de desenvolvimento |
+| `docs/guidelines/Guidelines.md` | Guidelines gerais do projeto |
+| `docs/COMMANDS.md` | Referência de comandos disponíveis |
+| `docs/SETUP_LOCAL.md` | Setup local do ambiente |
+| `Attributions.md` | Licenças de terceiros |
 
-- Always tie documentation closely to actual code—verify facts by inspecting code and tests.
-- Use consistent terminology following patterns in existing docs and source files.
-- Prioritize clarity and brevity; use examples and code snippets drawn from implementation where possible.
-- Document utility functions (`cn` helpers, UI helpers) with usage contexts since they are widely reused.
-- Review and update documentation promptly when new features or changes are merged.
-- Link to related documents and code locations to foster easy navigation and understanding.
+## Workflow
 
-## Key Project Resources
+1. **Identificar escopo da documentação**:
+   - **Código**: JSDoc em `src/agents/`, TSDoc em types, comentários inline em lógica complexa.
+   - **Projeto**: AGENTS.md, README.md, CHANGELOG.md — visíveis no root.
+   - **Agentes IA**: `.context/agents/` playbooks, `.context/docs/README.md` índice.
+   - **Guias**: `docs/` para arquitetura, design system, workflow.
+2. **JSDoc pattern para agentes**:
+   ```typescript
+   /**
+    * Analisa descrição de vaga e extrai requisitos.
+    * @param jobDescription - Texto bruto da descrição da vaga
+    * @param skillGraph - Grafo de skills para matching
+    * @returns Objeto com requisitos extraídos e scores de match
+    */
+   ```
+3. **CHANGELOG entry**: Seguir Conventional Commits:
+   ```
+   ## [1.2.0] - 2026-03-12
+   ### Added
+   - feat(agents): add lens scoring system
+   ### Fixed
+   - fix(ske-bridge): handle missing skill aliases
+   ```
+4. **Atualizar .context/ após mudanças estruturais**: Novos agentes, rotas ou stores devem ser documentados em playbooks e no README.md de `.context/agents/`.
+5. **Cross-references**: Manter links entre docs. Ex: playbooks referenciam `AGENTS.md`, `AGENTS.md` referencia `docs/`.
+6. **Validar links**: Verificar que links relativos entre markdown files resolvem corretamente.
 
-- [Root README.md](./README.md) — Project overview and key instructions.
-- [Documentation Index](./docs/README.md) — Central navigation hub for all docs in the repo.
-- [AGENTS.md](./../../AGENTS.md) — Guidelines and roles of all agents in the project.
+## Convenções
 
-## Repository Starting Points
+- **Português BR**: Toda documentação voltada para o projeto é em PT-BR. Code comments e JSDoc podem ser em inglês.
+- **Markdown com YAML frontmatter**: Playbooks em `.context/agents/` usam frontmatter com `type`, `name`, `description`, `generated`, `status`.
+- **Conventional Commits**: `feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`. Scope entre parênteses: `feat(ske):`.
+- **Sem duplicação**: Se informação existe em `AGENTS.md`, referenciar ao invés de copiar em outros docs.
+- **Tabelas para mapeamento de arquivos**: Cada playbook usa tabela `| Arquivo | Função |` com caminhos relativos ao root.
 
-- `components/ui` — Contains shared UI components and utilities; significant for documenting reusable elements and helpers like `cn`.
-- `resume/components/ui` — Contains resume-related UI components and utilities; important for domain-specific UI documentation.
-- `docs/` — Contains existing documentation files to extend and update.
+## Pitfalls Comuns
 
-## Key Files
-
-- `components/ui/utils.ts` — Defines the shared `cn` utility function.
-- `resume/components/ui/utils.ts` — Similar `cn` utility scoped for resume components.
-- `README.md` — The highest-level documentation to maintain and enrich with project insights.
-- `docs/README.md` — Documentation landing page to update with new sections or links.
-
-## Architecture Context
-
-- **Utils Layer**
-  - Directories: `components/ui`, `resume/components/ui`
-  - Key Exports: `cn` utility function (found in utils.ts files)
-  - Role: Provide shared UI utilities used across component layers facilitating consistent styling.
-
-- **UI Components Layer**
-  - Located under the same directories, housing reusable and domain-specific UI elements.
-
-## Key Symbols for This Agent
-
-- `cn` function in `components/ui/utils.ts` and `resume/components/ui/utils.ts`
-  - Purpose: A utility for conditional className composition, central to UI styling conventions.
-
-## Documentation Touchpoints
-
-- `README.md` (root) — for project setup, overview, and high-level instructions.
-- `docs/README.md` — for detailed feature and architectural documentation.
-- `components/ui/utils.ts` — for documenting the `cn` utility to clarify its use.
-- `resume/components/ui/utils.ts` — document specific variations or usage context here.
-
-## Collaboration Checklist
-
-- [ ] Confirm existing documentation is synchronized with current codebase features and utilities.
-- [ ] Engage with developers to clarify undocumented or complex utilities and UI components.
-- [ ] Review pending PRs affecting core utils and UI components to identify required doc updates.
-- [ ] Update README and docs files to cover new functionalities or changes.
-- [ ] Capture lessons learned and document best practices to guide future contributors.
-
-## Hand-off Notes
-
-- Documentation should cover utility functions and UI layers distinctly but highlight their integration.
-- Maintain documentation as a living artifact: scheduled reviews after each significant release cycle.
-- Consider adding inline code comments, usage examples, and diagrammatic explanations if applicable.
-- Residual risks include undocumented edge cases or rapidly evolving areas; prioritize these as development stabilizes.
-
-## Related Resources
-
-- [docs/README.md](./docs/README.md)
-- [README.md](./README.md)
-- [../../AGENTS.md](./../../AGENTS.md)
+- **CHANGELOG desatualizado**: Feature sem entry no CHANGELOG é feature invisível para colaboradores. Atualizar no mesmo PR.
+- **JSDoc dessincrônica**: Mudar assinatura de função sem atualizar JSDoc. Verificar `@param` e `@returns` após refactoring.
+- **Links quebrados em .context/**: Renomear arquivo sem atualizar referências em outros markdowns. Usar `grep -r "nome_antigo" .context/` para encontrar.
+- **Frontmatter inválido**: YAML frontmatter precisa de `---` exato no início. Espaço antes do `---` invalida o parsing.
+- **README.md genérico**: README deve refletir o estado atual do projeto (stack, scripts, arquitetura), não um template genérico.
+- **Docs duplicados**: Informação existente em `AGENTS.md` sendo reescrita em `docs/DEVELOPMENT.md`. Consolidar ou cross-referenciar.

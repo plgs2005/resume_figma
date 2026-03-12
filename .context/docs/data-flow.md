@@ -1,79 +1,153 @@
-## Data Flow & Integrations
+---
+type: doc
+name: data-flow
+description: Fluxo de dados, transformações e integrações
+category: architecture
+generated: 2026-03-12
+status: filled
+---
 
-The system primarily handles data related to resume creation and visualization, orchestrating interactions between user inputs, internal processing modules, and external services such as Figma for design integration. Data enters the system mainly through user interfaces where users submit resume details or interact with UI components built with React. This input data undergoes validation and transformation within service layers and utilities before being rendered dynamically using UI components.
+# Data Flow & Integrations
 
-Throughout its lifecycle, data flows between several core modules including input handlers, state management stores, and UI rendering components. The system integrates externally with the Figma API to fetch design assets (images, layouts) and possibly to synchronize visual representations of resumes. These external requests utilize authenticated API calls, with payloads structured according to Figma’s design system schemas. Data exits the system primarily as rendered UI or serialized output formats (e.g., downloadable resume PDFs), completing the user interaction cycle.
+## Schema Central: ResumeData
 
-## Module Dependencies
+O contrato `ResumeData` (definido em `src/types/resume.ts`) é o coração do sistema. Todas as transformações produzem ou consomem este schema:
 
-- **src/** → `utils`, `config`
-- **components/ui/** → `utils`
-- **components/figma/** → `src/components/ui`, `utils`
-- **src/components/ui/** → `utils`, `src/components/ui`
-- **src/components/figma/** → `src/components/figma`, `utils`
-- **services/** → `utils`
-- **utils/** → standalone or shared helper functions with no external dependencies
-
-## Service Layer
-
-- **FigmaService**: Handles authentication with Figma API, requests for design assets, manages API rate limits and caching.
-- **ResumeDataService**: Processes resume data input, performs validation and formatting before passing to UI components.
-- **ExportService**: Manages serialization of final resume data into downloadable formats (PDF, JSON).
-- **UserInteractionService**: Captures and processes user inputs, interactions with UI components, and triggers state updates.
-
-## High-level Flow
-
-The core data pipeline can be summarized as follows:
-
-```mermaid
-flowchart TD
-    UserInput[User Input]
-    Validation[Input Validation & Formatting]
-    StateUpdate[State Management]
-    UIRender[UI Rendering Components]
-    FigmaAPI[Figma API Integration]
-    Export[Export / Download]
-    
-    UserInput --> Validation --> StateUpdate --> UIRender
-    UIRender -->|Requests Design Assets| FigmaAPI
-    StateUpdate -->|Export Trigger| Export
+```typescript
+interface ResumeData {
+  schema_version: string;
+  pessoal: PersonalInfo;
+  resumo: ProfessionalSummary;
+  skill_groups: SkillGroup[];
+  experiencias: Experience[];
+  projetos: Project[];
+  consultorias: ConsultingProject[];
+  formacao: Education[];
+  especializacoes: Specialization[];
+  job_match?: JobMatch;
+  metadata?: ResumeMetadata;
+}
 ```
 
-1. User inputs resume data or interacts with UI components.
-2. Data undergoes validation and is formatted by the ResumeDataService.
-3. Validated data updates application state.
-4. UI components render based on the current state.
-5. Components fetch necessary design assets asynchronously from the Figma API via FigmaService.
-6. Users can trigger exports, where the ExportService converts current resume data into downloadable formats.
+## Fluxos de Dados
 
-## Internal Movement
+### Fluxo 1: Renderização Padrão (sem vaga)
 
-Modules communicate primarily through shared state management patterns typical to React-based frontends, such as context providers and hooks for reactive updates. Event-driven patterns are employed, where user actions trigger service calls that update state asynchronously.
+```
+resume-default.ts (dados estáticos)
+  → App.tsx (renderização direta)
+  → HTML/CSS otimizado para A4/ATS
+```
 
-Inter-module communication with services typically uses direct method calls, while external API communication is asynchronous via HTTP requests. There are no message queue or RPC systems currently. The state is centralized and shared through React Context or similar constructs to maintain synchronization between UI and data layers.
+### Fluxo 2: Pipeline de Tailoring (com vaga)
 
-## External Integrations
+```
+Entrada do usuário (texto/URL/imagem)
+  → job-input-resolver.ts (normalização)
+  → orchestrator.ts (coordenação)
+    ├→ ske-bridge.ts ← fetch('/skill-data.json')
+    ├→ job-analyzer.ts (parse requisitos + match)
+    │   ├→ lens.ts (dimensões contextuais)
+    │   └→ TECH_PATTERNS (50+ regex patterns)
+    └→ resume-builder.ts (geração tailored)
+        ├→ reorderSkillGroups()
+        ├→ markExperienceRelevance()
+        ├→ enrichResumeWithSKE()
+        └→ suggestSummaryAdjustments()
+  → PipelineResult → App.tsx (re-render)
+```
 
-- **Figma API**
-  - **Purpose:** Retrieve design assets such as images, component layouts, and styles to maintain visual consistency.
-  - **Authentication:** OAuth or API key-based authentication as managed by FigmaService.
-  - **Payload Shapes:** Requests typically contain project or component identifiers; responses return JSON structured design metadata and image URLs.
-  - **Retry Strategy:** Exponential backoff on failure with a maximum retry count to handle rate limiting and transient network issues.
+### Fluxo 3: Career Intelligence Pipeline (4 passos)
 
-- (Future integrations could extend to LinkedIn API or job-related services)
+```
+Passo 1: Sources   → coleta evidências (skills, experiências, projetos)
+Passo 2: Profile   → analisa evidências → ResumeData enriquecido com confiança
+Passo 3: Jobs      → analisa descrição de vaga → JobAnalysis
+Passo 4: Resume    → combina Profile + JobAnalysis → ResumeData tailored
+```
 
-## Observability & Failure Modes
+Gerenciado por `pipeline-store.ts` com estado persistido via `config-store.ts`.
 
-The system implements logging primarily at service layer entry and exit points, especially around external API calls such as with Figma. This includes metrics on API response times, success/failure counts, and error tracking to diagnose and respond to failure conditions.
+### Fluxo 4: SKE Offline Pipeline
 
-Failure modes involve:
+```
+Filesystem scan (git, package.json, README, docker-compose, etc.)
+  → collector.ts (coleta evidências brutas)
+  → normalizer.ts (dedup, classificação)
+  → extractor.ts (skills, padrões, níveis)
+  → answer-engine.ts (queries, job-match)
+  → bridge/export.ts → public/skill-data.json
+```
 
-- **API Call Failures:** Retries with exponential backoff; persistent failures routed to dead-letter logs.
-- **Data Validation Errors:** Immediate user feedback with UI error annotations.
-- **State Synchronization Issues:** Logs capture inconsistencies; UI falls back to safe states.
+## Modelos de Dados
 
-Monitoring can be augmented with third-party tools integrated for logs aggregation, but currently relies on in-app telemetry and console debugging.
+### SKEData (do skill-data.json)
+```typescript
+interface SKEData {
+  resumo: { total_skills, total_projetos, total_evidencias, padroes_engenharia };
+  por_nivel: { dominio_solido[], experiencia_avancada[], experiencia_pratica[], conhecimento_basico[] };
+  categorias: Record<string, string[]>;
+  destaques: Array<{ skill, nivel, projetos, profundidade }>;
+  padroes: string[];
+}
+```
 
-## Related Resources
+### JobAnalysis (saída do job-analyzer)
+```typescript
+interface JobAnalysis {
+  parsed: ParsedJob;           // título, empresa, requisitos
+  match: JobMatch;             // aderência, evidências
+  skills_encontradas: string[];
+  gaps: string[];
+  sugestoes: string[];
+  dimensions: LensDimension;   // senioridade, liderança, temas
+}
+```
 
-- [architecture.md](./architecture.md)
+### PipelineState (estado do workspace)
+```typescript
+interface PipelineState {
+  sources: PipelineSource[];
+  profile: SimpleProfile | null;
+  jobAnalysis: JobAnalysis | null;
+  tailoredResume: ResumeData | null;
+  completedStep: 0 | 1 | 2 | 3 | 4;
+}
+```
+
+## State Management
+
+O sistema usa **singletons com subscribe/notify** (sem Redux/Zustand):
+
+- `orchestrator.ts`: Estado do pipeline de agentes.
+- `pipeline-store.ts`: Estado do fluxo Career Intelligence.
+- `config-store.ts`: Persistência de configurações.
+- `execution-store.ts` / `execution-ledger.ts`: Rastreamento de execuções.
+
+Padrão:
+```typescript
+let _state = { ... };
+let _listeners: Array<(state) => void> = [];
+function notify() { for (const l of _listeners) l({..._state}); }
+export function subscribe(fn) { _listeners.push(fn); return () => { ... }; }
+```
+
+## Integrações Externas
+
+| Integração | Mecanismo | Dados |
+|-----------|-----------|-------|
+| SKE → React | `fetch('/skill-data.json')` | Skill database JSON |
+| GitHub API | Token-based REST (SKE) | Repos, linguagens, topics |
+| html2pdf.js | CDN script load | Exportação PDF |
+| Figma MCP | Design integration | Componentes visuais |
+
+## Transformações Chave
+
+| Transformação | Entrada | Saída | Arquivo |
+|--------------|---------|-------|---------|
+| Parse de vaga | texto bruto | ParsedJob | job-analyzer.ts |
+| Match com SKE | ParsedJob + SKEData | JobAnalysis | job-analyzer.ts |
+| Tailoring | ResumeData + JobAnalysis | ResumeData tailored | resume-builder.ts |
+| Scoring | texto + dimensões | score 0-100 | lens.ts |
+| SKE Lookup | nome de skill | SKEMatch | ske-bridge.ts |
+| Grafo build | evidências + skills | SkillGraph | skill-graph.ts |

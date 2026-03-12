@@ -1,115 +1,70 @@
-# Performance Optimizer Agent Playbook
-
+---
+type: agent
+name: performance-optimizer
+description: Otimizador de performance do bundle Vite, lazy loading, React.memo, CSS optimization e velocidade de scan do SKE.
+generated: 2026-03-12
+status: filled
 ---
 
-## Mission
+# Performance Optimizer Playbook
 
-The Performance Optimizer agent supports the development team by proactively identifying and mitigating performance bottlenecks within the codebase. It engages during evaluation (E) and verification (V) phases to ensure that features and components maintain optimal responsiveness and efficiency. The agent assists in improving rendering times, reducing resource usage, and optimizing overall user experience.
+## Responsabilidades
 
----
+- Otimizar o bundle Vite de produção (code splitting, tree shaking, chunk strategy).
+- Implementar lazy loading para rotas e componentes pesados.
+- Aplicar `React.memo` em componentes frequentemente re-renderizados (skill cards, lista items).
+- Otimizar CSS: purging de classes não utilizadas, redução de custom properties, minificação.
+- Melhorar performance do scan SKE (reduzir tempo de processamento de commits/repos).
+- Monitorar e reduzir First Contentful Paint (FCP) e Largest Contentful Paint (LCP).
 
-## Responsibilities
+## Arquivos-Chave
 
-- Analyze key UI components and utility functions to detect performance hotspots.
-- Provide actionable insights and fixes for slow-rendering or resource-intensive features.
-- Evaluate the impact of new code on application performance and maintain regression-free optimizations.
-- Recommend best practices for asynchronous data handling, memoization, and component rendering optimization.
-- Monitor and suggest improvements in shared utility functions, especially those heavily reused across components.
+| Arquivo | Função |
+|---|---|
+| `vite.config.ts` | Build config: chunks, minification, rollup options |
+| `src/App.tsx` (669 linhas) | Componente principal — alvo de memo e splitting |
+| `src/AppRouter.tsx` | Router — candidato a lazy loading por rota |
+| `src/components/JobPanel.tsx` (711 linhas) | Componente pesado — candidato a lazy load |
+| `src/skills/skill-graph.ts` (424 linhas) | Algoritmos de grafo — performance de traversal |
+| `src/lib/pipeline-store.ts` (323 linhas) | Store — frequência de notify afeta re-renders |
+| `src/styles/globals.css` | CSS — tamanho e custom properties |
+| `index.html` | Scripts CDN — blocking vs async/defer |
+| `src/agents/orchestrator.ts` (292 linhas) | Pipeline — tempo total de processamento |
+| `agents/self-knowledge-engine/src/engine.ts` | SKE pipeline — tempo de scan |
+| `agents/self-knowledge-engine/src/commit-analyzer.ts` | Análise de commits — iteração pesada |
+| `public/skill-data.json` | Tamanho do JSON carregado no startup |
 
----
+## Workflow
 
-## Best Practices
+1. **Medir antes de otimizar**: Usar `npx vite-bundle-visualizer` para analisar chunks. Identificar os maiores modules.
+2. **Lazy loading de rotas**:
+   ```tsx
+   const JobsPage = React.lazy(() => import('./pages/workspace/Jobs'));
+   ```
+   Cada rota do workspace (Home, Sources, Profile, Jobs, Resume, QuickApply) deve ser lazy loaded.
+3. **React.memo em listas**: Componentes renderizados dentro de `map()` (skill cards, experience items) devem usar `React.memo` com custom comparator se necessário.
+4. **Otimizar pipeline-store notify**: Se `notify()` dispara em cada keystroke (ex: durante typing no JobPanel), debounce é necessário. Listeners recebem estado completo — considerar selectors.
+5. **SkillGraph traversal**: `skill-graph.ts` com 424 linhas faz traversals (BFS/DFS). Para grafos grandes, implementar cache de paths frequentes. Evitar traversals desnecessários em renders.
+6. **Vite build optimization**:
+   - `build.rollupOptions.output.manualChunks` para separar vendor de app code.
+   - Shadcn/ui components em chunk separado (47 componentes é significativo).
+   - `build.cssCodeSplit: true` para CSS por chunk.
+7. **SKE scan performance**: `commit-analyzer.ts` itera sobre commits. Para repos grandes, implementar batch processing e early termination quando dados suficientes forem coletados.
+8. **CDN scripts**: Mover scripts de `index.html` para async/defer. Fonts com `<link rel="preconnect">`.
 
-- Prioritize optimization of components under `components/ui` and `resume/components/ui` where common utilities (e.g., `cn` utility function) are heavily used.
-- Focus on minimizing unnecessary re-renders by leveraging appropriate React hooks and memoization.
-- Ensure utility functions remain lightweight and avoid side effects that can cascade into performance issues.
-- Encourage code splitting and lazy loading strategies when applicable to reduce initial load times.
-- Use profiling tools and browser performance APIs for accurate bottleneck identification before making changes.
-- Maintain a strict balance between optimization and code readability to keep maintenance manageable.
+## Convenções
 
----
+- **Medir, otimizar, medir**: Sem métricas antes/depois, otimização é chute. Usar Lighthouse e bundle analyzer.
+- **Lazy loading granular**: Uma `React.lazy()` por rota/page. Componentes dentro de uma page não precisam ser lazy individualmente (overhead de Suspense).
+- **Sem premature optimization**: `React.memo` apenas em componentes medidos como gargalo. Não aplicar em tudo.
+- **CSS-first animations**: Preferir `transition` e `@keyframes` CSS sobre JS animations. Menos frames dropped.
+- **Immutable data para shallow compare**: `React.memo` funciona melhor com dados imutáveis. Se `pipeline-store` muta objetos, memo não pega mudanças.
 
-## Key Project Resources
+## Pitfalls Comuns
 
-- [Project Documentation Index](./../docs/README.md) – Overview and high-level reading
-- [Agent Handbook](./../../AGENTS.md) – Guidelines on agent interactions and best practices
-- [Contributor Guide](./CONTRIBUTING.md) – Coding standards and repository conventions
-
----
-
-## Repository Starting Points
-
-- `components/ui` – Core UI components and shared utilities critical for profiling and optimization
-- `resume/components/ui` – Scoped UI components with reusable patterns and utilities
-- `resume/components/ui/utils.ts` – Contains key exported utilities like `cn` that impact multiple components
-
----
-
-## Key Files
-
-- `components/ui/utils.ts` – Utility functions essential for styling and performance improvements
-- `resume/components/ui/utils.ts` – Similar utility exports leveraged broadly in resume-related UI
-- Main UI component entry points inside `components/ui` and `resume/components/ui/` – Focus areas for rendering optimization
-
----
-
-## Architecture Context
-
-- **UI Layer:**
-  - Directories: `components/ui`, `resume/components/ui`
-  - Symbol concentration: Numerous components and shared `utils.ts` utilities
-  - Exports like `cn` used as className composition helpers show centralized styling performance opportunities
-
-- **Utility Layer:**
-  - Shared helper functions implemented to enhance maintainability and reduce duplication
-  - Performance gains here benefit multiple dependent components
-
----
-
-## Key Symbols for This Agent
-
-- `cn` function (components/ui/utils.ts and resume/components/ui/utils.ts)  
-  Central string concatenation utility for classNames — critical to optimize to reduce overhead in rendering cycles.
-
-- Component classes/functions under `components/ui` and `resume/components/ui`  
-  Identify those with complex rendering logic for memoization and lazy loading.
-
----
-
-## Documentation Touchpoints
-
-- [Performance best practices documentation](./../docs/performance.md) *(If available)* – Reference to existing strategies and metrics
-- Inline comments within `utils.ts` files explaining utility function roles
-- Repository README noting UI architectural decisions and typical render flows
-
----
-
-## Collaboration Checklist
-
-- [ ] Confirm component render performance baseline using profiling tools (React DevTools Profiler, Lighthouse)
-- [ ] Review new pull requests for potential performance regressions (excessive re-renders, large bundle sizes)
-- [ ] Update documentation to reflect optimization techniques and tool usage
-- [ ] Capture post-optimization metrics to evaluate success and identify further opportunities
-
----
-
-## Hand-off Notes
-
-Upon completion of optimization tasks, provide summarized reports highlighting:
-
-- Identified bottlenecks and corresponding fixes applied
-- Before-and-after performance metrics (render times, CPU usage, memory footprint)
-- Residual or potential risks (e.g., complexity added by optimization)
-- Recommendations for ongoing performance monitoring routines
-
----
-
-## Related Resources
-
-- [Project Root README](./README.md)
-- [AGENTS.md Repository Handbook](./../../AGENTS.md)
-- [General Documentation Index](./../docs/README.md)
-
----
-
-This playbook enables the Performance Optimizer agent to effectively locate, analyze, and resolve performance issues grounded in the core UI layers and shared utilities, leveraging repository-specific conventions and entry points.
+- **skill-data.json bloqueando startup**: JSON grande carregado sincrônicamente no mount. Usar `fetch()` assíncrono com Suspense boundary.
+- **pipeline-store over-notifying**: Cada `setState` dispara `notify()` para todos os listeners. Se 10 componentes subscrevem, todos re-renderizam mesmo que só 1 precise atualizar.
+- **SkillGraph recomputing**: Se o grafo é reconstruído a cada render (em vez de cached), algoritmos O(n²) matam performance com muitas skills.
+- **47 Shadcn/ui no bundle principal**: Sem code splitting, todos 47 componentes vão no chunk principal mesmo se a page usa só 5.
+- **Print layout re-render**: `@media print` pode triggar re-render se useMediaQuery hooks são usados. Componente pode flicker durante print dialog.
+- **Vite dev ≠ prod**: Performance em dev mode é significativamente pior (sem minificação, sem tree shaking). Sempre testar prod build para métricas reais.

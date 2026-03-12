@@ -1,141 +1,89 @@
-# Tooling & Productivity Guide
-
-This guide outlines the essential tooling, automation, editor configurations, and productivity tips to help developers efficiently contribute to the **resume_figma** project. Following these guidelines ensures a smooth development experience with consistent code quality and effective collaboration.
-
-## Required Tooling
-
-To develop, test, and maintain the project, you need the following tools installed:
-
-- **Node.js**
-  - **Version:** >=18.x
-  - **Purpose:** Provides the runtime for building and running JavaScript/TypeScript code, including package management.
-  - **Installation:** Download from [https://nodejs.org/](https://nodejs.org/) or use a version manager like `nvm`.
-
-- **pnpm**
-  - **Version:** Latest stable
-  - **Purpose:** Fast, efficient package manager used to install dependencies and run scripts.
-  - **Installation:**  
-    ```bash
-    npm install -g pnpm
-    ```
-  - Use `pnpm install` to set up project dependencies.
-
-- **TypeScript**
-  - **Version:** As specified by `package.json` (typically the latest stable)
-  - **Purpose:** To catch type errors early and enable advanced code intelligence.
-  - Installed automatically via pnpm.
-
-- **Vite**
-  - **Version:** As specified in `package.json`
-  - **Purpose:** The frontend build tool providing fast development server and efficient bundling.
-  - Installed automatically via pnpm.
-
-- **ESLint**
-  - **Version:** Aligned with project config
-  - **Purpose:** Ensures consistent code style and enforces best practices.
-  - Used with project-configured rules.
-
-- **Prettier**
-  - **Version:** Latest recommended by project
-  - **Purpose:** Code formatter to maintain a consistent code style.
-  - Configured via project settings.
-
-- **Git**
-  - **Version:** Latest stable
-  - **Purpose:** Version control and collaboration.
-  - Installed from [https://git-scm.com/](https://git-scm.com/).
-
-## Recommended Automation
-
-Automation in the project improves code quality and developer efficiency with minimal manual intervention:
-
-- **Pre-commit Hooks**
-  - Implemented via [Husky](https://typicode.github.io/husky/#/).
-  - Automatically runs linting and formatting checks before commits to prevent bad code from entering the repository.
-
-- **Linting and Formatting**
-  - Run linting via:
-    ```bash
-    pnpm lint
-    ```
-  - Format code using:
-    ```bash
-    pnpm format
-    ```
-  - Both commands can also be configured to watch file changes during development.
-
-- **Type Checking**
-  - Run type checks using:
-    ```bash
-    pnpm type-check
-    ```
-  - Ensures type safety throughout the project.
-
-- **Development Server**
-  - Start a fast-refresh enabled server with:
-    ```bash
-    pnpm dev
-    ```
-  - Enables immediate feedback and live reload when editing components or UI.
-
-- **Code Generators / Scaffolding**
-
-## IDE / Editor Setup
-
-Using these editor plugins and configurations enhances development speed and reduces errors:
-
-- **VS Code Extensions**
-  - **ESLint:** Highlights lint issues in real-time.
-  - **Prettier - Code Formatter:** Formats code on save.
-  - **TypeScript and JavaScript Language Features:** Provides autocomplete and inline error detection.
-  - **GitLens:** Enhances Git integration.
-  - **Tailwind CSS IntelliSense:** Provides class name suggestions if Tailwind CSS is used.
-
-- **Workspace Settings**
-  - Configure VS Code to format on save:
-    ```json
-    {
-      "editor.formatOnSave": true,
-      "eslint.validate": [ "javascript", "typescript", "typescriptreact" ],
-      "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-      }
-    }
-    ```
-- **Snippets and Templates**
-  - Create code snippets for common UI components (e.g., `Input`, `Label`, `Select`) to speed up typical component scaffolding.
-  - Follow component structure and style conventions as found in `src/components/ui` for consistency.
-
-## Productivity Tips
-
-Maximize your efficiency by adopting these development practices:
-
-- **Terminal Aliases**
-  - Define shortcuts for common commands in your shell config (e.g., `.bashrc`, `.zshrc`):
-    ```bash
-    alias rsdev="pnpm dev"
-    alias rslint="pnpm lint"
-    alias rsformat="pnpm format"
-    alias rstype="pnpm type-check"
-    ```
-  - Save keystrokes and reduce context switching.
-
-- **Containerized Development**
-  - While not yet defined, consider using Docker or similar containers to standardize development environments and dependencies.
-  
-- **Local Emulators and Hot Reload**
-  - Leverage Vite’s hot reload capability for instant feedback while working on UI components.
-  - Use editor-integrated terminals to run scripts without leaving VS Code.
-
-- **Shared Dotfiles**
-  - Sync your dotfiles (aliases, editor config, git config) with the team repo to standardize developer environment and tooling preferences.
-
-## Related Resources
-
-For additional workflow and process details, visit:
-
-- [development-workflow.md](./development-workflow.md)
-
+---
+type: doc
+name: tooling
+description: Ferramentas de desenvolvimento e produtividade
+category: tooling
+generated: 2026-03-12
+status: filled
 ---
 
-This guide will evolve as the project grows. Please contribute back any tooling improvements or automation scripts that improve team productivity!
+# Tooling & Productivity Guide
+
+## Build System
+
+| Ferramenta | Versão | Função |
+|-----------|--------|--------|
+| Vite | 6.x | Dev server + bundler de produção |
+| @vitejs/plugin-react | 4.x | Fast Refresh para React |
+| @tailwindcss/vite | 4.x | Integração Tailwind v4 |
+| TypeScript | 5.7.x | Compilação e type-checking |
+
+## Scripts Disponíveis
+
+### Root (`/resume_figma`)
+
+```bash
+npm run dev          # Dev server com HMR (http://localhost:5173)
+npm run build        # Build de produção (dist/)
+npm run build:strict # tsc -b + vite build
+npm run preview      # Preview do build
+npm run type-check   # tsc --noEmit
+npm run fix-imports  # Corrige imports Figma
+```
+
+### SKE (`/agents/self-knowledge-engine`)
+
+```bash
+npm run build        # Compila TypeScript → dist/
+npm run dev          # tsc --watch
+npm run scan         # Pipeline completo
+npm run export       # Exporta skill-data.json → public/
+npm run refresh      # Build + Scan + Export
+npm test             # Jest (32 testes, 5 suites)
+npm run test:watch   # Jest --watch
+```
+
+## IDE Setup (VS Code)
+
+### Extensões Recomendadas
+- **TypeScript** (built-in)
+- **Tailwind CSS IntelliSense** — autocomplete de classes
+- **ES7+ React/Redux/GraphQL** — snippets React
+- **Prettier** — formatação
+- **ESLint** — linting (se configurado)
+
+### Settings Relevantes
+- `editor.defaultFormatter: "esbenp.prettier-vscode"` (recomendado)
+- `typescript.preferences.importModuleSpecifier: "relative"` (imports relativos)
+
+## Configuração TypeScript
+
+O projeto usa 3 tsconfigs:
+- `tsconfig.json` — raiz (referencia app e node)
+- `tsconfig.app.json` — config do app React (strict, jsx: react-jsx)
+- `tsconfig.node.json` — config para vite.config.ts
+
+O SKE tem seu próprio `tsconfig.json` em `agents/self-knowledge-engine/`.
+
+## Automação & Scripts
+
+- `scripts/fix-figma-imports.sh` — Corrige imports Figma (pós-geração de componentes)
+- SKE `bridge/export.ts` — Exporta dados coletados para `public/skill-data.json`
+
+## AI Context Tools
+
+- `.context/` — Artefatos gerados pelo AI-CONTEXT
+- `agents/` — Playbooks para agentes AI
+- `docs/` — Documentação estruturada para consumo por AI
+- `AGENTS.md` — Instruções de CI/testes para agentes Codex/copilot
+
+## Debug
+
+### Frontend
+- Chrome DevTools (F12)
+- React DevTools extension
+- Vite HMR errors aparecem como overlay no browser
+
+### SKE
+- `node --enable-source-maps dist/cli.js <comando>` — source maps habilitados
+- `npm run dev` (tsc --watch) para desenvolvimento contínuo

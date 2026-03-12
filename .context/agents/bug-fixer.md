@@ -1,118 +1,63 @@
-# Bug Fixer Agent Playbook for resume_figma
-
+---
+type: agent
+name: bug-fixer
+description: Especialista em debugging do pipeline de agentes, componentes React, SKE e problemas de build/print layout.
+generated: 2026-03-12
+status: filled
 ---
 
-## Mission
+# Bug Fixer Playbook
 
-The Bug Fixer agent supports the development team by systematically analyzing bug reports, error logs, and failing tests to identify root causes and implement fixes. The agent engages during the exploration (E) phase to investigate potential bugs and the verification (V) phase to ensure fixes are correctly applied and bugs are resolved.
+## Responsabilidades
 
----
+- Diagnosticar e corrigir bugs no pipeline de agentes (orchestrator, job-analyzer, resume-builder, lens).
+- Debugar problemas de renderização React nos 47 componentes Shadcn/ui e no `App.tsx` (669 linhas).
+- Resolver erros do SKE (Node.js CLI) usando source maps e stack traces do Jest.
+- Corrigir problemas de print layout (CSS `@media print`) e responsividade.
+- Investigar falhas de carregamento de dados (`skill-data.json`, config JSONs, `resume-default.ts`).
+- Triar type mismatches entre `ResumeData` e dados reais em runtime.
 
-## Responsibilities
+## Arquivos-Chave
 
-- **Bug Analysis:** Interpret error messages, stack traces, or reported malfunction symptoms to pinpoint problematic code areas.
-- **Code Troubleshooting:** Navigate relevant source files and utility modules to trace and isolate bugs.
-- **Bug Fix Implementation:** Apply targeted code corrections with adherence to coding conventions, ensuring minimal impact on existing functionality.
-- **Validation:** Collaborate in verifying fixes through re-running tests, reviewing logs, and confirming bug resolution.
-- **Documentation:** Update issue trackers, write clear fix summaries, and note any required follow-ups for remaining risks.
+| Arquivo | Função |
+|---|---|
+| `src/App.tsx` (669 linhas) | Componente principal — maioria dos bugs de UI reside aqui |
+| `src/components/JobPanel.tsx` (711 linhas) | Painel de análise de vagas — complexo, propenso a bugs |
+| `src/agents/orchestrator.ts` (292 linhas) | Coordenador do pipeline — falhas em cascata originam aqui |
+| `src/lib/pipeline-store.ts` (323 linhas) | Estado singleton — bugs de state stale ou notify faltante |
+| `src/lib/ske-bridge.ts` (292 linhas) | Ponte SKE — erros de parsing ou campos faltantes |
+| `src/types/resume.ts` | Schema — type mismatches entre esperado e real |
+| `src/styles/globals.css` | Tokens CSS e print styles |
+| `public/skill-data.json` | Dados exportados do SKE — pode estar ausente ou malformado |
+| `src/data/resume-default.ts` | Dados estáticos — fallback quando pipeline falha |
+| `vite.config.ts` | Config Vite — problemas de build, alias paths |
 
----
+## Workflow
 
-## Best Practices
+1. **Reproduzir o bug**: Rodar `npm run dev` e abrir o browser. Usar DevTools Console (F12) para erros React. Para SKE, rodar `cd agents/self-knowledge-engine && npm test`.
+2. **Classificar o bug**:
+   - **UI/React**: Verificar Console para React warnings, Tailwind classes inválidas, ou componentes Shadcn/ui mal configurados.
+   - **Pipeline/Agentes**: Adicionar `console.log` nos handlers do `orchestrator.ts`. Verificar se cada step emite output válido.
+   - **SKE/Node**: Rodar teste isolado com `npm test -- --watch --testNamePattern="nome_do_teste"`. Source maps habilitados via `ts-jest`.
+   - **Print layout**: Abrir Print Preview (Ctrl+P). Bugs comuns: overflow de página, fontes não carregadas, cores ausentes.
+   - **Data loading**: Verificar Network tab para 404 em `skill-data.json`. Verificar que `resume-default.ts` exporta shape compatível com `ResumeData`.
+3. **Isolar a causa**: Usar binary search em componentes (comentar metade do JSX até achar o trecho problemático). Para pipeline, testar cada agente isoladamente.
+4. **Corrigir com type safety**: Nunca usar `as any` para silenciar erros. Corrigir o type na fonte.
+5. **Validar a correção**: Rodar `npm run build` (zero errors no TypeScript). Para SKE: `npm test` (32 testes passando).
+6. **Verificar regressão**: Testar print layout, mobile viewport (375px), e desktop (1440px) após qualquer fix de CSS.
 
-- Investigate bugs starting from user-facing components down to shared utilities in `components/ui` and `resume/components/ui`.
-- Prioritize analyzing changes to key shared utilities like the `cn` function in both utils.ts files to catch common bugs affecting UI.
-- Preserve code formatting and leverage existing helper functions to maintain consistency.
-- Write minimal, well-documented fixes accompanied by tests or test corrections.
-- Always confirm bug reproduction locally before applying fixes.
-- Use descriptive commit messages referencing bug IDs or error messages.
-- Collaborate with test maintainers to extend or add tests covering the fixed scenarios when applicable.
-- Avoid introducing new dependencies or heavy refactors in bug fixes unless necessary for stability.
+## Convenções
 
----
+- **Console limpo**: O app não deve ter warnings no Console em prod. Tratar todos durante debug.
+- **Sem try/catch silencioso**: Bugs escondidos por `catch(() => {})` devem ser expostos com logging mínimo.
+- **Source maps**: Vite gera source maps em dev. SKE usa `ts-jest` com source maps. Sempre debugar no TypeScript original, não no JS compilado.
+- **Print é feature**: Bugs de print layout são tão prioritários quanto bugs de tela. O currículo é impresso por recrutadores.
 
-## Key Project Resources
+## Pitfalls Comuns
 
-- [`README.md`](./README.md) — Overview of the project and getting started info.
-- [`../../AGENTS.md`](./../../AGENTS.md) — Guidance on agent roles and collaboration.
-- [Project Documentation Folder `docs/`](./../docs/README.md) — Contains manuals, architectural docs, and coding guidelines.
-
----
-
-## Repository Starting Points
-
-- `components/ui` — Contains shared UI components and utilities such as helper functions (`cn`).
-- `resume/components/ui` — UI components and utilities scoped to resume-related functionality.
-- `resume/components/ui/utils.ts` and `components/ui/utils.ts` — Shared utility function files likely relevant when bugs involve styling or UI logic issues.
-
----
-
-## Key Files
-
-- `components/ui/utils.ts` — Utility helpers, includes the exported function `cn` used broadly for UI class name management.
-- `resume/components/ui/utils.ts` — Similar utility module in the resume submodule.
-- `README.md` — Project overview, useful for context on project scope.
-- `docs/README.md` — Documentation for deeper architectural and process insights.
-- Test files adjacent to UI components and utilities (discovery recommended during bug verification).
-
----
-
-## Architecture Context
-
-- **Utils Layer:** Focused on shared helper functions under `components/ui` and `resume/components/ui`. Two instances of the key `cn` function exist here, indicating a possible source of class name or styling bugs.
-- **UI Components:** Bug fixes here often impact user-facing features and must be verified visually and through existing UI tests.
-- **Resume Submodule:** Separate directory structure with its own UI utilities and components. Bug fix work here requires understanding this domain-specific code context.
-
----
-
-## Key Symbols for This Agent
-
-- `cn` function in `components/ui/utils.ts` — Used for conditional class name concatenation.
-- `cn` function in `resume/components/ui/utils.ts` — Variant scoped to resume components.
-- Core UI component classes and functions discovered during bug analysis relevant to the reported issue.
-
----
-
-## Documentation Touchpoints
-
-- Project `README.md` — for understanding project goals and relevant tech stack.
-- `docs/README.md` — for detailed architectural guidelines and contribution standards.
-- `../../AGENTS.md` — for cross-agent collaboration protocols and best practices.
-
----
-
-## Collaboration Checklist
-
-- [x] Confirm bug reproducibility and understand error messages.
-- [x] Identify relevant code files and utilities involved in the bug.
-- [x] Review recent changes that could relate to the bug.
-- [x] Apply fix aligned to coding conventions and utility usage.
-- [x] Commit with clear, descriptive messages referencing bug ID.
-- [x] Run and/or add tests that confirm bug fix validity.
-- [x] Submit fix for peer review; incorporate feedback.
-- [x] Update documentation or issue tracking systems with resolution details.
-- [x] Communicate with QA or test maintainers to verify fix in staging.
-
----
-
-## Hand-off Notes
-
-After completing bug fixes, provide a concise summary including:
-
-- Description of root cause and fix applied.
-- Areas of the codebase affected.
-- Any remaining risks or incomplete fixes.
-- Suggestions for future improvements or monitoring.
-- Reference to new or updated tests for verification.
-
----
-
-## Related Resources
-
-- [../docs/README.md](./../docs/README.md)
-- [README.md](./README.md)
-- [../../AGENTS.md](./../../AGENTS.md)
-
----
-
-This playbook equips the bug-fixer agent with clear task guidance, best practices, relevant areas, and a checklist for efficient and consistent bug resolution within the resume_figma codebase.
+- **`skill-data.json` not found (404)**: O arquivo vive em `public/` e é servido como static asset. Se estiver ausente, re-exportar via SKE `bridge/export.ts`.
+- **Type mismatch silencioso**: `ResumeData` é o contrato. Se `resume-default.ts` tem um campo a mais/menos que o type, o TS compila mas o runtime falha em props undefined.
+- **Print CSS sobrescrito**: Tailwind v4 usa CSS custom properties. `@media print` no `globals.css` pode ser sobrescrito por classes utilitárias inline. Verificar especificidade.
+- **Singleton state stale**: `pipeline-store` mantém estado entre navegações (React Router). Bug comum: dados da análise anterior persistem ao trocar de vaga.
+- **Vite HMR não reflete mudança em JSON**: Alterar `skill-data.json` ou config JSONs pode não triggar HMR. Fazer hard reload (Ctrl+Shift+R).
+- **JobPanel overflow**: Com 711 linhas, `JobPanel.tsx` tem scroll containers aninhados. Bug de overflow aparece em viewports menores que 768px.

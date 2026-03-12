@@ -1,94 +1,72 @@
-# Mobile Specialist Agent Playbook
-
-## Mission
-
-The Mobile Specialist agent supports the development, maintenance, and enhancement of mobile-friendly user interface components and cross-platform mobile interaction patterns within the codebase. This agent is engaged primarily to implement responsive features, optimize mobile user experience, and ensure seamless mobile device support across all UI segments, focusing on both adaptive design and mobile-specific utilities.
-
-## Responsibilities
-
-- Develop and maintain mobile-responsive UI components and hooks leveraging existing mobile detection utilities.
-- Optimize and debug mobile-specific performance and user interaction issues.
-- Collaborate with UI/UX designers to translate mobile design requirements into functional components.
-- Integrate mobile detection utilities (`useIsMobile`) to control conditional rendering and style application.
-- Enhance mobile accessibility and touch interactions across components.
-- Contribute to the shared utilities layer by creating and refining mobile-specific helpers.
-- Participate in mobile test case creation and validation for reliable deployment on various mobile devices.
-
-## Best Practices
-
-- Leverage `useIsMobile` hook from `components/ui/use-mobile.ts` or `resume/components/ui/use-mobile.ts` to detect mobile environments consistently.
-- Utilize the shared `cn` utility function for className concatenation to maintain styling consistency and reduce redundancy.
-- Prefer composition of atomic UI components that easily adapt or extend for mobile views, e.g., Tabs, Sheet, Tooltip.
-- Maintain a clear separation between desktop and mobile logic via hooks and conditional rendering to keep code maintainable.
-- Use provided UI components in `components/ui` directory for reusable building blocks instead of creating new mobile UI patterns from scratch.
-- Ensure touch-friendly interaction design: appropriate hit target sizes, gestures, and avoid hover-only interactions.
-- Optimize loading performance on mobile by utilizing fallback images (`ImageWithFallback`) and configuring adaptive chart rendering (`ChartConfig`).
-- Validate mobile UI changes with both unit tests and manual device testing, prioritizing critical user flows.
-
-## Key Project Resources
-
-- [Project README](./README.md) — Overview of the project
-- [Agent Handbook](../../AGENTS.md) — Guidelines for all project agents
-- [Mobile UI/UX Design Principles (Internal)] — Reference to mobile design philosophy within the team (location TBD)
-- Shared utilities documentation in `components/ui/utils.ts` and `resume/components/ui/utils.ts`
-
-## Repository Starting Points
-
-- `components/ui/` — Core UI components and utilities with mobile detection hooks
-- `resume/components/ui/` — UI components specifically for resume-related interfaces, many with mobile adaptations
-- `components/figma/` & `resume/components/figma/` — Figma-driven components like `ImageWithFallback`, potentially used for responsive media
-
-## Key Files
-
-- `components/ui/use-mobile.ts` — Mobile detection hook implementation (`useIsMobile`)
-- `resume/components/ui/use-mobile.ts` — Resume-specific mobile detection hook variant
-- `components/ui/utils.ts` — Shared UI utilities including `cn` for class name management
-- `components/ui/tooltip.tsx` — Mobile-friendly tooltip components with `TooltipProvider`
-- `components/ui/tabs.tsx` — Tabs component, used in responsive navigation or UI segmentation
-- `components/ui/sheet.tsx` — Slide-in overlay component for mobile menus or dialogs
-- `components/figma/ImageWithFallback.tsx` — Responsive fallback image component handling mobile image loading gracefully
-- `components/ui/chart.tsx` — Chart configuration supporting adaptive rendering on mobile screens
-
-## Architecture Context
-
-- **Utils Layer** (`components/ui`, `resume/components/ui`): Houses essential utilities such as the `cn` helper for dynamic classnames and the `useIsMobile` hook that abstracts device detection logic. These utilities are foundational for building responsive components.
-- **Components Layer** (`components/ui`, `resume/components/ui`, `components/figma`, `resume/components/figma`): Contains UI building blocks designed with mobile adaptability. Key components provide touch-enabled interaction patterns like tooltips, overlays, tabs, and charts.
-- Mobile support is integrated via hooks and utilities rather than separate mobile-only components, enabling unified UI logic with responsive behavior.
-
-## Key Symbols for This Agent
-
-- `useIsMobile` — Hook detecting mobile device context, controlling conditional UI adaptations.
-- `cn` — Utility function used throughout for consolidating and conditional class names.
-- `TooltipProvider`, `Tooltip`, `TooltipTrigger`, `TooltipContent` — Mobile-optimized tooltip system supporting touch interaction.
-- `SheetOverlay` — Slide-in panel for mobile navigation or contextual menus.
-- `ImageWithFallback` — Component that ensures images load gracefully on mobile devices with fallback sources.
-- `ChartConfig` — Configurations enabling charts to adapt to screen size constraints in mobile views.
-
-## Documentation Touchpoints
-
-- Inline code comments for `useIsMobile` and relevant component files.
-- Component usage examples in storybook or test files (if present).
-- Common UI/UX guidelines referenced in the main README or internal documentation.
-- Conventions for class naming and styles in `utils.ts` documentation.
-
-## Collaboration Checklist
-
-- [ ] Confirm mobile UI requirements and constraints with design and product teams.
-- [ ] Review pull requests focusing on mobile responsiveness and usability.
-- [ ] Update and maintain documentation related to mobile utilities and components.
-- [ ] Capture lessons learned from mobile feature implementation for future efficiency.
-- [ ] Ensure accessibility compliance on mobile devices is considered and tested.
-
-## Hand-off Notes
-
-Upon task completion, provide detailed notes on applied mobile patterns, any discovered device compatibility caveats, and suggestions for further mobile experience improvements. Clearly document changes to utilities or component APIs affecting mobile behavior to maintain team alignment.
-
-## Related Resources
-
-- [../docs/README.md](./../docs/README.md)
-- [README.md](./README.md)
-- [../../AGENTS.md](./../../AGENTS.md)
-
+---
+type: agent
+name: mobile-specialist
+description: Especialista em design responsivo, hook useIsMobile, classes Tailwind responsivas, media queries de impressão e touch interactions.
+generated: 2026-03-12
+status: filled
 ---
 
-This playbook aims to empower the Mobile Specialist agent with actionable knowledge and structured workflows to enhance mobile experience across the repository’s UI ecosystem efficiently.
+# Mobile Specialist Playbook
+
+## Responsabilidades
+
+- Garantir que todas as páginas (Home, Sources, Profile, Jobs, Resume, QuickApply) são responsivas.
+- Manter e evoluir o hook `useIsMobile` para detecção de viewport.
+- Implementar e auditar classes Tailwind responsivas (`sm:`, `md:`, `lg:`, `xl:`).
+- Manter media queries `@media print` em `globals.css` para impressão correta do currículo.
+- Garantir touch-friendly interactions no `JobPanel.tsx` e componentes interativos.
+- Testar em viewports: mobile (375px), tablet (768px), desktop (1024px+), e print.
+
+## Arquivos-Chave
+
+| Arquivo | Função |
+|---|---|
+| `src/App.tsx` (669 linhas) | Layout principal — responsive grid e print layout |
+| `src/components/JobPanel.tsx` (711 linhas) | Painel complexo — overflow e scroll em mobile |
+| `src/hooks/useWorkspaceConfig.ts` | Config hook — pode conter lógica responsiva |
+| `src/styles/globals.css` | Tailwind v4 config, tokens CSS, `@media print`, responsive overrides |
+| `src/components/ui/sidebar.tsx` | Sidebar do workspace — colapsa em mobile |
+| `src/components/ui/sheet.tsx` | Bottom sheet — alternativa mobile para dialogs |
+| `src/components/ui/drawer.tsx` | Drawer — navegação mobile |
+| `src/components/ui/dialog.tsx` | Dialog — precisa ser touch-friendly |
+| `src/components/ui/navigation-menu.tsx` | Menu de navegação — adapter mobile |
+| `src/components/ui/scroll-area.tsx` | Área de scroll customizado — toque e momentum |
+| `src/AppRouter.tsx` | Rotas — layout responsive por rota |
+| `index.html` | Meta viewport tag |
+
+## Workflow
+
+1. **Verificar meta viewport**: `index.html` deve ter `<meta name="viewport" content="width=device-width, initial-scale=1.0">`. Sem isso, mobile não escala.
+2. **Auditar breakpoints**: Projeto usa breakpoints Tailwind v4 padrão:
+   - `sm:` → 640px
+   - `md:` → 768px (tablet)
+   - `lg:` → 1024px (desktop)
+   - `xl:` → 1280px (wide)
+   - `print:` → media print
+3. **Testar useIsMobile**: O hook retorna boolean baseado em matchMedia. Verificar que threshold é consistente com breakpoints Tailwind.
+4. **Mobile-first CSS**: Estilos base são mobile. Classes `md:` e `lg:` adicionam para telas maiores. Nunca fazer desktop-first com overrides para mobile.
+5. **Print layout**: Abrir Ctrl+P, verificar:
+   - Fontes carregam corretamente
+   - Cores visíveis (sem `print:hidden` acidental)
+   - Páginas não quebram no meio de seções
+   - Margens adequadas
+6. **Touch targets**: Botões e links devem ter mínimo 44x44px de touch target. Shadcn/ui buttons já respeitam, mas custom elements precisam verificar.
+7. **Overflow e scroll**: `JobPanel.tsx` (711 linhas) tem containers de scroll aninhados. Em mobile, testar scroll momentum e que nested scrolls não conflitam.
+
+## Convenções
+
+- **Mobile-first**: CSS base é mobile. Adicionar complexidade para telas maiores com `md:`, `lg:`.
+- **Tailwind v4 responsive**: Usar classes Tailwind, não `@media` queries manuais (exceto print).
+- **Touch-friendly**: Min 44px touch targets. Padding generoso em interactive elements.
+- **Print é feature**: O currículo é impresso. `@media print` deve produzir layout profissional com margens corretas.
+- **Sem horizontal scroll**: Nenhuma página deve ter scroll horizontal em qualquer viewport. `overflow-x-hidden` como último recurso.
+
+## Pitfalls Comuns
+
+- **Print CSS ignorado**: Mudanças de layout que quebram print preview. Sempre testar Ctrl+P após alterações em `App.tsx` ou `globals.css`.
+- **useIsMobile inconsistente com Tailwind**: Se o hook usa 768px como threshold mas componentes usam `lg:` (1024px), há gap de comportamento entre 768-1024px.
+- **Sidebar colapsada perde conteúdo**: Sidebar em mobile colapsa para hamburger. Se workspace content depende de sidebar visível, perde funcionalidade.
+- **Scroll container nesting**: `JobPanel.tsx` com scroll dentro de scroll. Em iOS Safari, causa bounce effect indesejado e scroll trapping.
+- **Font size mínimo iOS**: Safari iOS ignora font-size menor que 16px em inputs, causando zoom automático. Usar `text-base` (16px) em inputs.
+- **Print page breaks**: Sem `break-inside: avoid` em seções do currículo, conteúdo pode ser cortado entre páginas em print.
+- **Viewport units em mobile**: `100vh` no mobile inclui a barra de endereço do browser. Usar `100dvh` (dynamic viewport height) quando disponível.

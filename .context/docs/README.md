@@ -1,65 +1,25 @@
-# Documentation Overview
+# Documentation Index — Resume Figma
 
-Welcome to the documentation directory of the Resume Figma project. This README serves as an entry point and index to the comprehensive guides and resources available within the `docs/` folder to help developers, contributors, and stakeholders understand and effectively work with the repository.
+> Gerado em 2026-03-12. Conteúdo baseado na análise real do codebase.
 
-## Contents of the `docs/` Directory
+## Docs Disponíveis
 
-The `docs/` folder contains in-depth markdown files covering all major aspects of the project, including architecture, development workflows, testing, domain concepts, and more. These guides are designed to provide clarity on the repository layout, coding conventions, and operational practices.
+| Documento | Descrição |
+|-----------|-----------|
+| [project-overview.md](./project-overview.md) | Visão geral do projeto, stack, entry points |
+| [architecture.md](./architecture.md) | Arquitetura, camadas, padrões de design, pipeline |
+| [data-flow.md](./data-flow.md) | Fluxo de dados, schemas, transformações, integrações |
+| [development-workflow.md](./development-workflow.md) | Fluxo de desenvolvimento, scripts, CI/CD |
+| [glossary.md](./glossary.md) | Glossário, termos do domínio, acrônimos |
+| [testing-strategy.md](./testing-strategy.md) | Estratégia de testes, Jest (SKE), validação (React) |
+| [security.md](./security.md) | Segurança, secrets, riscos, compliance |
+| [tooling.md](./tooling.md) | Ferramentas, scripts, IDE setup, debug |
+| [codebase-map.json](./codebase-map.json) | Mapa detalhado do codebase (gerado automaticamente) |
 
-### Core Guides
+## Referências Rápidas
 
-- **[Project Overview](./project-overview.md)**  
-  Introduction to the project’s purpose, goals, and high-level roadmap. It outlines the key features and stakeholders involved.
-
-- **[Architecture Notes](./architecture.md)**  
-  Details the structural design, component organization, technology stack, and architectural rationale. Includes diagrams and explanations of major modules and their responsibilities.
-
-- **[Development Workflow](./development-workflow.md)**  
-  Explains the branching strategy, commit conventions, CI/CD processes, and coding standards to streamline contributions and maintain code quality.
-
-- **[Testing Strategy](./testing-strategy.md)**  
-  Describes testing frameworks, coverage targets, types of tests (unit, integration, end-to-end), and guidelines for writing effective tests.
-
-- **[Glossary & Domain Concepts](./glossary.md)**  
-  Defines key business terms, user personas, domain models, and concepts relevant to the application domain.
-
-- **[Data Flow & Integrations](./data-flow.md)**  
-  Illustrates data pipelines, external integrations, APIs, and event-driven interactions that the system relies on or exposes.
-
-- **[Security & Compliance Notes](./security.md)**  
-  Covers authentication and authorization models, data privacy controls, secrets management, and compliance with relevant standards.
-
-- **[Tooling & Productivity Guide](./tooling.md)**  
-  Provides information on development tools, IDE configurations, scripts, and automation to boost developer productivity.
-
-## Repository Snapshot
-
-The project repository contains the following top-level files and directories:  
-
-- Source and UI components (e.g., `src/components/`, `src/components/`)  
-- Entry points and configuration files (`main.tsx`, `package.json`, `vite.config.ts`)  
-- TypeScript configurations (`tsconfig.json`, etc.)  
-- Additional documentation and changelogs (`CHANGELOG.md`, `README.md`)  
-- Scripts and styles folders for auxiliary resources  
-
-## How to Use This Documentation
-
-- Start by reading the **Project Overview** to gain a broad understanding of the repository’s intent and scope.  
-- Consult the **Architecture Notes** for insight into the design and key patterns, especially if you plan to extend or refactor the codebase.  
-- Follow the **Development Workflow** guide for contribution guidelines and to understand the CI/CD pipeline.  
-- Leverage the **Testing Strategy** when writing or maintaining tests to ensure quality and reliability.  
-- Reference the **Glossary** to familiarize yourself with domain-specific terminology.  
-- Review the **Data Flow & Integrations** and **Security & Compliance** guides for operational and security-related considerations.  
-- Use the **Tooling & Productivity Guide** to streamline your local setup and development tasks.
-
-## Cross-References
-
-- Many UI components follow consistent conventions documented in the architecture and can be found under `src/components/ui` and `resume/components/ui`.  
-- Utility functions, hooks (e.g., `useIsMobile`), and shared types like `ChartConfig` are defined in these UI directories and adhere to patterns described in the architectural guides.  
-- The modular component design supports flexible resume-building features, integrated with Figma-based UI elements located in `src/components/figma` and `resume/components/figma`.
-
----
-
-For any further questions or contributions, please refer to the contribution guidelines in the `development-workflow.md` and consult your team lead or project maintainer.
-
-Happy coding!
+- **Entry Point**: `src/main.tsx` → `src/AppRouter.tsx`
+- **Schema Central**: `src/types/resume.ts` (ResumeData)
+- **Agentes**: `src/agents/` (orchestrator, job-analyzer, resume-builder, lens)
+- **SKE**: `agents/self-knowledge-engine/`
+- **UI Kit**: `src/components/ui/` (47 componentes Shadcn/ui)

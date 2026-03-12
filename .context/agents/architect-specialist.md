@@ -1,86 +1,59 @@
+---
+type: agent
+name: architect-specialist
+description: Arquiteto de software responsável pelo design do schema ResumeData, pipeline de agentes, padrão singleton e grafo de skills.
+generated: 2026-03-12
+status: filled
+---
+
 # Architect Specialist Playbook
 
-## Mission
+## Responsabilidades
 
-The Architect Specialist agent supports the software development team by designing, reviewing, and evolving the overall system architecture to ensure scalability, maintainability, and performance. This agent is engaged during the planning (P) and refinement (R) phases to shape the structural direction of the project, identify architectural risks, and establish clear architecture patterns across codebases.
+- Projetar e evoluir o schema `ResumeData` (`src/types/resume.ts`) que é o contrato central entre agentes e UI.
+- Definir a arquitetura do pipeline de agentes: orchestrator → job-analyzer → resume-builder → lens.
+- Manter o padrão Singleton com subscribe/notify usado em `pipeline-store.ts`, `config-store.ts` e `execution-ledger.ts`.
+- Projetar o `SkillGraph` (`src/skills/skill-graph.ts`) como estrutura de grafo dirigido para relacionamentos entre skills.
+- Garantir que o fluxo de dados entre camadas SKE (Collector → Normalizer → Extractor → Answer Engine) e o frontend via `ske-bridge.ts` seja coerente.
+- Decidir quando introduzir novos agentes ou camadas no pipeline sem acoplar componentes existentes.
 
-## Responsibilities
+## Arquivos-Chave
 
-- Assess and design high-level system architecture, including modularization, layering, and integration strategies.
-- Define and enforce architectural principles, patterns, and conventions used throughout the project.
-- Collaborate with product owners, developers, and other stakeholders to align technical design with business goals.
-- Review architectural impacts of major code changes, new features, and technology adoptions.
-- Document architecture decisions, rationale, and guidelines for ongoing reference.
-- Facilitate architectural discussions and decision-making in code reviews and design sessions.
+| Arquivo | Função |
+|---|---|
+| `src/types/resume.ts` | Schema `ResumeData` — contrato entre agentes e UI |
+| `src/agents/orchestrator.ts` (292 linhas) | Coordenador do pipeline de 4 etapas |
+| `src/agents/job-analyzer.ts` (318 linhas) | Parsing + matching de descrições de vaga |
+| `src/agents/resume-builder.ts` (258 linhas) | Geração de currículo tailored |
+| `src/agents/lens.ts` (237 linhas) | Sistema de scoring e avaliação |
+| `src/skills/skill-graph.ts` (424 linhas) | Grafo de relacionamento de skills |
+| `src/lib/pipeline-store.ts` (323 linhas) | Estado do pipeline (4 steps) com Singleton |
+| `src/lib/ske-bridge.ts` (292 linhas) | Ponte entre dados SKE exportados e frontend |
+| `src/lib/config-loader.ts` | Carregamento de configurações JSON |
+| `src/lib/execution-ledger.ts` | Registro de execuções do pipeline |
+| `src/config/agents-config.json` | Configuração declarativa dos agentes |
 
-## Best Practices
+## Workflow
 
-- Always base architecture decisions on thorough analysis of the repository structure and existing patterns.
-- Promote separation of concerns by clearly defining responsibilities per module or directory.
-- Use and document consistent design patterns and coding conventions found in the codebase to maintain uniformity.
-- Keep architectural documentation up-to-date alongside code changes to aid onboarding and maintenance.
-- Favor modular, loosely coupled, and highly cohesive components to improve testability and extendability.
-- Review pull requests for architectural integrity and potential technical debt introduction.
+1. **Entender o contrato vigente**: Ler `src/types/resume.ts` para conhecer o shape atual de `ResumeData`. Toda decisão arquitetural deve preservar essa interface ou evoluí-la com backward compatibility.
+2. **Mapear dependências do pipeline**: Trace o fluxo `orchestrator → job-analyzer → resume-builder → lens`. Cada agente recebe input do anterior e emite output tipado. Não introduza dependências cíclicas entre agentes.
+3. **Avaliar o SkillGraph**: O grafo em `skill-graph.ts` usa adjacency list para relacionamentos (aliases, parents, siblings). Novas relações devem respeitar a estrutura existente de nós e arestas.
+4. **Verificar o Singleton pattern**: `pipeline-store.ts` expõe um singleton com `subscribe()` e `notify()`. Qualquer novo store deve seguir esse padrão — sem Redux/Zustand.
+5. **Validar integração SKE↔Frontend**: `ske-bridge.ts` carrega `skill-data.json` (exportado offline pelo SKE) e o transforma para consumo do frontend. Mudanças no schema SKE (`agents/self-knowledge-engine/src/types.ts`) devem ser refletidas aqui.
+6. **Documentar decisões**: Atualizar `docs/ARCHITECTURE_DIAGRAMS.md` e `.context/agents/` ao introduzir mudanças estruturais.
 
-## Key Project Resources
+## Convenções
 
-- The main project README for overall project understanding.
-- `/docs/` directory for architectural decision records and technical guidelines.
-- Contributor guide and AGENTS.md for process and collaboration standards.
+- **Sem backend server**: Toda lógica roda client-side (React 18) ou offline (SKE Node.js CLI). Não projetar APIs REST.
+- **Imutabilidade**: Agentes produzem novos objetos, nunca mutam state recebido. `Object.freeze()` é encorajado em dados exportados.
+- **TypeScript strict**: `tsconfig.app.json` com strict mode. Interfaces tipadas explicitamente, sem `any`.
+- **Separação de concerns**: Agentes (`src/agents/`) não importam componentes React. Componentes (`src/components/`) não importam agentes diretamente — usam hooks (`useOrchestrator.ts`).
+- **Schema-first**: Qualquer feature nova começa pela extensão do `ResumeData` type antes de tocar agentes ou UI.
 
-## Repository Starting Points
+## Pitfalls Comuns
 
-- `src/` — Main source code directory containing application logic, components, and modules.
-- `config/` — Configuration files defining environment-specific settings and build parameters.
-- `tests/` — Test suites for unit, integration, and system testing, important to understand code quality and coverage.
-
-## Key Files
-
-- `src/index.ts` or equivalent application entry point that initializes the system.
-- Architecture-related configuration files (e.g., `tsconfig.json`, `.eslintrc`, or `.prettierrc`) governing code style and structure.
-- High-level modules or services under `src/services/` or `src/modules/` that represent core system components.
-
-## Architecture Context
-
-- **Presentation Layer:** User interface and API endpoints generally under `src/components/` or `src/routes/`.
-- **Business Logic Layer:** Core processing and service orchestration typically inside `src/services/` or equivalent directories.
-- **Data Access Layer:** Repository or database interaction modules possibly located in `src/repositories/` or `src/data/`.
-- Each layer should have clear API boundaries and minimal direct dependencies on other layers.
-
-## Key Symbols for This Agent
-
-- Main service classes implementing business logic.
-- Core interfaces defining contracts between layers.
-- Factory or builder patterns facilitating object creation.
-- Any singleton or global state management classes.
-
-## Documentation Touchpoints
-
-- `/docs/architecture.md` or similar architecture overview documentation.
-- `README.md` for setup and high-level component descriptions.
-- `/docs/DECISIONS.md` or ADR (Architecture Decision Records) folder for tracking key architectural decisions.
-
-## Collaboration Checklist
-
-- [ ] Confirm project goals and constraints related to architecture with stakeholders.
-- [ ] Analyze repository structure and existing code patterns.
-- [ ] Propose architecture diagrams, layers, and major component interactions.
-- [ ] Review pull requests focusing on architectural consistency.
-- [ ] Update or create architectural documentation with rationale for decisions.
-- [ ] Communicate architectural changes and get team buy-in.
-- [ ] Identify and track architectural risks and technical debt.
-
-## Hand-off Notes
-
-Upon concluding an architectural review or design iteration:
-
-- Summarize key architecture decisions, outstanding risks, and critical technical debts.
-- Ensure all changes are reflected in documentation and shared with the team.
-- Provide a roadmap or recommendations for next architecture improvements.
-- Suggest follow-up code reviews or refactoring tasks to align implementation with architecture.
-
-## Related Resources
-
-- [Project Documentation Index](./docs/README.md)
-- [Project Root README](./README.md)
-- [AGENTS Overview](./../../AGENTS.md)
+- **Dependência cíclica agentes↔UI**: Agentes não devem importar de `src/components/`. Se precisar de dados de UI, passe como parâmetro.
+- **SkillGraph sem validação de ciclos**: O grafo permite edges arbitrárias. Sem guardrail, pode criar ciclos que causam stack overflow em traversals recursivos.
+- **Singleton leak em testes**: O singleton de `pipeline-store` mantém estado entre testes. O SKE resolve isso com `beforeEach` reset — o frontend ainda não tem esse padrão.
+- **Schema drift**: Alterar `ResumeData` sem atualizar `resume-default.ts` e `ske-bridge.ts` causa runtime errors silenciosos (campos `undefined`).
+- **Config JSON não tipado**: Os JSONs em `src/config/` são carregados dinamicamente. Mudanças de shape não são detectadas em compile time.

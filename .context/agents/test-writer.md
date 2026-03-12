@@ -1,119 +1,105 @@
-# Test Writer Agent Playbook
-
+---
+type: agent
+name: test-writer
+description: Escritor de testes Jest para o SKE (32 testes, 5 suites), guidelines de teste do AGENTS.md e recomendação de Vitest para agentes React.
+generated: 2026-03-12
+status: filled
 ---
 
-## Mission
+# Test Writer Playbook
 
-The Test Writer agent is dedicated to enhancing code quality by producing thorough unit and integration tests across the codebase. It supports the development team by ensuring new features, utilities, and components are well-tested, catching bugs early, and maintaining high reliability during refactors. This agent is engaged during feature development, bugfixes, and prior to major releases to validate code correctness and behavior adherence.
+## Responsabilidades
 
----
+- Manter e expandir os 32+ testes Jest do SKE em `agents/self-knowledge-engine/__tests__/`.
+- Garantir cobertura das 5 suites: answer-engine, authorship/identity, commit-analyzer, extractor/normalizer, project-discovery/utils.
+- Recomendar e implementar testes Vitest para agentes frontend (`src/agents/`).
+- Seguir as instruções de teste do `AGENTS.md`: `npm run test`, watch mode, build+test antes de PR.
+- Escrever testes que são determinísticos, isolados e rápidos.
+- Mockar dependências externas (filesystem, GitHub API, fetch) sem side effects.
 
-## Responsibilities
+## Arquivos-Chave
 
-- Write comprehensive and maintainable unit tests for functions, utilities, and components in the repository.
-- Create integration tests to verify interaction between various modules and UI components where applicable.
-- Maintain and improve existing tests by refactoring or extending coverage as code evolves.
-- Identify code areas lacking test coverage and prioritize test creation to mitigate risk.
-- Document test assumptions and expected outcomes clearly within test code or related comments.
+| Arquivo | Função |
+|---|---|
+| `agents/self-knowledge-engine/__tests__/answer-engine.test.ts` | Testes do Answer Engine (camada 4) |
+| `agents/self-knowledge-engine/__tests__/authorship.test.ts` | Testes de autoria e identity |
+| `agents/self-knowledge-engine/__tests__/commit-analyzer.test.ts` | Testes de análise de commits |
+| `agents/self-knowledge-engine/__tests__/extractor.test.ts` | Testes do Extractor (camada 3) |
+| `agents/self-knowledge-engine/__tests__/identity-resolver.test.ts` | Testes de resolução de identidade |
+| `agents/self-knowledge-engine/__tests__/normalizer.test.ts` | Testes do Normalizer (camada 2) |
+| `agents/self-knowledge-engine/__tests__/project-discovery.test.ts` | Testes de descoberta de projetos |
+| `agents/self-knowledge-engine/__tests__/prompt-export.test.ts` | Testes de exportação de prompts |
+| `agents/self-knowledge-engine/__tests__/utils.test.ts` | Testes de utilitários |
+| `agents/self-knowledge-engine/jest.config.cjs` | Config Jest (CommonJS + ts-jest) |
+| `AGENTS.md` | Instruções de teste do projeto |
 
----
+## Workflow
 
-## Best Practices
+1. **Rodar testes existentes**: `cd agents/self-knowledge-engine && npm test`. Verificar que todos 32 testes passam antes de qualquer alteração.
+2. **Watch mode para desenvolvimento**: `npm test -- --watch` — re-roda testes afetados a cada save.
+3. **Estrutura de teste SKE (Jest)**:
+   ```typescript
+   describe('NormalizerModule', () => {
+     beforeEach(() => {
+       // Reset state entre testes
+     });
 
-- Use descriptive test names that explain what is being tested and the expected outcomes.
-- Follow existing patterns for test structure and testing libraries in use (e.g., Jest, React Testing Library).
-- Target boundary cases and error conditions, not just happy paths.
-- Mock dependencies in unit tests to isolate functionality, favor integration in higher-level tests.
-- Keep tests independent, repeatable, and deterministic.
-- Maintain tests alongside the source code to ensure synchronicity.
-- Use shared utilities or helpers for common test setup to avoid duplication.
-- Review coverage reports to identify untested logic branches and improve tests iteratively.
+     it('should normalize skill names to lowercase', () => {
+       const result = normalizeSkill('TypeScript');
+       expect(result).toBe('typescript');
+     });
 
----
+     it('should handle empty input gracefully', () => {
+       expect(() => normalizeSkill('')).not.toThrow();
+     });
+   });
+   ```
+4. **Mocking patterns para SKE**:
+   ```typescript
+   // Mock filesystem
+   jest.mock('fs', () => ({
+     readFileSync: jest.fn().mockReturnValue('mock content'),
+     existsSync: jest.fn().mockReturnValue(true),
+   }));
 
-## Key Project Resources
+   // Mock GitHub API
+   jest.mock('../src/collector', () => ({
+     fetchCommits: jest.fn().mockResolvedValue([
+       { sha: 'abc123', message: 'feat: add feature' }
+     ]),
+   }));
+   ```
+5. **Recomendação Vitest para frontend**: Os agentes em `src/agents/` não têm testes. Vitest é recomendado por integração nativa com Vite:
+   ```typescript
+   // src/agents/__tests__/job-analyzer.test.ts (futuro)
+   import { describe, it, expect } from 'vitest';
+   import { analyzeJob } from '../job-analyzer';
 
-- [Project README.md](./README.md) — Overview of the project for contextual understanding.
-- [Contributing Guide (if exists)](./CONTRIBUTING.md) — Guidelines on contributions including testing expectations.
-- [AGENTS.md](./../../AGENTS.md) — Repository-wide agent roles and responsibilities for collaboration.
-- [Project Docs](./../docs/README.md) — Documentation for general and technical project details.
+   describe('JobAnalyzer', () => {
+     it('should extract skills from job description', () => {
+       const result = analyzeJob('Looking for React and TypeScript developer');
+       expect(result.skills).toContain('react');
+       expect(result.skills).toContain('typescript');
+     });
+   });
+   ```
+6. **Build + test antes de PR**: Conforme AGENTS.md: `npm run build && npm run test`.
 
----
+## Convenções
 
-## Repository Starting Points
+- **Jest para SKE**: Config CommonJS (`jest.config.cjs`), transform via `ts-jest`. Não migrar para ESM sem necessidade.
+- **Vitest para frontend**: Quando testes de agentes frontend forem necessários, usar Vitest (integração Vite nativa).
+- **Determinístico**: Testes não dependem de rede, filesystem real, ou estado global. Mock tudo que é externo.
+- **Isolado**: `beforeEach` para reset de state. Singletons (pipeline-store) devem ser resetados entre testes.
+- **Nomenclatura**: `should <expected behavior> when <condition>`. Ex: `should return empty array when no skills found`.
+- **Sem snapshots para lógica**: Snapshot testing é para UI. Lógica de agentes usa assertions explícitas.
 
-- `components/ui` — Contains UI components and utilities used throughout the project.
-- `resume/components/ui` — Specialized UI components for resume-related features.
-- `components/ui/utils.ts` & `resume/components/ui/utils.ts` — Utility functions shared in UI layers.
-- Test files typically co-located or placed alongside source files or in `__tests__` folders.
+## Pitfalls Comuns
 
----
-
-## Key Files
-
-- `components/ui/utils.ts` — Critical utility functions like `cn` (class name helpers), good candidates for unit tests.
-- `resume/components/ui/utils.ts` — Utility code with shared helpers in resume-specific UI.
-- Component files under `components/ui` and `resume/components/ui` — Key UI components expected to have rendering and behavior tests.
-- Existing test files often have `.test.ts(x)` or `.spec.ts(x)` extensions near source counterparts.
-
----
-
-## Architecture Context
-
-- **UI Components Layer**  
-  - Directories: `components/ui`, `resume/components/ui`  
-  - Tests focus: component rendering, prop interactions, emitted events  
-  - Key exports: React components, hooks, helper utilities such as `cn` function.
-
-- **Shared Utilities**  
-  - Utility functions that aid UI behavior or formatting, ideal for isolated unit tests.
-
----
-
-## Key Symbols for This Agent
-
-- `cn` function (className utility) in both `components/ui/utils.ts` and `resume/components/ui/utils.ts`.
-- Primary React components under UI directories.
-- Key hooks or utility helpers that transform or process data for UI components.
-
----
-
-## Documentation Touchpoints
-
-- Inline code comments in utility and component files for understanding expected behaviors.
-- Project-wide documentation under `docs/` folder offers architectural and design insights.
-- Test libraries documentation used in the repo (likely Jest and Testing Library).
-
----
-
-## Collaboration Checklist
-
-- [ ] Confirm testing framework and patterns used in the repository.
-- [ ] Review relevant pull requests to understand testing standards and style.
-- [ ] Add or update tests in every feature or bugfix PR.
-- [ ] Validate tests run and pass on CI before merging.
-- [ ] Update or create documentation for testing guidelines.
-- [ ] Periodically review coverage reports and identify gaps.
-
----
-
-## Hand-off Notes
-
-Upon completing test writing tasks, ensure:
-
-- Adequate coverage for new and changed code.
-- Test failures are documented and addressed.
-- Recommendations for areas needing further testing are communicated to development leads.
-- Documentation is updated to reflect any changes in testing strategy or new helper functions for tests.
-
----
-
-## Related Resources
-
-- [../docs/README.md](./../docs/README.md)
-- [README.md](./README.md)
-- [../../AGENTS.md](./../../AGENTS.md)
-
----
-
-This playbook guides a test-writer agent to methodically produce and maintain high-quality tests, improving overall codebase robustness and developer confidence.
+- **Singleton não resetado entre testes**: `pipeline-store` mantém estado entre `it()` blocks. Sem `beforeEach` reset, testes são order-dependent.
+- **Jest config CommonJS**: `jest.config.cjs` é CommonJS por necessidade do ts-jest. Renomear para `.ts` ou `.mjs` quebra.
+- **Mock de fs sem restore**: `jest.mock('fs')` afeta todos os testes do arquivo. Usar `jest.restoreAllMocks()` em `afterEach`.
+- **Testes SKE que escrevem em disco**: Testes que criam arquivos em `.context/` podem falhar em CI ou poluir workspace. Mock filesystem.
+- **Cobertura enganosa**: `npm test -- --coverage` mostra linhas, mas não branch coverage. Erro comum: testar happy path e ignorar error paths.
+- **Vitest não configurado**: O projeto ainda não tem Vitest setup. Antes de escrever testes frontend, configurar `vitest.config.ts` e adicionar `@testing-library/react`.
+- **Testes acoplados a dados reais**: Testes que importam `resume-default.ts` como fixture criam acoplamento. Usar dados mock inline.
