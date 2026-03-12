@@ -25,11 +25,17 @@ import {
   type BuilderOptions,
 } from "./resume-builder";
 import { defaultResumeData } from "../data/resume-default";
+import {
+  resolveJobInput,
+  type JobInput,
+  type ResolvedJobContent,
+} from "./job-input-resolver";
 
 /* ── Tipos ── */
 
 export type PipelineStage =
   | "idle"
+  | "resolving"
   | "loading-ske"
   | "analyzing"
   | "building"
@@ -54,6 +60,8 @@ export interface PipelineResult {
   skeCoverage: SKEStats;
   /** Timestamp da geração */
   gerado_em: string;
+  /** Conteúdo resolvido da entrada (quando via JobInput) */
+  resolvedContent?: ResolvedJobContent;
 }
 
 export interface OrchestratorState {
@@ -205,6 +213,42 @@ export async function runPipeline(
   };
   notify();
 
+  return result;
+}
+
+/**
+ * Executa o pipeline a partir de um JobInput (texto, URL ou imagem).
+ * Resolve a entrada antes de analisar.
+ */
+export async function resolveAndRunPipeline(
+  input: JobInput,
+  options?: BuilderOptions,
+  onOCRProgress?: (pct: number) => void,
+): Promise<PipelineResult> {
+  // Fase 0: Resolver entrada
+  _state = { ..._state, stage: "resolving" as PipelineStage, error: null };
+  notify();
+
+  const resolved = await resolveJobInput(input, onOCRProgress);
+
+  if (!resolved.extractedText.trim()) {
+    const error =
+      resolved.orientacao || "Sem conteúdo suficiente para análise.";
+    _state = { ..._state, stage: "error", error };
+    notify();
+    throw new Error(error);
+  }
+
+  // Executar pipeline com texto resolvido
+  const result = await runPipeline(
+    resolved.extractedText,
+    resolved.titulo,
+    resolved.empresa,
+    options,
+  );
+
+  // Anexar conteúdo resolvido ao resultado
+  result.resolvedContent = resolved;
   return result;
 }
 

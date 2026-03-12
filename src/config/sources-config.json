@@ -1,0 +1,19 @@
+{
+    "schema_version": "1.0",
+    "sources": [
+        {
+            "id": "ske_data",
+            "type": "local-file",
+            "label": "Self-Knowledge Engine Data",
+            "path": "public/skill-data.json",
+            "enabled": true
+        },
+        {
+            "id": "resume_base",
+            "type": "local-file",
+            "label": "Currículo Base",
+            "path": "src/data/resume-default.ts",
+            "enabled": true
+        }
+    ]
+}

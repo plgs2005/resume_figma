@@ -9,11 +9,13 @@ import {
   getState,
   initialize,
   runPipeline,
+  resolveAndRunPipeline,
   resetToDefault,
   type OrchestratorState,
   type PipelineResult,
   type BuilderOptions,
 } from "./orchestrator";
+import type { JobInput } from "./job-input-resolver";
 
 export interface UseOrchestratorReturn {
   /** Estado atual do orchestrator */
@@ -24,6 +26,12 @@ export interface UseOrchestratorReturn {
     titulo?: string,
     empresa?: string,
     options?: BuilderOptions,
+  ) => Promise<PipelineResult>;
+  /** Executa pipeline a partir de JobInput (texto/URL/imagem) */
+  analyzeFromInput: (
+    input: JobInput,
+    options?: BuilderOptions,
+    onOCRProgress?: (pct: number) => void,
   ) => Promise<PipelineResult>;
   /** Reseta para dados default */
   reset: () => void;
@@ -37,12 +45,8 @@ export function useOrchestrator(): UseOrchestratorReturn {
   const [state, setState] = useState<OrchestratorState>(getState);
 
   useEffect(() => {
-    // Subscrever a mudanças de estado
     const unsubscribe = subscribe(setState);
-
-    // Inicializar SKE na montagem
     initialize();
-
     return unsubscribe;
   }, []);
 
@@ -58,11 +62,23 @@ export function useOrchestrator(): UseOrchestratorReturn {
     [],
   );
 
+  const analyzeFromInput = useCallback(
+    async (
+      input: JobInput,
+      options?: BuilderOptions,
+      onOCRProgress?: (pct: number) => void,
+    ) => {
+      return resolveAndRunPipeline(input, options, onOCRProgress);
+    },
+    [],
+  );
+
   const reset = useCallback(() => {
     resetToDefault();
   }, []);
 
   const isProcessing =
+    state.stage === "resolving" ||
     state.stage === "loading-ske" ||
     state.stage === "analyzing" ||
     state.stage === "building";
@@ -72,6 +88,7 @@ export function useOrchestrator(): UseOrchestratorReturn {
   return {
     state,
     analyze,
+    analyzeFromInput,
     reset,
     isProcessing,
     isTailored,

@@ -170,7 +170,7 @@ export default function App({
 }) {
   const [isReady, setIsReady] = useState(false);
   const [jobPanelOpen, setJobPanelOpen] = useState(false);
-  const { state, analyze, reset, isProcessing, isTailored } =
+  const { state, analyzeFromInput, reset, isProcessing, isTailored } =
     useOrchestrator();
 
   // Usar dados da prop se fornecidos, senão dados ativos do orchestrator
@@ -252,8 +252,9 @@ export default function App({
       <JobPanel
         isOpen={jobPanelOpen}
         onClose={() => setJobPanelOpen(false)}
-        onAnalyze={analyze}
+        onAnalyze={analyzeFromInput}
         onReset={reset}
+        onExportPDF={handleExportPDF}
         isProcessing={isProcessing}
         isTailored={isTailored}
         result={state.lastResult}

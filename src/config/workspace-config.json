@@ -1,0 +1,26 @@
+{
+    "schema_version": "1.0",
+    "workspace": {
+        "enabledModules": [
+            "home",
+            "profile",
+            "sources",
+            "jobs",
+            "resume"
+        ],
+        "agents": {
+            "job_analyzer": true,
+            "resume_builder": true,
+            "lens": true,
+            "skill_inference": true
+        },
+        "features": {
+            "autoResume": false,
+            "autoJobMatching": false,
+            "careerGraph": false,
+            "configActions": true
+        },
+        "theme": "default",
+        "locale": "pt-BR"
+    }
+}

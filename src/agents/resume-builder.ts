@@ -15,6 +15,7 @@ import type { ResumeData, SkillGroup, Experience } from "../types/resume";
 import type { JobAnalysis } from "./job-analyzer";
 import type { SKEData } from "../lib/ske-bridge";
 import { enrichResumeWithSKE } from "../lib/ske-bridge";
+import { scoreText, type LensDimension } from "./lens";
 
 /* ── Configuração ── */
 
@@ -77,13 +78,14 @@ export function buildTailoredResume(
     };
   }
 
-  // 3. Marcar relevância das experiências
+  // 3. Marcar relevância das experiências (com Lens)
   if (opts.markExperienceRelevance) {
     result = {
       ...result,
       experiencias: markExperienceRelevance(
         result.experiencias,
         analysis.parsed.requisitos.map((r) => r.nome),
+        analysis.dimensions,
       ),
     };
   }
@@ -129,12 +131,14 @@ function reorderSkillGroups(
 
 /**
  * Analisa texto de realizações para determinar relevância com a vaga.
+ * Usa match de keywords (80%) + Lens scoring (20%) para precisão.
  */
 function markExperienceRelevance(
   experiencias: Experience[],
   keywords: string[],
+  dimensions?: LensDimension,
 ): Experience[] {
-  if (keywords.length === 0) return experiencias;
+  if (keywords.length === 0 && !dimensions) return experiencias;
 
   const keywordSet = keywords.map((k) => k.toLowerCase());
 
@@ -148,15 +152,26 @@ function markExperienceRelevance(
       .join(" ")
       .toLowerCase();
 
+    // Match de keywords (lógica existente)
     const matchCount = keywordSet.filter((kw) =>
       allText.includes(kw),
     ).length;
-    const matchRatio = matchCount / keywords.length;
+    const keywordRatio =
+      keywords.length > 0 ? matchCount / keywords.length : 0;
+
+    // Lens scoring (contextual: liderança, temas de negócio, etc.)
+    let lensBonus = 0;
+    if (dimensions) {
+      const lensScore = scoreText(allText, dimensions);
+      lensBonus = (lensScore / 100) * 0.2; // 20% de peso
+    }
+
+    const totalRatio = keywordRatio * 0.8 + lensBonus;
 
     let relevancia_vaga: Experience["relevancia_vaga"];
-    if (matchRatio >= 0.4) {
+    if (totalRatio >= 0.35) {
       relevancia_vaga = "alta";
-    } else if (matchRatio >= 0.15) {
+    } else if (totalRatio >= 0.12) {
       relevancia_vaga = "media";
     } else {
       relevancia_vaga = "baixa";

@@ -1,0 +1,70 @@
+{
+    "schema_version": "1.0",
+    "resume": {
+        "layout": "professional",
+        "header": {
+            "title": "Resume Builder",
+            "subtitle": "Currículo dinâmico controlado por configuração — altere seções, ordem e tema via JSON."
+        },
+        "theme": {
+            "primary": "#0f172a",
+            "accent": "#6366f1",
+            "background": "#ffffff",
+            "text": "#334155",
+            "textMuted": "#64748b",
+            "textDimmed": "#94a3b8",
+            "surface": "#f8fafc",
+            "surfaceAlt": "#f1f5f9",
+            "border": "#e2e8f0",
+            "tagBg": "#eef2ff",
+            "successBg": "#f0fdf4",
+            "successText": "#16a34a",
+            "matchBg": "#eef2ff",
+            "matchBorder": "#c7d2fe",
+            "matchText": "#4338ca",
+            "matchKeywordBg": "#dcfce7"
+        },
+        "sections": [
+            {
+                "id": "profile",
+                "label": "Resumo Profissional",
+                "enabled": true,
+                "order": 1
+            },
+            {
+                "id": "skills",
+                "label": "Conhecimentos Técnicos",
+                "enabled": true,
+                "order": 2
+            },
+            {
+                "id": "experience",
+                "label": "Experiência Profissional",
+                "enabled": true,
+                "order": 3
+            },
+            {
+                "id": "projects",
+                "label": "Projetos",
+                "enabled": true,
+                "order": 4
+            },
+            {
+                "id": "education",
+                "label": "Formação",
+                "enabled": true,
+                "order": 5
+            },
+            {
+                "id": "certifications",
+                "label": "Certificações",
+                "enabled": false,
+                "order": 6
+            }
+        ],
+        "max_skills_highlight": 12,
+        "include_match_score": true,
+        "max_experience_items": 10,
+        "max_achievements_per_item": 4
+    }
+}

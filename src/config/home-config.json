@@ -1,0 +1,14 @@
+{
+    "schema_version": "1.0",
+    "home": {
+        "welcome_message": "Bem-vindo ao Career Intelligence Workspace",
+        "show_quick_actions": true,
+        "show_recent_activity": true,
+        "recommended_flow": [
+            "sources",
+            "profile",
+            "jobs",
+            "resume"
+        ]
+    }
+}

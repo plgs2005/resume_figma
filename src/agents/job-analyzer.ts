@@ -10,6 +10,11 @@
 import type { JobMatch } from "../types/resume";
 import type { SKEData } from "../lib/ske-bridge";
 import { findSkill, getSKEData } from "../lib/ske-bridge";
+import {
+  extractDimensions,
+  detectsLeadership,
+  type LensDimension,
+} from "./lens";
 
 /* ── Tipos internos ── */
 
@@ -34,6 +39,8 @@ export interface JobAnalysis {
   gaps: string[];
   /** Sugestões de melhoria para o currículo */
   sugestoes: string[];
+  /** Dimensões contextuais da vaga (lens) */
+  dimensions: LensDimension;
 }
 
 /* ── Patterns de detecção de tecnologias ── */
@@ -199,6 +206,9 @@ export function analyzeJob(
   const ske = skeData || getSKEData();
   const parsed = parseJobDescription(text, titulo, empresa);
 
+  // Extrair dimensões contextuais via Lens
+  const dimensions = extractDimensions(text, titulo);
+
   const skillsEncontradas: string[] = [];
   const gaps: string[] = [];
   const keywordsMatch: string[] = [];
@@ -260,6 +270,22 @@ export function analyzeJob(
     );
   }
 
+  // Sugestões baseadas no Lens
+  if (dimensions.lideranca && detectsLeadership(text)) {
+    sugestoes.push(
+      "🎯 Vaga pede liderança técnica. Destaque experiências como líder/coordenador.",
+    );
+  }
+
+  if (dimensions.temas_negocio.length > 0) {
+    sugestoes.push(
+      `🏢 Temas de negócio identificados: ${dimensions.temas_negocio.join(", ")}. Relacione experiências nesses domínios.`,
+    );
+  }
+
+  // Injetar tecnologias detectadas nas dimensões
+  dimensions.tecnologias = skillsEncontradas;
+
   const jobMatch: JobMatch = {
     titulo_vaga: parsed.titulo,
     empresa_vaga: parsed.empresa,
@@ -275,6 +301,7 @@ export function analyzeJob(
     skills_encontradas: skillsEncontradas,
     gaps,
     sugestoes,
+    dimensions,
   };
 }
 

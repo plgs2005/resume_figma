@@ -49,6 +49,8 @@ export interface Skill {
   confidence?: number;
   /** Se foi destacada pelo match com a vaga */
   destaque_vaga?: boolean;
+  /** Origem do dado (progressivo) */
+  source?: "truth-layer" | "user-declared" | "user-confirmed";
 }
 
 export interface SkillGroup {
@@ -74,6 +76,8 @@ export interface Experience {
   stack?: string[];
   /** Se esta experiência é relevante para a vaga atual (match) */
   relevancia_vaga?: "alta" | "media" | "baixa";
+  /** Origem do dado (progressivo) */
+  source?: "truth-layer" | "user-declared" | "user-confirmed";
 }
 
 // ── Projetos Próprios ────────────────────────────────────────────────
